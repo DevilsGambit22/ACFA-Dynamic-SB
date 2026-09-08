@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d09">
+<title>ACFA Dashboard</title>
+<style>
+:root{
+  --bg:#0b0d09;
+  --bg2:#11150f;
+  --panel:rgba(22,27,19,.76);
+  --panel-strong:#171d14;
+  --panel-soft:#20281b;
+  --line:rgba(221,178,80,.22);
+  --line-bright:rgba(238,197,101,.72);
+  --gold:#d8a847;
+  --gold2:#f3d27e;
+  --ivory:#f6f1e6;
+  --muted:#aeb5a6;
+  --green:#81b64c;
+  --green2:#9fd46b;
+  --shadow:0 24px 70px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  min-height:100%;
+  background:transparent;
+  color:var(--ivory);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+button,a{font:inherit}
+body{overflow-x:hidden}
+.shell{max-width:760px;margin:0 auto;padding:10px}
+.app{
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+  border:1px solid rgba(221,178,80,.18);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% -15%,rgba(216,168,71,.14),transparent 34%),
+    radial-gradient(circle at 12% 45%,rgba(129,182,76,.07),transparent 28%),
+    linear-gradient(180deg,#11150f 0%,#0c0f0a 52%,#090b08 100%);
+  box-shadow:var(--shadow);
+  isolation:isolate;
+}
+.app:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 85%);
+  z-index:-2;
+}
+.ambient{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.spark{
+  position:absolute;
+  width:4px;height:4px;
+  border-radius:50%;
+  background:var(--gold2);
+  box-shadow:0 0 12px rgba(243,210,126,.8);
+  opacity:.0;
+  animation:drift var(--dur) linear infinite;
+  animation-delay:var(--delay);
+  left:var(--x);
+  bottom:-12px;
+}
+@keyframes drift{
+  0%{transform:translate3d(0,0,0) scale(.6);opacity:0}
+  12%{opacity:.55}
+  72%{opacity:.25}
+  100%{transform:translate3d(var(--dx),-110vh,0) scale(1.15);opacity:0}
+}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 14px;
+  background:rgba(10,13,9,.78);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  backdrop-filter:blur(16px) saturate(130%);
+}
+.brand{min-width:0}
+.brand strong{
+  display:block;
+  font-family:Georgia,"Times New Roman",serif;
+  letter-spacing:.04em;
+  color:var(--gold2);
+  font-size:.9rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.brand span{
+  display:block;
+  margin-top:2px;
+  font-size:.64rem;
+  color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.nav{
+  display:flex;
+  gap:6px;
+  padding:4px;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:999px;
+  background:rgba(255,255,255,.025);
+}
+.nav-btn{
+  border:0;
+  border-radius:999px;
+  padding:8px 12px;
+  background:transparent;
+  color:#9ea49a;
+  font-size:.7rem;
+  letter-spacing:.07em;
+  font-weight:900;
+  cursor:pointer;
+  transition:.24s ease;
+}
+.nav-btn:hover{color:var(--ivory)}
+.nav-btn.active{
+  color:#18140b;
+  background:linear-gradient(180deg,#f6da8f,#d7a544);
+  box-shadow:0 4px 18px rgba(216,168,71,.22);
+}
+.viewport{overflow:hidden}
+.track{
+  display:flex;
+  width:200%;
+  transition:transform .56s cubic-bezier(.2,.86,.22,1);
+}
+.track.tournaments{transform:translateX(-50%)}
+.page{
+  width:50%;
+  min-width:50%;
+  padding:16px;
+}
+.hero{
+  position:relative;
+  min-height:460px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:16px 8px 24px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-glow{
+  position:absolute;
+  width:440px;height:440px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(227,182,83,.16),rgba(227,182,83,.05) 38%,transparent 68%);
+  filter:blur(4px);
+  animation:breathe 5s ease-in-out infinite;
+}
+@keyframes breathe{50%{transform:scale(1.08);opacity:.72}}
+.orbit{
+  position:absolute;
+  width:min(76vw,410px);
+  aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid rgba(243,210,126,.18);
+  animation:spin 18s linear infinite;
+}
+.orbit:before,.orbit:after{
+  content:"";
+  position:absolute;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--gold2);
+  box-shadow:0 0 18px rgba(243,210,126,.9);
+}
+.orbit:before{top:10%;left:15%}
+.orbit:after{bottom:12%;right:16%}
+.orbit.two{
+  width:min(65vw,350px);
+  border-style:dashed;
+  border-color:rgba(129,182,76,.14);
+  animation-duration:26s;
+  animation-direction:reverse;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo-stage{
+  position:relative;
+  width:min(84%,390px);
+  z-index:2;
+  animation:floatLogo 5.3s ease-in-out infinite;
+}
+@keyframes floatLogo{
+  0%,100%{transform:translateY(0) rotate(-.3deg)}
+  50%{transform:translateY(-10px) rotate(.35deg)}
+}
+.logo-stage:after{
+  content:"";
+  position:absolute;
+  left:14%;
+  right:14%;
+  bottom:1%;
+  height:18px;
+  border-radius:50%;
+  background:rgba(0,0,0,.38);
+  filter:blur(10px);
+  z-index:-1;
+  animation:shadowPulse 5.3s ease-in-out infinite;
+}
+@keyframes shadowPulse{50%{transform:scale(.84);opacity:.55}}
+.logo{
+  width:100%;
+  display:block;
+  filter:drop-shadow(0 18px 24px rgba(0,0,0,.42)) drop-shadow(0 0 22px rgba(216,168,71,.08));
+}
+.hero-copy{position:relative;z-index:4;margin-top:8px}
+.greeting{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.45rem,5vw,2.15rem);
+  color:var(--gold2);
+  text-shadow:0 0 22px rgba(216,168,71,.12);
+}
+.clock{
+  margin-top:6px;
+  font-size:1.2rem;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.04em;
+}
+.date{
+  margin-top:3px;
+  color:var(--muted);
+  font-size:.74rem;
+}
+.section{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:
+    linear-gradient(180deg,rgba(31,38,27,.8),rgba(19,24,17,.76));
+  box-shadow:inset 0 1px rgba(255,255,255,.025);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.section:hover{
+  transform:translateY(-2px);
+  border-color:rgba(243,210,126,.38);
+  box-shadow:0 12px 30px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.03);
+}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:10px;
+}
+.section h2{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.05rem;
+  color:var(--gold2);
+}
+.live-dot{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:.64rem;
+  color:var(--muted);
+}
+.live-dot:before{
+  content:"";
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--green2);
+  box-shadow:0 0 0 0 rgba(159,212,107,.45);
+  animation:ping 2s infinite;
+}
+@keyframes ping{
+  70%{box-shadow:0 0 0 8px rgba(159,212,107,0)}
+  100%{box-shadow:0 0 0 0 rgba(159,212,107,0)}
+}
+.events{display:grid;gap:8px}
+.event{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px;
+  border-radius:14px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.05);
+  text-decoration:none;
+  color:inherit;
+  transition:.22s ease;
+}
+.event[href]:hover{
+  transform:translateX(3px);
+  background:rgba(216,168,71,.08);
+  border-color:rgba(216,168,71,.25);
+}
+.event-date{
+  width:46px;
+  min-width:46px;
+  text-align:center;
+  padding:7px 4px;
+  border-radius:12px;
+  background:rgba(216,168,71,.1);
+  border:1px solid rgba(216,168,71,.18);
+  color:var(--gold2);
+  font-weight:900;
+  font-size:.68rem;
+  line-height:1.15;
+}
+.event-main{min-width:0;flex:1}
+.event-title{font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.event-meta{font-size:.68rem;color:var(--muted);margin-top:2px}
+.members-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.member-list{display:grid;gap:7px}
+.member{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:8px;
+  border-radius:13px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.045);
+  color:inherit;
+  text-decoration:none;
+  min-width:0;
+  transition:.2s ease;
+}
+.member:hover{background:rgba(255,255,255,.055);transform:translateY(-1px)}
+.avatar{
+  width:38px;height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#2a3126;
+  border:1px solid rgba(243,210,126,.2);
+}
+.member-copy{min-width:0;flex:1}
+.username{
+  font-weight:850;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:.78rem;
+}
+.meta{font-size:.64rem;color:var(--muted);margin-top:2px}
+.title{
+  padding:3px 6px;
+  border-radius:8px;
+  background:rgba(216,168,71,.12);
+  border:1px solid rgba(216,168,71,.2);
+  color:var(--gold2);
+  font-size:.62rem;
+  font-weight:950;
+}
+.skeleton{
+  height:56px;
+  border-radius:13px;
+  background:linear-gradient(90deg,#1d241a 20%,#293222 50%,#1d241a 80%);
+  background-size:220% 100%;
+  animation:shimmer 1.1s infinite linear;
+}
+@keyframes shimmer{to{background-position:-220% 0}}
+.rules-window{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+  border-radius:15px;
+  background:rgba(0,0,0,.12);
+  border:1px solid rgba(255,255,255,.04);
+}
+.rules-window:before,.rules-window:after{
+  content:"";
+  position:absolute;
+  z-index:5;
+  left:0;right:0;
+  height:34px;
+  pointer-events:none;
+}
+.rules-window:before{top:0;background:linear-gradient(#171d14,transparent)}
+.rules-window:after{bottom:0;background:linear-gradient(transparent,#171d14)}
+.rules-track{
+  display:grid;
+  gap:8px;
+  padding:12px;
+  animation:ruleScroll 24s linear infinite;
+}
+.rules-window:hover .rules-track{animation-play-state:paused}
+@keyframes ruleScroll{to{transform:translateY(-50%)}}
+.rule{
+  display:flex;
+  gap:9px;
+  align-items:flex-start;
+  padding:9px 10px;
+  border-radius:12px;
+  background:rgba(255,255,255,.03);
+  font-size:.72rem;
+  line-height:1.45;
+}
+.rule i{
+  flex:0 0 auto;
+  width:20px;height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  font-style:normal;
+  font-size:.6rem;
+  font-weight:900;
+  color:#17120a;
+  background:linear-gradient(180deg,var(--gold2),var(--gold));
+}
+.tour-hero{
+  position:relative;
+  min-height:390px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:6px;
+  padding:18px 8px 4px;
+}
+.tour-copy{position:relative;z-index:3}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.64rem;
+  color:var(--gold);
+  font-weight:900;
+}
+.season-title{
+  margin:5px 0 8px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.8rem,6vw,3rem);
+  color:var(--gold2);
+  line-height:1;
+}
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 9px;
+  border-radius:999px;
+  color:#c9eba8;
+  background:rgba(129,182,76,.11);
+  border:1px solid rgba(129,182,76,.27);
+  font-size:.66rem;
+  font-weight:900;
+}
+.status:before{
+  content:"";
+  width:6px;height:6px;border-radius:50%;background:var(--green2);
+  box-shadow:0 0 12px rgba(159,212,107,.7);
+}
+.justice-wrap{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:360px;
+}
+.justice-wrap:before{
+  content:"";
+  position:absolute;
+  width:250px;height:250px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(216,168,71,.14),transparent 67%);
+  animation:breathe 5.6s ease-in-out infinite;
+}
+.justice{
+  position:relative;
+  width:100%;
+  max-height:390px;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 20px rgba(0,0,0,.42));
+  animation:justiceFloat 6.4s ease-in-out infinite;
+}
+@keyframes justiceFloat{50%{transform:translateY(-7px) rotate(.25deg)}}
+.facts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  margin-top:11px;
+}
+.fact{
+  padding:9px;
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.045);
+}
+.fact b{display:block;font-size:.6rem;color:var(--muted);margin-bottom:3px}
+.fact span{font-size:.72rem;font-weight:750}
+.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 10px;
+  border-radius:11px;
+  border:1px solid rgba(216,168,71,.22);
+  background:rgba(216,168,71,.08);
+  color:var(--gold2);
+  text-decoration:none;
+  font-size:.68rem;
+  font-weight:900;
+}
+.podium-shell{
+  border:2px solid rgba(238,197,101,.82);
+  border-radius:24px;
+  padding:18px 10px 12px;
+  background:
+    radial-gradient(circle at 50% -5%,rgba(243,210,126,.11),transparent 38%),
+    linear-gradient(180deg,#223145,#1a2736);
+  box-shadow:0 14px 0 rgba(0,0,0,.16),inset 0 0 0 1px rgba(255,255,255,.025);
+}
+.podium{
+  display:grid;
+  grid-template-columns:1fr 1.05fr 1fr;
+  gap:8px;
+  align-items:end;
+  min-height:330px;
+}
+.podium-card{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  text-align:center;
+  color:inherit;
+  text-decoration:none;
+}
+.podium-card.center{transform:translateY(-21px)}
+.season-pill{
+  position:relative;
+  z-index:2;
+  margin-bottom:-7px;
+  padding:5px 8px;
+  border-radius:999px;
+  color:#17120a;
+  background:linear-gradient(180deg,#ffe398,#d9aa4e);
+  font-size:.62rem;
+  font-weight:950;
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+.podium-avatar{
+  width:82px;height:82px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid #3d5f88;
+  background:#34465d;
+  box-shadow:0 10px 20px rgba(0,0,0,.35);
+}
+.center .podium-avatar{
+  width:98px;height:98px;
+  border-color:#f0ca48;
+  box-shadow:0 0 0 4px rgba(240,202,72,.07),0 12px 22px rgba(0,0,0,.38);
+}
+.podium-name{
+  margin-top:7px;
+  max-width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:.77rem;
+  font-weight:950;
+}
+.podium-meta{margin-top:2px;font-size:.62rem;color:#d4dbe4}
+.podium-rating-type{margin-top:4px;font-size:.6rem;color:#aebdce}
+.block{
+  width:100%;
+  min-height:90px;
+  margin-top:9px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(180deg,#ffe66f,#f4cb00);
+  color:#111827;
+  border-bottom:8px solid #8b7600;
+  box-shadow:inset 0 1px rgba(255,255,255,.65);
+}
+.center .block{
+  min-height:116px;
+  color:white;
+  background:linear-gradient(180deg,#4bd478,#118b3b);
+  border-bottom-color:#075d25;
+}
+.block strong{font-size:1.25rem}
+.center .block strong{font-size:1.5rem}
+.block span{font-size:.62rem;margin-top:4px;letter-spacing:.05em}
+.archive{display:grid;gap:7px;margin-top:10px}
+.archive-row{
+  display:grid;
+  grid-template-columns:46px 1fr auto;
+  align-items:center;
+  gap:9px;
+  padding:8px;
+  border-radius:12px;
+  background:rgba(255,255,255,.025);
+}
+.archive-row img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.archive-rating{font-size:.68rem;font-weight:900;color:var(--gold2)}
+.empty{color:var(--muted);font-size:.72rem;padding:16px;text-align:center}
+.footer-note{
+  padding:18px 6px 8px;
+  text-align:center;
+  color:#71786d;
+  font-size:.62rem;
+}
+@media(max-width:560px){
+  .shell{padding:0}
+  .app{border-radius:0;border-left:0;border-right:0}
+  .topbar{padding:11px 10px}
+  .brand span{display:none}
+  .page{padding:12px}
+  .hero{min-height:430px}
+  .members-grid{grid-template-columns:1fr}
+  .tour-hero{grid-template-columns:1fr;min-height:0}
+  .justice-wrap{min-height:290px}
+  .justice{max-height:320px}
+  .podium{gap:5px}
+  .podium-avatar{width:70px;height:70px;border-width:5px}
+  .center .podium-avatar{width:84px;height:84px}
+  .podium-name{font-size:.69rem}
+  .block strong{font-size:1.05rem}
+  .center .block strong{font-size:1.25rem}
+}
+
+.new-members-panel{
+  position:relative;
+  overflow:visible;
+}
+.new-members-panel .member-list{
+  position:relative;
+  z-index:2;
+  padding-right:96px;
+}
+.new-member-mascot{
+  position:absolute;
+  right:-8px;
+  bottom:-10px;
+  width:118px;
+  max-height:240px;
+  object-fit:contain;
+  z-index:3;
+  pointer-events:none;
+  filter:drop-shadow(0 12px 16px rgba(0,0,0,.38));
+  transform-origin:50% 100%;
+  animation:newMemberWaveFloat 4.8s ease-in-out infinite;
+}
+.new-member-mascot-glow{
+  position:absolute;
+  right:4px;
+  bottom:12px;
+  width:115px;
+  height:160px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(243,210,126,.12),transparent 68%);
+  filter:blur(6px);
+  pointer-events:none;
+  z-index:1;
+  animation:breathe 4.8s ease-in-out infinite;
+}
+@keyframes newMemberWaveFloat{
+  0%,100%{transform:translateY(0) rotate(-.4deg)}
+  50%{transform:translateY(-5px) rotate(.5deg)}
+}
+@media(max-width:560px){
+  .new-members-panel .member-list{padding-right:78px}
+  .new-member-mascot{width:98px;right:-4px;bottom:-6px}
+  .new-member-mascot-glow{width:95px;height:135px;right:0}
+}
+
+</style>
+</head>
+<body>
+<div class="shell">
+  <main class="app">
+    <div class="ambient" id="ambient"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <strong>AND CHESS FOR ALL</strong>
+        <span id="motto">Every Player Belongs • Every Move Matters</span>
+      </div>
+      <nav class="nav" aria-label="Dashboard">
+        <button class="nav-btn active" data-view="home">HOME</button>
+        <button class="nav-btn" data-view="tournaments">TOURNAMENTS</button>
+      </nav>
+    </header>
+
+    <div class="viewport">
+      <div class="track" id="track">
+
+        <section class="page">
+          <section class="hero">
+            <div class="hero-glow"></div>
+            <div class="orbit"></div>
+            <div class="orbit two"></div>
+
+            <div class="logo-stage">
+              <img class="logo" src="./assets/acfa-logo.png" alt="And Chess For All">
+            </div>
+
+            <div class="hero-copy">
+              <div class="greeting" id="greeting">Welcome to ACFA</div>
+              <div class="clock" id="clock">--:--:--</div>
+              <div class="date" id="dateLine"></div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <h2>Club Events</h2>
+              <span class="live-dot">Current</span>
+            </div>
+            <div class="events" id="events"></div>
+          </section>
+
+          <div class="members-grid">
+            <section class="section new-members-panel">
+              <div class="section-head">
+                <h2>Newest Members</h2>
+                <span class="live-dot">Live API</span>
+              </div>
+              <div class="new-member-mascot-glow"></div>
+              <div class="member-list" id="newMembers">
+                <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+              </div>
+              <img class="new-member-mascot"
+                   src="./assets/lady-justice-new-members.png"
+                   alt=""
+                   aria-hidden="true">
+            </section>
+
+            <section class="section">
+              <div class="section-head">
+                <h2>Titled Members</h2>
+                <span class="live-dot">Live API</span>
+              </div>
+              <div class="member-list" id="titledMembers">
+                <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+              </div>
+            </section>
+          </div>
+
+          <section class="section">
+            <div class="section-head">
+              <h2>Club Rules</h2>
+              <span class="meta">Hover to pause</span>
+            </div>
+            <div class="rules-window">
+              <div class="rules-track" id="rulesTrack"></div>
+            </div>
+          </section>
+
+          <div class="footer-note">ACFA Dashboard • Live club data powered by Chess.com Public API</div>
+        </section>
+
+        <section class="page">
+          <section class="tour-hero">
+            <div class="tour-copy">
+              <div class="eyebrow">ACFA Seasonal Championships</div>
+              <h1 class="season-title" id="seasonTitle">Fall 2026</h1>
+              <span class="status" id="seasonStatus">Planning</span>
+
+              <div class="facts">
+                <div class="fact"><b>Registration</b><span id="registrationDeadline">TBA</span></div>
+                <div class="fact"><b>Starts</b><span id="startDate">TBA</span></div>
+                <div class="fact"><b>Ends</b><span id="endDate">TBA</span></div>
+                <div class="fact"><b>Format</b><span id="format">Seasonal Championship</span></div>
+              </div>
+
+              <div class="actions">
+                <a class="action" id="eventBtn" target="_blank" rel="noopener" style="display:none">Tournament</a>
+                <a class="action" id="detailsBtn" target="_blank" rel="noopener" style="display:none">Details</a>
+              </div>
+            </div>
+
+            <div class="justice-wrap">
+              <img class="justice" src="./assets/lady-justice.png" alt="ACFA Lady Justice">
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <h2>Season Champions</h2>
+              <span class="meta">Latest three</span>
+            </div>
+            <div class="podium-shell">
+              <div class="podium" id="podium"></div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <h2>Champions Archive</h2>
+              <span class="meta">All seasons</span>
+            </div>
+            <div class="archive" id="archive"></div>
+          </section>
+
+          <div class="footer-note">Spring • Summer • Fall</div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const DATA_URL="./data/acfa.json";
+const API="https://api.chess.com/pub";
+const FALLBACK="./assets/acfa-logo.png";
+const MEMBER_TTL=1000*60*10;
+const PROFILE_TTL=1000*60*60*12;
+const TITLES=["GM","WGM","IM","WIM","FM","WFM","CM","WCM"];
+let DATA=null, CLUB_MEMBERS=[];
+
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>(s??"").toString().replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
+const safe=(v,f="TBA")=>(v??"").toString().trim()||f;
+
+function buildAmbient(){
+  const root=$("#ambient");
+  for(let i=0;i<24;i++){
+    const s=document.createElement("i");
+    s.className="spark";
+    s.style.setProperty("--x",`${Math.random()*100}%`);
+    s.style.setProperty("--dx",`${(Math.random()-.5)*90}px`);
+    s.style.setProperty("--dur",`${8+Math.random()*10}s`);
+    s.style.setProperty("--delay",`${-Math.random()*16}s`);
+    root.appendChild(s);
+  }
+}
+buildAmbient();
+
+function niceDate(v){
+  if(!v) return "TBA";
+  const d=new Date(v+(v.length===10?"T12:00:00":""));
+  if(Number.isNaN(d.getTime())) return v;
+  return d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+}
+function monthDay(v){
+  if(!v) return ["TBA",""];
+  const d=new Date(v+"T12:00:00");
+  if(Number.isNaN(d.getTime())) return [v,""];
+  return [
+    d.toLocaleDateString(undefined,{month:"short"}).toUpperCase(),
+    d.getDate()
+  ];
+}
+function cacheGet(key,ttl){
+  try{
+    const raw=localStorage.getItem(key);
+    if(!raw) return null;
+    const x=JSON.parse(raw);
+    return Date.now()-x.t<=ttl?x.v:null;
+  }catch{return null}
+}
+function cacheSet(key,v){try{localStorage.setItem(key,JSON.stringify({t:Date.now(),v}))}catch{}}
+async function getJSON(url){
+  const r=await fetch(url,{cache:"no-store"});
+  if(!r.ok) throw new Error(`${r.status}: ${url}`);
+  return r.json();
+}
+
+function setView(view){
+  $("#track").classList.toggle("tournaments",view==="tournaments");
+  $$(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+}
+$$(".nav-btn").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+
+function clockTick(){
+  const d=new Date(),h=d.getHours();
+  const greet=h<5?"Good Night":h<12?"Good Morning":h<17?"Good Afternoon":h<21?"Good Evening":"Good Night";
+  $("#greeting").textContent=`${greet}, ACFA`;
+  $("#clock").textContent=d.toLocaleTimeString([], {hour:"numeric",minute:"2-digit",second:"2-digit"});
+  $("#dateLine").textContent=d.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});
+}
+clockTick();setInterval(clockTick,1000);
+
+function renderStatic(){
+  $("#motto").textContent=safe(DATA.club.motto,"");
+
+  const events=DATA.home.events||[];
+  $("#events").innerHTML=events.length?events.map(e=>{
+    const [m,d]=monthDay(e.date);
+    const tag=e.url?"a":"div";
+    const href=e.url?` href="${e.url}" target="_blank" rel="noopener"`:"";
+    return `<${tag} class="event"${href}>
+      <div class="event-date">${esc(m)}<br>${esc(d)}</div>
+      <div class="event-main">
+        <div class="event-title">${esc(e.title)}</div>
+        <div class="event-meta">${esc(e.status||"")} ${e.url?"• Tap to open":""}</div>
+      </div>
+    </${tag}>`
+  }).join(""):`<div class="empty">No current club events.</div>`;
+
+  const rules=DATA.home.rules||[];
+  const rows=rules.map((r,i)=>`<div class="rule"><i>${i+1}</i><span>${esc(r)}</span></div>`).join("");
+  $("#rulesTrack").innerHTML=rows+rows;
+
+  const t=DATA.tournament;
+  $("#seasonTitle").textContent=`${safe(t.activeSeason,"Season")} ${safe(t.year,"")}`.trim();
+  $("#seasonStatus").textContent=safe(t.status,"Planning");
+  $("#registrationDeadline").textContent=niceDate(t.registrationDeadline);
+  $("#startDate").textContent=niceDate(t.startDate);
+  $("#endDate").textContent=niceDate(t.endDate);
+  $("#format").textContent=safe(t.format,"Seasonal Championship");
+  if(t.eventUrl){$("#eventBtn").href=t.eventUrl;$("#eventBtn").style.display="inline-flex"}
+  if(t.detailsUrl){$("#detailsBtn").href=t.detailsUrl;$("#detailsBtn").style.display="inline-flex"}
+}
+
+async function clubMembers(){
+  const key="acfa:club-members";
+  const cached=cacheGet(key,MEMBER_TTL);
+  if(cached) return cached;
+  const d=await getJSON(`${API}/club/${DATA.club.slug}/members`);
+  const all=[...(d.weekly||[]),...(d.all_time||[])];
+  const seen=new Set(), out=[];
+  for(const m of all){
+    const k=m.username.toLowerCase();
+    if(!seen.has(k)){seen.add(k);out.push(m)}
+  }
+  cacheSet(key,out);
+  return out;
+}
+async function profile(username){
+  const key=`acfa:p:${username.toLowerCase()}`, c=cacheGet(key,PROFILE_TTL);
+  if(c) return c;
+  const p=await getJSON(`${API}/player/${encodeURIComponent(username)}`);
+  cacheSet(key,p);return p;
+}
+async function stats(username){
+  const key=`acfa:s:${username.toLowerCase()}`, c=cacheGet(key,PROFILE_TTL);
+  if(c) return c;
+  const s=await getJSON(`${API}/player/${encodeURIComponent(username)}/stats`);
+  cacheSet(key,s);return s;
+}
+function bestRating(s){
+  for(const k of ["chess_daily","chess_rapid","chess_blitz","chess_bullet"]){
+    const r=s?.[k]?.last?.rating;
+    if(r)return {value:r,label:k.replace("chess_","")};
+  }
+  return null;
+}
+function memberCard(username,p=null,sub=""){
+  const av=p?.avatar||FALLBACK;
+  const title=p?.title?`<span class="title">${esc(p.title)}</span>`:"";
+  return `<a class="member" href="https://www.chess.com/member/${encodeURIComponent(username)}" target="_blank" rel="noopener">
+    <img class="avatar" src="${av}" alt="" loading="lazy" onerror="this.src='${FALLBACK}'">
+    <div class="member-copy"><div class="username">${esc(username)}</div><div class="meta">${esc(sub)}</div></div>
+    ${title}
+  </a>`;
+}
+async function renderNewest(){
+  const newest=[...CLUB_MEMBERS].sort((a,b)=>(b.joined||0)-(a.joined||0)).slice(0,5);
+  $("#newMembers").innerHTML=newest.map(m=>memberCard(m.username,null,"New member")).join("");
+  requestAnimationFrame(async()=>{
+    const rows=await Promise.all(newest.map(async m=>{
+      try{return memberCard(m.username,await profile(m.username),"New member")}
+      catch{return memberCard(m.username,null,"New member")}
+    }));
+    $("#newMembers").innerHTML=rows.join("");
+  });
+}
+async function renderTitled(){
+  const set=new Set(CLUB_MEMBERS.map(m=>m.username.toLowerCase()));
+  const groups=await Promise.all(TITLES.map(async title=>{
+    const key=`acfa:titled:${title}`;
+    let arr=cacheGet(key,PROFILE_TTL);
+    if(!arr){
+      try{arr=(await getJSON(`${API}/titled/${title}`)).players||[];cacheSet(key,arr)}
+      catch{arr=[]}
+    }
+    return arr.map(username=>({username,title}));
+  }));
+  const hits=groups.flat().filter(x=>set.has(x.username.toLowerCase())).slice(0,8);
+  $("#titledMembers").innerHTML=hits.length?hits.map(x=>memberCard(x.username,{title:x.title},"Titled member")).join(""):`<div class="empty">No titled members found.</div>`;
+}
+
+function podiumOrder(champs){
+  const order={Spring:1,Summer:2,Fall:3};
+  const sorted=[...champs].sort((a,b)=>(b.year-a.year)||((order[b.season]||0)-(order[a.season]||0)));
+  return {sorted,top:[sorted[1]||null,sorted[0]||null,sorted[2]||null]};
+}
+async function championData(c){
+  if(!c)return null;
+  let p=null,s=null;
+  try{[p,s]=await Promise.all([profile(c.username),stats(c.username)])}catch{}
+  return {...c,p,r:bestRating(s)};
+}
+async function renderChampions(){
+  const champs=DATA.tournament.champions||[];
+  if(!champs.length){
+    $("#podium").innerHTML=`<div class="empty" style="grid-column:1/-1">No seasonal champions have been added yet.</div>`;
+    $("#archive").innerHTML=`<div class="empty">The first ACFA champion will appear here.</div>`;
+    return;
+  }
+  const {sorted,top}=podiumOrder(champs);
+  const seasons={Spring:"🌸",Summer:"☀️",Fall:"🍂"};
+  const tops=await Promise.all(top.map(championData));
+  $("#podium").innerHTML=tops.map((x,i)=>{
+    if(!x)return `<div class="podium-card"><div class="empty">Future Champion</div></div>`;
+    const center=i===1?" center":"";
+    const av=x.p?.avatar||FALLBACK;
+    const title=x.p?.title?`${x.p.title} `:"";
+    return `<a class="podium-card${center}" href="https://www.chess.com/member/${encodeURIComponent(x.username)}" target="_blank" rel="noopener">
+      <div class="season-pill">${seasons[x.season]||"🏆"} ${esc(x.season)} ${esc(x.year)}</div>
+      <img class="podium-avatar" src="${av}" alt="" onerror="this.src='${FALLBACK}'">
+      <div class="podium-name">${esc(title+x.username)}</div>
+      <div class="podium-meta">${esc(x.season)} Champion</div>
+      <div class="podium-rating-type">${x.r?esc(x.r.label)+" rating":"Rating unavailable"}</div>
+      <div class="block"><strong>${x.r?esc(x.r.value):"—"}</strong><span>rating</span></div>
+    </a>`
+  }).join("");
+
+  const archiveData=await Promise.all(sorted.map(championData));
+  $("#archive").innerHTML=archiveData.map(x=>{
+    const av=x.p?.avatar||FALLBACK;
+    const t=x.p?.title?`${x.p.title} `:"";
+    return `<a class="archive-row" href="https://www.chess.com/member/${encodeURIComponent(x.username)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">
+      <img src="${av}" alt="" loading="lazy" onerror="this.src='${FALLBACK}'">
+      <div><div class="username">${esc(t+x.username)}</div><div class="meta">${esc(x.season)} ${esc(x.year)} Champion</div></div>
+      <div class="archive-rating">${x.r?esc(x.r.value):"—"}</div>
+    </a>`
+  }).join("");
+}
+
+(async function(){
+  try{
+    DATA=await getJSON(DATA_URL);
+    renderStatic();
+    renderChampions();
+    try{
+      CLUB_MEMBERS=await clubMembers();
+      renderNewest();
+      renderTitled();
+    }catch(e){
+      $("#newMembers").innerHTML=`<div class="empty">Member data is temporarily unavailable.</div>`;
+      $("#titledMembers").innerHTML=`<div class="empty">Titled-member data is temporarily unavailable.</div>`;
+      console.warn(e);
+    }
+  }catch(e){
+    document.body.innerHTML=`<div style="padding:24px;background:#0b0d09;color:#f6f1e6;font-family:system-ui">Could not load <b>data/acfa.json</b>.</div>`;
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

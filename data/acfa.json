@@ -1,0 +1,40 @@
+{
+  "club": {
+    "name": "And Chess For All Official",
+    "slug": "and-chess-for-all-official",
+    "clubUrl": "https://www.chess.com/club/and-chess-for-all-official",
+    "motto": "Every Player Belongs \u2022 Every Move Matters"
+  },
+  "home": {
+    "events": [
+      {
+        "title": "ACFA Fall Championship",
+        "date": "2026-10-05",
+        "status": "Coming Soon",
+        "url": ""
+      }
+    ],
+    "rules": [
+      "Respect every member.",
+      "No harassment, bullying, or personal attacks.",
+      "Keep discussions constructive and appropriate.",
+      "No cheating, sandbagging, or fair-play violations.",
+      "Follow Chess.com Community Guidelines.",
+      "Do not spam club notes, forums, or messages.",
+      "Tournament participants are expected to complete their games.",
+      "Handle disputes respectfully through the proper admin channels."
+    ]
+  },
+  "tournament": {
+    "activeSeason": "Fall",
+    "year": 2026,
+    "status": "Planning",
+    "registrationDeadline": "",
+    "startDate": "",
+    "endDate": "",
+    "format": "Seasonal ACFA Championship",
+    "eventUrl": "",
+    "detailsUrl": "",
+    "champions": []
+  }
+}
