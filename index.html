@@ -1,26 +1,39 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#000000">
 
-<title>And Chess For All | Dashboard</title>
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta
+  name="theme-color"
+  content="#000000">
+
+<title>
+And Chess For All | Dashboard
+</title>
+
 
 <style>
+
 /* =========================================================
    ACFA DYNAMIC DASHBOARD
    BLACK • BLUE • GOLD • WHITE
    ========================================================= */
 
 :root{
+
   --black:#000000;
   --black2:#03050a;
 
   --blue:#1266c8;
   --blue2:#2d8cff;
   --blue3:#69b7ff;
-  --blue4:#a8d7ff;
+  --blue4:#b4ddff;
 
   --navy:#061326;
   --navy2:#0a203d;
@@ -34,33 +47,38 @@
   --soft:#e7edf6;
   --muted:#9eadc2;
 
-  --green:#7ed36a;
-  --red:#ff6b6b;
-
   --line:rgba(71,151,255,.28);
   --gold-line:rgba(255,214,107,.34);
 
   --shadow:
     0 22px 60px rgba(0,0,0,.62),
     0 0 36px rgba(45,140,255,.08);
+
 }
+
 
 *{
   box-sizing:border-box;
 }
 
+
 html{
-  min-height:100%;
   margin:0;
+  min-height:100%;
   background:#000;
 }
 
+
 body{
-  min-height:100vh;
+
   margin:0;
+
+  min-height:100vh;
+
   overflow-x:hidden;
 
   color:var(--white);
+
   background:#000;
 
   font-family:
@@ -72,90 +90,130 @@ body{
     "Segoe UI",
     Arial,
     sans-serif;
+
 }
+
 
 button,
 a{
   font:inherit;
 }
 
+
 a{
   color:inherit;
 }
 
+
 img{
   max-width:100%;
 }
+
 
 /* =========================================================
    APP
    ========================================================= */
 
 .shell{
+
   width:100%;
+
   max-width:760px;
+
   margin:0 auto;
+
   padding:10px;
+
 }
 
+
 .app{
+
   position:relative;
+
   min-height:100vh;
+
   overflow:hidden;
+
   isolation:isolate;
 
-  border:1px solid var(--gold-line);
+  border:
+    1px solid
+    var(--gold-line);
+
   border-radius:28px;
 
   background:
+
     radial-gradient(
       circle at 50% -10%,
       rgba(45,140,255,.18),
       transparent 35%
     ),
+
     radial-gradient(
-      circle at 100% 50%,
+      circle at 100% 48%,
       rgba(18,102,200,.06),
-      transparent 38%
+      transparent 40%
     ),
+
     linear-gradient(
       180deg,
       #020305,
       #000
     );
 
-  box-shadow:var(--shadow);
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 /* =========================================================
    PARTICLES
    ========================================================= */
 
 .ambient{
+
   position:absolute;
+
   inset:0;
-  z-index:-1;
+
   overflow:hidden;
+
+  z-index:-1;
+
   pointer-events:none;
+
 }
 
+
 .spark{
+
   position:absolute;
 
   left:var(--x);
-  bottom:-18px;
+
+  bottom:-20px;
 
   width:5px;
   height:5px;
 
   border-radius:50%;
 
-  background:var(--gold2);
+  background:
+    var(--gold2);
 
   box-shadow:
-    0 0 8px rgba(255,214,107,1),
-    0 0 18px rgba(255,186,47,.82),
-    0 0 30px rgba(255,186,47,.25);
+
+    0 0 8px
+    rgba(255,214,107,1),
+
+    0 0 18px
+    rgba(255,186,47,.82),
+
+    0 0 30px
+    rgba(255,186,47,.26);
 
   opacity:0;
 
@@ -165,48 +223,74 @@ img{
     linear
     infinite;
 
-  animation-delay:var(--delay);
+  animation-delay:
+    var(--delay);
+
 }
 
+
 .spark.blue{
+
   width:4px;
   height:4px;
 
-  background:var(--blue3);
+  background:
+    var(--blue3);
 
   box-shadow:
-    0 0 8px rgba(105,183,255,1),
-    0 0 18px rgba(45,140,255,.9),
-    0 0 30px rgba(45,140,255,.38);
+
+    0 0 8px
+    rgba(105,183,255,1),
+
+    0 0 18px
+    rgba(45,140,255,.9),
+
+    0 0 30px
+    rgba(45,140,255,.4);
+
 }
+
 
 .spark.large{
+
   width:7px;
   height:7px;
+
 }
 
+
 @keyframes emberRise{
+
   0%{
+
     transform:
       translate3d(0,0,0)
       scale(.35);
 
     opacity:0;
+
   }
 
   7%{
+
     opacity:1;
+
   }
 
   55%{
+
     opacity:.8;
+
   }
 
   82%{
+
     opacity:.35;
+
   }
 
   100%{
+
     transform:
       translate3d(
         var(--drift),
@@ -216,28 +300,42 @@ img{
       scale(1.3);
 
     opacity:0;
+
   }
+
 }
+
 
 /* =========================================================
    TOP BAR
    ========================================================= */
 
 .topbar{
+
   position:sticky;
+
   top:0;
+
   z-index:50;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:10px;
 
-  padding:13px 14px;
+  padding:
+    13px
+    14px;
 
-  border-bottom:1px solid rgba(45,140,255,.18);
+  border-bottom:
+    1px solid
+    rgba(45,140,255,.18);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(0,0,0,.98),
@@ -247,16 +345,23 @@ img{
   backdrop-filter:
     blur(16px)
     saturate(140%);
+
 }
+
 
 .brand{
+
   min-width:0;
+
 }
 
+
 .brand strong{
+
   display:block;
 
-  color:var(--gold2);
+  color:
+    var(--gold2);
 
   font-family:
     Georgia,
@@ -264,72 +369,106 @@ img{
     serif;
 
   font-size:.9rem;
+
   letter-spacing:.055em;
 
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
 
+
 .brand span{
+
   display:block;
 
   margin-top:2px;
 
-  color:var(--muted);
+  color:
+    var(--muted);
 
   font-size:.61rem;
 
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
 
+
 /* =========================================================
-   MAIN NAV
+   TOP NAVIGATION
    ========================================================= */
 
 .nav{
+
   display:flex;
+
   gap:5px;
 
   padding:4px;
 
   border-radius:999px;
 
-  border:1px solid rgba(45,140,255,.18);
+  border:
+    1px solid
+    rgba(45,140,255,.18);
 
-  background:rgba(10,32,61,.56);
+  background:
+    rgba(10,32,61,.56);
+
 }
 
+
 .nav-btn{
+
   border:0;
 
-  padding:8px 12px;
+  padding:
+    8px
+    12px;
 
   border-radius:999px;
 
   color:#a9b6c9;
-  background:transparent;
+
+  background:
+    transparent;
 
   cursor:pointer;
 
   font-size:.67rem;
+
   font-weight:950;
+
   letter-spacing:.075em;
 
   transition:.22s ease;
+
 }
+
 
 .nav-btn:hover{
+
   color:#fff;
-  transform:translateY(-1px);
+
+  transform:
+    translateY(-1px);
+
 }
 
+
 .nav-btn.active{
+
   color:#111;
 
   background:
+
     linear-gradient(
       180deg,
       #ffe38e,
@@ -337,72 +476,109 @@ img{
     );
 
   box-shadow:
-    0 5px 18px rgba(215,166,62,.34);
+
+    0 5px 18px
+    rgba(215,166,62,.34);
+
 }
 
+
 /* =========================================================
-   PAGE SLIDER
+   DASHBOARD SLIDER
    ========================================================= */
 
 .viewport{
+
   overflow:hidden;
+
 }
+
 
 .track{
+
   display:flex;
+
   width:200%;
 
-  transform:translateX(0);
+  transform:
+    translateX(0);
 
   transition:
-    transform .58s
+
+    transform
+    .58s
     cubic-bezier(.2,.86,.22,1);
+
 }
+
 
 .track.tournaments{
-  transform:translateX(-50%);
+
+  transform:
+    translateX(-50%);
+
 }
 
+
 .page{
+
   width:50%;
+
   min-width:50%;
+
   padding:14px;
+
 }
+
 
 /* =========================================================
    HERO
    ========================================================= */
 
 .hero{
+
   position:relative;
 
   min-height:470px;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
-  padding:24px 0 28px;
+  padding:
+    24px
+    0
+    28px;
 
   overflow:hidden;
+
   text-align:center;
+
 }
 
+
 .hero-glow{
+
   position:absolute;
 
   left:50%;
+
   top:46%;
 
   width:445px;
   height:445px;
 
-  transform:translate(-50%,-50%);
+  transform:
+    translate(-50%,-50%);
 
   border-radius:50%;
 
   background:
+
     radial-gradient(
       circle,
       rgba(45,140,255,.25),
@@ -410,49 +586,67 @@ img{
       transparent 70%
     );
 
-  filter:blur(5px);
+  filter:
+    blur(5px);
 
   animation:
     heroGlow
     5s
     ease-in-out
     infinite;
+
 }
 
+
 @keyframes heroGlow{
+
   50%{
+
     transform:
       translate(-50%,-50%)
       scale(1.07);
 
     opacity:.7;
+
   }
+
 }
 
+
 .orbit{
+
   position:absolute;
 
   left:50%;
+
   top:46%;
 
-  width:min(78vw,420px);
+  width:
+    min(78vw,420px);
+
   aspect-ratio:1;
 
-  transform:translate(-50%,-50%);
+  transform:
+    translate(-50%,-50%);
 
   border-radius:50%;
 
-  border:1px solid rgba(105,183,255,.24);
+  border:
+    1px solid
+    rgba(105,183,255,.24);
 
   animation:
     orbitSpin
     18s
     linear
     infinite;
+
 }
+
 
 .orbit::before,
 .orbit::after{
+
   content:"";
 
   position:absolute;
@@ -462,58 +656,93 @@ img{
 
   border-radius:50%;
 
-  background:var(--gold2);
+  background:
+    var(--gold2);
 
   box-shadow:
-    0 0 8px rgba(255,214,107,1),
-    0 0 23px rgba(255,214,107,.85);
+
+    0 0 8px
+    rgba(255,214,107,1),
+
+    0 0 23px
+    rgba(255,214,107,.85);
+
 }
+
 
 .orbit::before{
+
   top:7%;
+
   left:20%;
+
 }
+
 
 .orbit::after{
+
   right:14%;
+
   bottom:10%;
+
 }
+
 
 .orbit.two{
-  width:min(65vw,350px);
+
+  width:
+    min(65vw,350px);
 
   border-style:dashed;
-  border-color:rgba(255,214,107,.19);
+
+  border-color:
+    rgba(255,214,107,.19);
 
   animation-duration:27s;
+
   animation-direction:reverse;
+
 }
 
+
 @keyframes orbitSpin{
+
   from{
+
     transform:
       translate(-50%,-50%)
       rotate(0deg);
+
   }
 
   to{
+
     transform:
       translate(-50%,-50%)
       rotate(360deg);
+
   }
+
 }
 
+
 .logo-stage{
+
   position:relative;
+
   z-index:5;
 
-  width:min(78%,360px);
+  width:
+    min(78%,360px);
 
   margin-left:auto;
+
   margin-right:auto;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   animation:
@@ -521,15 +750,20 @@ img{
     5.4s
     ease-in-out
     infinite;
+
 }
 
+
 .logo-stage::after{
+
   content:"";
 
   position:absolute;
 
   left:17%;
+
   right:17%;
+
   bottom:-7px;
 
   height:20px;
@@ -538,49 +772,69 @@ img{
 
   border-radius:50%;
 
-  background:rgba(0,0,0,.64);
+  background:
+    rgba(0,0,0,.64);
 
-  filter:blur(11px);
+  filter:
+    blur(11px);
+
 }
 
+
 .logo{
+
   display:block;
 
   width:100%;
+
   height:auto;
 
-  margin:0 auto;
+  margin:
+    0 auto;
 
   object-fit:contain;
 
   filter:
+
     drop-shadow(
       0 16px 22px
       rgba(0,0,0,.55)
     )
+
     drop-shadow(
       0 0 24px
       rgba(255,214,107,.18)
     );
+
 }
 
+
 @keyframes logoFloat{
+
   0%,
   100%{
+
     transform:
       translateY(0)
       rotate(-.3deg);
+
   }
 
   50%{
+
     transform:
       translateY(-9px)
       rotate(.35deg);
+
   }
+
 }
 
+
 .hero-copy{
+
   position:relative;
+
   z-index:6;
 
   width:100%;
@@ -588,10 +842,14 @@ img{
   margin-top:8px;
 
   text-align:center;
+
 }
 
+
 .greeting{
-  color:var(--gold2);
+
+  color:
+    var(--gold2);
 
   font-family:
     Georgia,
@@ -599,6 +857,7 @@ img{
     serif;
 
   font-size:
+
     clamp(
       1.5rem,
       5vw,
@@ -606,52 +865,70 @@ img{
     );
 
   text-shadow:
+
     0 0 22px
     rgba(215,166,62,.24);
+
 }
 
+
 .clock{
+
   margin-top:6px;
 
   color:#fff;
 
   font-size:1.2rem;
+
   font-weight:950;
+
   letter-spacing:.04em;
 
-  font-variant-numeric:tabular-nums;
+  font-variant-numeric:
+    tabular-nums;
+
 }
 
+
 .date{
+
   margin-top:3px;
 
   color:#d4deec;
 
   font-size:.72rem;
+
 }
+
 
 /* =========================================================
    STANDARD SECTION
    ========================================================= */
 
 .section{
+
   position:relative;
 
   margin-top:14px;
+
   padding:14px;
 
   overflow:hidden;
 
   border-radius:21px;
 
-  border:1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   background:
+
     radial-gradient(
       circle at 100% 0%,
       rgba(45,140,255,.11),
       transparent 32%
     ),
+
     linear-gradient(
       180deg,
       rgba(11,32,61,.97),
@@ -659,24 +936,35 @@ img{
     );
 
   box-shadow:
-    0 15px 35px rgba(0,0,0,.25),
-    inset 0 1px rgba(255,255,255,.025);
+
+    0 15px 35px
+    rgba(0,0,0,.25),
+
+    inset
+    0 1px
+    rgba(255,255,255,.025);
 
   transition:.25s ease;
+
 }
 
+
 .section::before{
+
   content:"";
 
   position:absolute;
 
   top:0;
+
   left:14%;
+
   right:14%;
 
   height:1px;
 
   background:
+
     linear-gradient(
       90deg,
       transparent,
@@ -685,34 +973,54 @@ img{
     );
 
   opacity:.48;
+
 }
+
 
 .section:hover{
-  transform:translateY(-2px);
 
-  border-color:rgba(255,214,107,.52);
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(255,214,107,.52);
 
   box-shadow:
-    0 19px 40px rgba(0,0,0,.38),
-    0 0 22px rgba(45,140,255,.08);
+
+    0 19px 40px
+    rgba(0,0,0,.38),
+
+    0 0 22px
+    rgba(45,140,255,.08);
+
 }
 
+
 .section-head{
+
   position:relative;
+
   z-index:5;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:8px;
 
   margin-bottom:11px;
+
 }
 
+
 .section h2{
+
   margin:0;
 
-  color:var(--gold2);
+  color:
+    var(--gold2);
 
   font-family:
     Georgia,
@@ -720,43 +1028,59 @@ img{
     serif;
 
   font-size:1.06rem;
+
 }
 
+
 .section-kicker{
+
   margin-bottom:4px;
 
-  color:var(--blue3);
+  color:
+    var(--blue3);
 
   font-size:.57rem;
+
   font-weight:950;
 
   text-transform:uppercase;
+
   letter-spacing:.17em;
+
 }
+
 
 /* =========================================================
    LIVE DOT
    ========================================================= */
 
 .live-dot{
+
   display:inline-flex;
+
   align-items:center;
+
   gap:6px;
 
   color:#d7e5f7;
 
   font-size:.61rem;
+
 }
 
+
 .live-dot::before{
+
   content:"";
 
   width:7px;
+
   height:7px;
 
   border-radius:50%;
 
-  background:var(--blue3);
+  background:
+    var(--blue3);
 
   box-shadow:
     0 0 0 0
@@ -766,56 +1090,79 @@ img{
     pulseDot
     1.9s
     infinite;
+
 }
 
+
 @keyframes pulseDot{
+
   70%{
+
     box-shadow:
+
       0 0 0 8px
       rgba(105,183,255,0);
+
   }
 
   100%{
+
     box-shadow:
+
       0 0 0 0
       rgba(105,183,255,0);
+
   }
+
 }
+
 
 /* =========================================================
    QUICK LINKS
    ========================================================= */
 
 .quick-links{
+
   display:grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(4,1fr);
 
   gap:8px;
+
 }
 
+
 .quick-link{
+
   position:relative;
 
-  min-height:76px;
+  min-height:78px;
 
   display:flex;
+
   flex-direction:column;
+
   justify-content:center;
+
   align-items:center;
 
   gap:5px;
 
-  padding:10px 7px;
+  padding:
+    10px
+    6px;
 
   overflow:hidden;
 
   border-radius:15px;
 
-  border:1px solid rgba(105,183,255,.18);
+  border:
+    1px solid
+    rgba(105,183,255,.18);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(17,48,88,.92),
@@ -823,12 +1170,16 @@ img{
     );
 
   color:#fff;
+
   text-decoration:none;
 
   transition:.22s ease;
+
 }
 
+
 .quick-link::after{
+
   content:"";
 
   position:absolute;
@@ -836,6 +1187,7 @@ img{
   inset:0;
 
   background:
+
     linear-gradient(
       120deg,
       transparent 20%,
@@ -843,230 +1195,347 @@ img{
       transparent 65%
     );
 
-  transform:translateX(-120%);
+  transform:
+    translateX(-120%);
 
   transition:.45s ease;
+
 }
 
+
 .quick-link:hover{
+
   transform:
     translateY(-3px)
     scale(1.015);
 
-  border-color:rgba(255,214,107,.46);
+  border-color:
+    rgba(255,214,107,.46);
 
   box-shadow:
-    0 10px 25px rgba(0,0,0,.3),
-    0 0 18px rgba(45,140,255,.12);
+
+    0 10px 25px
+    rgba(0,0,0,.3),
+
+    0 0 18px
+    rgba(45,140,255,.12);
+
 }
+
 
 .quick-link:hover::after{
-  transform:translateX(120%);
+
+  transform:
+    translateX(120%);
+
 }
+
 
 .quick-icon{
-  color:var(--gold2);
 
-  font-size:1.3rem;
+  color:
+    var(--gold2);
+
+  font-size:1.25rem;
+
 }
+
 
 .quick-label{
-  font-size:.68rem;
+
+  font-size:.63rem;
+
   font-weight:900;
+
+  text-align:center;
+
 }
 
+
 /* =========================================================
-   ANNOUNCEMENT BOARD
+   ANNOUNCEMENTS
    ========================================================= */
 
 .announcement-list{
+
   display:grid;
+
   gap:9px;
+
 }
 
+
 .announcement{
+
   position:relative;
 
   padding:11px;
 
   border-radius:15px;
 
-  border:1px solid rgba(105,183,255,.13);
+  border:
+    1px solid
+    rgba(105,183,255,.13);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(14,42,79,.88),
       rgba(6,22,43,.88)
     );
 
-  transition:.22s ease;
 }
 
+
 .announcement.pinned{
-  border-color:rgba(255,214,107,.34);
+
+  border-color:
+    rgba(255,214,107,.34);
 
   background:
+
     radial-gradient(
       circle at 100% 0%,
       rgba(255,214,107,.08),
       transparent 34%
     ),
+
     linear-gradient(
       180deg,
       rgba(17,48,88,.92),
       rgba(6,22,43,.92)
     );
+
 }
 
+
 .announcement-top{
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:8px;
+
 }
 
+
 .announcement-title{
+
   min-width:0;
 
   color:#fff;
 
   font-size:.78rem;
+
   font-weight:950;
+
 }
+
 
 .announcement-date{
+
   flex:0 0 auto;
 
-  color:var(--gold3);
+  color:
+    var(--gold3);
 
   font-size:.58rem;
+
   font-weight:850;
+
 }
+
 
 .pin{
+
+  color:
+    var(--gold2);
+
   margin-right:4px;
 
-  color:var(--gold2);
 }
 
+
 .announcement-body{
+
   margin-top:5px;
 
   color:#c5d2e3;
 
   font-size:.67rem;
+
   line-height:1.5;
+
 }
 
+
 .announcement-link{
+
   display:inline-flex;
 
   margin-top:8px;
 
-  padding:6px 9px;
+  padding:
+    6px
+    9px;
 
   border-radius:9px;
 
-  border:1px solid rgba(105,183,255,.22);
+  border:
+    1px solid
+    rgba(105,183,255,.22);
 
-  background:rgba(45,140,255,.09);
+  background:
+    rgba(45,140,255,.09);
 
-  color:var(--blue4);
+  color:
+    var(--blue4);
 
   text-decoration:none;
 
   font-size:.62rem;
+
   font-weight:900;
+
 }
+
 
 /* =========================================================
    EVENTS
    ========================================================= */
 
 .events{
+
   display:grid;
+
   gap:8px;
+
 }
 
+
 .event{
+
   display:flex;
+
   align-items:center;
+
   gap:10px;
 
   padding:11px;
 
   border-radius:14px;
 
-  border:1px solid rgba(105,183,255,.13);
+  border:
+    1px solid
+    rgba(105,183,255,.13);
 
-  background:rgba(255,255,255,.035);
+  background:
+    rgba(255,255,255,.035);
 
   color:inherit;
+
   text-decoration:none;
 
   transition:.22s ease;
+
 }
+
 
 .event[href]:hover{
-  transform:translateX(3px);
 
-  border-color:rgba(255,214,107,.4);
+  transform:
+    translateX(3px);
 
-  background:rgba(45,140,255,.09);
+  border-color:
+    rgba(255,214,107,.4);
+
+  background:
+    rgba(45,140,255,.09);
+
 }
 
+
 .event-date{
+
   width:48px;
+
   min-width:48px;
 
-  padding:7px 4px;
+  padding:
+    7px
+    4px;
 
   text-align:center;
 
   border-radius:12px;
 
-  border:1px solid rgba(255,214,107,.32);
+  border:
+    1px solid
+    rgba(255,214,107,.32);
 
-  background:rgba(215,166,62,.08);
+  background:
+    rgba(215,166,62,.08);
 
-  color:var(--gold2);
+  color:
+    var(--gold2);
 
   font-size:.67rem;
+
   font-weight:950;
+
   line-height:1.15;
+
 }
+
 
 .event-main{
+
   flex:1;
+
   min-width:0;
+
 }
 
+
 .event-title{
+
   color:#fff;
 
   font-size:.78rem;
+
   font-weight:900;
 
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
+
 
 .event-meta{
+
   margin-top:2px;
 
-  color:var(--muted);
+  color:
+    var(--muted);
 
   font-size:.64rem;
+
 }
 
+
 /* =========================================================
-   MEMBER GRIDS
+   MEMBER BOARDS
    ========================================================= */
 
 .members-grid{
+
   display:grid;
 
   grid-template-columns:
@@ -1074,16 +1543,25 @@ img{
     1fr;
 
   gap:12px;
+
 }
+
 
 .member-list{
+
   display:grid;
+
   gap:7px;
+
 }
 
+
 .member{
+
   display:flex;
+
   align-items:center;
+
   gap:9px;
 
   min-width:0;
@@ -1092,26 +1570,40 @@ img{
 
   border-radius:13px;
 
-  border:1px solid rgba(105,183,255,.09);
+  border:
+    1px solid
+    rgba(105,183,255,.09);
 
-  background:rgba(0,0,0,.2);
+  background:
+    rgba(0,0,0,.2);
 
   color:inherit;
+
   text-decoration:none;
 
   transition:.2s ease;
+
 }
+
 
 .member:hover{
-  transform:translateY(-1px);
 
-  border-color:rgba(255,214,107,.27);
+  transform:
+    translateY(-1px);
 
-  background:rgba(45,140,255,.08);
+  border-color:
+    rgba(255,214,107,.27);
+
+  background:
+    rgba(45,140,255,.08);
+
 }
 
+
 .avatar{
+
   width:40px;
+
   height:40px;
 
   flex:0 0 auto;
@@ -1122,84 +1614,129 @@ img{
 
   background:#0d1b2f;
 
-  border:1px solid rgba(255,214,107,.32);
+  border:
+    1px solid
+    rgba(255,214,107,.32);
+
 }
+
 
 .member-copy{
+
   flex:1;
+
   min-width:0;
+
 }
 
+
 .username{
+
   color:#fff;
 
   font-size:.78rem;
+
   font-weight:900;
 
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
+
 
 .meta{
+
   margin-top:2px;
 
-  color:var(--muted);
+  color:
+    var(--muted);
 
   font-size:.62rem;
+
 }
+
 
 .member-rating{
+
   margin-top:3px;
 
-  color:var(--gold3);
+  color:
+    var(--gold3);
 
   font-size:.64rem;
+
   font-weight:850;
+
 }
 
+
 .title{
+
   flex:0 0 auto;
 
-  padding:3px 6px;
+  padding:
+    3px
+    6px;
 
   border-radius:8px;
 
-  border:1px solid rgba(255,214,107,.32);
+  border:
+    1px solid
+    rgba(255,214,107,.32);
 
-  background:rgba(215,166,62,.12);
+  background:
+    rgba(215,166,62,.12);
 
-  color:var(--gold2);
+  color:
+    var(--gold2);
 
   font-size:.61rem;
+
   font-weight:950;
+
 }
 
+
 /* =========================================================
-   NEW MEMBER MASCOT
+   NEW MEMBER LADY JUSTICE
    ========================================================= */
 
 .new-members-panel{
+
   position:relative;
+
   overflow:hidden;
+
 }
 
-.new-members-panel .member-list{
+
+.new-members-panel
+.member-list{
+
   position:relative;
+
   z-index:4;
 
   padding-right:86px;
+
 }
 
+
 .new-member-mascot{
+
   position:absolute;
 
   z-index:3;
 
   right:-5px;
+
   bottom:-9px;
 
   width:108px;
+
   max-height:220px;
 
   object-fit:contain;
@@ -1207,6 +1744,7 @@ img{
   pointer-events:none;
 
   filter:
+
     drop-shadow(
       0 12px 17px
       rgba(0,0,0,.52)
@@ -1217,15 +1755,20 @@ img{
     4.7s
     ease-in-out
     infinite;
+
 }
 
+
 .new-member-glow{
+
   position:absolute;
 
   right:-5px;
+
   bottom:4px;
 
   width:120px;
+
   height:180px;
 
   z-index:2;
@@ -1233,42 +1776,58 @@ img{
   border-radius:50%;
 
   background:
+
     radial-gradient(
       circle,
       rgba(45,140,255,.18),
       transparent 67%
     );
 
-  filter:blur(7px);
+  filter:
+    blur(7px);
 
   pointer-events:none;
+
 }
 
+
 @keyframes mascotFloat{
+
   0%,
   100%{
+
     transform:
       translateY(0)
       rotate(-.2deg);
+
   }
 
   50%{
+
     transform:
       translateY(-5px)
       rotate(.35deg);
+
   }
+
 }
+
 
 /* =========================================================
    STAFF BOARD
    ========================================================= */
 
 .staff-grid{
+
   display:grid;
+
   gap:9px;
+
 }
 
+
 .staff-card{
+
   display:grid;
 
   grid-template-columns:
@@ -1284,9 +1843,12 @@ img{
 
   border-radius:15px;
 
-  border:1px solid rgba(105,183,255,.13);
+  border:
+    1px solid
+    rgba(105,183,255,.13);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(15,45,82,.9),
@@ -1294,182 +1856,263 @@ img{
     );
 
   color:inherit;
+
   text-decoration:none;
 
   transition:.22s ease;
+
 }
 
+
 .staff-card.head-staff{
-  border-color:rgba(255,214,107,.44);
+
+  border-color:
+    rgba(255,214,107,.44);
 
   background:
+
     radial-gradient(
       circle at 100% 0%,
       rgba(255,214,107,.1),
       transparent 35%
     ),
+
     linear-gradient(
       180deg,
       rgba(19,54,97,.95),
       rgba(7,23,43,.95)
     );
+
 }
+
 
 .staff-card:hover{
-  transform:translateY(-2px);
 
-  border-color:rgba(255,214,107,.42);
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(255,214,107,.42);
 
   box-shadow:
-    0 12px 25px rgba(0,0,0,.24);
+
+    0 12px 25px
+    rgba(0,0,0,.24);
+
 }
 
+
 .staff-avatar{
+
   width:50px;
+
   height:50px;
 
   border-radius:50%;
 
   object-fit:cover;
 
-  border:2px solid rgba(255,214,107,.44);
+  border:
+    2px solid
+    rgba(255,214,107,.44);
 
   background:#0d1b2f;
+
 }
+
 
 .staff-main{
+
   min-width:0;
+
 }
 
+
 .staff-name{
+
   color:#fff;
 
   font-size:.8rem;
+
   font-weight:950;
 
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
+
 
 .staff-role{
+
   margin-top:2px;
 
-  color:var(--gold3);
+  color:
+    var(--gold3);
 
   font-size:.64rem;
+
   font-weight:850;
+
 }
 
+
 .staff-rating{
+
   margin-top:3px;
 
   color:#9fafc3;
 
   font-size:.6rem;
+
 }
+
 
 .staff-badges{
+
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-end;
+
   gap:4px;
+
 }
 
+
 .role-badge{
-  padding:4px 7px;
+
+  padding:
+    4px
+    7px;
 
   border-radius:999px;
 
   white-space:nowrap;
 
   font-size:.55rem;
+
   font-weight:950;
+
   letter-spacing:.04em;
+
 }
 
+
 .role-owner{
+
   color:#15110a;
 
   background:
+
     linear-gradient(
       180deg,
       #ffe493,
       #d7a63e
     );
+
 }
 
+
 .role-co-owner{
+
   color:#fff;
 
   background:
+
     linear-gradient(
       180deg,
       #3b96ff,
       #1266c8
     );
+
 }
 
+
 .role-head-of-staff{
+
   color:#101827;
 
   background:
+
     linear-gradient(
       180deg,
       #a9e3ff,
       #57bde9
     );
+
 }
 
+
 .role-super-admin{
+
   color:#fff;
 
   background:
+
     linear-gradient(
       180deg,
       #775dff,
       #4932c8
     );
+
 }
 
+
 .role-admin{
+
   color:#fff;
 
   background:
+
     linear-gradient(
       180deg,
       #2e8cdf,
       #125a9b
     );
+
 }
 
+
 .role-coordinator{
+
   color:#061326;
 
   background:
+
     linear-gradient(
       180deg,
       #88d5ff,
       #51a7dc
     );
+
 }
 
+
 .role-mascot{
+
   color:#15110a;
 
   background:
+
     linear-gradient(
       180deg,
       #fff1b7,
       #dfb950
     );
+
 }
+
 
 /* =========================================================
    RULES
    ========================================================= */
 
 .rules-window{
+
   position:relative;
 
   height:220px;
@@ -1478,18 +2121,25 @@ img{
 
   border-radius:15px;
 
-  border:1px solid rgba(105,183,255,.11);
+  border:
+    1px solid
+    rgba(105,183,255,.11);
 
-  background:rgba(0,0,0,.23);
+  background:
+    rgba(0,0,0,.23);
+
 }
+
 
 .rules-window::before,
 .rules-window::after{
+
   content:"";
 
   position:absolute;
 
   left:0;
+
   right:0;
 
   height:38px;
@@ -1497,77 +2147,117 @@ img{
   z-index:8;
 
   pointer-events:none;
+
 }
 
+
 .rules-window::before{
+
   top:0;
 
   background:
+
     linear-gradient(
       180deg,
       #081a32,
       transparent
     );
+
 }
 
+
 .rules-window::after{
+
   bottom:0;
 
   background:
+
     linear-gradient(
       0deg,
       #07172b,
       transparent
     );
+
 }
 
+
 .rules-track{
+
   display:grid;
+
   gap:8px;
 
   padding:12px;
 
   animation:
+
     rulesScroll
     25s
     linear
     infinite;
+
 }
 
-.rules-window:hover .rules-track{
-  animation-play-state:paused;
+
+.rules-window:hover
+.rules-track{
+
+  animation-play-state:
+    paused;
+
 }
+
 
 @keyframes rulesScroll{
+
   to{
-    transform:translateY(-50%);
+
+    transform:
+      translateY(-50%);
+
   }
+
 }
 
+
 .rule{
+
   display:flex;
+
   align-items:flex-start;
+
   gap:9px;
 
-  padding:9px 10px;
+  padding:
+    9px
+    10px;
 
   border-radius:12px;
 
-  border:1px solid rgba(105,183,255,.065);
+  border:
+    1px solid
+    rgba(105,183,255,.065);
 
-  background:rgba(255,255,255,.032);
+  background:
+    rgba(255,255,255,.032);
 
   font-size:.7rem;
+
   line-height:1.45;
+
 }
 
+
 .rule i{
+
   display:grid;
+
   place-items:center;
 
   flex:0 0 auto;
 
   width:21px;
+
   height:21px;
 
   border-radius:50%;
@@ -1575,6 +2265,7 @@ img{
   color:#111;
 
   background:
+
     linear-gradient(
       180deg,
       var(--gold2),
@@ -1582,20 +2273,26 @@ img{
     );
 
   font-style:normal;
+
   font-size:.6rem;
+
   font-weight:950;
+
 }
+
 
 /* =========================================================
    SKELETON
    ========================================================= */
 
 .skeleton{
+
   height:58px;
 
   border-radius:13px;
 
   background:
+
     linear-gradient(
       90deg,
       #07172b 20%,
@@ -1603,26 +2300,37 @@ img{
       #07172b 80%
     );
 
-  background-size:220% 100%;
+  background-size:
+    220% 100%;
 
   animation:
+
     shimmer
     1.08s
     linear
     infinite;
+
 }
 
+
 @keyframes shimmer{
+
   to{
-    background-position:-220% 0;
+
+    background-position:
+      -220% 0;
+
   }
+
 }
+
 
 /* =========================================================
    TOURNAMENT HERO
    ========================================================= */
 
 .tournament-hero{
+
   position:relative;
 
   min-height:390px;
@@ -1637,28 +2345,48 @@ img{
 
   align-items:center;
 
-  padding:18px 8px 8px;
+  padding:
+    18px
+    8px
+    8px;
+
 }
+
 
 .tournament-copy{
+
   position:relative;
+
   z-index:4;
+
 }
 
+
 .eyebrow{
-  color:var(--blue3);
+
+  color:
+    var(--blue3);
 
   font-size:.62rem;
+
   font-weight:950;
 
   text-transform:uppercase;
+
   letter-spacing:.17em;
+
 }
 
-.season-title{
-  margin:5px 0 9px;
 
-  color:var(--gold2);
+.season-title{
+
+  margin:
+    5px
+    0
+    9px;
+
+  color:
+    var(--gold2);
 
   font-family:
     Georgia,
@@ -1666,6 +2394,7 @@ img{
     serif;
 
   font-size:
+
     clamp(
       2rem,
       6vw,
@@ -1673,42 +2402,63 @@ img{
     );
 
   line-height:1;
+
 }
 
+
 .status{
+
   display:inline-flex;
+
   align-items:center;
+
   gap:7px;
 
-  padding:6px 9px;
+  padding:
+    6px
+    9px;
 
   border-radius:999px;
 
-  border:1px solid rgba(105,183,255,.34);
+  border:
+    1px solid
+    rgba(105,183,255,.34);
 
-  background:rgba(45,140,255,.12);
+  background:
+    rgba(45,140,255,.12);
 
   color:#d8ecff;
 
   font-size:.64rem;
+
   font-weight:900;
+
 }
 
+
 .status::before{
+
   content:"";
 
   width:6px;
+
   height:6px;
 
   border-radius:50%;
 
-  background:var(--blue3);
+  background:
+    var(--blue3);
 
   box-shadow:
-    0 0 12px rgba(105,183,255,.85);
+
+    0 0 12px
+    rgba(105,183,255,.85);
+
 }
 
+
 .facts{
+
   display:grid;
 
   grid-template-columns:
@@ -1718,88 +2468,129 @@ img{
   gap:7px;
 
   margin-top:11px;
+
 }
 
+
 .fact{
+
   padding:9px;
 
   border-radius:12px;
 
-  border:1px solid rgba(105,183,255,.15);
+  border:
+    1px solid
+    rgba(105,183,255,.15);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(16,43,79,.8),
       rgba(7,23,43,.8)
     );
+
 }
 
+
 .fact b{
+
   display:block;
 
   margin-bottom:3px;
 
-  color:var(--blue3);
+  color:
+    var(--blue3);
 
   font-size:.59rem;
+
 }
 
+
 .fact span{
+
   color:#fff;
 
   font-size:.7rem;
+
   font-weight:800;
+
 }
 
+
 .actions{
+
   display:flex;
+
   flex-wrap:wrap;
+
   gap:7px;
 
   margin-top:10px;
+
 }
 
+
 .action{
+
   display:inline-flex;
+
   align-items:center;
+
   justify-content:center;
 
-  padding:8px 10px;
+  padding:
+    8px
+    10px;
 
   border-radius:11px;
 
-  border:1px solid rgba(255,214,107,.32);
+  border:
+    1px solid
+    rgba(255,214,107,.32);
 
-  background:rgba(215,166,62,.10);
+  background:
+    rgba(215,166,62,.10);
 
-  color:var(--gold2);
+  color:
+    var(--gold2);
+
   text-decoration:none;
 
   font-size:.67rem;
+
   font-weight:900;
+
 }
 
+
 .justice-wrap{
+
   position:relative;
 
   min-height:350px;
 
   display:grid;
+
   place-items:center;
+
 }
 
+
 .justice-wrap::before{
+
   content:"";
 
   position:absolute;
 
   width:260px;
+
   height:260px;
 
   border-radius:50%;
 
   background:
+
     radial-gradient(
       circle,
       rgba(45,140,255,.22),
@@ -1808,69 +2599,100 @@ img{
     );
 
   animation:
+
     justiceGlow
     5.5s
     ease-in-out
     infinite;
+
 }
 
+
 .justice{
+
   position:relative;
+
   z-index:3;
 
   width:100%;
+
   max-height:385px;
 
   object-fit:contain;
 
   filter:
+
     drop-shadow(
       0 17px 20px
       rgba(0,0,0,.55)
     );
 
   animation:
+
     justiceFloat
     6s
     ease-in-out
     infinite;
+
 }
+
 
 @keyframes justiceGlow{
+
   50%{
-    transform:scale(1.09);
+
+    transform:
+      scale(1.09);
+
     opacity:.66;
+
   }
+
 }
 
+
 @keyframes justiceFloat{
+
   50%{
+
     transform:
       translateY(-7px)
       rotate(.25deg);
+
   }
+
 }
+
 
 /* =========================================================
    PODIUM
    ========================================================= */
 
 .podium-shell{
+
   position:relative;
+
   overflow:hidden;
 
-  padding:20px 10px 12px;
+  padding:
+    20px
+    10px
+    12px;
 
   border-radius:24px;
 
-  border:2px solid rgba(255,214,107,.86);
+  border:
+    2px solid
+    rgba(255,214,107,.86);
 
   background:
+
     radial-gradient(
       circle at 50% -10%,
       rgba(45,140,255,.24),
       transparent 42%
     ),
+
     linear-gradient(
       180deg,
       #12345f,
@@ -1878,10 +2700,15 @@ img{
     );
 
   box-shadow:
-    0 14px 0 rgba(0,0,0,.2);
+
+    0 14px 0
+    rgba(0,0,0,.2);
+
 }
 
+
 .podium{
+
   display:grid;
 
   grid-template-columns:
@@ -1894,46 +2721,69 @@ img{
   align-items:end;
 
   min-height:350px;
+
 }
 
+
 .podium-card{
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:flex-end;
 
   min-width:0;
 
   color:inherit;
+
   text-decoration:none;
 
   text-align:center;
+
 }
+
 
 .podium-card.center{
-  transform:translateY(-22px);
+
+  transform:
+    translateY(-22px);
+
 }
 
+
 .place-medal{
+
   position:relative;
+
   z-index:5;
 
   display:grid;
+
   place-items:center;
 
   min-width:38px;
+
   height:30px;
 
   margin-bottom:-6px;
-  padding:0 7px;
+
+  padding:
+    0
+    7px;
 
   border-radius:999px;
 
-  border:1px solid rgba(255,255,255,.55);
+  border:
+    1px solid
+    rgba(255,255,255,.55);
 
   color:#111;
 
   background:
+
     linear-gradient(
       180deg,
       #ffe493,
@@ -1941,50 +2791,80 @@ img{
     );
 
   font-size:.69rem;
+
   font-weight:950;
+
 }
+
 
 .podium-avatar,
 .empty-avatar{
+
   width:82px;
+
   height:82px;
 
   border-radius:50%;
 
   background:#10294a;
 
-  border:6px solid #2a6eb8;
+  border:
+    6px solid
+    #2a6eb8;
+
 }
+
 
 .podium-avatar{
+
   object-fit:cover;
+
 }
 
-.center .podium-avatar,
-.center .empty-avatar{
+
+.center
+.podium-avatar,
+.center
+.empty-avatar{
+
   width:98px;
+
   height:98px;
 
-  border-color:var(--gold2);
+  border-color:
+    var(--gold2);
+
 }
 
+
 .empty-avatar{
+
   display:grid;
+
   place-items:center;
 
   border-style:dashed;
 
-  color:rgba(255,255,255,.48);
+  color:
+    rgba(255,255,255,.48);
 
   font-size:1.6rem;
+
 }
 
-.center .empty-avatar{
-  color:rgba(255,214,107,.68);
+
+.center
+.empty-avatar{
+
+  color:
+    rgba(255,214,107,.68);
+
 }
+
 
 .podium-name,
 .awaiting{
+
   width:100%;
 
   margin-top:7px;
@@ -1992,39 +2872,56 @@ img{
   color:#fff;
 
   font-size:.72rem;
+
   font-weight:950;
 
   white-space:nowrap;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
+
 
 .podium-meta,
 .awaiting-sub{
+
   margin-top:2px;
 
   color:#cfdaeb;
 
   font-size:.6rem;
+
 }
+
 
 .podium-rating-type{
+
   margin-top:4px;
 
-  color:var(--gold3);
+  color:
+    var(--gold3);
 
   font-size:.58rem;
+
 }
 
+
 .podium-block{
+
   width:100%;
+
   min-height:91px;
 
   margin-top:9px;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:
@@ -2036,21 +2933,29 @@ img{
   color:#08111e;
 
   background:
+
     linear-gradient(
       180deg,
       #78bcff,
       #237cd9
     );
 
-  border-bottom:8px solid #0d4f95;
+  border-bottom:
+    8px solid
+    #0d4f95;
+
 }
 
-.center .podium-block{
+
+.center
+.podium-block{
+
   min-height:118px;
 
   color:#15110a;
 
   background:
+
     linear-gradient(
       180deg,
       #ffe888,
@@ -2058,32 +2963,49 @@ img{
     );
 
   border-bottom-color:#806300;
+
 }
+
 
 .podium-block strong{
+
   font-size:1.22rem;
+
 }
 
-.center .podium-block strong{
+
+.center
+.podium-block strong{
+
   font-size:1.5rem;
+
 }
+
 
 .podium-block span{
+
   margin-top:4px;
 
   font-size:.59rem;
+
 }
+
 
 /* =========================================================
    ARCHIVE
    ========================================================= */
 
 .archive{
+
   display:grid;
+
   gap:7px;
+
 }
 
+
 .archive-row{
+
   display:grid;
 
   grid-template-columns:
@@ -2099,33 +3021,51 @@ img{
 
   border-radius:13px;
 
-  border:1px solid rgba(105,183,255,.08);
+  border:
+    1px solid
+    rgba(105,183,255,.08);
 
-  background:rgba(0,0,0,.2);
+  background:
+    rgba(0,0,0,.2);
 
   color:inherit;
+
   text-decoration:none;
+
 }
 
+
 .archive-row img{
+
   width:40px;
+
   height:40px;
 
   border-radius:50%;
 
   object-fit:cover;
 
-  border:1px solid rgba(255,214,107,.26);
+  border:
+    1px solid
+    rgba(255,214,107,.26);
+
 }
+
 
 .archive-rating{
-  color:var(--gold2);
+
+  color:
+    var(--gold2);
 
   font-size:.67rem;
+
   font-weight:950;
+
 }
 
+
 .empty{
+
   padding:18px;
 
   color:#9faec2;
@@ -2133,17 +3073,25 @@ img{
   text-align:center;
 
   font-size:.7rem;
+
 }
 
+
 .footer-note{
-  padding:18px 6px 8px;
+
+  padding:
+    18px
+    6px
+    8px;
 
   color:#65748a;
 
   text-align:center;
 
   font-size:.6rem;
+
 }
+
 
 /* =========================================================
    MOBILE
@@ -2152,123 +3100,206 @@ img{
 @media(max-width:560px){
 
   .shell{
+
     padding:0;
+
   }
+
 
   .app{
+
     border-left:0;
+
     border-right:0;
+
     border-radius:0;
+
   }
+
 
   .topbar{
-    padding:11px 10px;
+
+    padding:
+      11px
+      10px;
+
   }
+
 
   .brand span{
+
     display:none;
+
   }
+
 
   .page{
+
     padding:12px;
+
   }
+
 
   .hero{
+
     min-height:440px;
+
   }
+
 
   .logo-stage{
-    width:min(76%,330px);
+
+    width:
+      min(76%,330px);
+
   }
+
 
   .members-grid{
+
     grid-template-columns:1fr;
+
   }
+
 
   .quick-links{
-    grid-template-columns:1fr 1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
 
-  .new-members-panel .member-list{
+
+  .new-members-panel
+  .member-list{
+
     padding-right:78px;
+
   }
+
 
   .new-member-mascot{
+
     width:96px;
+
   }
 
+
   .staff-card{
+
     grid-template-columns:
       46px
       minmax(0,1fr)
       auto;
+
   }
+
 
   .staff-avatar{
+
     width:46px;
+
     height:46px;
+
   }
+
 
   .tournament-hero{
+
     grid-template-columns:1fr;
+
   }
+
 
   .justice-wrap{
+
     min-height:290px;
+
   }
+
 
   .justice{
+
     max-height:320px;
+
   }
 
+
   .podium{
+
     gap:5px;
+
   }
+
 
   .podium-avatar,
   .empty-avatar{
+
     width:69px;
+
     height:69px;
+
   }
 
-  .center .podium-avatar,
-  .center .empty-avatar{
+
+  .center
+  .podium-avatar,
+  .center
+  .empty-avatar{
+
     width:84px;
-    height:84px;
-  }
 
-  .podium-name,
-  .awaiting{
-    font-size:.64rem;
+    height:84px;
+
   }
 
 }
+
 </style>
+
 </head>
+
+
 
 <body>
 
+
 <div class="shell">
+
 
 <main class="app">
 
-<div class="ambient" id="ambient"></div>
+
+<div
+  class="ambient"
+  id="ambient">
+</div>
+
+
 
 <header class="topbar">
 
+
   <div class="brand">
+
 
     <strong>
       AND CHESS FOR ALL
     </strong>
 
+
     <span id="motto">
       Every Player Belongs • Every Move Matters
     </span>
 
+
   </div>
 
+
+
   <nav class="nav">
+
 
     <button
       class="nav-btn active"
@@ -2278,6 +3309,7 @@ img{
 
     </button>
 
+
     <button
       class="nav-btn"
       data-view="tournaments">
@@ -2286,43 +3318,58 @@ img{
 
     </button>
 
+
   </nav>
+
 
 </header>
 
 
+
 <div class="viewport">
 
-<div class="track" id="track">
+
+<div
+  class="track"
+  id="track">
+
 
 
 <!-- =====================================================
      HOME DASHBOARD
      ===================================================== -->
 
+
 <section class="page">
 
 
-<!-- HERO -->
 
 <section class="hero">
 
+
   <div class="hero-glow"></div>
+
 
   <div class="orbit"></div>
 
+
   <div class="orbit two"></div>
 
+
   <div class="logo-stage">
+
 
     <img
       class="logo"
       src="./assets/acfa-logo.png"
       alt="And Chess For All">
 
+
   </div>
 
+
   <div class="hero-copy">
+
 
     <div
       class="greeting"
@@ -2332,6 +3379,7 @@ img{
 
     </div>
 
+
     <div
       class="clock"
       id="clock">
@@ -2340,132 +3388,178 @@ img{
 
     </div>
 
+
     <div
       class="date"
       id="dateLine">
     </div>
 
+
   </div>
+
 
 </section>
 
 
+
 <!-- QUICK LINKS -->
+
 
 <section class="section">
 
+
   <div class="section-head">
 
+
     <div>
+
 
       <div class="section-kicker">
         Navigate ACFA
       </div>
 
+
       <h2>
         Quick Links
       </h2>
 
+
     </div>
 
+
   </div>
+
 
   <div
     class="quick-links"
     id="quickLinks">
   </div>
 
+
 </section>
+
 
 
 <!-- ANNOUNCEMENTS -->
 
+
 <section class="section">
+
 
   <div class="section-head">
 
+
     <div>
+
 
       <div class="section-kicker">
         Latest From ACFA
       </div>
 
+
       <h2>
         Announcements
       </h2>
 
+
     </div>
+
 
     <span class="live-dot">
       Updates
     </span>
 
+
   </div>
+
 
   <div
     class="announcement-list"
     id="announcementBoard">
   </div>
 
+
 </section>
 
 
-<!-- CLUB EVENTS -->
+
+<!-- EVENTS -->
+
 
 <section class="section">
 
+
   <div class="section-head">
+
 
     <h2>
       Club Events
     </h2>
 
+
     <span class="live-dot">
       Current
     </span>
 
+
   </div>
+
 
   <div
     class="events"
     id="events">
   </div>
 
+
 </section>
 
 
-<!-- MEMBER BOARDS -->
+
+<!-- MEMBERS -->
+
 
 <div class="members-grid">
+
 
 
 <section
   class="section
          new-members-panel">
 
+
   <div class="section-head">
+
 
     <h2>
       Newest Members
     </h2>
 
+
     <span class="live-dot">
       Live API
     </span>
 
+
   </div>
 
+
   <div class="new-member-glow"></div>
+
 
   <div
     class="member-list"
     id="newMembers">
 
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
+
     <div class="skeleton"></div>
 
+    <div class="skeleton"></div>
+
+    <div class="skeleton"></div>
+
+
   </div>
+
 
   <img
     class="new-member-mascot"
@@ -2473,102 +3567,141 @@ img{
     alt=""
     aria-hidden="true">
 
+
 </section>
+
 
 
 <section class="section">
 
+
   <div class="section-head">
+
 
     <h2>
       Titled Members
     </h2>
 
+
     <span class="live-dot">
       CM → GM
     </span>
 
+
   </div>
+
 
   <div
     class="member-list"
     id="titledMembers">
 
+
     <div class="skeleton"></div>
+
     <div class="skeleton"></div>
+
     <div class="skeleton"></div>
+
 
   </div>
 
+
 </section>
+
 
 
 </div>
 
 
+
 <!-- STAFF -->
+
 
 <section class="section">
 
+
   <div class="section-head">
 
+
     <div>
+
 
       <div class="section-kicker">
         ACFA Leadership
       </div>
 
+
       <h2>
         Staff Board
       </h2>
 
+
     </div>
+
 
     <span class="live-dot">
       API Profiles
     </span>
 
+
   </div>
+
 
   <div
     class="staff-grid"
     id="staffBoard">
 
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
+
     <div class="skeleton"></div>
 
+    <div class="skeleton"></div>
+
+    <div class="skeleton"></div>
+
+
   </div>
+
 
 </section>
 
 
+
 <!-- RULES -->
+
 
 <section class="section">
 
+
   <div class="section-head">
+
 
     <h2>
       Club Rules
     </h2>
 
+
     <span class="meta">
       Hover to pause
     </span>
 
+
   </div>
 
+
   <div class="rules-window">
+
 
     <div
       class="rules-track"
       id="rulesTrack">
     </div>
 
+
   </div>
 
+
 </section>
+
 
 
 <div class="footer-note">
@@ -2580,23 +3713,30 @@ img{
 </div>
 
 
+
 </section>
+
 
 
 <!-- =====================================================
      TOURNAMENT DASHBOARD
      ===================================================== -->
 
+
 <section class="page">
+
 
 
 <section class="tournament-hero">
 
+
   <div class="tournament-copy">
+
 
     <div class="eyebrow">
       ACFA Seasonal Championships
     </div>
+
 
     <h1
       class="season-title"
@@ -2605,6 +3745,7 @@ img{
       Fall 2026
 
     </h1>
+
 
     <span
       class="status"
@@ -2616,6 +3757,7 @@ img{
 
 
     <div class="facts">
+
 
       <div class="fact">
 
@@ -2629,6 +3771,7 @@ img{
 
       </div>
 
+
       <div class="fact">
 
         <b>
@@ -2640,6 +3783,7 @@ img{
         </span>
 
       </div>
+
 
       <div class="fact">
 
@@ -2653,6 +3797,7 @@ img{
 
       </div>
 
+
       <div class="fact">
 
         <b>
@@ -2665,10 +3810,12 @@ img{
 
       </div>
 
+
     </div>
 
 
     <div class="actions">
+
 
       <a
         class="action"
@@ -2681,6 +3828,7 @@ img{
 
       </a>
 
+
       <a
         class="action"
         id="detailsBtn"
@@ -2692,73 +3840,92 @@ img{
 
       </a>
 
+
     </div>
+
 
   </div>
 
 
+
   <div class="justice-wrap">
+
 
     <img
       class="justice"
       src="./assets/lady-justice.png"
       alt="ACFA Lady Justice">
 
+
   </div>
+
 
 </section>
 
 
-<!-- CHAMPIONS -->
 
 <section class="section">
 
+
   <div class="section-head">
+
 
     <h2>
       Season Champions
     </h2>
 
+
     <span class="meta">
       Latest Three
     </span>
 
+
   </div>
 
+
   <div class="podium-shell">
+
 
     <div
       class="podium"
       id="podium">
     </div>
 
+
   </div>
+
 
 </section>
 
 
-<!-- ARCHIVE -->
 
 <section class="section">
 
+
   <div class="section-head">
+
 
     <h2>
       Champions Archive
     </h2>
 
+
     <span class="meta">
       All Seasons
     </span>
 
+
   </div>
+
 
   <div
     class="archive"
     id="archive">
   </div>
 
+
 </section>
+
 
 
 <div class="footer-note">
@@ -2768,226 +3935,456 @@ img{
 </div>
 
 
+
 </section>
 
 
-</div>
+
 </div>
 
-</main>
 </div>
+
+
+</main>
+
+
+</div>
+
 
 
 <!-- =========================================================
-     =========================================================
-     ACFA DATA JSON
-
-     THIS IS THE ONLY PART YOU SHOULD NORMALLY EDIT.
-     =========================================================
+     ACFA DATA
+     THIS IS THE PART YOU NORMALLY EDIT
      ========================================================= -->
+
 
 <script
   id="acfaData"
   type="application/json">
 
 {
+
   "club": {
-    "name": "And Chess For All Official",
-    "slug": "and-chess-for-all-official",
-    "motto": "Every Player Belongs • Every Move Matters"
+
+    "name":
+      "And Chess For All Official",
+
+    "slug":
+      "and-chess-for-all-official",
+
+    "motto":
+      "Every Player Belongs • Every Move Matters"
+
   },
 
+
   "quickLinks": [
+
     {
-      "label": "Club Events",
-      "icon": "♟",
-      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
+
+      "label":
+        "Club Events",
+
+      "icon":
+        "♟",
+
+      "url":
+        "https://www.chess.com/clubs/events/and-chess-for-all-official"
+
     },
+
     {
-      "label": "Forums",
-      "icon": "✦",
-      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+
+      "label":
+        "Forums",
+
+      "icon":
+        "✦",
+
+      "url":
+        "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+
     },
+
     {
-      "label": "Announcements",
-      "icon": "★",
-      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
+
+      "label":
+        "Announcements",
+
+      "icon":
+        "★",
+
+      "url":
+        "https://www.chess.com/club/and-chess-for-all-official/announcements"
+
+    },
+
+    {
+
+      "label":
+        "Notes",
+
+      "icon":
+        "✎",
+
+      "url":
+        "https://www.chess.com/club/notes/and-chess-for-all-official"
+
     }
+
   ],
+
 
   "announcements": [
+
     {
-      "title": "ACFA Fall Championship",
-      "date": "September 2026",
-      "body": "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
-      "url": "",
-      "pinned": true
+
+      "title":
+        "ACFA Fall Championship",
+
+      "date":
+        "September 2026",
+
+      "body":
+        "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
+
+      "url":
+        "",
+
+      "pinned":
+        true
+
     },
 
     {
-      "title": "Welcome to the ACFA Dashboard",
-      "date": "September 2026",
-      "body": "Use this board for important club news, competition updates, seasonal announcements, and community information.",
-      "url": "",
-      "pinned": false
+
+      "title":
+        "Welcome to the ACFA Dashboard",
+
+      "date":
+        "September 2026",
+
+      "body":
+        "Use this board for important club news, competition updates, seasonal announcements, and community information.",
+
+      "url":
+        "",
+
+      "pinned":
+        false
+
     }
+
   ],
+
 
   "events": [
+
     {
-      "title": "ACFA Fall Championship",
-      "date": "2026-10-05",
-      "status": "Coming Soon",
-      "url": ""
+
+      "title":
+        "ACFA Fall Championship",
+
+      "date":
+        "2026-10-05",
+
+      "status":
+        "Coming Soon",
+
+      "url":
+        ""
+
     }
+
   ],
+
 
   "staff": [
+
     {
-      "username": "DevilsGambit22",
-      "role": "Owner"
+
+      "username":
+        "DevilsGambit22",
+
+      "role":
+        "Owner"
+
     },
 
     {
-      "username": "SaintsGambit98",
-      "role": "Co-Owner"
+
+      "username":
+        "SaintsGambit98",
+
+      "role":
+        "Co-Owner"
+
     },
 
     {
-      "username": "Bgeerr",
-      "role": "Head of Staff"
+
+      "username":
+        "Bgeerr",
+
+      "role":
+        "Head of Staff"
+
     },
 
     {
-      "username": "OfficialLadyJustice",
-      "role": "Mascot",
-      "secondaryRole": "Super Admin"
+
+      "username":
+        "OfficialLadyJustice",
+
+      "role":
+        "Mascot",
+
+      "secondaryRole":
+        "Super Admin"
+
     },
 
     {
-      "username": "Stefan-Mazarine",
-      "role": "Super Admin"
+
+      "username":
+        "Stefan-Mazarine",
+
+      "role":
+        "Super Admin"
+
     },
 
     {
-      "username": "Cookie00190",
-      "role": "Admin"
+
+      "username":
+        "Cookie00190",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "NtsakoCloy",
-      "role": "Admin"
+
+      "username":
+        "NtsakoCloy",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "roheemo_h",
-      "role": "Admin"
+
+      "username":
+        "roheemo_h",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "Xtreme-Ninja-100",
-      "role": "Admin"
+
+      "username":
+        "Xtreme-Ninja-100",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "Kissenschlach",
-      "role": "Coordinator"
+
+      "username":
+        "Kissenschlach",
+
+      "role":
+        "Coordinator"
+
     }
+
   ],
+
+
+  "verifiedTitledMembers": [
+
+    {
+
+      "username":
+        "chapelinmyVSL",
+
+      "title":
+        "IM"
+
+    }
+
+  ],
+
 
   "rules": [
+
     "Respect every member.",
+
     "No harassment, bullying, or personal attacks.",
+
     "Keep discussions constructive and appropriate.",
+
     "No cheating, sandbagging, or fair-play violations.",
+
     "Follow Chess.com Community Guidelines.",
+
     "Do not spam club notes, forums, or messages.",
+
     "Tournament participants are expected to complete their games.",
+
     "Handle disputes respectfully through the proper admin channels."
+
   ],
 
+
   "tournament": {
-    "activeSeason": "Fall",
-    "year": 2026,
-    "status": "Planning",
 
-    "registrationDeadline": "",
-    "startDate": "",
-    "endDate": "",
+    "activeSeason":
+      "Fall",
 
-    "format": "Seasonal ACFA Championship",
+    "year":
+      2026,
 
-    "eventUrl": "",
-    "detailsUrl": "",
+    "status":
+      "Planning",
 
-    "champions": []
+    "registrationDeadline":
+      "",
+
+    "startDate":
+      "",
+
+    "endDate":
+      "",
+
+    "format":
+      "Seasonal ACFA Championship",
+
+    "eventUrl":
+      "",
+
+    "detailsUrl":
+      "",
+
+    "champions":
+      []
+
   }
+
 }
 
 </script>
 
 
+
 <script>
+
 /* =========================================================
-   JAVASCRIPT
+   CONFIG
    ========================================================= */
 
 const API =
   "https://api.chess.com/pub";
 
+
 const FALLBACK =
   "./assets/acfa-logo.png";
 
 
-const DATA =
-  JSON.parse(
-    document
-      .getElementById(
-        "acfaData"
-      )
-      .textContent
-  );
-
-
 const TITLE_CODES = [
+
   "GM",
+
   "WGM",
+
   "IM",
+
   "WIM",
+
   "FM",
+
   "WFM",
+
   "CM",
+
   "WCM"
+
 ];
 
 
 const TITLE_RANK = {
+
   GM:8,
+
   WGM:7,
+
   IM:6,
+
   WIM:5,
+
   FM:4,
+
   WFM:3,
+
   CM:2,
+
   WCM:1
+
 };
 
 
 const MEMBER_CACHE =
   1000 * 60 * 10;
 
-const PLAYER_CACHE =
-  1000 * 60 * 60 * 12;
 
-const TITLED_CACHE =
-  1000 * 60 * 60 * 4;
+/*
+   Reduced profile cache from the
+   earlier 12 hours.
+
+   This helps refreshed avatars
+   appear sooner.
+*/
+
+const PLAYER_CACHE =
+  1000 * 60 * 30;
 
 
 const PROFILE_CONCURRENCY =
   6;
 
 
-let CLUB_MEMBERS = [];
+/*
+   Completely new cache version.
+
+   Old profile/title data cannot
+   contaminate this build.
+*/
+
+const CACHE_VERSION =
+  "acfa-v12";
+
+
+const DATA =
+
+  JSON.parse(
+
+    document
+      .getElementById(
+        "acfaData"
+      )
+      .textContent
+
+  );
+
+
+let CLUB_MEMBERS =
+  [];
 
 
 const $ =
@@ -3019,11 +4416,17 @@ function escapeHTML(
       /[&<>"']/g,
       character =>
         ({
+
           "&":"&amp;",
+
           "<":"&lt;",
+
           ">":"&gt;",
+
           "\"":"&quot;",
+
           "'":"&#039;"
+
         })[character]
     );
 
@@ -3036,10 +4439,12 @@ function safe(
 ){
 
   const text =
+
     String(
       value ?? ""
     )
     .trim();
+
 
   return text || fallback;
 
@@ -3054,10 +4459,12 @@ function cacheGet(
   try{
 
     const raw =
+
       localStorage
         .getItem(
-          key
+          `${CACHE_VERSION}:${key}`
         );
+
 
     if(!raw){
 
@@ -3067,15 +4474,18 @@ function cacheGet(
 
 
     const cached =
+
       JSON.parse(raw);
 
 
     if(
+
       Date.now()
       -
       cached.time
       >
       lifetime
+
     ){
 
       return null;
@@ -3105,11 +4515,19 @@ function cacheSet(
 
     localStorage
       .setItem(
-        key,
+
+        `${CACHE_VERSION}:${key}`,
+
         JSON.stringify({
-          time:Date.now(),
-          value:value
+
+          time:
+            Date.now(),
+
+          value:
+            value
+
         })
+
       );
 
   }
@@ -3120,16 +4538,26 @@ function cacheSet(
 }
 
 
+/* =========================================================
+   GENERAL FETCH
+   ========================================================= */
+
 async function fetchJSON(
   url
 ){
 
   const response =
+
     await fetch(
+
       url,
+
       {
+
         cache:"no-store"
+
       }
+
     );
 
 
@@ -3137,6 +4565,58 @@ async function fetchJSON(
 
     throw new Error(
       `${response.status} ${url}`
+    );
+
+  }
+
+
+  return response.json();
+
+}
+
+
+/* =========================================================
+   FORCE-FRESH PLAYER PROFILE
+   ========================================================= */
+
+/*
+   Important fix for DevilsGambit22:
+
+   Staff profiles do NOT depend on
+   the normal cached profile result.
+
+   This request is intentionally
+   cache-busted.
+*/
+
+async function fetchFreshProfile(
+  username
+){
+
+  const url =
+
+    `${API}/player/${encodeURIComponent(username)}?acfa=${Date.now()}`;
+
+
+  const response =
+
+    await fetch(
+
+      url,
+
+      {
+
+        cache:"no-store"
+
+      }
+
+    );
+
+
+  if(!response.ok){
+
+    throw new Error(
+      `Profile unavailable: ${username}`
     );
 
   }
@@ -3164,9 +4644,11 @@ function buildParticles(){
   ){
 
     const spark =
-      document.createElement(
-        "i"
-      );
+
+      document
+        .createElement(
+          "i"
+        );
 
 
     const classes = [
@@ -3200,33 +4682,50 @@ function buildParticles(){
       classes.join(" ");
 
 
-    spark.style.setProperty(
-      "--x",
-      `${Math.random()*100}%`
-    );
+    spark.style
+      .setProperty(
+
+        "--x",
+
+        `${Math.random()*100}%`
+
+      );
 
 
-    spark.style.setProperty(
-      "--drift",
-      `${(Math.random()-.5)*160}px`
-    );
+    spark.style
+      .setProperty(
+
+        "--drift",
+
+        `${(Math.random()-.5)*160}px`
+
+      );
 
 
-    spark.style.setProperty(
-      "--dur",
-      `${7+Math.random()*11}s`
-    );
+    spark.style
+      .setProperty(
+
+        "--dur",
+
+        `${7+Math.random()*11}s`
+
+      );
 
 
-    spark.style.setProperty(
-      "--delay",
-      `${-Math.random()*22}s`
-    );
+    spark.style
+      .setProperty(
+
+        "--delay",
+
+        `${-Math.random()*22}s`
+
+      );
 
 
-    container.appendChild(
-      spark
-    );
+    container
+      .appendChild(
+        spark
+      );
 
   }
 
@@ -3295,25 +4794,41 @@ function updateClock(){
 
   $("#clock")
     .textContent =
+
       now.toLocaleTimeString(
+
         [],
+
         {
+
           hour:"numeric",
+
           minute:"2-digit",
+
           second:"2-digit"
+
         }
+
       );
 
 
   $("#dateLine")
     .textContent =
+
       now.toLocaleDateString(
+
         undefined,
+
         {
+
           weekday:"long",
+
           month:"long",
+
           day:"numeric"
+
         }
+
       );
 
 }
@@ -3339,9 +4854,13 @@ function setView(
   $("#track")
     .classList
     .toggle(
+
       "tournaments",
-      view ===
+
+      view
+      ===
       "tournaments"
+
     );
 
 
@@ -3352,10 +4871,13 @@ function setView(
         button
           .classList
           .toggle(
+
             "active",
+
             button.dataset.view
             ===
             view
+
           );
 
       }
@@ -3370,11 +4892,14 @@ $$(".nav-btn")
 
       button
         .addEventListener(
+
           "click",
+
           () =>
             setView(
               button.dataset.view
             )
+
         );
 
     }
@@ -3397,9 +4922,13 @@ function niceDate(
 
 
   const date =
+
     new Date(
+
       value
+
       +
+
       (
         value.length === 10
           ?
@@ -3407,6 +4936,7 @@ function niceDate(
           :
           ""
       )
+
     );
 
 
@@ -3423,12 +4953,19 @@ function niceDate(
 
   return date
     .toLocaleDateString(
+
       undefined,
+
       {
+
         month:"short",
+
         day:"numeric",
+
         year:"numeric"
+
       }
+
     );
 
 }
@@ -3449,8 +4986,10 @@ function monthDay(
 
 
   const date =
+
     new Date(
-      value +
+      value
+      +
       "T12:00:00"
     );
 
@@ -3459,10 +4998,15 @@ function monthDay(
 
     date
       .toLocaleDateString(
+
         undefined,
+
         {
+
           month:"short"
+
         }
+
       )
       .toUpperCase(),
 
@@ -3479,17 +5023,16 @@ function monthDay(
 
 function renderQuickLinks(){
 
-  const links =
-    DATA.quickLinks || [];
-
-
   $("#quickLinks")
     .innerHTML =
-      links
+
+      (DATA.quickLinks || [])
+
         .filter(
           item =>
             item.url
         )
+
         .map(
           item =>`
 
@@ -3521,6 +5064,7 @@ function renderQuickLinks(){
 
           `
         )
+
         .join("");
 
 }
@@ -3533,7 +5077,10 @@ function renderQuickLinks(){
 function renderAnnouncements(){
 
   const announcements =
-    DATA.announcements || [];
+
+    [
+      ...(DATA.announcements || [])
+    ];
 
 
   if(
@@ -3542,40 +5089,50 @@ function renderAnnouncements(){
 
     $("#announcementBoard")
       .innerHTML =
+
         `
         <div class="empty">
+
           No announcements posted.
+
         </div>
         `;
+
 
     return;
 
   }
 
 
-  const sorted = [
+  announcements
+    .sort(
+      (
+        a,
+        b
+      ) =>
 
-    ...announcements
+        Number(
+          Boolean(
+            b.pinned
+          )
+        )
 
-  ]
-  .sort(
-    (
-      a,
-      b
-    ) =>
-      Number(
-        Boolean(b.pinned)
-      )
-      -
-      Number(
-        Boolean(a.pinned)
-      )
-  );
+        -
+
+        Number(
+          Boolean(
+            a.pinned
+          )
+        )
+
+    );
 
 
   $("#announcementBoard")
     .innerHTML =
-      sorted
+
+      announcements
+
         .map(
           announcement =>`
 
@@ -3653,6 +5210,7 @@ function renderAnnouncements(){
 
           `
         )
+
         .join("");
 
 }
@@ -3674,11 +5232,15 @@ function renderEvents(){
 
     $("#events")
       .innerHTML =
+
         `
         <div class="empty">
+
           No current club events.
+
         </div>
         `;
+
 
     return;
 
@@ -3687,6 +5249,7 @@ function renderEvents(){
 
   $("#events")
     .innerHTML =
+
       events
         .map(
           event =>{
@@ -3695,12 +5258,14 @@ function renderEvents(){
               month,
               day
             ] =
+
               monthDay(
                 event.date
               );
 
 
             const tag =
+
               event.url
                 ?
                 "a"
@@ -3709,6 +5274,7 @@ function renderEvents(){
 
 
             const href =
+
               event.url
                 ?
                 `
@@ -3721,6 +5287,7 @@ function renderEvents(){
 
 
             return `
+
             <${tag}
               class="event"
               ${href}>
@@ -3758,10 +5325,12 @@ function renderEvents(){
 
 
             </${tag}>
+
             `;
 
           }
         )
+
         .join("");
 
 }
@@ -3778,6 +5347,7 @@ function renderRules(){
 
 
   const html =
+
     rules
       .map(
         (
@@ -3787,24 +5357,34 @@ function renderRules(){
 
         <div class="rule">
 
+
           <i>
+
             ${index+1}
+
           </i>
 
+
           <span>
+
             ${escapeHTML(rule)}
+
           </span>
+
 
         </div>
 
         `
       )
+
       .join("");
 
 
   $("#rulesTrack")
     .innerHTML =
-      html + html;
+      html
+      +
+      html;
 
 }
 
@@ -3821,14 +5401,17 @@ function renderTournament(){
 
   $("#seasonTitle")
     .textContent =
+
       `
       ${safe(tournament.activeSeason,"Season")}
       ${safe(tournament.year,"")}
-      `.trim();
+      `
+      .trim();
 
 
   $("#seasonStatus")
     .textContent =
+
       safe(
         tournament.status,
         "Planning"
@@ -3837,6 +5420,7 @@ function renderTournament(){
 
   $("#registrationDeadline")
     .textContent =
+
       niceDate(
         tournament.registrationDeadline
       );
@@ -3844,6 +5428,7 @@ function renderTournament(){
 
   $("#startDate")
     .textContent =
+
       niceDate(
         tournament.startDate
       );
@@ -3851,6 +5436,7 @@ function renderTournament(){
 
   $("#endDate")
     .textContent =
+
       niceDate(
         tournament.endDate
       );
@@ -3858,6 +5444,7 @@ function renderTournament(){
 
   $("#format")
     .textContent =
+
       safe(
         tournament.format,
         "Seasonal Championship"
@@ -3870,6 +5457,7 @@ function renderTournament(){
 
     $("#eventBtn").href =
       tournament.eventUrl;
+
 
     $("#eventBtn")
       .style.display =
@@ -3885,6 +5473,7 @@ function renderTournament(){
     $("#detailsBtn").href =
       tournament.detailsUrl;
 
+
     $("#detailsBtn")
       .style.display =
         "inline-flex";
@@ -3895,16 +5484,17 @@ function renderTournament(){
 
 
 /* =========================================================
-   API
+   API — CLUB MEMBERS
    ========================================================= */
 
 async function getClubMembers(){
 
   const key =
-    "acfa:members:v9";
+    "members";
 
 
   const cached =
+
     cacheGet(
       key,
       MEMBER_CACHE
@@ -3919,8 +5509,11 @@ async function getClubMembers(){
 
 
   const response =
+
     await fetchJSON(
+
       `${API}/club/${DATA.club.slug}/members`
+
     );
 
 
@@ -3947,13 +5540,17 @@ async function getClubMembers(){
     combined
   ){
 
-    const key =
+    const normalized =
+
       member.username
+        .trim()
         .toLowerCase();
 
 
     if(
-      seen.has(key)
+      seen.has(
+        normalized
+      )
     ){
 
       continue;
@@ -3961,15 +5558,20 @@ async function getClubMembers(){
     }
 
 
-    seen.add(key);
+    seen.add(
+      normalized
+    );
 
-    unique.push(member);
+
+    unique.push(
+      member
+    );
 
   }
 
 
   cacheSet(
-    "acfa:members:v9",
+    key,
     unique
   );
 
@@ -3979,15 +5581,27 @@ async function getClubMembers(){
 }
 
 
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
 async function getProfile(
   username
 ){
 
+  const normalized =
+
+    username
+      .trim()
+      .toLowerCase();
+
+
   const key =
-    `acfa:profile:${username.toLowerCase()}`;
+    `profile:${normalized}`;
 
 
   const cached =
+
     cacheGet(
       key,
       PLAYER_CACHE
@@ -4002,8 +5616,11 @@ async function getProfile(
 
 
   const profile =
+
     await fetchJSON(
+
       `${API}/player/${encodeURIComponent(username)}`
+
     );
 
 
@@ -4018,15 +5635,27 @@ async function getProfile(
 }
 
 
+/* =========================================================
+   STATS
+   ========================================================= */
+
 async function getStats(
   username
 ){
 
+  const normalized =
+
+    username
+      .trim()
+      .toLowerCase();
+
+
   const key =
-    `acfa:stats:${username.toLowerCase()}`;
+    `stats:${normalized}`;
 
 
   const cached =
+
     cacheGet(
       key,
       PLAYER_CACHE
@@ -4041,8 +5670,11 @@ async function getStats(
 
 
   const stats =
+
     await fetchJSON(
+
       `${API}/player/${encodeURIComponent(username)}/stats`
+
     );
 
 
@@ -4058,7 +5690,7 @@ async function getStats(
 
 
 /* =========================================================
-   RATINGS
+   HIGHEST RATING
    ========================================================= */
 
 function highestRating(
@@ -4068,23 +5700,43 @@ function highestRating(
   const categories = [
 
     {
-      key:"chess_daily",
-      label:"Daily"
+
+      key:
+        "chess_daily",
+
+      label:
+        "Daily"
+
     },
 
     {
-      key:"chess_rapid",
-      label:"Rapid"
+
+      key:
+        "chess_rapid",
+
+      label:
+        "Rapid"
+
     },
 
     {
-      key:"chess_blitz",
-      label:"Blitz"
+
+      key:
+        "chess_blitz",
+
+      label:
+        "Blitz"
+
     },
 
     {
-      key:"chess_bullet",
-      label:"Bullet"
+
+      key:
+        "chess_bullet",
+
+      label:
+        "Bullet"
+
     }
 
   ];
@@ -4101,6 +5753,7 @@ function highestRating(
   ){
 
     const rating =
+
       stats?.[
         category.key
       ]?.last?.rating;
@@ -4116,7 +5769,9 @@ function highestRating(
     if(
       !best
       ||
-      rating > best.rating
+      rating
+      >
+      best.rating
     ){
 
       best = {
@@ -4150,6 +5805,7 @@ async function mapLimited(
 ){
 
   const results =
+
     new Array(
       items.length
     );
@@ -4181,6 +5837,7 @@ async function mapLimited(
       try{
 
         results[current] =
+
           await worker(
             items[current],
             current
@@ -4203,14 +5860,20 @@ async function mapLimited(
   await Promise.all(
 
     Array.from(
+
       {
+
         length:
           Math.min(
             limit,
             items.length
           )
+
       },
-      () => runner()
+
+      () =>
+        runner()
+
     )
 
   );
@@ -4237,9 +5900,11 @@ async function renderNewestMembers(){
       a,
       b
     ) =>
+
       (b.joined || 0)
       -
       (a.joined || 0)
+
   )
   .slice(
     0,
@@ -4248,128 +5913,137 @@ async function renderNewestMembers(){
 
 
   const cards =
+
     await Promise.all(
 
-      newest.map(
-        async member =>{
+      newest
+        .map(
+          async member =>{
 
-          let profile =
-            null;
-
-          let stats =
-            null;
+            let profile =
+              null;
 
 
-          try{
-
-            [
-              profile,
-              stats
-            ] =
-              await Promise.all([
-
-                getProfile(
-                  member.username
-                ),
-
-                getStats(
-                  member.username
-                )
-
-              ]);
-
-          }
-
-          catch{
-          }
+            let stats =
+              null;
 
 
-          const rating =
-            highestRating(
-              stats
-            );
+            try{
 
+              [
+                profile,
+                stats
+              ] =
 
-          return `
-          <a
-            class="member"
+                await Promise.all([
 
-            href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
+                  getProfile(
+                    member.username
+                  ),
 
-            target="_blank"
+                  getStats(
+                    member.username
+                  )
 
-            rel="noopener">
+                ]);
 
+            }
 
-            <img
-              class="avatar"
-
-              src="${
-                profile?.avatar
-                ||
-                FALLBACK
-              }"
-
-              alt=""
-
-              loading="lazy"
-
-              onerror="
-                this.src='${FALLBACK}'
-              ">
-
-
-            <div class="member-copy">
-
-
-              <div class="username">
-
-                ${escapeHTML(member.username)}
-
-              </div>
-
-
-              <div class="meta">
-
-                New member
-
-              </div>
-
-
-              <div class="member-rating">
-
-                ${
-                  rating
-                    ?
-                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
-                    :
-                    "Rating unavailable"
-                }
-
-              </div>
-
-
-            </div>
-
-
-            ${
-              profile?.title
-                ?
-                `
-                <span class="title">
-                  ${escapeHTML(profile.title)}
-                </span>
-                `
-                :
-                ""
+            catch{
             }
 
 
-          </a>
-          `;
+            const rating =
 
-        }
-      )
+              highestRating(
+                stats
+              );
+
+
+            return `
+
+            <a
+              class="member"
+
+              href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
+
+              target="_blank"
+
+              rel="noopener">
+
+
+              <img
+                class="avatar"
+
+                src="${
+                  profile?.avatar
+                  ||
+                  FALLBACK
+                }"
+
+                alt=""
+
+                loading="lazy"
+
+                onerror="
+                  this.src='${FALLBACK}'
+                ">
+
+
+              <div class="member-copy">
+
+
+                <div class="username">
+
+                  ${escapeHTML(member.username)}
+
+                </div>
+
+
+                <div class="meta">
+
+                  New member
+
+                </div>
+
+
+                <div class="member-rating">
+
+                  ${
+                    rating
+                      ?
+                      `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                      :
+                      "Rating unavailable"
+                  }
+
+                </div>
+
+
+              </div>
+
+
+              ${
+                profile?.title
+                  ?
+                  `
+                  <span class="title">
+
+                    ${escapeHTML(profile.title)}
+
+                  </span>
+                  `
+                  :
+                  ""
+              }
+
+
+            </a>
+
+            `;
+
+          }
+        )
 
     );
 
@@ -4383,13 +6057,55 @@ async function renderNewestMembers(){
 
 /* =========================================================
    TITLED MEMBERS
-
-   Uses BOTH:
-   1. Chess.com title lists
-   2. Direct profile.title scanning
    ========================================================= */
 
 async function renderTitledMembers(){
+
+  /*
+     Important:
+
+     verifiedTitledMembers is merged FIRST.
+
+     This guarantees chapelinmyVSL
+     appears even if Chess.com's
+     club-member endpoint or title
+     list behaves inconsistently.
+  */
+
+  const found =
+    new Map();
+
+
+  for(
+    const player
+    of
+    (
+      DATA.verifiedTitledMembers
+      ||
+      []
+    )
+  ){
+
+    found.set(
+
+      player.username
+        .trim()
+        .toLowerCase(),
+
+      {
+
+        username:
+          player.username,
+
+        title:
+          player.title
+
+      }
+
+    );
+
+  }
+
 
   const clubMap =
     new Map();
@@ -4402,6 +6118,7 @@ async function renderTitledMembers(){
         clubMap.set(
 
           member.username
+            .trim()
             .toLowerCase(),
 
           member.username
@@ -4412,13 +6129,13 @@ async function renderTitledMembers(){
     );
 
 
-  const found =
-    new Map();
+  /*
+     PASS 1
+     Every title from CM through GM.
+  */
 
+  const titleGroups =
 
-  /* TITLE LIST PASS */
-
-  const titleLists =
     await Promise.all(
 
       TITLE_CODES.map(
@@ -4427,17 +6144,24 @@ async function renderTitledMembers(){
           try{
 
             const result =
+
               await fetchJSON(
+
                 `${API}/titled/${title}`
+
               );
 
 
             return {
-              title:title,
+
+              title:
+                title,
+
               players:
                 result.players
                 ||
                 []
+
             };
 
           }
@@ -4445,8 +6169,13 @@ async function renderTitledMembers(){
           catch{
 
             return {
-              title:title,
-              players:[]
+
+              title:
+                title,
+
+              players:
+                []
+
             };
 
           }
@@ -4460,7 +6189,7 @@ async function renderTitledMembers(){
   for(
     const group
     of
-    titleLists
+    titleGroups
   ){
 
     for(
@@ -4469,24 +6198,35 @@ async function renderTitledMembers(){
       group.players
     ){
 
-      const lower =
+      const normalized =
+
         username
+          .trim()
           .toLowerCase();
 
 
       if(
-        clubMap.has(lower)
+        clubMap.has(
+          normalized
+        )
       ){
 
         found.set(
-          lower,
+
+          normalized,
+
           {
+
             username:
-              clubMap.get(lower),
+              clubMap.get(
+                normalized
+              ),
 
             title:
               group.title
+
           }
+
         );
 
       }
@@ -4496,9 +6236,14 @@ async function renderTitledMembers(){
   }
 
 
-  /* PROFILE PASS */
+  /*
+     PASS 2
+     Direct profile scan of ALL
+     ACFA club members.
+  */
 
-  const profileResults =
+  const profileScan =
+
     await mapLimited(
 
       CLUB_MEMBERS,
@@ -4508,6 +6253,7 @@ async function renderTitledMembers(){
       async member =>{
 
         const profile =
+
           await getProfile(
             member.username
           );
@@ -4523,6 +6269,7 @@ async function renderTitledMembers(){
 
 
         return {
+
           username:
             member.username,
 
@@ -4531,6 +6278,7 @@ async function renderTitledMembers(){
 
           profile:
             profile
+
         };
 
       }
@@ -4541,47 +6289,70 @@ async function renderTitledMembers(){
   for(
     const player
     of
-    profileResults
+    profileScan
       .filter(Boolean)
   ){
 
-    found.set(
-      player.username
-        .toLowerCase(),
+    const normalized =
 
+      player.username
+        .trim()
+        .toLowerCase();
+
+
+    found.set(
+      normalized,
       player
     );
 
   }
 
 
-  let players = [
+  /*
+     Hydrate every final titled player.
+  */
 
-    ...found.values()
+  let players =
 
-  ];
+    [
+      ...found.values()
+    ];
 
-
-  /* FINAL PROFILE HYDRATION */
 
   players =
+
     await Promise.all(
 
-      players.map(
-        async player =>{
+      players
+        .map(
+          async player =>{
 
-          let profile =
-            player.profile
-            ||
-            null;
+            let profile =
+              player.profile
+              ||
+              null;
 
 
-          if(!profile){
+            let stats =
+              null;
+
 
             try{
 
-              profile =
-                await getProfile(
+              if(!profile){
+
+                profile =
+
+                  await getProfile(
+                    player.username
+                  );
+
+              }
+
+
+              stats =
+
+                await getStats(
                   player.username
                 );
 
@@ -4590,39 +6361,67 @@ async function renderTitledMembers(){
             catch{
             }
 
+
+            return {
+
+              username:
+                profile?.username
+                ||
+                player.username,
+
+              title:
+                profile?.title
+                ||
+                player.title,
+
+              profile:
+                profile,
+
+              rating:
+                highestRating(
+                  stats
+                )
+
+            };
+
           }
-
-
-          let stats =
-            null;
-
-
-          try{
-
-            stats =
-              await getStats(
-                player.username
-              );
-
-          }
-
-          catch{
-          }
-
-
-          return {
-            ...player,
-            profile:profile,
-            rating:
-              highestRating(
-                stats
-              )
-          };
-
-        }
-      )
+        )
 
     );
+
+
+  /*
+     Final dedupe AFTER hydration.
+  */
+
+  const finalMap =
+    new Map();
+
+
+  for(
+    const player
+    of
+    players
+  ){
+
+    finalMap.set(
+
+      player.username
+        .trim()
+        .toLowerCase(),
+
+      player
+
+    );
+
+  }
+
+
+  players =
+
+    [
+      ...finalMap.values()
+    ];
 
 
   players.sort(
@@ -4631,7 +6430,8 @@ async function renderTitledMembers(){
       b
     ) =>{
 
-      const aRank =
+      const rankA =
+
         TITLE_RANK[
           a.title
         ]
@@ -4639,7 +6439,8 @@ async function renderTitledMembers(){
         0;
 
 
-      const bRank =
+      const rankB =
+
         TITLE_RANK[
           b.title
         ]
@@ -4648,10 +6449,10 @@ async function renderTitledMembers(){
 
 
       if(
-        bRank !== aRank
+        rankB !== rankA
       ){
 
-        return bRank - aRank;
+        return rankB - rankA;
 
       }
 
@@ -4671,11 +6472,15 @@ async function renderTitledMembers(){
 
     $("#titledMembers")
       .innerHTML =
+
         `
         <div class="empty">
+
           No titled members detected.
+
         </div>
         `;
+
 
     return;
 
@@ -4684,6 +6489,7 @@ async function renderTitledMembers(){
 
   $("#titledMembers")
     .innerHTML =
+
       players
         .map(
           player =>`
@@ -4760,6 +6566,7 @@ async function renderTitledMembers(){
 
           `
         )
+
         .join("");
 
 }
@@ -4774,14 +6581,18 @@ function roleClass(
 ){
 
   return (
+
     "role-"
+
     +
+
     role
       .toLowerCase()
       .replace(
         /\s+/g,
         "-"
       )
+
   );
 
 }
@@ -4831,185 +6642,233 @@ async function renderStaff(){
       a,
       b
     ) =>
+
       staffPriority(
         b.role
       )
+
       -
+
       staffPriority(
         a.role
       )
+
   );
 
 
   const cards =
+
     await Promise.all(
 
-      staff.map(
-        async staffMember =>{
+      staff
+        .map(
+          async staffMember =>{
 
-          let profile =
-            null;
-
-          let stats =
-            null;
+            let profile =
+              null;
 
 
-          try{
-
-            [
-              profile,
-              stats
-            ] =
-              await Promise.all([
-
-                getProfile(
-                  staffMember.username
-                ),
-
-                getStats(
-                  staffMember.username
-                )
-
-              ]);
-
-          }
-
-          catch{
-          }
+            let stats =
+              null;
 
 
-          const rating =
-            highestRating(
-              stats
-            );
+            /*
+               Owner receives a true
+               forced refresh.
 
+               Other staff use normal
+               short-duration cache.
+            */
 
-          const isHead =
-            staffMember.role
-            ===
-            "Head of Staff";
+            try{
 
+              if(
+                staffMember.username
+                  .toLowerCase()
+                ===
+                "devilsgambit22"
+              ){
 
-          return `
-          <a
-            class="
-              staff-card
-              ${
-                isHead
-                  ?
-                  "head-staff"
-                  :
-                  ""
+                profile =
+
+                  await fetchFreshProfile(
+                    staffMember.username
+                  );
+
               }
-            "
 
-            href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
+              else{
 
-            target="_blank"
+                profile =
 
-            rel="noopener">
+                  await getProfile(
+                    staffMember.username
+                  );
 
+              }
 
-            <img
-              class="staff-avatar"
+            }
 
-              src="${
-                profile?.avatar
-                ||
-                FALLBACK
-              }"
-
-              alt=""
-
-              loading="lazy"
-
-              onerror="
-                this.src='${FALLBACK}'
-              ">
+            catch{
+            }
 
 
-            <div class="staff-main">
+            try{
+
+              stats =
+
+                await getStats(
+                  staffMember.username
+                );
+
+            }
+
+            catch{
+            }
 
 
-              <div class="staff-name">
+            const rating =
+
+              highestRating(
+                stats
+              );
+
+
+            const isHead =
+
+              staffMember.role
+              ===
+              "Head of Staff";
+
+
+            return `
+
+            <a
+              class="
+                staff-card
+                ${
+                  isHead
+                    ?
+                    "head-staff"
+                    :
+                    ""
+                }
+              "
+
+              href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
+
+              target="_blank"
+
+              rel="noopener">
+
+
+              <img
+                class="staff-avatar"
+
+                src="${
+                  profile?.avatar
+                  ||
+                  FALLBACK
+                }"
+
+                alt=""
+
+                loading="lazy"
+
+                onerror="
+                  this.src='${FALLBACK}'
+                ">
+
+
+              <div class="staff-main">
+
+
+                <div class="staff-name">
+
+                  ${
+                    profile?.title
+                      ?
+                      `${escapeHTML(profile.title)} `
+                      :
+                      ""
+                  }
+
+                  ${
+                    escapeHTML(
+                      profile?.username
+                      ||
+                      staffMember.username
+                    )
+                  }
+
+                </div>
+
+
+                <div class="staff-role">
+
+                  ${escapeHTML(staffMember.role)}
+
+                </div>
+
+
+                <div class="staff-rating">
+
+                  ${
+                    rating
+                      ?
+                      `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                      :
+                      "Rating unavailable"
+                  }
+
+                </div>
+
+
+              </div>
+
+
+              <div class="staff-badges">
+
+
+                <span
+                  class="
+                    role-badge
+                    ${roleClass(staffMember.role)}
+                  ">
+
+                  ${escapeHTML(staffMember.role)}
+
+                </span>
+
 
                 ${
-                  profile?.title
+                  staffMember.secondaryRole
                     ?
-                    `${escapeHTML(profile.title)} `
+                    `
+                    <span
+                      class="
+                        role-badge
+                        ${roleClass(staffMember.secondaryRole)}
+                      ">
+
+                      ${escapeHTML(staffMember.secondaryRole)}
+
+                    </span>
+                    `
                     :
                     ""
                 }
 
-                ${escapeHTML(staffMember.username)}
 
               </div>
 
 
-              <div class="staff-role">
+            </a>
 
-                ${escapeHTML(staffMember.role)}
+            `;
 
-              </div>
-
-
-              <div class="staff-rating">
-
-                ${
-                  rating
-                    ?
-                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
-                    :
-                    "Rating unavailable"
-                }
-
-              </div>
-
-
-            </div>
-
-
-            <div class="staff-badges">
-
-
-              <span
-                class="
-                  role-badge
-                  ${roleClass(staffMember.role)}
-                ">
-
-                ${escapeHTML(staffMember.role)}
-
-              </span>
-
-
-              ${
-                staffMember.secondaryRole
-                  ?
-                  `
-                  <span
-                    class="
-                      role-badge
-                      ${roleClass(staffMember.secondaryRole)}
-                    ">
-
-                    ${escapeHTML(staffMember.secondaryRole)}
-
-                  </span>
-                  `
-                  :
-                  ""
-              }
-
-
-            </div>
-
-
-          </a>
-          `;
-
-        }
-      )
+          }
+        )
 
     );
 
@@ -5022,7 +6881,7 @@ async function renderStaff(){
 
 
 /* =========================================================
-   EMPTY PODIUM
+   EMPTY CHAMPION PODIUM
    ========================================================= */
 
 function emptyPodiumCard(
@@ -5031,6 +6890,7 @@ function emptyPodiumCard(
 ){
 
   return `
+
   <div
     class="
       podium-card
@@ -5074,18 +6934,26 @@ function emptyPodiumCard(
 
     <div class="podium-block">
 
+
       <strong>
+
         —
+
       </strong>
 
+
       <span>
+
         rating
+
       </span>
+
 
     </div>
 
 
   </div>
+
   `;
 
 }
@@ -5095,10 +6963,15 @@ function renderEmptyPodium(){
 
   $("#podium")
     .innerHTML =
+
       `
+
       ${emptyPodiumCard("2",false)}
+
       ${emptyPodiumCard("1",true)}
+
       ${emptyPodiumCard("3",false)}
+
       `;
 
 }
@@ -5122,6 +6995,7 @@ async function hydrateChampion(
   let profile =
     null;
 
+
   let stats =
     null;
 
@@ -5132,6 +7006,7 @@ async function hydrateChampion(
       profile,
       stats
     ] =
+
       await Promise.all([
 
         getProfile(
@@ -5151,14 +7026,17 @@ async function hydrateChampion(
 
 
   return {
+
     ...champion,
 
-    profile:profile,
+    profile:
+      profile,
 
     rating:
       highestRating(
         stats
       )
+
   };
 
 }
@@ -5167,6 +7045,7 @@ async function hydrateChampion(
 async function renderChampions(){
 
   const champions =
+
     DATA.tournament
       ?.champions
     ||
@@ -5182,6 +7061,7 @@ async function renderChampions(){
 
     $("#archive")
       .innerHTML =
+
         `
         <div class="empty">
 
@@ -5190,6 +7070,7 @@ async function renderChampions(){
 
         </div>
         `;
+
 
     return;
 
@@ -5225,9 +7106,11 @@ async function renderChampions(){
       ){
 
         return (
+
           Number(b.year)
           -
           Number(a.year)
+
         );
 
       }
@@ -5273,13 +7156,18 @@ async function renderChampions(){
 
 
   const placements = [
+
     "2",
+
     "1",
+
     "3"
+
   ];
 
 
   const hydrated =
+
     await Promise.all(
 
       podiumOrder
@@ -5292,6 +7180,7 @@ async function renderChampions(){
 
   $("#podium")
     .innerHTML =
+
       hydrated
         .map(
           (
@@ -5306,14 +7195,18 @@ async function renderChampions(){
             if(!champion){
 
               return emptyPodiumCard(
+
                 placements[index],
+
                 center
+
               );
 
             }
 
 
             return `
+
             <a
               class="
                 podium-card
@@ -5397,6 +7290,7 @@ async function renderChampions(){
 
               <div class="podium-block">
 
+
                 <strong>
 
                   ${
@@ -5411,33 +7305,42 @@ async function renderChampions(){
 
                 </strong>
 
+
                 <span>
+
                   rating
+
                 </span>
+
 
               </div>
 
 
             </a>
+
             `;
 
           }
         )
+
         .join("");
 
 
   const archive =
+
     await Promise.all(
 
-      sorted.map(
-        hydrateChampion
-      )
+      sorted
+        .map(
+          hydrateChampion
+        )
 
     );
 
 
   $("#archive")
     .innerHTML =
+
       archive
         .map(
           champion =>`
@@ -5511,6 +7414,7 @@ async function renderChampions(){
 
           `
         )
+
         .join("");
 
 }
@@ -5529,15 +7433,34 @@ async function initialize(){
 
   renderQuickLinks();
 
+
   renderAnnouncements();
+
 
   renderEvents();
 
+
   renderRules();
+
 
   renderTournament();
 
+
+  /*
+     Podium renders immediately
+     even before API data arrives.
+  */
+
   renderChampions();
+
+
+  /*
+     Staff is independent of the
+     club-member endpoint.
+
+     This is important for your
+     owner avatar.
+  */
 
   renderStaff();
 
@@ -5545,10 +7468,12 @@ async function initialize(){
   try{
 
     CLUB_MEMBERS =
+
       await getClubMembers();
 
 
     renderNewestMembers();
+
 
     renderTitledMembers();
 
@@ -5563,6 +7488,7 @@ async function initialize(){
 
     $("#newMembers")
       .innerHTML =
+
         `
         <div class="empty">
 
@@ -5573,16 +7499,17 @@ async function initialize(){
         `;
 
 
-    $("#titledMembers")
-      .innerHTML =
-        `
-        <div class="empty">
+    /*
+       Even if club-members fails,
+       manually verified titled
+       members can STILL render.
+    */
 
-          Titled-player data
-          temporarily unavailable.
+    CLUB_MEMBERS =
+      [];
 
-        </div>
-        `;
+
+    renderTitledMembers();
 
   }
 
@@ -5593,5 +7520,7 @@ initialize();
 
 </script>
 
+
 </body>
+
 </html>
