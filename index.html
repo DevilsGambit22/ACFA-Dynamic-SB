@@ -5,64 +5,64 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 
-<title>ACFA Dashboard</title>
+<title>And Chess For All | Dashboard</title>
 
 <style>
 /* =========================================================
-   ACFA DASHBOARD
-   Black • Blue • Gold • White
+   ACFA DYNAMIC DASHBOARD
+   BLACK • BLUE • GOLD • WHITE
    ========================================================= */
 
 :root{
   --black:#000000;
-  --black-soft:#05070c;
+  --black2:#03050a;
 
   --blue:#1266c8;
-  --blue-bright:#2d8cff;
-  --blue-light:#69b7ff;
-  --blue-deep:#07172b;
-  --blue-panel:#0b203d;
-  --blue-panel-2:#102b4f;
+  --blue2:#2d8cff;
+  --blue3:#69b7ff;
+  --blue4:#a8d7ff;
+
+  --navy:#061326;
+  --navy2:#0a203d;
+  --navy3:#102e56;
 
   --gold:#d7a63e;
-  --gold-bright:#ffd66b;
-  --gold-soft:#f3d58a;
+  --gold2:#ffd66b;
+  --gold3:#f3d58a;
 
   --white:#ffffff;
-  --ivory:#f8f5ed;
-  --muted:#aebbd0;
+  --soft:#e7edf6;
+  --muted:#9eadc2;
 
-  --green:#7ac943;
+  --green:#7ed36a;
+  --red:#ff6b6b;
 
-  --line:rgba(255,214,107,.38);
-  --blue-line:rgba(45,140,255,.28);
+  --line:rgba(71,151,255,.28);
+  --gold-line:rgba(255,214,107,.34);
 
   --shadow:
-    0 20px 55px rgba(0,0,0,.62),
-    0 0 35px rgba(21,102,200,.08);
+    0 22px 60px rgba(0,0,0,.62),
+    0 0 36px rgba(45,140,255,.08);
 }
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
 
 *{
   box-sizing:border-box;
 }
 
 html{
-  margin:0;
   min-height:100%;
+  margin:0;
   background:#000;
 }
 
 body{
-  margin:0;
   min-height:100vh;
+  margin:0;
   overflow-x:hidden;
-  background:#000;
+
   color:var(--white);
+  background:#000;
+
   font-family:
     Inter,
     ui-sans-serif,
@@ -87,9 +87,8 @@ img{
   max-width:100%;
 }
 
-
 /* =========================================================
-   OUTER SHELL
+   APP
    ========================================================= */
 
 .shell{
@@ -103,79 +102,68 @@ img{
   position:relative;
   min-height:100vh;
   overflow:hidden;
+  isolation:isolate;
 
-  border:1px solid rgba(255,214,107,.34);
+  border:1px solid var(--gold-line);
   border-radius:28px;
 
   background:
     radial-gradient(
-      circle at 50% 0%,
-      rgba(28,116,225,.14),
+      circle at 50% -10%,
+      rgba(45,140,255,.18),
       transparent 35%
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(18,102,200,.06),
+      transparent 38%
     ),
     linear-gradient(
       180deg,
-      #020305 0%,
-      #000000 100%
+      #020305,
+      #000
     );
 
   box-shadow:var(--shadow);
-  isolation:isolate;
 }
-
-.app::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  pointer-events:none;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(45,140,255,.025),
-      transparent
-    );
-
-  z-index:-2;
-}
-
 
 /* =========================================================
-   INTENSE FLOATING EMBERS / LIGHT PARTICLES
+   PARTICLES
    ========================================================= */
 
 .ambient{
   position:absolute;
   inset:0;
+  z-index:-1;
   overflow:hidden;
   pointer-events:none;
-  z-index:-1;
 }
 
 .spark{
   position:absolute;
 
+  left:var(--x);
+  bottom:-18px;
+
   width:5px;
   height:5px;
 
-  left:var(--x);
-  bottom:-20px;
-
   border-radius:50%;
 
-  background:var(--gold-bright);
+  background:var(--gold2);
 
   box-shadow:
-    0 0 7px rgba(255,214,107,.95),
-    0 0 15px rgba(255,184,44,.75),
-    0 0 26px rgba(45,140,255,.35);
+    0 0 8px rgba(255,214,107,1),
+    0 0 18px rgba(255,186,47,.82),
+    0 0 30px rgba(255,186,47,.25);
 
   opacity:0;
 
   animation:
-    emberRise var(--dur) linear infinite;
+    emberRise
+    var(--dur)
+    linear
+    infinite;
 
   animation-delay:var(--delay);
 }
@@ -184,29 +172,34 @@ img{
   width:4px;
   height:4px;
 
-  background:var(--blue-light);
+  background:var(--blue3);
 
   box-shadow:
-    0 0 7px rgba(105,183,255,.95),
-    0 0 16px rgba(45,140,255,.75),
-    0 0 28px rgba(45,140,255,.35);
+    0 0 8px rgba(105,183,255,1),
+    0 0 18px rgba(45,140,255,.9),
+    0 0 30px rgba(45,140,255,.38);
+}
+
+.spark.large{
+  width:7px;
+  height:7px;
 }
 
 @keyframes emberRise{
   0%{
     transform:
       translate3d(0,0,0)
-      scale(.45);
+      scale(.35);
 
     opacity:0;
   }
 
-  8%{
-    opacity:.95;
+  7%{
+    opacity:1;
   }
 
   55%{
-    opacity:.7;
+    opacity:.8;
   }
 
   82%{
@@ -220,44 +213,40 @@ img{
         -115vh,
         0
       )
-      scale(1.25);
+      scale(1.3);
 
     opacity:0;
   }
 }
 
-
 /* =========================================================
-   TOP NAV
+   TOP BAR
    ========================================================= */
 
 .topbar{
   position:sticky;
   top:0;
-
   z-index:50;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  gap:12px;
+  gap:10px;
 
   padding:13px 14px;
+
+  border-bottom:1px solid rgba(45,140,255,.18);
 
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,.96),
-      rgba(0,0,0,.84)
+      rgba(0,0,0,.98),
+      rgba(0,0,0,.86)
     );
-
-  border-bottom:
-    1px solid rgba(45,140,255,.16);
 
   backdrop-filter:
     blur(16px)
-    saturate(130%);
+    saturate(140%);
 }
 
 .brand{
@@ -267,12 +256,12 @@ img{
 .brand strong{
   display:block;
 
+  color:var(--gold2);
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
-  color:var(--gold-bright);
 
   font-size:.9rem;
   letter-spacing:.055em;
@@ -287,35 +276,30 @@ img{
 
   margin-top:2px;
 
-  font-size:.62rem;
-
   color:var(--muted);
+
+  font-size:.61rem;
 
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
 
-
 /* =========================================================
-   HOME / TOURNAMENT TOGGLE
+   MAIN NAV
    ========================================================= */
 
 .nav{
   display:flex;
-  align-items:center;
-
   gap:5px;
 
   padding:4px;
 
   border-radius:999px;
 
-  border:
-    1px solid rgba(45,140,255,.18);
+  border:1px solid rgba(45,140,255,.18);
 
-  background:
-    rgba(10,26,47,.52);
+  background:rgba(10,32,61,.56);
 }
 
 .nav-btn{
@@ -325,22 +309,16 @@ img{
 
   border-radius:999px;
 
+  color:#a9b6c9;
   background:transparent;
-
-  color:#aab5c7;
 
   cursor:pointer;
 
-  font-size:.68rem;
+  font-size:.67rem;
   font-weight:950;
+  letter-spacing:.075em;
 
-  letter-spacing:.08em;
-
-  transition:
-    transform .22s ease,
-    background .22s ease,
-    color .22s ease,
-    box-shadow .22s ease;
+  transition:.22s ease;
 }
 
 .nav-btn:hover{
@@ -349,23 +327,21 @@ img{
 }
 
 .nav-btn.active{
-  color:#101010;
+  color:#111;
 
   background:
     linear-gradient(
       180deg,
-      #ffe18a,
+      #ffe38e,
       #d7a63e
     );
 
   box-shadow:
-    0 5px 18px rgba(215,166,62,.34),
-    0 0 18px rgba(255,214,107,.15);
+    0 5px 18px rgba(215,166,62,.34);
 }
 
-
 /* =========================================================
-   DASHBOARD SLIDER
+   PAGE SLIDER
    ========================================================= */
 
 .viewport{
@@ -374,7 +350,6 @@ img{
 
 .track{
   display:flex;
-
   width:200%;
 
   transform:translateX(0);
@@ -391,13 +366,11 @@ img{
 .page{
   width:50%;
   min-width:50%;
-
   padding:14px;
 }
 
-
 /* =========================================================
-   HOME HERO
+   HERO
    ========================================================= */
 
 .hero{
@@ -410,18 +383,11 @@ img{
   align-items:center;
   justify-content:center;
 
-  text-align:center;
-
-  padding:
-    24px
-    0
-    28px;
+  padding:24px 0 28px;
 
   overflow:hidden;
+  text-align:center;
 }
-
-
-/* large blue halo */
 
 .hero-glow{
   position:absolute;
@@ -429,52 +395,39 @@ img{
   left:50%;
   top:46%;
 
-  width:430px;
-  height:430px;
+  width:445px;
+  height:445px;
 
-  transform:
-    translate(-50%,-50%);
+  transform:translate(-50%,-50%);
 
   border-radius:50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(45,140,255,.22),
-      rgba(18,102,200,.09) 35%,
-      transparent 69%
+      rgba(45,140,255,.25),
+      rgba(18,102,200,.09) 36%,
+      transparent 70%
     );
 
   filter:blur(5px);
 
   animation:
-    heroGlowPulse
+    heroGlow
     5s
     ease-in-out
     infinite;
 }
 
-@keyframes heroGlowPulse{
-  0%,
-  100%{
-    opacity:.68;
-
-    transform:
-      translate(-50%,-50%)
-      scale(.94);
-  }
-
+@keyframes heroGlow{
   50%{
-    opacity:1;
-
     transform:
       translate(-50%,-50%)
       scale(1.07);
+
+    opacity:.7;
   }
 }
-
-
-/* orbit rings */
 
 .orbit{
   position:absolute;
@@ -483,16 +436,13 @@ img{
   top:46%;
 
   width:min(78vw,420px);
-
   aspect-ratio:1;
 
-  transform:
-    translate(-50%,-50%);
+  transform:translate(-50%,-50%);
 
   border-radius:50%;
 
-  border:
-    1px solid rgba(105,183,255,.23);
+  border:1px solid rgba(105,183,255,.24);
 
   animation:
     orbitSpin
@@ -512,11 +462,11 @@ img{
 
   border-radius:50%;
 
-  background:var(--gold-bright);
+  background:var(--gold2);
 
   box-shadow:
     0 0 8px rgba(255,214,107,1),
-    0 0 22px rgba(255,214,107,.85);
+    0 0 23px rgba(255,214,107,.85);
 }
 
 .orbit::before{
@@ -525,17 +475,15 @@ img{
 }
 
 .orbit::after{
-  bottom:10%;
   right:14%;
+  bottom:10%;
 }
 
 .orbit.two{
   width:min(65vw,350px);
 
   border-style:dashed;
-
-  border-color:
-    rgba(255,214,107,.18);
+  border-color:rgba(255,214,107,.19);
 
   animation-duration:27s;
   animation-direction:reverse;
@@ -555,14 +503,8 @@ img{
   }
 }
 
-
-/* =========================================================
-   CENTERED LOGO
-   ========================================================= */
-
 .logo-stage{
   position:relative;
-
   z-index:5;
 
   width:min(78%,360px);
@@ -571,8 +513,8 @@ img{
   margin-right:auto;
 
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
   animation:
     logoFloat
@@ -586,26 +528,19 @@ img{
 
   position:absolute;
 
-  left:18%;
-  right:18%;
-  bottom:-6px;
+  left:17%;
+  right:17%;
+  bottom:-7px;
 
   height:20px;
 
-  border-radius:50%;
-
-  background:
-    rgba(0,0,0,.62);
-
-  filter:blur(11px);
-
   z-index:-1;
 
-  animation:
-    logoShadow
-    5.4s
-    ease-in-out
-    infinite;
+  border-radius:50%;
+
+  background:rgba(0,0,0,.64);
+
+  filter:blur(11px);
 }
 
 .logo{
@@ -624,8 +559,8 @@ img{
       rgba(0,0,0,.55)
     )
     drop-shadow(
-      0 0 22px
-      rgba(255,214,107,.15)
+      0 0 24px
+      rgba(255,214,107,.18)
     );
 }
 
@@ -644,21 +579,8 @@ img{
   }
 }
 
-@keyframes logoShadow{
-  50%{
-    opacity:.55;
-    transform:scale(.82);
-  }
-}
-
-
-/* =========================================================
-   GREETING / CLOCK
-   ========================================================= */
-
 .hero-copy{
   position:relative;
-
   z-index:6;
 
   width:100%;
@@ -669,6 +591,8 @@ img{
 }
 
 .greeting{
+  color:var(--gold2);
+
   font-family:
     Georgia,
     "Times New Roman",
@@ -676,83 +600,69 @@ img{
 
   font-size:
     clamp(
-      1.55rem,
+      1.5rem,
       5vw,
       2.15rem
     );
 
-  color:var(--gold-bright);
-
   text-shadow:
     0 0 22px
-    rgba(215,166,62,.22);
+    rgba(215,166,62,.24);
 }
 
 .clock{
   margin-top:6px;
 
-  font-size:1.2rem;
-  font-weight:950;
-
   color:#fff;
 
-  letter-spacing:.045em;
+  font-size:1.2rem;
+  font-weight:950;
+  letter-spacing:.04em;
 
-  font-variant-numeric:
-    tabular-nums;
+  font-variant-numeric:tabular-nums;
 }
 
 .date{
   margin-top:3px;
 
-  font-size:.72rem;
+  color:#d4deec;
 
-  color:#d5deeb;
+  font-size:.72rem;
 }
 
-
 /* =========================================================
-   DASHBOARD CARDS
+   STANDARD SECTION
    ========================================================= */
 
 .section{
   position:relative;
 
   margin-top:14px;
-
   padding:14px;
 
   overflow:hidden;
 
   border-radius:21px;
 
-  border:
-    1px solid
-    rgba(45,140,255,.28);
+  border:1px solid var(--line);
 
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(45,140,255,.09),
+      rgba(45,140,255,.11),
       transparent 32%
     ),
     linear-gradient(
       180deg,
-      rgba(11,32,61,.96),
-      rgba(4,14,29,.96)
+      rgba(11,32,61,.97),
+      rgba(4,14,29,.97)
     );
 
   box-shadow:
-    0 15px 35px
-    rgba(0,0,0,.25),
-    inset
-    0 1px
-    rgba(255,255,255,.025);
+    0 15px 35px rgba(0,0,0,.25),
+    inset 0 1px rgba(255,255,255,.025);
 
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
+  transition:.25s ease;
 }
 
 .section::before{
@@ -770,7 +680,7 @@ img{
     linear-gradient(
       90deg,
       transparent,
-      rgba(255,214,107,.8),
+      rgba(255,214,107,.82),
       transparent
     );
 
@@ -778,17 +688,13 @@ img{
 }
 
 .section:hover{
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 
-  border-color:
-    rgba(255,214,107,.55);
+  border-color:rgba(255,214,107,.52);
 
   box-shadow:
-    0 19px 40px
-    rgba(0,0,0,.38),
-    0 0 22px
-    rgba(45,140,255,.08);
+    0 19px 40px rgba(0,0,0,.38),
+    0 0 22px rgba(45,140,255,.08);
 }
 
 .section-head{
@@ -798,7 +704,6 @@ img{
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   gap:8px;
 
   margin-bottom:11px;
@@ -807,7 +712,7 @@ img{
 .section h2{
   margin:0;
 
-  color:var(--gold-bright);
+  color:var(--gold2);
 
   font-family:
     Georgia,
@@ -817,20 +722,30 @@ img{
   font-size:1.06rem;
 }
 
+.section-kicker{
+  margin-bottom:4px;
+
+  color:var(--blue3);
+
+  font-size:.57rem;
+  font-weight:950;
+
+  text-transform:uppercase;
+  letter-spacing:.17em;
+}
 
 /* =========================================================
-   LIVE API STATUS
+   LIVE DOT
    ========================================================= */
 
 .live-dot{
   display:inline-flex;
   align-items:center;
-
   gap:6px;
 
-  font-size:.62rem;
+  color:#d7e5f7;
 
-  color:#d9e5f4;
+  font-size:.61rem;
 }
 
 .live-dot::before{
@@ -841,35 +756,230 @@ img{
 
   border-radius:50%;
 
-  background:var(--blue-light);
+  background:var(--blue3);
 
   box-shadow:
-    0 0 0
-    0
-    rgba(105,183,255,.7);
+    0 0 0 0
+    rgba(105,183,255,.65);
 
   animation:
-    livePulse
+    pulseDot
     1.9s
     infinite;
 }
 
-@keyframes livePulse{
+@keyframes pulseDot{
   70%{
     box-shadow:
-      0 0 0
-      8px
+      0 0 0 8px
       rgba(105,183,255,0);
   }
 
   100%{
     box-shadow:
-      0 0 0
-      0
+      0 0 0 0
       rgba(105,183,255,0);
   }
 }
 
+/* =========================================================
+   QUICK LINKS
+   ========================================================= */
+
+.quick-links{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:8px;
+}
+
+.quick-link{
+  position:relative;
+
+  min-height:76px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  gap:5px;
+
+  padding:10px 7px;
+
+  overflow:hidden;
+
+  border-radius:15px;
+
+  border:1px solid rgba(105,183,255,.18);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17,48,88,.92),
+      rgba(6,22,43,.92)
+    );
+
+  color:#fff;
+  text-decoration:none;
+
+  transition:.22s ease;
+}
+
+.quick-link::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(255,255,255,.07),
+      transparent 65%
+    );
+
+  transform:translateX(-120%);
+
+  transition:.45s ease;
+}
+
+.quick-link:hover{
+  transform:
+    translateY(-3px)
+    scale(1.015);
+
+  border-color:rgba(255,214,107,.46);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.3),
+    0 0 18px rgba(45,140,255,.12);
+}
+
+.quick-link:hover::after{
+  transform:translateX(120%);
+}
+
+.quick-icon{
+  color:var(--gold2);
+
+  font-size:1.3rem;
+}
+
+.quick-label{
+  font-size:.68rem;
+  font-weight:900;
+}
+
+/* =========================================================
+   ANNOUNCEMENT BOARD
+   ========================================================= */
+
+.announcement-list{
+  display:grid;
+  gap:9px;
+}
+
+.announcement{
+  position:relative;
+
+  padding:11px;
+
+  border-radius:15px;
+
+  border:1px solid rgba(105,183,255,.13);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,42,79,.88),
+      rgba(6,22,43,.88)
+    );
+
+  transition:.22s ease;
+}
+
+.announcement.pinned{
+  border-color:rgba(255,214,107,.34);
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255,214,107,.08),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(17,48,88,.92),
+      rgba(6,22,43,.92)
+    );
+}
+
+.announcement-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:8px;
+}
+
+.announcement-title{
+  min-width:0;
+
+  color:#fff;
+
+  font-size:.78rem;
+  font-weight:950;
+}
+
+.announcement-date{
+  flex:0 0 auto;
+
+  color:var(--gold3);
+
+  font-size:.58rem;
+  font-weight:850;
+}
+
+.pin{
+  margin-right:4px;
+
+  color:var(--gold2);
+}
+
+.announcement-body{
+  margin-top:5px;
+
+  color:#c5d2e3;
+
+  font-size:.67rem;
+  line-height:1.5;
+}
+
+.announcement-link{
+  display:inline-flex;
+
+  margin-top:8px;
+
+  padding:6px 9px;
+
+  border-radius:9px;
+
+  border:1px solid rgba(105,183,255,.22);
+
+  background:rgba(45,140,255,.09);
+
+  color:var(--blue4);
+
+  text-decoration:none;
+
+  font-size:.62rem;
+  font-weight:900;
+}
 
 /* =========================================================
    EVENTS
@@ -883,37 +993,28 @@ img{
 .event{
   display:flex;
   align-items:center;
-
   gap:10px;
 
   padding:11px;
 
   border-radius:14px;
 
-  border:
-    1px solid
-    rgba(105,183,255,.12);
+  border:1px solid rgba(105,183,255,.13);
 
-  background:
-    rgba(255,255,255,.035);
+  background:rgba(255,255,255,.035);
 
   color:inherit;
   text-decoration:none;
 
-  transition:
-    transform .22s ease,
-    border-color .22s ease,
-    background .22s ease;
+  transition:.22s ease;
 }
 
 .event[href]:hover{
   transform:translateX(3px);
 
-  border-color:
-    rgba(255,214,107,.4);
+  border-color:rgba(255,214,107,.4);
 
-  background:
-    rgba(45,140,255,.1);
+  background:rgba(45,140,255,.09);
 }
 
 .event-date{
@@ -926,23 +1027,14 @@ img{
 
   border-radius:12px;
 
-  border:
-    1px solid
-    rgba(255,214,107,.33);
+  border:1px solid rgba(255,214,107,.32);
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,214,107,.15),
-      rgba(215,166,62,.06)
-    );
+  background:rgba(215,166,62,.08);
 
-  color:var(--gold-bright);
-
-  font-weight:950;
+  color:var(--gold2);
 
   font-size:.67rem;
-
+  font-weight:950;
   line-height:1.15;
 }
 
@@ -952,7 +1044,9 @@ img{
 }
 
 .event-title{
-  font-size:.79rem;
+  color:#fff;
+
+  font-size:.78rem;
   font-weight:900;
 
   white-space:nowrap;
@@ -965,12 +1059,11 @@ img{
 
   color:var(--muted);
 
-  font-size:.65rem;
+  font-size:.64rem;
 }
 
-
 /* =========================================================
-   MEMBER BOARDS
+   MEMBER GRIDS
    ========================================================= */
 
 .members-grid{
@@ -991,40 +1084,30 @@ img{
 .member{
   display:flex;
   align-items:center;
+  gap:9px;
 
   min-width:0;
-
-  gap:9px;
 
   padding:8px;
 
   border-radius:13px;
 
-  border:
-    1px solid
-    rgba(105,183,255,.08);
+  border:1px solid rgba(105,183,255,.09);
 
-  background:
-    rgba(0,0,0,.19);
+  background:rgba(0,0,0,.2);
 
   color:inherit;
   text-decoration:none;
 
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
+  transition:.2s ease;
 }
 
 .member:hover{
-  transform:
-    translateY(-1px);
+  transform:translateY(-1px);
 
-  border-color:
-    rgba(255,214,107,.27);
+  border-color:rgba(255,214,107,.27);
 
-  background:
-    rgba(45,140,255,.08);
+  background:rgba(45,140,255,.08);
 }
 
 .avatar{
@@ -1039,13 +1122,7 @@ img{
 
   background:#0d1b2f;
 
-  border:
-    1px solid
-    rgba(255,214,107,.32);
-
-  box-shadow:
-    0 0 13px
-    rgba(45,140,255,.08);
+  border:1px solid rgba(255,214,107,.32);
 }
 
 .member-copy{
@@ -1075,7 +1152,7 @@ img{
 .member-rating{
   margin-top:3px;
 
-  color:var(--gold-soft);
+  color:var(--gold3);
 
   font-size:.64rem;
   font-weight:850;
@@ -1088,23 +1165,18 @@ img{
 
   border-radius:8px;
 
-  border:
-    1px solid
-    rgba(255,214,107,.32);
+  border:1px solid rgba(255,214,107,.32);
 
-  background:
-    rgba(215,166,62,.12);
+  background:rgba(215,166,62,.12);
 
-  color:
-    var(--gold-bright);
+  color:var(--gold2);
 
   font-size:.61rem;
   font-weight:950;
 }
 
-
 /* =========================================================
-   NEW-MEMBER LADY JUSTICE
+   NEW MEMBER MASCOT
    ========================================================= */
 
 .new-members-panel{
@@ -1116,7 +1188,7 @@ img{
   position:relative;
   z-index:4;
 
-  padding-right:88px;
+  padding-right:86px;
 }
 
 .new-member-mascot{
@@ -1128,7 +1200,6 @@ img{
   bottom:-9px;
 
   width:108px;
-
   max-height:220px;
 
   object-fit:contain;
@@ -1139,10 +1210,6 @@ img{
     drop-shadow(
       0 12px 17px
       rgba(0,0,0,.52)
-    )
-    drop-shadow(
-      0 0 14px
-      rgba(255,214,107,.08)
     );
 
   animation:
@@ -1155,7 +1222,7 @@ img{
 .new-member-glow{
   position:absolute;
 
-  right:-4px;
+  right:-5px;
   bottom:4px;
 
   width:120px;
@@ -1175,12 +1242,6 @@ img{
   filter:blur(7px);
 
   pointer-events:none;
-
-  animation:
-    mascotGlow
-    4.7s
-    ease-in-out
-    infinite;
 }
 
 @keyframes mascotFloat{
@@ -1198,53 +1259,214 @@ img{
   }
 }
 
-@keyframes mascotGlow{
-  50%{
-    transform:scale(1.08);
-    opacity:.65;
-  }
-}
-
-
 /* =========================================================
-   LOADING
+   STAFF BOARD
    ========================================================= */
 
-.skeleton{
-  height:58px;
+.staff-grid{
+  display:grid;
+  gap:9px;
+}
 
-  border-radius:13px;
+.staff-card{
+  display:grid;
+
+  grid-template-columns:
+    50px
+    minmax(0,1fr)
+    auto;
+
+  gap:10px;
+
+  align-items:center;
+
+  padding:10px;
+
+  border-radius:15px;
+
+  border:1px solid rgba(105,183,255,.13);
 
   background:
     linear-gradient(
-      90deg,
-      #07172b 20%,
-      #102b4f 50%,
-      #07172b 80%
+      180deg,
+      rgba(15,45,82,.9),
+      rgba(7,23,43,.9)
     );
 
-  background-size:
-    220%
-    100%;
+  color:inherit;
+  text-decoration:none;
 
-  animation:
-    shimmer
-    1.08s
-    linear
-    infinite;
+  transition:.22s ease;
 }
 
-@keyframes shimmer{
-  to{
-    background-position:
-      -220%
-      0;
-  }
+.staff-card.head-staff{
+  border-color:rgba(255,214,107,.44);
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255,214,107,.1),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(19,54,97,.95),
+      rgba(7,23,43,.95)
+    );
 }
 
+.staff-card:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(255,214,107,.42);
+
+  box-shadow:
+    0 12px 25px rgba(0,0,0,.24);
+}
+
+.staff-avatar{
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:2px solid rgba(255,214,107,.44);
+
+  background:#0d1b2f;
+}
+
+.staff-main{
+  min-width:0;
+}
+
+.staff-name{
+  color:#fff;
+
+  font-size:.8rem;
+  font-weight:950;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.staff-role{
+  margin-top:2px;
+
+  color:var(--gold3);
+
+  font-size:.64rem;
+  font-weight:850;
+}
+
+.staff-rating{
+  margin-top:3px;
+
+  color:#9fafc3;
+
+  font-size:.6rem;
+}
+
+.staff-badges{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:4px;
+}
+
+.role-badge{
+  padding:4px 7px;
+
+  border-radius:999px;
+
+  white-space:nowrap;
+
+  font-size:.55rem;
+  font-weight:950;
+  letter-spacing:.04em;
+}
+
+.role-owner{
+  color:#15110a;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffe493,
+      #d7a63e
+    );
+}
+
+.role-co-owner{
+  color:#fff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #3b96ff,
+      #1266c8
+    );
+}
+
+.role-head-of-staff{
+  color:#101827;
+
+  background:
+    linear-gradient(
+      180deg,
+      #a9e3ff,
+      #57bde9
+    );
+}
+
+.role-super-admin{
+  color:#fff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #775dff,
+      #4932c8
+    );
+}
+
+.role-admin{
+  color:#fff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #2e8cdf,
+      #125a9b
+    );
+}
+
+.role-coordinator{
+  color:#061326;
+
+  background:
+    linear-gradient(
+      180deg,
+      #88d5ff,
+      #51a7dc
+    );
+}
+
+.role-mascot{
+  color:#15110a;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff1b7,
+      #dfb950
+    );
+}
 
 /* =========================================================
-   CLUB RULES VERTICAL MARQUEE
+   RULES
    ========================================================= */
 
 .rules-window{
@@ -1256,12 +1478,9 @@ img{
 
   border-radius:15px;
 
-  border:
-    1px solid
-    rgba(105,183,255,.11);
+  border:1px solid rgba(105,183,255,.11);
 
-  background:
-    rgba(0,0,0,.23);
+  background:rgba(0,0,0,.23);
 }
 
 .rules-window::before,
@@ -1304,7 +1523,6 @@ img{
 
 .rules-track{
   display:grid;
-
   gap:8px;
 
   padding:12px;
@@ -1316,38 +1534,30 @@ img{
     infinite;
 }
 
-.rules-window:hover
-.rules-track{
-  animation-play-state:
-    paused;
+.rules-window:hover .rules-track{
+  animation-play-state:paused;
 }
 
 @keyframes rulesScroll{
   to{
-    transform:
-      translateY(-50%);
+    transform:translateY(-50%);
   }
 }
 
 .rule{
   display:flex;
   align-items:flex-start;
-
   gap:9px;
 
   padding:9px 10px;
 
   border-radius:12px;
 
-  background:
-    rgba(255,255,255,.032);
+  border:1px solid rgba(105,183,255,.065);
 
-  border:
-    1px solid
-    rgba(105,183,255,.065);
+  background:rgba(255,255,255,.032);
 
   font-size:.7rem;
-
   line-height:1.45;
 }
 
@@ -1362,21 +1572,51 @@ img{
 
   border-radius:50%;
 
-  font-style:normal;
-
-  color:#0c1017;
+  color:#111;
 
   background:
     linear-gradient(
       180deg,
-      var(--gold-bright),
+      var(--gold2),
       var(--gold)
     );
 
+  font-style:normal;
   font-size:.6rem;
   font-weight:950;
 }
 
+/* =========================================================
+   SKELETON
+   ========================================================= */
+
+.skeleton{
+  height:58px;
+
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #07172b 20%,
+      #102b4f 50%,
+      #07172b 80%
+    );
+
+  background-size:220% 100%;
+
+  animation:
+    shimmer
+    1.08s
+    linear
+    infinite;
+}
+
+@keyframes shimmer{
+  to{
+    background-position:-220% 0;
+  }
+}
 
 /* =========================================================
    TOURNAMENT HERO
@@ -1397,36 +1637,28 @@ img{
 
   align-items:center;
 
-  padding:
-    18px
-    8px
-    8px;
+  padding:18px 8px 8px;
 }
 
 .tournament-copy{
   position:relative;
-
   z-index:4;
 }
 
 .eyebrow{
-  color:var(--blue-light);
+  color:var(--blue3);
 
   font-size:.62rem;
   font-weight:950;
 
   text-transform:uppercase;
-
   letter-spacing:.17em;
 }
 
 .season-title{
-  margin:
-    5px
-    0
-    9px;
+  margin:5px 0 9px;
 
-  color:var(--gold-bright);
+  color:var(--gold2);
 
   font-family:
     Georgia,
@@ -1446,19 +1678,15 @@ img{
 .status{
   display:inline-flex;
   align-items:center;
-
   gap:7px;
 
   padding:6px 9px;
 
   border-radius:999px;
 
-  border:
-    1px solid
-    rgba(105,183,255,.34);
+  border:1px solid rgba(105,183,255,.34);
 
-  background:
-    rgba(45,140,255,.12);
+  background:rgba(45,140,255,.12);
 
   color:#d8ecff;
 
@@ -1474,17 +1702,11 @@ img{
 
   border-radius:50%;
 
-  background:var(--blue-light);
+  background:var(--blue3);
 
   box-shadow:
-    0 0 12px
-    rgba(105,183,255,.85);
+    0 0 12px rgba(105,183,255,.85);
 }
-
-
-/* =========================================================
-   TOURNAMENT FACTS
-   ========================================================= */
 
 .facts{
   display:grid;
@@ -1503,9 +1725,7 @@ img{
 
   border-radius:12px;
 
-  border:
-    1px solid
-    rgba(105,183,255,.15);
+  border:1px solid rgba(105,183,255,.15);
 
   background:
     linear-gradient(
@@ -1520,7 +1740,7 @@ img{
 
   margin-bottom:3px;
 
-  color:var(--blue-light);
+  color:var(--blue3);
 
   font-size:.59rem;
 }
@@ -1532,15 +1752,9 @@ img{
   font-weight:800;
 }
 
-
-/* =========================================================
-   TOURNAMENT LINKS
-   ========================================================= */
-
 .actions{
   display:flex;
   flex-wrap:wrap;
-
   gap:7px;
 
   margin-top:10px;
@@ -1551,43 +1765,20 @@ img{
   align-items:center;
   justify-content:center;
 
-  padding:
-    8px
-    10px;
+  padding:8px 10px;
 
   border-radius:11px;
 
-  border:
-    1px solid
-    rgba(255,214,107,.32);
+  border:1px solid rgba(255,214,107,.32);
 
-  background:
-    rgba(215,166,62,.1);
+  background:rgba(215,166,62,.10);
 
-  color:var(--gold-bright);
-
+  color:var(--gold2);
   text-decoration:none;
 
   font-size:.67rem;
   font-weight:900;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
 }
-
-.action:hover{
-  transform:
-    translateY(-1px);
-
-  background:
-    rgba(215,166,62,.2);
-}
-
-
-/* =========================================================
-   LADY JUSTICE TOURNAMENT HERO
-   ========================================================= */
 
 .justice-wrap{
   position:relative;
@@ -1625,11 +1816,9 @@ img{
 
 .justice{
   position:relative;
-
   z-index:3;
 
   width:100%;
-
   max-height:385px;
 
   object-fit:contain;
@@ -1662,26 +1851,19 @@ img{
   }
 }
 
-
 /* =========================================================
-   CHAMPION PODIUM
+   PODIUM
    ========================================================= */
 
 .podium-shell{
   position:relative;
-
   overflow:hidden;
 
-  padding:
-    20px
-    10px
-    12px;
+  padding:20px 10px 12px;
 
   border-radius:24px;
 
-  border:
-    2px solid
-    rgba(255,214,107,.88);
+  border:2px solid rgba(255,214,107,.86);
 
   background:
     radial-gradient(
@@ -1696,57 +1878,10 @@ img{
     );
 
   box-shadow:
-    0 14px 0
-    rgba(0,0,0,.2),
-    inset
-    0 0 0
-    1px
-    rgba(255,255,255,.028);
-}
-
-.podium-shell::before{
-  content:"";
-
-  position:absolute;
-
-  top:-60%;
-  left:-15%;
-
-  width:40%;
-  height:180%;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.055),
-      transparent
-    );
-
-  transform:
-    rotate(18deg);
-
-  animation:
-    podiumSweep
-    8s
-    linear
-    infinite;
-}
-
-@keyframes podiumSweep{
-  from{
-    left:-45%;
-  }
-
-  to{
-    left:120%;
-  }
+    0 14px 0 rgba(0,0,0,.2);
 }
 
 .podium{
-  position:relative;
-  z-index:3;
-
   display:grid;
 
   grid-template-columns:
@@ -1770,20 +1905,17 @@ img{
   min-width:0;
 
   color:inherit;
-
   text-decoration:none;
 
   text-align:center;
 }
 
 .podium-card.center{
-  transform:
-    translateY(-22px);
+  transform:translateY(-22px);
 }
 
 .place-medal{
   position:relative;
-
   z-index:5;
 
   display:grid;
@@ -1793,16 +1925,11 @@ img{
   height:30px;
 
   margin-bottom:-6px;
-
-  padding:
-    0
-    7px;
+  padding:0 7px;
 
   border-radius:999px;
 
-  border:
-    1px solid
-    rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.55);
 
   color:#111;
 
@@ -1815,55 +1942,56 @@ img{
 
   font-size:.69rem;
   font-weight:950;
-
-  box-shadow:
-    0 5px 12px
-    rgba(0,0,0,.28);
 }
 
-.podium-avatar{
+.podium-avatar,
+.empty-avatar{
   width:82px;
   height:82px;
 
   border-radius:50%;
 
-  object-fit:cover;
-
   background:#10294a;
 
-  border:
-    6px solid
-    #2a6eb8;
-
-  box-shadow:
-    0 10px 20px
-    rgba(0,0,0,.4);
+  border:6px solid #2a6eb8;
 }
 
-.center
 .podium-avatar{
+  object-fit:cover;
+}
+
+.center .podium-avatar,
+.center .empty-avatar{
   width:98px;
   height:98px;
 
-  border-color:
-    var(--gold-bright);
-
-  box-shadow:
-    0 0 0
-    4px
-    rgba(255,214,107,.06),
-    0 13px 24px
-    rgba(0,0,0,.42);
+  border-color:var(--gold2);
 }
 
-.podium-name{
+.empty-avatar{
+  display:grid;
+  place-items:center;
+
+  border-style:dashed;
+
+  color:rgba(255,255,255,.48);
+
+  font-size:1.6rem;
+}
+
+.center .empty-avatar{
+  color:rgba(255,214,107,.68);
+}
+
+.podium-name,
+.awaiting{
   width:100%;
 
   margin-top:7px;
 
   color:#fff;
 
-  font-size:.75rem;
+  font-size:.72rem;
   font-weight:950;
 
   white-space:nowrap;
@@ -1871,25 +1999,25 @@ img{
   text-overflow:ellipsis;
 }
 
-.podium-meta{
+.podium-meta,
+.awaiting-sub{
   margin-top:2px;
 
   color:#cfdaeb;
 
-  font-size:.61rem;
+  font-size:.6rem;
 }
 
 .podium-rating-type{
   margin-top:4px;
 
-  color:var(--gold-soft);
+  color:var(--gold3);
 
-  font-size:.59rem;
+  font-size:.58rem;
 }
 
 .podium-block{
   width:100%;
-
   min-height:91px;
 
   margin-top:9px;
@@ -1914,18 +2042,10 @@ img{
       #237cd9
     );
 
-  border-bottom:
-    8px solid
-    #0d4f95;
-
-  box-shadow:
-    inset
-    0 1px
-    rgba(255,255,255,.55);
+  border-bottom:8px solid #0d4f95;
 }
 
-.center
-.podium-block{
+.center .podium-block{
   min-height:118px;
 
   color:#15110a;
@@ -1937,88 +2057,22 @@ img{
       #d8a800
     );
 
-  border-bottom-color:
-    #806300;
+  border-bottom-color:#806300;
 }
 
 .podium-block strong{
   font-size:1.22rem;
 }
 
-.center
-.podium-block strong{
+.center .podium-block strong{
   font-size:1.5rem;
 }
 
 .podium-block span{
   margin-top:4px;
 
-  font-size:.6rem;
-
-  letter-spacing:.045em;
+  font-size:.59rem;
 }
-
-
-/* =========================================================
-   EMPTY PODIUM
-   ========================================================= */
-
-.empty-avatar{
-  display:grid;
-  place-items:center;
-
-  width:82px;
-  height:82px;
-
-  border-radius:50%;
-
-  border:
-    3px dashed
-    rgba(105,183,255,.48);
-
-  background:
-    rgba(0,0,0,.19);
-
-  color:
-    rgba(255,255,255,.42);
-
-  font-size:1.6rem;
-
-  box-shadow:
-    inset
-    0 0 22px
-    rgba(45,140,255,.1);
-}
-
-.center
-.empty-avatar{
-  width:98px;
-  height:98px;
-
-  border-color:
-    rgba(255,214,107,.6);
-
-  color:
-    rgba(255,214,107,.62);
-}
-
-.awaiting{
-  color:#fff;
-
-  margin-top:8px;
-
-  font-size:.71rem;
-  font-weight:900;
-}
-
-.awaiting-sub{
-  margin-top:2px;
-
-  color:#a9b8cc;
-
-  font-size:.58rem;
-}
-
 
 /* =========================================================
    ARCHIVE
@@ -2026,10 +2080,7 @@ img{
 
 .archive{
   display:grid;
-
   gap:7px;
-
-  margin-top:2px;
 }
 
 .archive-row{
@@ -2048,15 +2099,11 @@ img{
 
   border-radius:13px;
 
-  border:
-    1px solid
-    rgba(105,183,255,.08);
+  border:1px solid rgba(105,183,255,.08);
 
-  background:
-    rgba(0,0,0,.2);
+  background:rgba(0,0,0,.2);
 
   color:inherit;
-
   text-decoration:none;
 }
 
@@ -2068,13 +2115,11 @@ img{
 
   object-fit:cover;
 
-  border:
-    1px solid
-    rgba(255,214,107,.26);
+  border:1px solid rgba(255,214,107,.26);
 }
 
 .archive-rating{
-  color:var(--gold-bright);
+  color:var(--gold2);
 
   font-size:.67rem;
   font-weight:950;
@@ -2090,24 +2135,15 @@ img{
   font-size:.7rem;
 }
 
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
 .footer-note{
-  padding:
-    18px
-    6px
-    8px;
-
-  text-align:center;
+  padding:18px 6px 8px;
 
   color:#65748a;
 
+  text-align:center;
+
   font-size:.6rem;
 }
-
 
 /* =========================================================
    MOBILE
@@ -2122,14 +2158,11 @@ img{
   .app{
     border-left:0;
     border-right:0;
-
     border-radius:0;
   }
 
   .topbar{
-    padding:
-      11px
-      10px;
+    padding:11px 10px;
   }
 
   .brand span{
@@ -2149,22 +2182,35 @@ img{
   }
 
   .members-grid{
-    grid-template-columns:
-      1fr;
+    grid-template-columns:1fr;
   }
 
-  .new-members-panel
-  .member-list{
-    padding-right:80px;
+  .quick-links{
+    grid-template-columns:1fr 1fr 1fr;
+  }
+
+  .new-members-panel .member-list{
+    padding-right:78px;
   }
 
   .new-member-mascot{
-    width:98px;
+    width:96px;
+  }
+
+  .staff-card{
+    grid-template-columns:
+      46px
+      minmax(0,1fr)
+      auto;
+  }
+
+  .staff-avatar{
+    width:46px;
+    height:46px;
   }
 
   .tournament-hero{
-    grid-template-columns:
-      1fr;
+    grid-template-columns:1fr;
   }
 
   .justice-wrap{
@@ -2185,32 +2231,20 @@ img{
     height:69px;
   }
 
-  .center
-  .podium-avatar,
-  .center
-  .empty-avatar{
+  .center .podium-avatar,
+  .center .empty-avatar{
     width:84px;
     height:84px;
   }
 
-  .podium-name{
-    font-size:.67rem;
-  }
-
-  .podium-block strong{
-    font-size:1rem;
-  }
-
-  .center
-  .podium-block strong{
-    font-size:1.22rem;
+  .podium-name,
+  .awaiting{
+    font-size:.64rem;
   }
 
 }
-
 </style>
 </head>
-
 
 <body>
 
@@ -2218,494 +2252,685 @@ img{
 
 <main class="app">
 
-  <!-- animated particles -->
-  <div
-    class="ambient"
-    id="ambient">
+<div class="ambient" id="ambient"></div>
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <strong>
+      AND CHESS FOR ALL
+    </strong>
+
+    <span id="motto">
+      Every Player Belongs • Every Move Matters
+    </span>
+
   </div>
 
+  <nav class="nav">
 
-  <!-- =====================================================
-       TOP BAR
-       ===================================================== -->
+    <button
+      class="nav-btn active"
+      data-view="home">
 
-  <header class="topbar">
+      HOME
 
-    <div class="brand">
+    </button>
 
-      <strong>
-        AND CHESS FOR ALL
-      </strong>
+    <button
+      class="nav-btn"
+      data-view="tournaments">
 
-      <span id="motto">
-        Every Player Belongs • Every Move Matters
-      </span>
+      TOURNAMENTS
 
-    </div>
+    </button>
 
+  </nav>
 
-    <nav
-      class="nav"
-      aria-label="Dashboard">
-
-      <button
-        class="nav-btn active"
-        data-view="home">
-
-        HOME
-
-      </button>
+</header>
 
 
-      <button
-        class="nav-btn"
-        data-view="tournaments">
+<div class="viewport">
 
-        TOURNAMENTS
-
-      </button>
-
-    </nav>
-
-  </header>
+<div class="track" id="track">
 
 
-  <!-- =====================================================
-       SLIDING DASHBOARDS
-       ===================================================== -->
+<!-- =====================================================
+     HOME DASHBOARD
+     ===================================================== -->
 
-  <div class="viewport">
+<section class="page">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-glow"></div>
+
+  <div class="orbit"></div>
+
+  <div class="orbit two"></div>
+
+  <div class="logo-stage">
+
+    <img
+      class="logo"
+      src="./assets/acfa-logo.png"
+      alt="And Chess For All">
+
+  </div>
+
+  <div class="hero-copy">
 
     <div
-      class="track"
-      id="track">
+      class="greeting"
+      id="greeting">
 
+      Welcome to ACFA
 
-      <!-- ===================================================
-           HOME DASHBOARD
-           =================================================== -->
+    </div>
 
-      <section class="page">
+    <div
+      class="clock"
+      id="clock">
 
+      --:--:--
 
-        <!-- HERO -->
+    </div>
 
-        <section class="hero">
+    <div
+      class="date"
+      id="dateLine">
+    </div>
 
-          <div class="hero-glow"></div>
+  </div>
 
-          <div class="orbit"></div>
+</section>
 
-          <div class="orbit two"></div>
 
+<!-- QUICK LINKS -->
 
-          <div class="logo-stage">
+<section class="section">
 
-            <img
-              class="logo"
-              src="./assets/acfa-logo.png"
-              alt="And Chess For All">
+  <div class="section-head">
 
-          </div>
+    <div>
 
+      <div class="section-kicker">
+        Navigate ACFA
+      </div>
 
-          <div class="hero-copy">
-
-            <div
-              class="greeting"
-              id="greeting">
-
-              Welcome to ACFA
-
-            </div>
-
-
-            <div
-              class="clock"
-              id="clock">
-
-              --:--:--
-
-            </div>
-
-
-            <div
-              class="date"
-              id="dateLine">
-            </div>
-
-          </div>
-
-        </section>
-
-
-        <!-- CLUB EVENTS -->
-
-        <section class="section">
-
-          <div class="section-head">
-
-            <h2>
-              Club Events
-            </h2>
-
-            <span class="live-dot">
-              Current
-            </span>
-
-          </div>
-
-
-          <div
-            class="events"
-            id="events">
-          </div>
-
-        </section>
-
-
-        <!-- MEMBERS -->
-
-        <div class="members-grid">
-
-
-          <!-- NEWEST MEMBERS -->
-
-          <section
-            class="section
-                   new-members-panel">
-
-            <div class="section-head">
-
-              <h2>
-                Newest Members
-              </h2>
-
-              <span class="live-dot">
-                Live API
-              </span>
-
-            </div>
-
-
-            <div class="new-member-glow"></div>
-
-
-            <div
-              class="member-list"
-              id="newMembers">
-
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-
-            </div>
-
-
-            <img
-              class="new-member-mascot"
-              src="./assets/lady-justice-new-members.png"
-              alt=""
-              aria-hidden="true">
-
-          </section>
-
-
-          <!-- TITLED MEMBERS -->
-
-          <section class="section">
-
-            <div class="section-head">
-
-              <h2>
-                Titled Members
-              </h2>
-
-              <span class="live-dot">
-                Live API
-              </span>
-
-            </div>
-
-
-            <div
-              class="member-list"
-              id="titledMembers">
-
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-              <div class="skeleton"></div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!-- CLUB RULES -->
-
-        <section class="section">
-
-          <div class="section-head">
-
-            <h2>
-              Club Rules
-            </h2>
-
-            <span class="meta">
-              Hover to pause
-            </span>
-
-          </div>
-
-
-          <div class="rules-window">
-
-            <div
-              class="rules-track"
-              id="rulesTrack">
-            </div>
-
-          </div>
-
-        </section>
-
-
-        <div class="footer-note">
-
-          ACFA Dashboard •
-          Live club data powered by
-          Chess.com Public API
-
-        </div>
-
-      </section>
-
-
-
-      <!-- ===================================================
-           TOURNAMENT DASHBOARD
-           =================================================== -->
-
-      <section class="page">
-
-
-        <!-- TOURNAMENT HERO -->
-
-        <section class="tournament-hero">
-
-
-          <div class="tournament-copy">
-
-            <div class="eyebrow">
-
-              ACFA Seasonal Championships
-
-            </div>
-
-
-            <h1
-              class="season-title"
-              id="seasonTitle">
-
-              Fall 2026
-
-            </h1>
-
-
-            <span
-              class="status"
-              id="seasonStatus">
-
-              Planning
-
-            </span>
-
-
-            <div class="facts">
-
-
-              <div class="fact">
-
-                <b>
-                  Registration
-                </b>
-
-                <span id="registrationDeadline">
-                  TBA
-                </span>
-
-              </div>
-
-
-              <div class="fact">
-
-                <b>
-                  Starts
-                </b>
-
-                <span id="startDate">
-                  TBA
-                </span>
-
-              </div>
-
-
-              <div class="fact">
-
-                <b>
-                  Ends
-                </b>
-
-                <span id="endDate">
-                  TBA
-                </span>
-
-              </div>
-
-
-              <div class="fact">
-
-                <b>
-                  Format
-                </b>
-
-                <span id="format">
-                  Seasonal Championship
-                </span>
-
-              </div>
-
-
-            </div>
-
-
-            <div class="actions">
-
-              <a
-                class="action"
-                id="eventBtn"
-                target="_blank"
-                rel="noopener"
-                style="display:none">
-
-                Tournament
-
-              </a>
-
-
-              <a
-                class="action"
-                id="detailsBtn"
-                target="_blank"
-                rel="noopener"
-                style="display:none">
-
-                Details
-
-              </a>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="justice-wrap">
-
-            <img
-              class="justice"
-              src="./assets/lady-justice.png"
-              alt="ACFA Lady Justice">
-
-          </div>
-
-
-        </section>
-
-
-        <!-- SEASON CHAMPIONS -->
-
-        <section class="section">
-
-          <div class="section-head">
-
-            <h2>
-              Season Champions
-            </h2>
-
-            <span class="meta">
-              Latest three
-            </span>
-
-          </div>
-
-
-          <div class="podium-shell">
-
-            <div
-              class="podium"
-              id="podium">
-            </div>
-
-          </div>
-
-        </section>
-
-
-        <!-- ARCHIVE -->
-
-        <section class="section">
-
-          <div class="section-head">
-
-            <h2>
-              Champions Archive
-            </h2>
-
-            <span class="meta">
-              All seasons
-            </span>
-
-          </div>
-
-
-          <div
-            class="archive"
-            id="archive">
-          </div>
-
-        </section>
-
-
-        <div class="footer-note">
-
-          Spring • Summer • Fall
-
-        </div>
-
-      </section>
-
+      <h2>
+        Quick Links
+      </h2>
 
     </div>
 
   </div>
 
-</main>
+  <div
+    class="quick-links"
+    id="quickLinks">
+  </div>
+
+</section>
+
+
+<!-- ANNOUNCEMENTS -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <div>
+
+      <div class="section-kicker">
+        Latest From ACFA
+      </div>
+
+      <h2>
+        Announcements
+      </h2>
+
+    </div>
+
+    <span class="live-dot">
+      Updates
+    </span>
+
+  </div>
+
+  <div
+    class="announcement-list"
+    id="announcementBoard">
+  </div>
+
+</section>
+
+
+<!-- CLUB EVENTS -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <h2>
+      Club Events
+    </h2>
+
+    <span class="live-dot">
+      Current
+    </span>
+
+  </div>
+
+  <div
+    class="events"
+    id="events">
+  </div>
+
+</section>
+
+
+<!-- MEMBER BOARDS -->
+
+<div class="members-grid">
+
+
+<section
+  class="section
+         new-members-panel">
+
+  <div class="section-head">
+
+    <h2>
+      Newest Members
+    </h2>
+
+    <span class="live-dot">
+      Live API
+    </span>
+
+  </div>
+
+  <div class="new-member-glow"></div>
+
+  <div
+    class="member-list"
+    id="newMembers">
+
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+
+  </div>
+
+  <img
+    class="new-member-mascot"
+    src="./assets/lady-justice-new-members.png"
+    alt=""
+    aria-hidden="true">
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-head">
+
+    <h2>
+      Titled Members
+    </h2>
+
+    <span class="live-dot">
+      CM → GM
+    </span>
+
+  </div>
+
+  <div
+    class="member-list"
+    id="titledMembers">
+
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+
+  </div>
+
+</section>
+
 
 </div>
 
 
+<!-- STAFF -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <div>
+
+      <div class="section-kicker">
+        ACFA Leadership
+      </div>
+
+      <h2>
+        Staff Board
+      </h2>
+
+    </div>
+
+    <span class="live-dot">
+      API Profiles
+    </span>
+
+  </div>
+
+  <div
+    class="staff-grid"
+    id="staffBoard">
+
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+
+  </div>
+
+</section>
+
+
+<!-- RULES -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <h2>
+      Club Rules
+    </h2>
+
+    <span class="meta">
+      Hover to pause
+    </span>
+
+  </div>
+
+  <div class="rules-window">
+
+    <div
+      class="rules-track"
+      id="rulesTrack">
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="footer-note">
+
+  And Chess For All •
+  Every Player Belongs •
+  Every Move Matters
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     TOURNAMENT DASHBOARD
+     ===================================================== -->
+
+<section class="page">
+
+
+<section class="tournament-hero">
+
+  <div class="tournament-copy">
+
+    <div class="eyebrow">
+      ACFA Seasonal Championships
+    </div>
+
+    <h1
+      class="season-title"
+      id="seasonTitle">
+
+      Fall 2026
+
+    </h1>
+
+    <span
+      class="status"
+      id="seasonStatus">
+
+      Planning
+
+    </span>
+
+
+    <div class="facts">
+
+      <div class="fact">
+
+        <b>
+          Registration
+        </b>
+
+        <span id="registrationDeadline">
+          TBA
+        </span>
+
+      </div>
+
+      <div class="fact">
+
+        <b>
+          Starts
+        </b>
+
+        <span id="startDate">
+          TBA
+        </span>
+
+      </div>
+
+      <div class="fact">
+
+        <b>
+          Ends
+        </b>
+
+        <span id="endDate">
+          TBA
+        </span>
+
+      </div>
+
+      <div class="fact">
+
+        <b>
+          Format
+        </b>
+
+        <span id="format">
+          Seasonal Championship
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="actions">
+
+      <a
+        class="action"
+        id="eventBtn"
+        target="_blank"
+        rel="noopener"
+        style="display:none">
+
+        Open Tournament
+
+      </a>
+
+      <a
+        class="action"
+        id="detailsBtn"
+        target="_blank"
+        rel="noopener"
+        style="display:none">
+
+        Event Details
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="justice-wrap">
+
+    <img
+      class="justice"
+      src="./assets/lady-justice.png"
+      alt="ACFA Lady Justice">
+
+  </div>
+
+</section>
+
+
+<!-- CHAMPIONS -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <h2>
+      Season Champions
+    </h2>
+
+    <span class="meta">
+      Latest Three
+    </span>
+
+  </div>
+
+  <div class="podium-shell">
+
+    <div
+      class="podium"
+      id="podium">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ARCHIVE -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <h2>
+      Champions Archive
+    </h2>
+
+    <span class="meta">
+      All Seasons
+    </span>
+
+  </div>
+
+  <div
+    class="archive"
+    id="archive">
+  </div>
+
+</section>
+
+
+<div class="footer-note">
+
+  Spring • Summer • Fall
+
+</div>
+
+
+</section>
+
+
+</div>
+</div>
+
+</main>
+</div>
+
+
+<!-- =========================================================
+     =========================================================
+     ACFA DATA JSON
+
+     THIS IS THE ONLY PART YOU SHOULD NORMALLY EDIT.
+     =========================================================
+     ========================================================= -->
+
+<script
+  id="acfaData"
+  type="application/json">
+
+{
+  "club": {
+    "name": "And Chess For All Official",
+    "slug": "and-chess-for-all-official",
+    "motto": "Every Player Belongs • Every Move Matters"
+  },
+
+  "quickLinks": [
+    {
+      "label": "Club Events",
+      "icon": "♟",
+      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
+    },
+    {
+      "label": "Forums",
+      "icon": "✦",
+      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+    },
+    {
+      "label": "Announcements",
+      "icon": "★",
+      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
+    }
+  ],
+
+  "announcements": [
+    {
+      "title": "ACFA Fall Championship",
+      "date": "September 2026",
+      "body": "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
+      "url": "",
+      "pinned": true
+    },
+
+    {
+      "title": "Welcome to the ACFA Dashboard",
+      "date": "September 2026",
+      "body": "Use this board for important club news, competition updates, seasonal announcements, and community information.",
+      "url": "",
+      "pinned": false
+    }
+  ],
+
+  "events": [
+    {
+      "title": "ACFA Fall Championship",
+      "date": "2026-10-05",
+      "status": "Coming Soon",
+      "url": ""
+    }
+  ],
+
+  "staff": [
+    {
+      "username": "DevilsGambit22",
+      "role": "Owner"
+    },
+
+    {
+      "username": "SaintsGambit98",
+      "role": "Co-Owner"
+    },
+
+    {
+      "username": "Bgeerr",
+      "role": "Head of Staff"
+    },
+
+    {
+      "username": "OfficialLadyJustice",
+      "role": "Mascot",
+      "secondaryRole": "Super Admin"
+    },
+
+    {
+      "username": "Stefan-Mazarine",
+      "role": "Super Admin"
+    },
+
+    {
+      "username": "Cookie00190",
+      "role": "Admin"
+    },
+
+    {
+      "username": "NtsakoCloy",
+      "role": "Admin"
+    },
+
+    {
+      "username": "roheemo_h",
+      "role": "Admin"
+    },
+
+    {
+      "username": "Xtreme-Ninja-100",
+      "role": "Admin"
+    },
+
+    {
+      "username": "Kissenschlach",
+      "role": "Coordinator"
+    }
+  ],
+
+  "rules": [
+    "Respect every member.",
+    "No harassment, bullying, or personal attacks.",
+    "Keep discussions constructive and appropriate.",
+    "No cheating, sandbagging, or fair-play violations.",
+    "Follow Chess.com Community Guidelines.",
+    "Do not spam club notes, forums, or messages.",
+    "Tournament participants are expected to complete their games.",
+    "Handle disputes respectfully through the proper admin channels."
+  ],
+
+  "tournament": {
+    "activeSeason": "Fall",
+    "year": 2026,
+    "status": "Planning",
+
+    "registrationDeadline": "",
+    "startDate": "",
+    "endDate": "",
+
+    "format": "Seasonal ACFA Championship",
+
+    "eventUrl": "",
+    "detailsUrl": "",
+
+    "champions": []
+  }
+}
+
+</script>
+
 
 <script>
-
 /* =========================================================
-   CONFIG
+   JAVASCRIPT
    ========================================================= */
-
-const DATA_URL =
-  "./data/acfa.json";
 
 const API =
   "https://api.chess.com/pub";
@@ -2714,55 +2939,56 @@ const FALLBACK =
   "./assets/acfa-logo.png";
 
 
-/*
-   Club membership can change often,
-   but there is no need to fetch it
-   every single page view.
-*/
+const DATA =
+  JSON.parse(
+    document
+      .getElementById(
+        "acfaData"
+      )
+      .textContent
+  );
+
+
+const TITLE_CODES = [
+  "GM",
+  "WGM",
+  "IM",
+  "WIM",
+  "FM",
+  "WFM",
+  "CM",
+  "WCM"
+];
+
+
+const TITLE_RANK = {
+  GM:8,
+  WGM:7,
+  IM:6,
+  WIM:5,
+  FM:4,
+  WFM:3,
+  CM:2,
+  WCM:1
+};
+
 
 const MEMBER_CACHE =
   1000 * 60 * 10;
 
-
-/*
-   Player profile / stats data
-   can remain cached much longer.
-*/
-
 const PLAYER_CACHE =
   1000 * 60 * 60 * 12;
 
-
-/*
-   Titled-member scan can also
-   remain cached for several hours.
-*/
-
 const TITLED_CACHE =
-  1000 * 60 * 60 * 6;
+  1000 * 60 * 60 * 4;
 
-
-/*
-   How many player API calls are
-   allowed to run simultaneously.
-
-   This prevents blasting the API
-   with 100+ parallel requests.
-*/
 
 const PROFILE_CONCURRENCY =
-  8;
+  6;
 
-
-let DATA = null;
 
 let CLUB_MEMBERS = [];
 
-
-
-/* =========================================================
-   HELPERS
-   ========================================================= */
 
 const $ =
   selector =>
@@ -2780,7 +3006,13 @@ const $$ =
     ];
 
 
-function escapeHTML(value=""){
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function escapeHTML(
+  value=""
+){
 
   return String(value)
     .replace(
@@ -2806,12 +3038,12 @@ function safe(
   const text =
     String(
       value ?? ""
-    ).trim();
+    )
+    .trim();
 
   return text || fallback;
 
 }
-
 
 
 function cacheGet(
@@ -2822,12 +3054,16 @@ function cacheGet(
   try{
 
     const raw =
-      localStorage.getItem(
-        key
-      );
+      localStorage
+        .getItem(
+          key
+        );
 
-    if(!raw)
+    if(!raw){
+
       return null;
+
+    }
 
 
     const cached =
@@ -2850,6 +3086,7 @@ function cacheGet(
     return cached.value;
 
   }
+
   catch{
 
     return null;
@@ -2859,7 +3096,6 @@ function cacheGet(
 }
 
 
-
 function cacheSet(
   key,
   value
@@ -2867,20 +3103,21 @@ function cacheSet(
 
   try{
 
-    localStorage.setItem(
-      key,
-      JSON.stringify({
-        time:Date.now(),
-        value:value
-      })
-    );
+    localStorage
+      .setItem(
+        key,
+        JSON.stringify({
+          time:Date.now(),
+          value:value
+        })
+      );
 
   }
+
   catch{
   }
 
 }
-
 
 
 async function fetchJSON(
@@ -2910,7 +3147,6 @@ async function fetchJSON(
 }
 
 
-
 /* =========================================================
    PARTICLES
    ========================================================= */
@@ -2921,14 +3157,9 @@ function buildParticles(){
     $("#ambient");
 
 
-  /*
-     More intense than the old
-     implementation.
-  */
-
   for(
     let i=0;
-    i<55;
+    i<78;
     i++
   ){
 
@@ -2938,12 +3169,35 @@ function buildParticles(){
       );
 
 
-    spark.className =
+    const classes = [
+      "spark"
+    ];
+
+
+    if(
       i % 4 === 0
-        ?
-        "spark blue"
-        :
-        "spark";
+    ){
+
+      classes.push(
+        "blue"
+      );
+
+    }
+
+
+    if(
+      i % 9 === 0
+    ){
+
+      classes.push(
+        "large"
+      );
+
+    }
+
+
+    spark.className =
+      classes.join(" ");
 
 
     spark.style.setProperty(
@@ -2954,19 +3208,19 @@ function buildParticles(){
 
     spark.style.setProperty(
       "--drift",
-      `${(Math.random()-.5)*140}px`
+      `${(Math.random()-.5)*160}px`
     );
 
 
     spark.style.setProperty(
       "--dur",
-      `${7 + Math.random()*11}s`
+      `${7+Math.random()*11}s`
     );
 
 
     spark.style.setProperty(
       "--delay",
-      `${-Math.random()*20}s`
+      `${-Math.random()*22}s`
     );
 
 
@@ -2982,9 +3236,8 @@ function buildParticles(){
 buildParticles();
 
 
-
 /* =========================================================
-   CLOCK + GREETING
+   CLOCK
    ========================================================= */
 
 function updateClock(){
@@ -2997,41 +3250,40 @@ function updateClock(){
     now.getHours();
 
 
-  let greeting;
+  let greeting =
+    "Good Night";
 
 
-  if(hour < 5){
-
-    greeting =
-      "Good Night";
-
-  }
-
-  else if(hour < 12){
+  if(
+    hour >= 5
+    &&
+    hour < 12
+  ){
 
     greeting =
       "Good Morning";
 
   }
 
-  else if(hour < 17){
+  else if(
+    hour >= 12
+    &&
+    hour < 17
+  ){
 
     greeting =
       "Good Afternoon";
 
   }
 
-  else if(hour < 21){
+  else if(
+    hour >= 17
+    &&
+    hour < 21
+  ){
 
     greeting =
       "Good Evening";
-
-  }
-
-  else{
-
-    greeting =
-      "Good Night";
 
   }
 
@@ -3069,15 +3321,15 @@ function updateClock(){
 
 updateClock();
 
+
 setInterval(
   updateClock,
   1000
 );
 
 
-
 /* =========================================================
-   DASHBOARD SWITCH
+   NAVIGATION
    ========================================================= */
 
 function setView(
@@ -3085,7 +3337,8 @@ function setView(
 ){
 
   $("#track")
-    .classList.toggle(
+    .classList
+    .toggle(
       "tournaments",
       view ===
       "tournaments"
@@ -3096,12 +3349,14 @@ function setView(
     .forEach(
       button =>{
 
-        button.classList.toggle(
-          "active",
-          button.dataset.view
-          ===
-          view
-        );
+        button
+          .classList
+          .toggle(
+            "active",
+            button.dataset.view
+            ===
+            view
+          );
 
       }
     );
@@ -3126,17 +3381,19 @@ $$(".nav-btn")
   );
 
 
-
 /* =========================================================
-   DATES
+   DATE HELPERS
    ========================================================= */
 
 function niceDate(
   value
 ){
 
-  if(!value)
+  if(!value){
+
     return "TBA";
+
+  }
 
 
   const date =
@@ -3177,7 +3434,6 @@ function niceDate(
 }
 
 
-
 function monthDay(
   value
 ){
@@ -3199,20 +3455,6 @@ function monthDay(
     );
 
 
-  if(
-    Number.isNaN(
-      date.getTime()
-    )
-  ){
-
-    return [
-      value,
-      ""
-    ];
-
-  }
-
-
   return [
 
     date
@@ -3231,28 +3473,204 @@ function monthDay(
 }
 
 
-
 /* =========================================================
-   STATIC JSON DATA
+   QUICK LINKS
    ========================================================= */
 
-function renderStatic(){
+function renderQuickLinks(){
 
-  $("#motto")
-    .textContent =
-      safe(
-        DATA.club.motto,
-        ""
-      );
+  const links =
+    DATA.quickLinks || [];
 
 
-  /* CLUB EVENTS */
+  $("#quickLinks")
+    .innerHTML =
+      links
+        .filter(
+          item =>
+            item.url
+        )
+        .map(
+          item =>`
+
+          <a
+            class="quick-link"
+
+            href="${item.url}"
+
+            target="_blank"
+
+            rel="noopener">
+
+
+            <div class="quick-icon">
+
+              ${escapeHTML(item.icon || "•")}
+
+            </div>
+
+
+            <div class="quick-label">
+
+              ${escapeHTML(item.label)}
+
+            </div>
+
+
+          </a>
+
+          `
+        )
+        .join("");
+
+}
+
+
+/* =========================================================
+   ANNOUNCEMENTS
+   ========================================================= */
+
+function renderAnnouncements(){
+
+  const announcements =
+    DATA.announcements || [];
+
+
+  if(
+    !announcements.length
+  ){
+
+    $("#announcementBoard")
+      .innerHTML =
+        `
+        <div class="empty">
+          No announcements posted.
+        </div>
+        `;
+
+    return;
+
+  }
+
+
+  const sorted = [
+
+    ...announcements
+
+  ]
+  .sort(
+    (
+      a,
+      b
+    ) =>
+      Number(
+        Boolean(b.pinned)
+      )
+      -
+      Number(
+        Boolean(a.pinned)
+      )
+  );
+
+
+  $("#announcementBoard")
+    .innerHTML =
+      sorted
+        .map(
+          announcement =>`
+
+          <article
+            class="
+              announcement
+              ${
+                announcement.pinned
+                  ?
+                  "pinned"
+                  :
+                  ""
+              }
+            ">
+
+
+            <div class="announcement-top">
+
+
+              <div class="announcement-title">
+
+                ${
+                  announcement.pinned
+                    ?
+                    `<span class="pin">★</span>`
+                    :
+                    ""
+                }
+
+                ${escapeHTML(announcement.title)}
+
+              </div>
+
+
+              <div class="announcement-date">
+
+                ${escapeHTML(announcement.date || "")}
+
+              </div>
+
+
+            </div>
+
+
+            <div class="announcement-body">
+
+              ${escapeHTML(announcement.body || "")}
+
+            </div>
+
+
+            ${
+              announcement.url
+                ?
+                `
+                <a
+                  class="announcement-link"
+
+                  href="${announcement.url}"
+
+                  target="_blank"
+
+                  rel="noopener">
+
+                  Read More
+
+                </a>
+                `
+                :
+                ""
+            }
+
+
+          </article>
+
+          `
+        )
+        .join("");
+
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+function renderEvents(){
 
   const events =
-    DATA.home.events || [];
+    DATA.events || [];
 
 
-  if(!events.length){
+  if(
+    !events.length
+  ){
 
     $("#events")
       .innerHTML =
@@ -3262,137 +3680,140 @@ function renderStatic(){
         </div>
         `;
 
-  }
-
-  else{
-
-    $("#events")
-      .innerHTML =
-        events
-          .map(
-            event =>{
-
-              const [
-                month,
-                day
-              ] =
-                monthDay(
-                  event.date
-                );
-
-
-              const element =
-                event.url
-                  ?
-                  "a"
-                  :
-                  "div";
-
-
-              const href =
-                event.url
-                  ?
-                  `
-                  href="${event.url}"
-                  target="_blank"
-                  rel="noopener"
-                  `
-                  :
-                  "";
-
-
-              return `
-              <${element}
-                class="event"
-                ${href}>
-
-                <div class="event-date">
-
-                  ${escapeHTML(month)}
-                  <br>
-
-                  ${escapeHTML(day)}
-
-                </div>
-
-                <div class="event-main">
-
-                  <div class="event-title">
-
-                    ${escapeHTML(event.title)}
-
-                  </div>
-
-                  <div class="event-meta">
-
-                    ${
-                      escapeHTML(
-                        event.status || ""
-                      )
-                    }
-
-                  </div>
-
-                </div>
-
-              </${element}>
-              `;
-
-            }
-          )
-          .join("");
+    return;
 
   }
 
 
+  $("#events")
+    .innerHTML =
+      events
+        .map(
+          event =>{
 
-  /* RULES */
+            const [
+              month,
+              day
+            ] =
+              monthDay(
+                event.date
+              );
+
+
+            const tag =
+              event.url
+                ?
+                "a"
+                :
+                "div";
+
+
+            const href =
+              event.url
+                ?
+                `
+                href="${event.url}"
+                target="_blank"
+                rel="noopener"
+                `
+                :
+                "";
+
+
+            return `
+            <${tag}
+              class="event"
+              ${href}>
+
+
+              <div class="event-date">
+
+                ${escapeHTML(month)}
+
+                <br>
+
+                ${escapeHTML(day)}
+
+              </div>
+
+
+              <div class="event-main">
+
+
+                <div class="event-title">
+
+                  ${escapeHTML(event.title)}
+
+                </div>
+
+
+                <div class="event-meta">
+
+                  ${escapeHTML(event.status || "")}
+
+                </div>
+
+
+              </div>
+
+
+            </${tag}>
+            `;
+
+          }
+        )
+        .join("");
+
+}
+
+
+/* =========================================================
+   RULES
+   ========================================================= */
+
+function renderRules(){
 
   const rules =
-    DATA.home.rules || [];
+    DATA.rules || [];
 
 
-  const ruleHTML =
+  const html =
     rules
       .map(
         (
           rule,
           index
-        ) =>{
+        ) =>`
 
-          return `
-          <div class="rule">
+        <div class="rule">
 
-            <i>
-              ${index+1}
-            </i>
+          <i>
+            ${index+1}
+          </i>
 
-            <span>
-              ${escapeHTML(rule)}
-            </span>
+          <span>
+            ${escapeHTML(rule)}
+          </span>
 
-          </div>
-          `;
+        </div>
 
-        }
+        `
       )
       .join("");
 
 
-  /*
-     Duplicate the list so the
-     vertical marquee loops smoothly.
-  */
-
   $("#rulesTrack")
     .innerHTML =
-      ruleHTML
-      +
-      ruleHTML;
+      html + html;
+
+}
 
 
+/* =========================================================
+   TOURNAMENT STATIC DATA
+   ========================================================= */
 
-  /* TOURNAMENT */
+function renderTournament(){
 
   const tournament =
     DATA.tournament;
@@ -3401,18 +3822,8 @@ function renderStatic(){
   $("#seasonTitle")
     .textContent =
       `
-      ${
-        safe(
-          tournament.activeSeason,
-          "Season"
-        )
-      }
-      ${
-        safe(
-          tournament.year,
-          ""
-        )
-      }
+      ${safe(tournament.activeSeason,"Season")}
+      ${safe(tournament.year,"")}
       `.trim();
 
 
@@ -3483,20 +3894,19 @@ function renderStatic(){
 }
 
 
-
 /* =========================================================
-   CLUB MEMBERS
+   API
    ========================================================= */
 
 async function getClubMembers(){
 
-  const cacheKey =
-    "acfa:members:v3";
+  const key =
+    "acfa:members:v9";
 
 
   const cached =
     cacheGet(
-      cacheKey,
+      key,
       MEMBER_CACHE
     );
 
@@ -3508,7 +3918,7 @@ async function getClubMembers(){
   }
 
 
-  const data =
+  const response =
     await fetchJSON(
       `${API}/club/${DATA.club.slug}/members`
     );
@@ -3516,18 +3926,19 @@ async function getClubMembers(){
 
   const combined = [
 
-    ...(data.weekly || []),
+    ...(response.weekly || []),
 
-    ...(data.all_time || [])
+    ...(response.all_time || [])
 
   ];
 
 
-  const usernames =
+  const seen =
     new Set();
 
 
-  const unique = [];
+  const unique =
+    [];
 
 
   for(
@@ -3542,7 +3953,7 @@ async function getClubMembers(){
 
 
     if(
-      usernames.has(key)
+      seen.has(key)
     ){
 
       continue;
@@ -3550,7 +3961,7 @@ async function getClubMembers(){
     }
 
 
-    usernames.add(key);
+    seen.add(key);
 
     unique.push(member);
 
@@ -3558,7 +3969,7 @@ async function getClubMembers(){
 
 
   cacheSet(
-    cacheKey,
+    "acfa:members:v9",
     unique
   );
 
@@ -3567,11 +3978,6 @@ async function getClubMembers(){
 
 }
 
-
-
-/* =========================================================
-   PLAYER PROFILE
-   ========================================================= */
 
 async function getProfile(
   username
@@ -3612,11 +4018,6 @@ async function getProfile(
 }
 
 
-
-/* =========================================================
-   PLAYER STATS
-   ========================================================= */
-
 async function getStats(
   username
 ){
@@ -3656,20 +4057,9 @@ async function getStats(
 }
 
 
-
 /* =========================================================
-   HIGHEST ELO
+   RATINGS
    ========================================================= */
-
-/*
-   For newest members we want their
-   highest current rating, regardless
-   of category.
-
-   This differs from the champion
-   board, which can still prioritize
-   Daily Chess.
-*/
 
 function highestRating(
   stats
@@ -3700,7 +4090,8 @@ function highestRating(
   ];
 
 
-  let best = null;
+  let best =
+    null;
 
 
   for(
@@ -3715,9 +4106,7 @@ function highestRating(
       ]?.last?.rating;
 
 
-    if(
-      !rating
-    ){
+    if(!rating){
 
       continue;
 
@@ -3727,14 +4116,13 @@ function highestRating(
     if(
       !best
       ||
-      rating
-      >
-      best.rating
+      rating > best.rating
     ){
 
       best = {
 
-        rating:rating,
+        rating:
+          rating,
 
         label:
           category.label
@@ -3751,246 +4139,86 @@ function highestRating(
 }
 
 
-
 /* =========================================================
-   CHAMPION RATING
+   CONCURRENCY
    ========================================================= */
 
-/*
-   Champions prioritize Daily Chess
-   because ACFA competition is mainly
-   Daily oriented.
-
-   If Daily is unavailable:
-   Rapid -> Blitz -> Bullet.
-*/
-
-function championRating(
-  stats
+async function mapLimited(
+  items,
+  limit,
+  worker
 ){
 
-  const order = [
-
-    {
-      key:"chess_daily",
-      label:"Daily"
-    },
-
-    {
-      key:"chess_rapid",
-      label:"Rapid"
-    },
-
-    {
-      key:"chess_blitz",
-      label:"Blitz"
-    },
-
-    {
-      key:"chess_bullet",
-      label:"Bullet"
-    }
-
-  ];
+  const results =
+    new Array(
+      items.length
+    );
 
 
-  for(
-    const category
-    of
-    order
-  ){
-
-    const rating =
-      stats?.[
-        category.key
-      ]?.last?.rating;
+  let index =
+    0;
 
 
-    if(rating){
+  async function runner(){
 
-      return {
+    while(true){
 
-        rating:rating,
+      const current =
+        index++;
 
-        label:
-          category.label
 
-      };
+      if(
+        current
+        >=
+        items.length
+      ){
+
+        return;
+
+      }
+
+
+      try{
+
+        results[current] =
+          await worker(
+            items[current],
+            current
+          );
+
+      }
+
+      catch{
+
+        results[current] =
+          null;
+
+      }
 
     }
 
   }
 
 
-  return null;
+  await Promise.all(
+
+    Array.from(
+      {
+        length:
+          Math.min(
+            limit,
+            items.length
+          )
+      },
+      () => runner()
+    )
+
+  );
+
+
+  return results;
 
 }
-
-
-
-/* =========================================================
-   NEWEST MEMBER CARD
-   ========================================================= */
-
-function newestMemberHTML(
-  username,
-  profile,
-  ratingData
-){
-
-  const avatar =
-    profile?.avatar
-    ||
-    FALLBACK;
-
-
-  const title =
-    profile?.title
-      ?
-      `
-      <span class="title">
-        ${escapeHTML(profile.title)}
-      </span>
-      `
-      :
-      "";
-
-
-  const rating =
-    ratingData
-      ?
-      `
-      <div class="member-rating">
-
-        ${escapeHTML(ratingData.rating)}
-
-        •
-
-        ${escapeHTML(ratingData.label)}
-
-      </div>
-      `
-      :
-      `
-      <div class="member-rating">
-
-        Rating unavailable
-
-      </div>
-      `;
-
-
-  return `
-  <a
-    class="member"
-    href="https://www.chess.com/member/${encodeURIComponent(username)}"
-    target="_blank"
-    rel="noopener">
-
-    <img
-      class="avatar"
-      src="${avatar}"
-      alt=""
-      loading="lazy"
-      onerror="this.src='${FALLBACK}'">
-
-
-    <div class="member-copy">
-
-      <div class="username">
-
-        ${escapeHTML(username)}
-
-      </div>
-
-
-      <div class="meta">
-
-        New member
-
-      </div>
-
-
-      ${rating}
-
-    </div>
-
-
-    ${title}
-
-
-  </a>
-  `;
-
-}
-
-
-
-/* =========================================================
-   TITLED MEMBER CARD
-   ========================================================= */
-
-function titledMemberHTML(
-  username,
-  profile
-){
-
-  const avatar =
-    profile?.avatar
-    ||
-    FALLBACK;
-
-
-  const title =
-    profile?.title
-    ||
-    "TITLE";
-
-
-  return `
-  <a
-    class="member"
-    href="https://www.chess.com/member/${encodeURIComponent(username)}"
-    target="_blank"
-    rel="noopener">
-
-    <img
-      class="avatar"
-      src="${avatar}"
-      alt=""
-      loading="lazy"
-      onerror="this.src='${FALLBACK}'">
-
-
-    <div class="member-copy">
-
-      <div class="username">
-
-        ${escapeHTML(username)}
-
-      </div>
-
-
-      <div class="meta">
-
-        Titled member
-
-      </div>
-
-    </div>
-
-
-    <span class="title">
-
-      ${escapeHTML(title)}
-
-    </span>
-
-  </a>
-  `;
-
-}
-
 
 
 /* =========================================================
@@ -4019,69 +4247,22 @@ async function renderNewestMembers(){
   );
 
 
-  /*
-     Immediately render basic cards
-     so the board feels fast.
-  */
-
-  $("#newMembers")
-    .innerHTML =
-      newest
-        .map(
-          member =>{
-
-            return `
-            <a
-              class="member"
-              href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
-              target="_blank"
-              rel="noopener">
-
-              <img
-                class="avatar"
-                src="${FALLBACK}"
-                alt="">
-
-
-              <div class="member-copy">
-
-                <div class="username">
-
-                  ${escapeHTML(member.username)}
-
-                </div>
-
-
-                <div class="meta">
-
-                  Loading player data…
-
-                </div>
-
-              </div>
-
-            </a>
-            `;
-
-          }
-        )
-        .join("");
-
-
-  /*
-     Then hydrate profiles + ratings
-     in parallel.
-  */
-
-  const hydrated =
+  const cards =
     await Promise.all(
 
       newest.map(
         async member =>{
 
+          let profile =
+            null;
+
+          let stats =
+            null;
+
+
           try{
 
-            const [
+            [
               profile,
               stats
             ] =
@@ -4097,34 +4278,95 @@ async function renderNewestMembers(){
 
               ]);
 
-
-            return newestMemberHTML(
-
-              member.username,
-
-              profile,
-
-              highestRating(
-                stats
-              )
-
-            );
-
           }
 
           catch{
+          }
 
-            return newestMemberHTML(
 
-              member.username,
-
-              null,
-
-              null
-
+          const rating =
+            highestRating(
+              stats
             );
 
-          }
+
+          return `
+          <a
+            class="member"
+
+            href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
+
+            target="_blank"
+
+            rel="noopener">
+
+
+            <img
+              class="avatar"
+
+              src="${
+                profile?.avatar
+                ||
+                FALLBACK
+              }"
+
+              alt=""
+
+              loading="lazy"
+
+              onerror="
+                this.src='${FALLBACK}'
+              ">
+
+
+            <div class="member-copy">
+
+
+              <div class="username">
+
+                ${escapeHTML(member.username)}
+
+              </div>
+
+
+              <div class="meta">
+
+                New member
+
+              </div>
+
+
+              <div class="member-rating">
+
+                ${
+                  rating
+                    ?
+                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
+
+              </div>
+
+
+            </div>
+
+
+            ${
+              profile?.title
+                ?
+                `
+                <span class="title">
+                  ${escapeHTML(profile.title)}
+                </span>
+                `
+                :
+                ""
+            }
+
+
+          </a>
+          `;
 
         }
       )
@@ -4134,65 +4376,118 @@ async function renderNewestMembers(){
 
   $("#newMembers")
     .innerHTML =
-      hydrated.join("");
+      cards.join("");
 
 }
 
 
-
 /* =========================================================
-   CONCURRENCY HELPER
+   TITLED MEMBERS
+
+   Uses BOTH:
+   1. Chess.com title lists
+   2. Direct profile.title scanning
    ========================================================= */
 
-async function mapLimited(
-  items,
-  limit,
-  worker
-){
+async function renderTitledMembers(){
 
-  const results =
-    new Array(
-      items.length
+  const clubMap =
+    new Map();
+
+
+  CLUB_MEMBERS
+    .forEach(
+      member =>{
+
+        clubMap.set(
+
+          member.username
+            .toLowerCase(),
+
+          member.username
+
+        );
+
+      }
     );
 
 
-  let nextIndex =
-    0;
+  const found =
+    new Map();
 
 
-  async function runner(){
+  /* TITLE LIST PASS */
 
-    while(true){
+  const titleLists =
+    await Promise.all(
 
-      const index =
-        nextIndex++;
+      TITLE_CODES.map(
+        async title =>{
+
+          try{
+
+            const result =
+              await fetchJSON(
+                `${API}/titled/${title}`
+              );
+
+
+            return {
+              title:title,
+              players:
+                result.players
+                ||
+                []
+            };
+
+          }
+
+          catch{
+
+            return {
+              title:title,
+              players:[]
+            };
+
+          }
+
+        }
+      )
+
+    );
+
+
+  for(
+    const group
+    of
+    titleLists
+  ){
+
+    for(
+      const username
+      of
+      group.players
+    ){
+
+      const lower =
+        username
+          .toLowerCase();
 
 
       if(
-        index
-        >=
-        items.length
+        clubMap.has(lower)
       ){
 
-        return;
+        found.set(
+          lower,
+          {
+            username:
+              clubMap.get(lower),
 
-      }
-
-
-      try{
-
-        results[index] =
-          await worker(
-            items[index],
-            index
-          );
-
-      }
-
-      catch{
-
-        results[index] =
-          null;
+            title:
+              group.title
+          }
+        );
 
       }
 
@@ -4201,113 +4496,9 @@ async function mapLimited(
   }
 
 
-  const runners =
-    Array.from(
-      {
-        length:
-          Math.min(
-            limit,
-            items.length
-          )
-      },
-      () => runner()
-    );
+  /* PROFILE PASS */
 
-
-  await Promise.all(
-    runners
-  );
-
-
-  return results;
-
-}
-
-
-
-/* =========================================================
-   TITLED MEMBERS
-   ========================================================= */
-
-/*
-   The old build relied mostly on the
-   global /titled/{title} lists.
-
-   That can miss a club member.
-
-   This version scans actual ACFA
-   member profiles using cached,
-   concurrency-limited API calls.
-
-   It is slower only on the very first
-   visit. After that it is cached.
-*/
-
-async function renderTitledMembers(){
-
-  const cacheKey =
-    "acfa:titled-members:v4";
-
-
-  const cached =
-    cacheGet(
-      cacheKey,
-      TITLED_CACHE
-    );
-
-
-  if(
-    cached
-    &&
-    Array.isArray(cached)
-  ){
-
-    $("#titledMembers")
-      .innerHTML =
-        cached.length
-          ?
-          cached
-            .map(
-              item =>
-                titledMemberHTML(
-                  item.username,
-                  item.profile
-                )
-            )
-            .join("")
-          :
-          `
-          <div class="empty">
-            No titled members found.
-          </div>
-          `;
-
-
-    return;
-
-  }
-
-
-  $("#titledMembers")
-    .innerHTML =
-      `
-      <div class="meta"
-           style="
-             padding:10px;
-             text-align:center;
-           ">
-
-        Checking ACFA titled members…
-
-      </div>
-
-      <div class="skeleton"></div>
-
-      <div class="skeleton"></div>
-      `;
-
-
-  const profiles =
+  const profileResults =
     await mapLimited(
 
       CLUB_MEMBERS,
@@ -4332,13 +4523,14 @@ async function renderTitledMembers(){
 
 
         return {
-
           username:
             member.username,
 
+          title:
+            profile.title,
+
           profile:
             profile
-
         };
 
       }
@@ -4346,51 +4538,487 @@ async function renderTitledMembers(){
     );
 
 
-  const titled =
-    profiles
+  for(
+    const player
+    of
+    profileResults
       .filter(Boolean)
-      .sort(
-        (
-          a,
-          b
-        ) =>
-          a.username
-            .localeCompare(
-              b.username
-            )
-      );
+  ){
+
+    found.set(
+      player.username
+        .toLowerCase(),
+
+      player
+    );
+
+  }
 
 
-  cacheSet(
-    cacheKey,
-    titled
+  let players = [
+
+    ...found.values()
+
+  ];
+
+
+  /* FINAL PROFILE HYDRATION */
+
+  players =
+    await Promise.all(
+
+      players.map(
+        async player =>{
+
+          let profile =
+            player.profile
+            ||
+            null;
+
+
+          if(!profile){
+
+            try{
+
+              profile =
+                await getProfile(
+                  player.username
+                );
+
+            }
+
+            catch{
+            }
+
+          }
+
+
+          let stats =
+            null;
+
+
+          try{
+
+            stats =
+              await getStats(
+                player.username
+              );
+
+          }
+
+          catch{
+          }
+
+
+          return {
+            ...player,
+            profile:profile,
+            rating:
+              highestRating(
+                stats
+              )
+          };
+
+        }
+      )
+
+    );
+
+
+  players.sort(
+    (
+      a,
+      b
+    ) =>{
+
+      const aRank =
+        TITLE_RANK[
+          a.title
+        ]
+        ||
+        0;
+
+
+      const bRank =
+        TITLE_RANK[
+          b.title
+        ]
+        ||
+        0;
+
+
+      if(
+        bRank !== aRank
+      ){
+
+        return bRank - aRank;
+
+      }
+
+
+      return a.username
+        .localeCompare(
+          b.username
+        );
+
+    }
   );
+
+
+  if(
+    !players.length
+  ){
+
+    $("#titledMembers")
+      .innerHTML =
+        `
+        <div class="empty">
+          No titled members detected.
+        </div>
+        `;
+
+    return;
+
+  }
 
 
   $("#titledMembers")
     .innerHTML =
-      titled.length
-        ?
-        titled
-          .map(
-            item =>
-              titledMemberHTML(
-                item.username,
-                item.profile
-              )
-          )
-          .join("")
-        :
-        `
-        <div class="empty">
+      players
+        .map(
+          player =>`
 
-          No titled members found.
+          <a
+            class="member"
 
-        </div>
-        `;
+            href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
+
+            target="_blank"
+
+            rel="noopener">
+
+
+            <img
+              class="avatar"
+
+              src="${
+                player.profile?.avatar
+                ||
+                FALLBACK
+              }"
+
+              alt=""
+
+              loading="lazy"
+
+              onerror="
+                this.src='${FALLBACK}'
+              ">
+
+
+            <div class="member-copy">
+
+
+              <div class="username">
+
+                ${escapeHTML(player.username)}
+
+              </div>
+
+
+              <div class="meta">
+
+                Officially titled member
+
+              </div>
+
+
+              <div class="member-rating">
+
+                ${
+                  player.rating
+                    ?
+                    `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
+
+              </div>
+
+
+            </div>
+
+
+            <span class="title">
+
+              ${escapeHTML(player.title)}
+
+            </span>
+
+
+          </a>
+
+          `
+        )
+        .join("");
 
 }
 
+
+/* =========================================================
+   STAFF
+   ========================================================= */
+
+function roleClass(
+  role
+){
+
+  return (
+    "role-"
+    +
+    role
+      .toLowerCase()
+      .replace(
+        /\s+/g,
+        "-"
+      )
+  );
+
+}
+
+
+function staffPriority(
+  role
+){
+
+  const priority = {
+
+    "Owner":100,
+
+    "Co-Owner":95,
+
+    "Head of Staff":90,
+
+    "Super Admin":80,
+
+    "Admin":70,
+
+    "Coordinator":60,
+
+    "Mascot":50
+
+  };
+
+
+  return priority[
+    role
+  ]
+  ||
+  0;
+
+}
+
+
+async function renderStaff(){
+
+  const staff = [
+
+    ...(DATA.staff || [])
+
+  ]
+  .sort(
+    (
+      a,
+      b
+    ) =>
+      staffPriority(
+        b.role
+      )
+      -
+      staffPriority(
+        a.role
+      )
+  );
+
+
+  const cards =
+    await Promise.all(
+
+      staff.map(
+        async staffMember =>{
+
+          let profile =
+            null;
+
+          let stats =
+            null;
+
+
+          try{
+
+            [
+              profile,
+              stats
+            ] =
+              await Promise.all([
+
+                getProfile(
+                  staffMember.username
+                ),
+
+                getStats(
+                  staffMember.username
+                )
+
+              ]);
+
+          }
+
+          catch{
+          }
+
+
+          const rating =
+            highestRating(
+              stats
+            );
+
+
+          const isHead =
+            staffMember.role
+            ===
+            "Head of Staff";
+
+
+          return `
+          <a
+            class="
+              staff-card
+              ${
+                isHead
+                  ?
+                  "head-staff"
+                  :
+                  ""
+              }
+            "
+
+            href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
+
+            target="_blank"
+
+            rel="noopener">
+
+
+            <img
+              class="staff-avatar"
+
+              src="${
+                profile?.avatar
+                ||
+                FALLBACK
+              }"
+
+              alt=""
+
+              loading="lazy"
+
+              onerror="
+                this.src='${FALLBACK}'
+              ">
+
+
+            <div class="staff-main">
+
+
+              <div class="staff-name">
+
+                ${
+                  profile?.title
+                    ?
+                    `${escapeHTML(profile.title)} `
+                    :
+                    ""
+                }
+
+                ${escapeHTML(staffMember.username)}
+
+              </div>
+
+
+              <div class="staff-role">
+
+                ${escapeHTML(staffMember.role)}
+
+              </div>
+
+
+              <div class="staff-rating">
+
+                ${
+                  rating
+                    ?
+                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
+
+              </div>
+
+
+            </div>
+
+
+            <div class="staff-badges">
+
+
+              <span
+                class="
+                  role-badge
+                  ${roleClass(staffMember.role)}
+                ">
+
+                ${escapeHTML(staffMember.role)}
+
+              </span>
+
+
+              ${
+                staffMember.secondaryRole
+                  ?
+                  `
+                  <span
+                    class="
+                      role-badge
+                      ${roleClass(staffMember.secondaryRole)}
+                    ">
+
+                    ${escapeHTML(staffMember.secondaryRole)}
+
+                  </span>
+                  `
+                  :
+                  ""
+              }
+
+
+            </div>
+
+
+          </a>
+          `;
+
+        }
+      )
+
+    );
+
+
+  $("#staffBoard")
+    .innerHTML =
+      cards.join("");
+
+}
 
 
 /* =========================================================
@@ -4456,11 +5084,11 @@ function emptyPodiumCard(
 
     </div>
 
+
   </div>
   `;
 
 }
-
 
 
 function renderEmptyPodium(){
@@ -4476,22 +5104,23 @@ function renderEmptyPodium(){
 }
 
 
-
 /* =========================================================
-   CHAMPION DATA
+   CHAMPIONS
    ========================================================= */
 
 async function hydrateChampion(
   champion
 ){
 
-  if(!champion)
+  if(!champion){
+
     return null;
+
+  }
 
 
   let profile =
     null;
-
 
   let stats =
     null;
@@ -4522,42 +5151,27 @@ async function hydrateChampion(
 
 
   return {
-
     ...champion,
 
     profile:profile,
 
     rating:
-      championRating(
+      highestRating(
         stats
       )
-
   };
 
 }
 
 
-
-/* =========================================================
-   CHAMPION PODIUM
-   ========================================================= */
-
 async function renderChampions(){
 
   const champions =
     DATA.tournament
-      .champions
+      ?.champions
     ||
     [];
 
-
-  /*
-     Always render an empty podium
-     immediately.
-
-     This solves the blank blue box
-     when no winners exist.
-  */
 
   renderEmptyPodium();
 
@@ -4577,13 +5191,12 @@ async function renderChampions(){
         </div>
         `;
 
-
     return;
 
   }
 
 
-  const seasonOrder = {
+  const seasonRank = {
 
     Spring:1,
 
@@ -4623,7 +5236,7 @@ async function renderChampions(){
       return (
 
         (
-          seasonOrder[b.season]
+          seasonRank[b.season]
           ||
           0
         )
@@ -4631,7 +5244,7 @@ async function renderChampions(){
         -
 
         (
-          seasonOrder[a.season]
+          seasonRank[a.season]
           ||
           0
         )
@@ -4642,45 +5255,39 @@ async function renderChampions(){
   );
 
 
-  /*
-     Same structural idea as the
-     rating-climber podium:
-
-     previous = left
-     newest   = raised center
-     third    = right
-  */
-
   const podiumOrder = [
 
-    sorted[1] || null,
+    sorted[1]
+    ||
+    null,
 
-    sorted[0] || null,
+    sorted[0]
+    ||
+    null,
 
-    sorted[2] || null
+    sorted[2]
+    ||
+    null
 
+  ];
+
+
+  const placements = [
+    "2",
+    "1",
+    "3"
   ];
 
 
   const hydrated =
     await Promise.all(
 
-      podiumOrder.map(
-        hydrateChampion
-      )
+      podiumOrder
+        .map(
+          hydrateChampion
+        )
 
     );
-
-
-  const placements = [
-
-    "2",
-
-    "1",
-
-    "3"
-
-  ];
 
 
   $("#podium")
@@ -4696,42 +5303,14 @@ async function renderChampions(){
               index === 1;
 
 
-            /*
-               Missing slots remain
-               as proper podiums.
-            */
-
             if(!champion){
 
               return emptyPodiumCard(
-
                 placements[index],
-
                 center
-
               );
 
             }
-
-
-            const avatar =
-              champion.profile
-                ?.avatar
-              ||
-              FALLBACK;
-
-
-            const title =
-              champion.profile
-                ?.title
-                ?
-                `${champion.profile.title} `
-                :
-                "";
-
-
-            const rating =
-              champion.rating;
 
 
             return `
@@ -4746,8 +5325,11 @@ async function renderChampions(){
                     ""
                 }
               "
+
               href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+
               target="_blank"
+
               rel="noopener">
 
 
@@ -4760,31 +5342,38 @@ async function renderChampions(){
 
               <img
                 class="podium-avatar"
-                src="${avatar}"
+
+                src="${
+                  champion.profile?.avatar
+                  ||
+                  FALLBACK
+                }"
+
                 alt=""
-                onerror="this.src='${FALLBACK}'">
+
+                onerror="
+                  this.src='${FALLBACK}'
+                ">
 
 
               <div class="podium-name">
 
                 ${
-                  escapeHTML(
-                    title
-                    +
-                    champion.username
-                  )
+                  champion.profile?.title
+                    ?
+                    `${escapeHTML(champion.profile.title)} `
+                    :
+                    ""
                 }
+
+                ${escapeHTML(champion.username)}
 
               </div>
 
 
               <div class="podium-meta">
 
-                ${
-                  escapeHTML(
-                    champion.season
-                  )
-                }
+                ${escapeHTML(champion.season)}
 
                 ${escapeHTML(champion.year)}
 
@@ -4796,9 +5385,9 @@ async function renderChampions(){
               <div class="podium-rating-type">
 
                 ${
-                  rating
+                  champion.rating
                     ?
-                    `${escapeHTML(rating.label)} rating`
+                    `${escapeHTML(champion.rating.label)} rating`
                     :
                     "Rating unavailable"
                 }
@@ -4811,17 +5400,16 @@ async function renderChampions(){
                 <strong>
 
                   ${
-                    rating
+                    champion.rating
                       ?
                       escapeHTML(
-                        rating.rating
+                        champion.rating.rating
                       )
                       :
                       "—"
                   }
 
                 </strong>
-
 
                 <span>
                   rating
@@ -4838,10 +5426,7 @@ async function renderChampions(){
         .join("");
 
 
-
-  /* ARCHIVE */
-
-  const archiveData =
+  const archive =
     await Promise.all(
 
       sorted.map(
@@ -4853,210 +5438,148 @@ async function renderChampions(){
 
   $("#archive")
     .innerHTML =
-      archiveData
+      archive
         .map(
-          champion =>{
+          champion =>`
 
-            const avatar =
-              champion.profile
-                ?.avatar
-              ||
-              FALLBACK;
+          <a
+            class="archive-row"
 
+            href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
 
-            const title =
-              champion.profile
-                ?.title
-                ?
-                `${champion.profile.title} `
-                :
-                "";
+            target="_blank"
+
+            rel="noopener">
 
 
-            return `
-            <a
-              class="archive-row"
+            <img
+              src="${
+                champion.profile?.avatar
+                ||
+                FALLBACK
+              }"
 
-              href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+              alt=""
 
-              target="_blank"
+              loading="lazy"
 
-              rel="noopener">
-
-
-              <img
-                src="${avatar}"
-                alt=""
-                loading="lazy"
-
-                onerror="this.src='${FALLBACK}'">
+              onerror="
+                this.src='${FALLBACK}'
+              ">
 
 
-              <div>
-
-                <div class="username">
-
-                  ${
-                    escapeHTML(
-                      title
-                      +
-                      champion.username
-                    )
-                  }
-
-                </div>
+            <div>
 
 
-                <div class="meta">
+              <div class="username">
 
-                  ${
-                    escapeHTML(
-                      champion.season
-                    )
-                  }
-
-                  ${
-                    escapeHTML(
-                      champion.year
-                    )
-                  }
-
-                  Champion
-
-                </div>
+                ${escapeHTML(champion.username)}
 
               </div>
 
 
-              <div class="archive-rating">
+              <div class="meta">
 
-                ${
-                  champion.rating
-                    ?
-                    escapeHTML(
-                      champion.rating.rating
-                    )
-                    :
-                    "—"
-                }
+                ${escapeHTML(champion.season)}
+
+                ${escapeHTML(champion.year)}
+
+                Champion
 
               </div>
 
 
-            </a>
-            `;
+            </div>
 
-          }
+
+            <div class="archive-rating">
+
+              ${
+                champion.rating
+                  ?
+                  escapeHTML(
+                    champion.rating.rating
+                  )
+                  :
+                  "—"
+              }
+
+            </div>
+
+
+          </a>
+
+          `
         )
         .join("");
 
 }
 
 
-
 /* =========================================================
-   START DASHBOARD
+   INITIALIZE
    ========================================================= */
 
 async function initialize(){
 
+  $("#motto")
+    .textContent =
+      DATA.club.motto;
+
+
+  renderQuickLinks();
+
+  renderAnnouncements();
+
+  renderEvents();
+
+  renderRules();
+
+  renderTournament();
+
+  renderChampions();
+
+  renderStaff();
+
+
   try{
 
-    DATA =
-      await fetchJSON(
-        DATA_URL
-      );
+    CLUB_MEMBERS =
+      await getClubMembers();
 
 
-    renderStatic();
+    renderNewestMembers();
 
-
-    /*
-       Tournament podium can begin
-       loading independently.
-    */
-
-    renderChampions();
-
-
-    try{
-
-      CLUB_MEMBERS =
-        await getClubMembers();
-
-
-      /*
-         Newest members appear first.
-         Titled scan happens separately
-         so it does not block them.
-      */
-
-      renderNewestMembers();
-
-
-      renderTitledMembers();
-
-    }
-
-    catch(error){
-
-      console.warn(
-        error
-      );
-
-
-      $("#newMembers")
-        .innerHTML =
-          `
-          <div class="empty">
-
-            Chess.com member data is
-            temporarily unavailable.
-
-          </div>
-          `;
-
-
-      $("#titledMembers")
-        .innerHTML =
-          `
-          <div class="empty">
-
-            Chess.com titled-member
-            data is temporarily
-            unavailable.
-
-          </div>
-          `;
-
-    }
+    renderTitledMembers();
 
   }
 
   catch(error){
 
-    console.error(
+    console.warn(
       error
     );
 
 
-    document.body
+    $("#newMembers")
       .innerHTML =
         `
-        <div
-          style="
-            min-height:100vh;
-            padding:24px;
-            background:#000;
-            color:#fff;
-            font-family:system-ui;
-          ">
+        <div class="empty">
 
-          Could not load
+          Member data temporarily
+          unavailable.
 
-          <b>
-            data/acfa.json
-          </b>.
+        </div>
+        `;
+
+
+    $("#titledMembers")
+      .innerHTML =
+        `
+        <div class="empty">
+
+          Titled-player data
+          temporarily unavailable.
 
         </div>
         `;
