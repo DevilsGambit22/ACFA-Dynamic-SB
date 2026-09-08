@@ -14,13 +14,11 @@
 
 <title>And Chess For All | Dynamic Sidebar</title>
 
-
 <style>
 
 /* =========================================================
    ACFA DYNAMIC SIDEBAR
    HOME • TOURNAMENTS • STAFF
-   BLACK • BLUE • GOLD • WHITE
    ========================================================= */
 
 :root{
@@ -146,16 +144,6 @@ body::-webkit-scrollbar-thumb{
   box-shadow:
     0 0 8px rgba(45,140,255,.3),
     0 0 8px rgba(255,214,107,.2);
-}
-
-html::-webkit-scrollbar-thumb:hover,
-body::-webkit-scrollbar-thumb:hover{
-  background:
-    linear-gradient(
-      180deg,
-      #9bd0ff,
-      #ffe493
-    );
 }
 
 
@@ -294,7 +282,7 @@ body::-webkit-scrollbar-thumb:hover{
 
 
 /* =========================================================
-   THREE-DASHBOARD SLIDER
+   THREE DASHBOARDS
    ========================================================= */
 
 .viewport{
@@ -631,8 +619,6 @@ body::-webkit-scrollbar-thumb:hover{
    ========================================================= */
 
 .dashboard-switcher{
-  position:relative;
-
   display:grid;
 
   grid-template-columns:
@@ -685,23 +671,6 @@ body::-webkit-scrollbar-thumb:hover{
 
   font-size:13px;
   font-weight:900;
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    color .2s ease,
-    background .2s ease,
-    box-shadow .2s ease;
-}
-
-.dashboard-btn:hover{
-  transform:
-    translateY(-1px);
-
-  color:#fff;
-
-  border-color:
-    rgba(255,214,107,.35);
 }
 
 .dashboard-btn.active{
@@ -888,8 +857,6 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .quick-link{
-  position:relative;
-
   min-height:76px;
 
   display:flex;
@@ -918,25 +885,6 @@ body::-webkit-scrollbar-thumb:hover{
     );
 
   text-decoration:none;
-
-  overflow:hidden;
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-.quick-link:hover{
-  transform:
-    translateY(-2px);
-
-  border-color:
-    rgba(255,214,107,.4);
-
-  box-shadow:
-    0 10px 22px
-    rgba(0,0,0,.28);
 }
 
 .quick-icon{
@@ -984,18 +932,6 @@ body::-webkit-scrollbar-thumb:hover{
 .announcement.pinned{
   border-color:
     rgba(255,214,107,.33);
-
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(255,214,107,.08),
-      transparent 35%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(17,48,88,.92),
-      rgba(6,22,43,.92)
-    );
 }
 
 .announcement-top{
@@ -1014,6 +950,12 @@ body::-webkit-scrollbar-thumb:hover{
 
   font-size:14px;
   font-weight:950;
+
+  white-space:normal;
+  overflow:visible;
+
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 
 .announcement-date{
@@ -1096,19 +1038,6 @@ body::-webkit-scrollbar-thumb:hover{
   color:inherit;
 
   text-decoration:none;
-
-  transition:.2s ease;
-}
-
-.event[href]:hover{
-  transform:
-    translateX(2px);
-
-  border-color:
-    rgba(255,214,107,.35);
-
-  background:
-    rgba(45,140,255,.08);
 }
 
 .event-date{
@@ -1149,9 +1078,13 @@ body::-webkit-scrollbar-thumb:hover{
   font-size:13px;
   font-weight:900;
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space:normal;
+  overflow:visible;
+
+  overflow-wrap:anywhere;
+  word-break:break-word;
+
+  line-height:1.25;
 }
 
 .event-meta{
@@ -1179,19 +1112,19 @@ body::-webkit-scrollbar-thumb:hover{
 
 .member-list{
   display:grid;
-  gap:6px;
+  gap:7px;
 }
 
 .member{
   display:flex;
 
-  align-items:center;
+  align-items:flex-start;
 
   min-width:0;
 
   gap:8px;
 
-  padding:8px;
+  padding:9px;
 
   border-radius:12px;
 
@@ -1205,16 +1138,6 @@ body::-webkit-scrollbar-thumb:hover{
   color:inherit;
 
   text-decoration:none;
-
-  transition:.2s ease;
-}
-
-.member:hover{
-  border-color:
-    rgba(255,214,107,.27);
-
-  background:
-    rgba(45,140,255,.07);
 }
 
 .avatar{
@@ -1245,13 +1168,18 @@ body::-webkit-scrollbar-thumb:hover{
   font-size:14px;
   font-weight:900;
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+
+  overflow-wrap:anywhere;
+  word-break:break-word;
+
+  line-height:1.2;
 }
 
 .meta{
-  margin-top:2px;
+  margin-top:3px;
 
   color:var(--muted);
 
@@ -1306,17 +1234,17 @@ body::-webkit-scrollbar-thumb:hover{
 
   z-index:4;
 
-  padding-right:78px;
+  padding-right:58px;
 }
 
 .new-member-mascot{
   position:absolute;
 
-  right:-4px;
-  bottom:-7px;
+  right:-3px;
+  bottom:-5px;
 
-  width:92px;
-  max-height:185px;
+  width:72px;
+  max-height:160px;
 
   z-index:3;
 
@@ -1343,8 +1271,8 @@ body::-webkit-scrollbar-thumb:hover{
   right:-2px;
   bottom:2px;
 
-  width:96px;
-  height:150px;
+  width:80px;
+  height:140px;
 
   z-index:2;
 
@@ -1526,37 +1454,7 @@ body::-webkit-scrollbar-thumb:hover{
   text-align:center;
 }
 
-.staff-hero::before{
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-  top:50%;
-
-  width:260px;
-  height:150px;
-
-  transform:
-    translate(-50%,-50%);
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(45,140,255,.18),
-      transparent 70%
-    );
-
-  filter:blur(9px);
-
-  pointer-events:none;
-}
-
 .staff-eyebrow{
-  position:relative;
-
   color:var(--blue3);
 
   font-size:11px;
@@ -1567,8 +1465,6 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .staff-title{
-  position:relative;
-
   margin:
     5px
     0
@@ -1585,8 +1481,6 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .staff-subtitle{
-  position:relative;
-
   max-width:470px;
 
   margin:
@@ -1634,40 +1528,11 @@ body::-webkit-scrollbar-thumb:hover{
   color:inherit;
 
   text-decoration:none;
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-.staff-card:hover{
-  transform:
-    translateY(-1px);
-
-  border-color:
-    rgba(255,214,107,.36);
-
-  box-shadow:
-    0 10px 22px
-    rgba(0,0,0,.24);
 }
 
 .staff-card.head-staff{
   border-color:
     rgba(255,214,107,.45);
-
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(255,214,107,.08),
-      transparent 35%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(18,52,94,.95),
-      rgba(7,23,43,.95)
-    );
 }
 
 .staff-avatar{
@@ -1695,13 +1560,18 @@ body::-webkit-scrollbar-thumb:hover{
   font-size:14px;
   font-weight:950;
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+
+  overflow-wrap:anywhere;
+  word-break:break-word;
+
+  line-height:1.2;
 }
 
 .staff-role{
-  margin-top:2px;
+  margin-top:3px;
 
   color:var(--gold3);
 
@@ -1843,12 +1713,6 @@ body::-webkit-scrollbar-thumb:hover{
     8px;
 }
 
-.tournament-copy{
-  position:relative;
-
-  z-index:4;
-}
-
 .eyebrow{
   color:var(--blue3);
 
@@ -1906,21 +1770,6 @@ body::-webkit-scrollbar-thumb:hover{
 
   font-size:11px;
   font-weight:900;
-}
-
-.status::before{
-  content:"";
-
-  width:6px;
-  height:6px;
-
-  border-radius:50%;
-
-  background:var(--blue3);
-
-  box-shadow:
-    0 0 10px
-    rgba(105,183,255,.8);
 }
 
 .facts{
@@ -2011,31 +1860,6 @@ body::-webkit-scrollbar-thumb:hover{
   place-items:center;
 }
 
-.justice-wrap::before{
-  content:"";
-
-  position:absolute;
-
-  width:230px;
-  height:230px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(45,140,255,.2),
-      rgba(18,102,200,.07) 38%,
-      transparent 70%
-    );
-
-  animation:
-    justiceGlow
-    5.5s
-    ease-in-out
-    infinite;
-}
-
 .justice{
   position:relative;
 
@@ -2057,17 +1881,6 @@ body::-webkit-scrollbar-thumb:hover{
     6s
     ease-in-out
     infinite;
-}
-
-@keyframes justiceGlow{
-
-  50%{
-    transform:
-      scale(1.08);
-
-    opacity:.68;
-  }
-
 }
 
 @keyframes justiceFloat{
@@ -2112,10 +1925,6 @@ body::-webkit-scrollbar-thumb:hover{
       #12345f,
       #07172b
     );
-
-  box-shadow:
-    0 10px 0
-    rgba(0,0,0,.18);
 }
 
 .podium{
@@ -2155,10 +1964,6 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .place-medal{
-  position:relative;
-
-  z-index:5;
-
   display:grid;
   place-items:center;
 
@@ -2172,10 +1977,6 @@ body::-webkit-scrollbar-thumb:hover{
     6px;
 
   border-radius:999px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.5);
 
   background:
     linear-gradient(
@@ -2231,12 +2032,6 @@ body::-webkit-scrollbar-thumb:hover{
   font-size:1.4rem;
 }
 
-.center
-.empty-avatar{
-  color:
-    rgba(255,214,107,.68);
-}
-
 .podium-name,
 .awaiting{
   width:100%;
@@ -2248,9 +2043,14 @@ body::-webkit-scrollbar-thumb:hover{
   font-size:12px;
   font-weight:950;
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+
+  overflow-wrap:anywhere;
+  word-break:break-word;
+
+  line-height:1.2;
 }
 
 .podium-meta,
@@ -2350,7 +2150,7 @@ body::-webkit-scrollbar-thumb:hover{
 
   grid-template-columns:
     40px
-    1fr
+    minmax(0,1fr)
     auto;
 
   gap:8px;
@@ -2455,7 +2255,6 @@ body::-webkit-scrollbar-thumb:hover{
 
 /* =========================================================
    CHESS.COM SIDEBAR WIDTH
-   READABLE — NOT MINIATURE
    ========================================================= */
 
 @media(max-width:430px){
@@ -2557,38 +2356,18 @@ body::-webkit-scrollbar-thumb:hover{
     min-height:65px;
   }
 
-  .quick-icon{
-    font-size:18px;
-  }
-
   .quick-label{
     font-size:12px;
-  }
-
-  .announcement-title{
-    font-size:14px;
-  }
-
-  .announcement-date{
-    font-size:10px;
-  }
-
-  .announcement-body{
-    font-size:12px;
-  }
-
-  .event-title{
-    font-size:13px;
-  }
-
-  .event-meta{
-    font-size:11px;
   }
 
   .members-grid{
     grid-template-columns:1fr;
 
     gap:8px;
+  }
+
+  .member{
+    align-items:flex-start;
   }
 
   .username{
@@ -2609,48 +2388,12 @@ body::-webkit-scrollbar-thumb:hover{
 
   .new-members-panel
   .member-list{
-    padding-right:72px;
+    padding-right:52px;
   }
 
   .new-member-mascot{
-    width:85px;
-  }
-
-  .rule{
-    font-size:12px;
-  }
-
-  .tournament-hero{
-    grid-template-columns:1fr;
-
-    min-height:0;
-
-    text-align:center;
-  }
-
-  .actions{
-    justify-content:center;
-  }
-
-  .justice-wrap{
-    min-height:250px;
-  }
-
-  .justice{
-    max-height:260px;
-  }
-
-  .justice-wrap::before{
-    width:185px;
-    height:185px;
-  }
-
-  .staff-title{
-    font-size:26px;
-  }
-
-  .staff-subtitle{
-    font-size:12px;
+    width:66px;
+    max-height:145px;
   }
 
   .staff-card{
@@ -2683,12 +2426,31 @@ body::-webkit-scrollbar-thumb:hover{
     font-size:9px;
   }
 
+  .tournament-hero{
+    grid-template-columns:1fr;
+
+    min-height:0;
+
+    text-align:center;
+  }
+
+  .actions{
+    justify-content:center;
+  }
+
+  .justice-wrap{
+    min-height:250px;
+  }
+
+  .justice{
+    max-height:260px;
+  }
+
 }
 
 
 /* =========================================================
-   EXTRA NARROW
-   KEEP TEXT READABLE
+   VERY NARROW
    ========================================================= */
 
 @media(max-width:340px){
@@ -2755,6 +2517,7 @@ body::-webkit-scrollbar-thumb:hover{
 
   </div>
 
+
   <div class="hero-copy">
 
     <div
@@ -2782,8 +2545,6 @@ body::-webkit-scrollbar-thumb:hover{
 
 </section>
 
-
-<!-- DASHBOARD BUTTONS -->
 
 <nav
   class="dashboard-switcher"
@@ -2816,8 +2577,6 @@ body::-webkit-scrollbar-thumb:hover{
 </nav>
 
 
-<!-- QUICK LINKS -->
-
 <section class="section">
 
   <div class="section-head">
@@ -2843,8 +2602,6 @@ body::-webkit-scrollbar-thumb:hover{
 
 </section>
 
-
-<!-- ANNOUNCEMENTS -->
 
 <section class="section">
 
@@ -2876,8 +2633,6 @@ body::-webkit-scrollbar-thumb:hover{
 </section>
 
 
-<!-- EVENTS -->
-
 <section class="section">
 
   <div class="section-head">
@@ -2899,8 +2654,6 @@ body::-webkit-scrollbar-thumb:hover{
 
 </section>
 
-
-<!-- MEMBER BOARDS -->
 
 <div class="members-grid">
 
@@ -2928,9 +2681,7 @@ body::-webkit-scrollbar-thumb:hover{
     id="newMembers">
 
     <div class="skeleton"></div>
-
     <div class="skeleton"></div>
-
     <div class="skeleton"></div>
 
   </div>
@@ -2963,9 +2714,7 @@ body::-webkit-scrollbar-thumb:hover{
     id="titledMembers">
 
     <div class="skeleton"></div>
-
     <div class="skeleton"></div>
-
     <div class="skeleton"></div>
 
   </div>
@@ -2975,8 +2724,6 @@ body::-webkit-scrollbar-thumb:hover{
 
 </div>
 
-
-<!-- RULES -->
 
 <section class="section">
 
@@ -3222,13 +2969,6 @@ body::-webkit-scrollbar-thumb:hover{
 </section>
 
 
-<div class="footer-note">
-
-  Spring • Summer • Fall
-
-</div>
-
-
 </section>
 
 
@@ -3318,22 +3058,12 @@ body::-webkit-scrollbar-thumb:hover{
     id="staffBoard">
 
     <div class="skeleton"></div>
-
     <div class="skeleton"></div>
-
     <div class="skeleton"></div>
 
   </div>
 
 </section>
-
-
-<div class="footer-note">
-
-  Owner • Co-Owner • Head of Staff •
-  Super Admins • Admins • Coordinators • Mascot
-
-</div>
 
 
 </section>
@@ -3348,10 +3078,8 @@ body::-webkit-scrollbar-thumb:hover{
 </div>
 
 
-
 <!-- =========================================================
-     ACFA DATA
-     NORMAL UPDATES HAPPEN HERE
+     EASY UPDATE DATA
      ========================================================= -->
 
 <script
@@ -3361,262 +3089,133 @@ body::-webkit-scrollbar-thumb:hover{
 {
 
   "club": {
-
-    "name":
-      "And Chess For All Official",
-
-    "slug":
-      "and-chess-for-all-official",
-
-    "motto":
-      "Every Player Belongs • Every Move Matters"
-
+    "name": "And Chess For All Official",
+    "slug": "and-chess-for-all-official",
+    "motto": "Every Player Belongs • Every Move Matters"
   },
-
 
   "quickLinks": [
 
     {
-
-      "label":
-        "Club Events",
-
-      "icon":
-        "♟",
-
-      "url":
-        "https://www.chess.com/clubs/events/and-chess-for-all-official"
-
+      "label": "Club Events",
+      "icon": "♟",
+      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
     },
 
     {
-
-      "label":
-        "Forums",
-
-      "icon":
-        "✦",
-
-      "url":
-        "https://www.chess.com/clubs/forum/and-chess-for-all-official"
-
+      "label": "Forums",
+      "icon": "✦",
+      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
     },
 
     {
-
-      "label":
-        "Announcements",
-
-      "icon":
-        "★",
-
-      "url":
-        "https://www.chess.com/club/and-chess-for-all-official/announcements"
-
+      "label": "Announcements",
+      "icon": "★",
+      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
     },
 
     {
-
-      "label":
-        "Notes",
-
-      "icon":
-        "✎",
-
-      "url":
-        "https://www.chess.com/club/notes/and-chess-for-all-official"
-
+      "label": "Notes",
+      "icon": "✎",
+      "url": "https://www.chess.com/club/notes/and-chess-for-all-official"
     }
 
   ],
-
 
   "announcements": [
 
     {
-
-      "title":
-        "ACFA Fall Championship",
-
-      "date":
-        "September 2026",
-
-      "body":
-        "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
-
-      "url":
-        "",
-
-      "pinned":
-        true
-
+      "title": "ACFA Fall Championship",
+      "date": "September 2026",
+      "body": "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
+      "url": "",
+      "pinned": true
     },
 
     {
-
-      "title":
-        "Welcome to the ACFA Dashboard",
-
-      "date":
-        "September 2026",
-
-      "body":
-        "Important club news, tournament updates, seasonal announcements, and community information will appear here.",
-
-      "url":
-        "",
-
-      "pinned":
-        false
-
+      "title": "Welcome to the ACFA Dashboard",
+      "date": "September 2026",
+      "body": "Important club news, tournament updates, seasonal announcements, and community information will appear here.",
+      "url": "",
+      "pinned": false
     }
 
   ],
-
 
   "events": [
 
     {
-
-      "title":
-        "ACFA Fall Championship",
-
-      "date":
-        "2026-10-05",
-
-      "status":
-        "Coming Soon",
-
-      "url":
-        ""
-
+      "title": "ACFA Fall Championship",
+      "date": "2026-10-05",
+      "status": "Coming Soon",
+      "url": ""
     }
 
   ],
-
 
   "staff": [
 
     {
-
-      "username":
-        "DevilsGambit22",
-
-      "role":
-        "Owner"
-
+      "username": "DevilsGambit22",
+      "role": "Owner"
     },
 
     {
-
-      "username":
-        "SaintsGambit98",
-
-      "role":
-        "Co-Owner"
-
+      "username": "SaintsGambit98",
+      "role": "Co-Owner"
     },
 
     {
-
-      "username":
-        "Bgeerr",
-
-      "role":
-        "Head of Staff"
-
+      "username": "Bgeerr",
+      "role": "Head of Staff"
     },
 
     {
-
-      "username":
-        "OfficialLadyJustice",
-
-      "role":
-        "Mascot",
-
-      "secondaryRole":
-        "Super Admin"
-
+      "username": "OfficialLadyJustice",
+      "role": "Mascot",
+      "secondaryRole": "Super Admin"
     },
 
     {
-
-      "username":
-        "Stefan-Mazarine",
-
-      "role":
-        "Super Admin"
-
+      "username": "Stefan-Mazarine",
+      "role": "Super Admin"
     },
 
     {
-
-      "username":
-        "Cookie00190",
-
-      "role":
-        "Admin"
-
+      "username": "Cookie00190",
+      "role": "Admin"
     },
 
     {
-
-      "username":
-        "NtsakoCloy",
-
-      "role":
-        "Admin"
-
+      "username": "NtsakoCloy",
+      "role": "Admin"
     },
 
     {
-
-      "username":
-        "roheemo_h",
-
-      "role":
-        "Admin"
-
+      "username": "roheemo_h",
+      "role": "Admin"
     },
 
     {
-
-      "username":
-        "Xtreme-Ninja-100",
-
-      "role":
-        "Admin"
-
+      "username": "Xtreme-Ninja-100",
+      "role": "Admin"
     },
 
     {
-
-      "username":
-        "Kissenschlach",
-
-      "role":
-        "Coordinator"
-
+      "username": "Kissenschlach",
+      "role": "Coordinator"
     }
 
   ],
-
 
   "verifiedTitledMembers": [
 
     {
-
-      "username":
-        "ChapelinmyVSL",
-
-      "title":
-        "IM"
-
+      "username": "ChapelinmyVSL",
+      "title": "IM"
     }
 
   ],
-
 
   "rules": [
 
@@ -3638,45 +3237,33 @@ body::-webkit-scrollbar-thumb:hover{
 
   ],
 
-
   "tournament": {
 
-    "activeSeason":
-      "Fall",
+    "activeSeason": "Fall",
 
-    "year":
-      2026,
+    "year": 2026,
 
-    "status":
-      "Planning",
+    "status": "Planning",
 
-    "registrationDeadline":
-      "",
+    "registrationDeadline": "",
 
-    "startDate":
-      "",
+    "startDate": "",
 
-    "endDate":
-      "",
+    "endDate": "",
 
-    "format":
-      "Seasonal ACFA Championship",
+    "format": "Seasonal ACFA Championship",
 
-    "eventUrl":
-      "",
+    "eventUrl": "",
 
-    "detailsUrl":
-      "",
+    "detailsUrl": "",
 
-    "champions":
-      []
+    "champions": []
 
   }
 
 }
 
 </script>
-
 
 
 <script>
@@ -3704,36 +3291,26 @@ const DATA =
 
 
 const TITLE_CODES = [
-
   "GM",
   "WGM",
-
   "IM",
   "WIM",
-
   "FM",
   "WFM",
-
   "CM",
   "WCM"
-
 ];
 
 
 const TITLE_RANK = {
-
   GM:8,
   WGM:7,
-
   IM:6,
   WIM:5,
-
   FM:4,
   WFM:3,
-
   CM:2,
   WCM:1
-
 };
 
 
@@ -3750,7 +3327,7 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v20";
+  "acfa-dashboard-v21";
 
 
 let CLUB_MEMBERS =
@@ -3786,17 +3363,11 @@ function escapeHTML(
       /[&<>"']/g,
       character =>
         ({
-
           "&":"&amp;",
-
           "<":"&lt;",
-
           ">":"&gt;",
-
           "\"":"&quot;",
-
           "'":"&#039;"
-
         })[character]
     );
 
@@ -3813,7 +3384,6 @@ function safe(
       value ?? ""
     )
     .trim();
-
 
   return text || fallback;
 
@@ -3833,19 +3403,14 @@ function cacheGet(
           `${CACHE_VERSION}:${key}`
         );
 
-
     if(!raw){
-
       return null;
-
     }
-
 
     const cached =
       JSON.parse(
         raw
       );
-
 
     if(
       Date.now()
@@ -3854,11 +3419,8 @@ function cacheGet(
       >
       lifetime
     ){
-
       return null;
-
     }
-
 
     return cached.value;
 
@@ -3886,13 +3448,8 @@ function cacheSet(
         `${CACHE_VERSION}:${key}`,
 
         JSON.stringify({
-
-          time:
-            Date.now(),
-
-          value:
-            value
-
+          time:Date.now(),
+          value:value
         })
 
       );
@@ -3911,15 +3468,11 @@ async function fetchJSON(
 
   const response =
     await fetch(
-
       url,
-
       {
         cache:"no-store"
       }
-
     );
-
 
   if(!response.ok){
 
@@ -3929,14 +3482,13 @@ async function fetchJSON(
 
   }
 
-
   return response.json();
 
 }
 
 
 /* =========================================================
-   FORCE-FRESH PROFILE
+   FORCE FRESH PROFILE
    ========================================================= */
 
 async function fetchFreshProfile(
@@ -3954,7 +3506,6 @@ async function fetchFreshProfile(
 
     );
 
-
   if(!response.ok){
 
     throw new Error(
@@ -3962,7 +3513,6 @@ async function fetchFreshProfile(
     );
 
   }
-
 
   return response.json();
 
@@ -3986,10 +3536,9 @@ function buildParticles(){
   ){
 
     const spark =
-      document
-        .createElement(
-          "i"
-        );
+      document.createElement(
+        "i"
+      );
 
 
     const classes =
@@ -3999,22 +3548,18 @@ function buildParticles(){
     if(
       i % 4 === 0
     ){
-
       classes.push(
         "blue"
       );
-
     }
 
 
     if(
       i % 10 === 0
     ){
-
       classes.push(
         "large"
       );
-
     }
 
 
@@ -4022,50 +3567,33 @@ function buildParticles(){
       classes.join(" ");
 
 
-    spark.style
-      .setProperty(
-
-        "--x",
-
-        `${Math.random()*100}%`
-
-      );
+    spark.style.setProperty(
+      "--x",
+      `${Math.random()*100}%`
+    );
 
 
-    spark.style
-      .setProperty(
-
-        "--drift",
-
-        `${(Math.random()-.5)*150}px`
-
-      );
+    spark.style.setProperty(
+      "--drift",
+      `${(Math.random()-.5)*150}px`
+    );
 
 
-    spark.style
-      .setProperty(
-
-        "--dur",
-
-        `${7+Math.random()*11}s`
-
-      );
+    spark.style.setProperty(
+      "--dur",
+      `${7+Math.random()*11}s`
+    );
 
 
-    spark.style
-      .setProperty(
-
-        "--delay",
-
-        `${-Math.random()*22}s`
-
-      );
+    spark.style.setProperty(
+      "--delay",
+      `${-Math.random()*22}s`
+    );
 
 
-    root
-      .appendChild(
-        spark
-      );
+    root.appendChild(
+      spark
+    );
 
   }
 
@@ -4098,10 +3626,8 @@ function updateClock(){
     &&
     hour < 12
   ){
-
     greeting =
       "Good Morning";
-
   }
 
   else if(
@@ -4109,10 +3635,8 @@ function updateClock(){
     &&
     hour < 17
   ){
-
     greeting =
       "Good Afternoon";
-
   }
 
   else if(
@@ -4120,10 +3644,8 @@ function updateClock(){
     &&
     hour < 21
   ){
-
     greeting =
       "Good Evening";
-
   }
 
 
@@ -4135,38 +3657,24 @@ function updateClock(){
   $("#clock")
     .textContent =
       now.toLocaleTimeString(
-
         [],
-
         {
-
           hour:"numeric",
-
           minute:"2-digit",
-
           second:"2-digit"
-
         }
-
       );
 
 
   $("#dateLine")
     .textContent =
       now.toLocaleDateString(
-
         undefined,
-
         {
-
           weekday:"long",
-
           month:"long",
-
           day:"numeric"
-
         }
-
       );
 
 }
@@ -4182,7 +3690,7 @@ setInterval(
 
 
 /* =========================================================
-   DASHBOARD NAVIGATION
+   DASHBOARD NAV
    ========================================================= */
 
 function setDashboard(
@@ -4193,11 +3701,10 @@ function setDashboard(
     $("#track");
 
 
-  track.classList
-    .remove(
-      "view-tournaments",
-      "view-staff"
-    );
+  track.classList.remove(
+    "view-tournaments",
+    "view-staff"
+  );
 
 
   if(
@@ -4205,10 +3712,9 @@ function setDashboard(
     "tournaments"
   ){
 
-    track.classList
-      .add(
-        "view-tournaments"
-      );
+    track.classList.add(
+      "view-tournaments"
+    );
 
   }
 
@@ -4218,10 +3724,9 @@ function setDashboard(
     "staff"
   ){
 
-    track.classList
-      .add(
-        "view-staff"
-      );
+    track.classList.add(
+      "view-staff"
+    );
 
   }
 
@@ -4230,16 +3735,12 @@ function setDashboard(
     .forEach(
       button =>{
 
-        button.classList
-          .toggle(
-
-            "active",
-
-            button.dataset.dashboard
-            ===
-            dashboard
-
-          );
+        button.classList.toggle(
+          "active",
+          button.dataset.dashboard
+          ===
+          dashboard
+        );
 
       }
     );
@@ -4257,17 +3758,13 @@ $$(".dashboard-btn")
   .forEach(
     button =>{
 
-      button
-        .addEventListener(
-
-          "click",
-
-          () =>
-            setDashboard(
-              button.dataset.dashboard
-            )
-
-        );
+      button.addEventListener(
+        "click",
+        () =>
+          setDashboard(
+            button.dataset.dashboard
+          )
+      );
 
     }
   );
@@ -4282,19 +3779,14 @@ function niceDate(
 ){
 
   if(!value){
-
     return "TBA";
-
   }
 
 
   const date =
     new Date(
-
       value
-
       +
-
       (
         value.length === 10
           ?
@@ -4302,7 +3794,6 @@ function niceDate(
           :
           ""
       )
-
     );
 
 
@@ -4311,28 +3802,18 @@ function niceDate(
       date.getTime()
     )
   ){
-
     return value;
-
   }
 
 
-  return date
-    .toLocaleDateString(
-
-      undefined,
-
-      {
-
-        month:"short",
-
-        day:"numeric",
-
-        year:"numeric"
-
-      }
-
-    );
+  return date.toLocaleDateString(
+    undefined,
+    {
+      month:"short",
+      day:"numeric",
+      year:"numeric"
+    }
+  );
 
 }
 
@@ -4362,13 +3843,10 @@ function monthDay(
 
     date
       .toLocaleDateString(
-
         undefined,
-
         {
           month:"short"
         }
-
       )
       .toUpperCase(),
 
@@ -4407,20 +3885,17 @@ function renderQuickLinks(){
 
             rel="noopener">
 
-
             <div class="quick-icon">
 
               ${escapeHTML(item.icon || "•")}
 
             </div>
 
-
             <div class="quick-label">
 
               ${escapeHTML(item.label)}
 
             </div>
-
 
           </a>
 
@@ -4444,27 +3919,19 @@ function renderAnnouncements(){
     ];
 
 
-  announcements
-    .sort(
-      (
-        a,
-        b
-      ) =>
-
-        Number(
-          Boolean(
-            b.pinned
-          )
-        )
-
-        -
-
-        Number(
-          Boolean(
-            a.pinned
-          )
-        )
-    );
+  announcements.sort(
+    (
+      a,
+      b
+    ) =>
+      Number(
+        Boolean(b.pinned)
+      )
+      -
+      Number(
+        Boolean(a.pinned)
+      )
+  );
 
 
   if(
@@ -4473,15 +3940,11 @@ function renderAnnouncements(){
 
     $("#announcementBoard")
       .innerHTML =
-
         `
         <div class="empty">
-
           No announcements posted.
-
         </div>
         `;
-
 
     return;
 
@@ -4507,9 +3970,7 @@ function renderAnnouncements(){
               }
             ">
 
-
             <div class="announcement-top">
-
 
               <div class="announcement-title">
 
@@ -4525,23 +3986,19 @@ function renderAnnouncements(){
 
               </div>
 
-
               <div class="announcement-date">
 
                 ${escapeHTML(announcement.date || "")}
 
               </div>
 
-
             </div>
-
 
             <div class="announcement-body">
 
               ${escapeHTML(announcement.body || "")}
 
             </div>
-
 
             ${
               announcement.url
@@ -4564,12 +4021,10 @@ function renderAnnouncements(){
                 ""
             }
 
-
           </article>
 
           `
         )
-
         .join("");
 
 }
@@ -4591,15 +4046,11 @@ function renderEvents(){
 
     $("#events")
       .innerHTML =
-
         `
         <div class="empty">
-
           No current club events.
-
         </div>
         `;
-
 
     return;
 
@@ -4609,86 +4060,77 @@ function renderEvents(){
   $("#events")
     .innerHTML =
 
-      events
-        .map(
-          event =>{
+      events.map(
+        event =>{
+
+          const [
+            month,
+            day
+          ] =
+            monthDay(
+              event.date
+            );
 
 
-            const [
-              month,
-              day
-            ] =
-              monthDay(
-                event.date
-              );
+          const tag =
+            event.url
+              ?
+              "a"
+              :
+              "div";
 
 
-            const tag =
-              event.url
-                ?
-                "a"
-                :
-                "div";
+          const href =
+            event.url
+              ?
+              `
+              href="${event.url}"
+              target="_blank"
+              rel="noopener"
+              `
+              :
+              "";
 
 
-            const href =
-              event.url
-                ?
-                `
-                href="${event.url}"
-                target="_blank"
-                rel="noopener"
-                `
-                :
-                "";
+          return `
 
+          <${tag}
+            class="event"
+            ${href}>
 
-            return `
+            <div class="event-date">
 
-            <${tag}
-              class="event"
-              ${href}>
+              ${escapeHTML(month)}
 
+              <br>
 
-              <div class="event-date">
+              ${escapeHTML(day)}
 
-                ${escapeHTML(month)}
+            </div>
 
-                <br>
+            <div class="event-main">
 
-                ${escapeHTML(day)}
+              <div class="event-title">
 
-              </div>
-
-
-              <div class="event-main">
-
-
-                <div class="event-title">
-
-                  ${escapeHTML(event.title)}
-
-                </div>
-
-
-                <div class="event-meta">
-
-                  ${escapeHTML(event.status || "")}
-
-                </div>
-
+                ${escapeHTML(event.title)}
 
               </div>
 
+              <div class="event-meta">
 
-            </${tag}>
+                ${escapeHTML(event.status || "")}
 
-            `;
+              </div>
 
-          }
-        )
+            </div>
 
-        .join("");
+          </${tag}>
+
+          `;
+
+        }
+      )
+      .join("");
 
 }
 
@@ -4704,50 +4146,38 @@ function renderRules(){
 
 
   const html =
+    rules.map(
+      (
+        rule,
+        index
+      ) =>`
 
-    rules
-      .map(
-        (
-          rule,
-          index
-        ) =>`
+      <div class="rule">
 
-        <div class="rule">
+        <i>
+          ${index+1}
+        </i>
 
+        <span>
+          ${escapeHTML(rule)}
+        </span>
 
-          <i>
+      </div>
 
-            ${index+1}
-
-          </i>
-
-
-          <span>
-
-            ${escapeHTML(rule)}
-
-          </span>
-
-
-        </div>
-
-        `
-      )
-
-      .join("");
+      `
+    )
+    .join("");
 
 
   $("#rulesTrack")
     .innerHTML =
-      html
-      +
-      html;
+      html + html;
 
 }
 
 
 /* =========================================================
-   TOURNAMENT STATIC DATA
+   TOURNAMENT STATIC
    ========================================================= */
 
 function renderTournament(){
@@ -4758,7 +4188,6 @@ function renderTournament(){
 
   $("#seasonTitle")
     .textContent =
-
       `
       ${safe(tournament.activeSeason,"Season")}
       ${safe(tournament.year,"")}
@@ -4768,7 +4197,6 @@ function renderTournament(){
 
   $("#seasonStatus")
     .textContent =
-
       safe(
         tournament.status,
         "Planning"
@@ -4777,7 +4205,6 @@ function renderTournament(){
 
   $("#registrationDeadline")
     .textContent =
-
       niceDate(
         tournament.registrationDeadline
       );
@@ -4785,7 +4212,6 @@ function renderTournament(){
 
   $("#startDate")
     .textContent =
-
       niceDate(
         tournament.startDate
       );
@@ -4793,7 +4219,6 @@ function renderTournament(){
 
   $("#endDate")
     .textContent =
-
       niceDate(
         tournament.endDate
       );
@@ -4801,7 +4226,6 @@ function renderTournament(){
 
   $("#format")
     .textContent =
-
       safe(
         tournament.format,
         "Seasonal Championship"
@@ -4814,7 +4238,6 @@ function renderTournament(){
 
     $("#eventBtn").href =
       tournament.eventUrl;
-
 
     $("#eventBtn")
       .style.display =
@@ -4830,7 +4253,6 @@ function renderTournament(){
     $("#detailsBtn").href =
       tournament.detailsUrl;
 
-
     $("#detailsBtn")
       .style.display =
         "inline-flex";
@@ -4841,7 +4263,7 @@ function renderTournament(){
 
 
 /* =========================================================
-   CLUB MEMBERS
+   API
    ========================================================= */
 
 async function getClubMembers(){
@@ -4858,27 +4280,19 @@ async function getClubMembers(){
 
 
   if(cached){
-
     return cached;
-
   }
 
 
   const response =
-
     await fetchJSON(
-
       `${API}/club/${DATA.club.slug}/members`
-
     );
 
 
   const combined = [
-
     ...(response.weekly || []),
-
     ...(response.all_time || [])
-
   ];
 
 
@@ -4897,7 +4311,6 @@ async function getClubMembers(){
   ){
 
     const normalized =
-
       member.username
         .trim()
         .toLowerCase();
@@ -4908,9 +4321,7 @@ async function getClubMembers(){
         normalized
       )
     ){
-
       continue;
-
     }
 
 
@@ -4937,16 +4348,11 @@ async function getClubMembers(){
 }
 
 
-/* =========================================================
-   PLAYER PROFILE
-   ========================================================= */
-
 async function getProfile(
   username
 ){
 
   const normalized =
-
     username
       .trim()
       .toLowerCase();
@@ -4964,18 +4370,13 @@ async function getProfile(
 
 
   if(cached){
-
     return cached;
-
   }
 
 
   const profile =
-
     await fetchJSON(
-
       `${API}/player/${encodeURIComponent(username)}`
-
     );
 
 
@@ -4990,16 +4391,11 @@ async function getProfile(
 }
 
 
-/* =========================================================
-   PLAYER STATS
-   ========================================================= */
-
 async function getStats(
   username
 ){
 
   const normalized =
-
     username
       .trim()
       .toLowerCase();
@@ -5017,18 +4413,13 @@ async function getStats(
 
 
   if(cached){
-
     return cached;
-
   }
 
 
   const stats =
-
     await fetchJSON(
-
       `${API}/player/${encodeURIComponent(username)}/stats`
-
     );
 
 
@@ -5087,35 +4478,25 @@ function highestRating(
   ){
 
     const rating =
-
       stats?.[
         category.key
       ]?.last?.rating;
 
 
     if(!rating){
-
       continue;
-
     }
 
 
     if(
       !best
       ||
-      rating
-      >
-      best.rating
+      rating > best.rating
     ){
 
       best = {
-
-        rating:
-          rating,
-
-        label:
-          category.label
-
+        rating:rating,
+        label:category.label
       };
 
     }
@@ -5129,7 +4510,7 @@ function highestRating(
 
 
 /* =========================================================
-   LIMITED CONCURRENCY
+   CONCURRENCY
    ========================================================= */
 
 async function mapLimited(
@@ -5157,20 +4538,15 @@ async function mapLimited(
 
 
       if(
-        current
-        >=
-        items.length
+        current >= items.length
       ){
-
         return;
-
       }
 
 
       try{
 
         results[current] =
-
           await worker(
             items[current],
             current
@@ -5193,7 +4569,6 @@ async function mapLimited(
   await Promise.all(
 
     Array.from(
-
       {
         length:
           Math.min(
@@ -5201,10 +4576,8 @@ async function mapLimited(
             items.length
           )
       },
-
       () =>
         runner()
-
     )
 
   );
@@ -5222,23 +4595,18 @@ async function mapLimited(
 async function renderNewestMembers(){
 
   const newest =
-
     [
       ...CLUB_MEMBERS
     ]
-
     .sort(
       (
         a,
         b
       ) =>
-
         (b.joined || 0)
         -
         (a.joined || 0)
-
     )
-
     .slice(
       0,
       5
@@ -5246,138 +4614,122 @@ async function renderNewestMembers(){
 
 
   const cards =
-
     await Promise.all(
 
-      newest
-        .map(
-          async member =>{
+      newest.map(
+        async member =>{
+
+          let profile =
+            null;
+
+          let stats =
+            null;
 
 
-            let profile =
-              null;
+          try{
+
+            [
+              profile,
+              stats
+            ] =
+              await Promise.all([
+
+                getProfile(
+                  member.username
+                ),
+
+                getStats(
+                  member.username
+                )
+
+              ]);
+
+          }
+
+          catch{
+          }
 
 
-            let stats =
-              null;
+          const rating =
+            highestRating(
+              stats
+            );
 
 
-            try{
+          return `
 
-              [
-                profile,
-                stats
-              ] =
+          <a
+            class="member"
 
-                await Promise.all([
+            href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
 
-                  getProfile(
-                    member.username
-                  ),
+            target="_blank"
 
-                  getStats(
-                    member.username
-                  )
+            rel="noopener">
 
-                ]);
+            <img
+              class="avatar"
 
-            }
+              src="${
+                profile?.avatar
+                ||
+                FALLBACK
+              }"
 
-            catch{
-            }
+              alt=""
 
+              loading="lazy"
 
-            const rating =
+              onerror="
+                this.src='${FALLBACK}'
+              ">
 
-              highestRating(
-                stats
-              );
+            <div class="member-copy">
 
+              <div class="username">
 
-            return `
-
-            <a
-              class="member"
-
-              href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
-
-              target="_blank"
-
-              rel="noopener">
-
-
-              <img
-                class="avatar"
-
-                src="${
-                  profile?.avatar
-                  ||
-                  FALLBACK
-                }"
-
-                alt=""
-
-                loading="lazy"
-
-                onerror="
-                  this.src='${FALLBACK}'
-                ">
-
-
-              <div class="member-copy">
-
-
-                <div class="username">
-
-                  ${escapeHTML(member.username)}
-
-                </div>
-
-
-                <div class="meta">
-
-                  New member
-
-                </div>
-
-
-                <div class="member-rating">
-
-                  ${
-                    rating
-                      ?
-                      `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
-                      :
-                      "Rating unavailable"
-                  }
-
-                </div>
-
+                ${escapeHTML(member.username)}
 
               </div>
 
+              <div class="meta">
 
-              ${
-                profile?.title
-                  ?
-                  `
-                  <span class="title">
+                New member
 
-                    ${escapeHTML(profile.title)}
+              </div>
 
-                  </span>
-                  `
-                  :
-                  ""
-              }
+              <div class="member-rating">
 
+                ${
+                  rating
+                    ?
+                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
 
-            </a>
+              </div>
 
-            `;
+            </div>
 
-          }
-        )
+            ${
+              profile?.title
+                ?
+                `
+                <span class="title">
+                  ${escapeHTML(profile.title)}
+                </span>
+                `
+                :
+                ""
+            }
+
+          </a>
+
+          `;
+
+        }
+      )
 
     );
 
@@ -5391,7 +4743,6 @@ async function renderNewestMembers(){
 
 /* =========================================================
    TITLED MEMBERS
-   VERIFIED + ALL CM THROUGH GM
    ========================================================= */
 
 async function renderTitledMembers(){
@@ -5399,10 +4750,6 @@ async function renderTitledMembers(){
   const found =
     new Map();
 
-
-  /*
-     GUARANTEED VERIFIED TITLED USERS
-  */
 
   for(
     const player
@@ -5421,13 +4768,10 @@ async function renderTitledMembers(){
         .toLowerCase(),
 
       {
-
         username:
           player.username,
-
         title:
           player.title
-
       }
 
     );
@@ -5439,78 +4783,56 @@ async function renderTitledMembers(){
     new Map();
 
 
-  CLUB_MEMBERS
-    .forEach(
-      member =>{
+  CLUB_MEMBERS.forEach(
+    member =>{
 
-        clubMap.set(
+      clubMap.set(
 
-          member.username
-            .trim()
-            .toLowerCase(),
+        member.username
+          .trim()
+          .toLowerCase(),
 
-          member.username
+        member.username
 
-        );
+      );
 
-      }
-    );
+    }
+  );
 
-
-  /*
-     OFFICIAL TITLE LIST PASS
-  */
 
   const titleGroups =
-
     await Promise.all(
 
-      TITLE_CODES
-        .map(
-          async title =>{
+      TITLE_CODES.map(
+        async title =>{
+
+          try{
+
+            const result =
+              await fetchJSON(
+                `${API}/titled/${title}`
+              );
 
 
-            try{
-
-              const result =
-
-                await fetchJSON(
-
-                  `${API}/titled/${title}`
-
-                );
-
-
-              return {
-
-                title:
-                  title,
-
-                players:
-                  result.players
-                  ||
-                  []
-
-              };
-
-            }
-
-            catch{
-
-              return {
-
-                title:
-                  title,
-
-                players:
-                  []
-
-              };
-
-            }
+            return {
+              title:title,
+              players:
+                result.players || []
+            };
 
           }
-        )
+
+          catch{
+
+            return {
+              title:title,
+              players:[]
+            };
+
+          }
+
+        }
+      )
 
     );
 
@@ -5528,7 +4850,6 @@ async function renderTitledMembers(){
     ){
 
       const normalized =
-
         username
           .trim()
           .toLowerCase();
@@ -5541,21 +4862,15 @@ async function renderTitledMembers(){
       ){
 
         found.set(
-
           normalized,
-
           {
-
             username:
               clubMap.get(
                 normalized
               ),
-
             title:
               group.title
-
           }
-
         );
 
       }
@@ -5565,12 +4880,7 @@ async function renderTitledMembers(){
   }
 
 
-  /*
-     DIRECT PROFILE PASS
-  */
-
   const profileScan =
-
     await mapLimited(
 
       CLUB_MEMBERS,
@@ -5579,9 +4889,7 @@ async function renderTitledMembers(){
 
       async member =>{
 
-
         const profile =
-
           await getProfile(
             member.username
           );
@@ -5590,23 +4898,17 @@ async function renderTitledMembers(){
         if(
           !profile?.title
         ){
-
           return null;
-
         }
 
 
         return {
-
           username:
             member.username,
-
           title:
             profile.title,
-
           profile:
             profile
-
         };
 
       }
@@ -5617,8 +4919,7 @@ async function renderTitledMembers(){
   for(
     const player
     of
-    profileScan
-      .filter(Boolean)
+    profileScan.filter(Boolean)
   ){
 
     found.set(
@@ -5635,87 +4936,76 @@ async function renderTitledMembers(){
 
 
   let players =
-
     [
       ...found.values()
     ];
 
 
   players =
-
     await Promise.all(
 
-      players
-        .map(
-          async player =>{
+      players.map(
+        async player =>{
+
+          let profile =
+            player.profile || null;
+
+          let stats =
+            null;
 
 
-            let profile =
-              player.profile
-              ||
-              null;
+          try{
 
+            if(!profile){
 
-            let stats =
-              null;
-
-
-            try{
-
-              if(!profile){
-
-                profile =
-
-                  await getProfile(
-                    player.username
-                  );
-
-              }
-
-            }
-
-            catch{
-            }
-
-
-            try{
-
-              stats =
-
-                await getStats(
+              profile =
+                await getProfile(
                   player.username
                 );
 
             }
 
-            catch{
-            }
+          }
+
+          catch{
+          }
 
 
-            return {
+          try{
 
-              username:
-                profile?.username
-                ||
-                player.username,
-
-              title:
-                profile?.title
-                ||
-                player.title,
-
-              profile:
-                profile,
-
-              rating:
-                highestRating(
-                  stats
-                )
-
-            };
+            stats =
+              await getStats(
+                player.username
+              );
 
           }
-        )
+
+          catch{
+          }
+
+
+          return {
+            username:
+              profile?.username
+              ||
+              player.username,
+
+            title:
+              profile?.title
+              ||
+              player.title,
+
+            profile:
+              profile,
+
+            rating:
+              highestRating(
+                stats
+              )
+          };
+
+        }
+      )
 
     );
 
@@ -5744,56 +5034,42 @@ async function renderTitledMembers(){
 
 
   players =
-
     [
       ...finalMap.values()
     ];
 
 
-  players
-    .sort(
-      (
-        a,
-        b
-      ) =>{
+  players.sort(
+    (
+      a,
+      b
+    ) =>{
+
+      const aRank =
+        TITLE_RANK[
+          a.title
+        ] || 0;
+
+      const bRank =
+        TITLE_RANK[
+          b.title
+        ] || 0;
 
 
-        const rankA =
-
-          TITLE_RANK[
-            a.title
-          ]
-          ||
-          0;
-
-
-        const rankB =
-
-          TITLE_RANK[
-            b.title
-          ]
-          ||
-          0;
-
-
-        if(
-          rankB
-          !==
-          rankA
-        ){
-
-          return rankB - rankA;
-
-        }
-
-
-        return a.username
-          .localeCompare(
-            b.username
-          );
-
+      if(
+        bRank !== aRank
+      ){
+        return bRank - aRank;
       }
-    );
+
+
+      return a.username
+        .localeCompare(
+          b.username
+        );
+
+    }
+  );
 
 
   if(
@@ -5802,15 +5078,11 @@ async function renderTitledMembers(){
 
     $("#titledMembers")
       .innerHTML =
-
         `
         <div class="empty">
-
           No titled members detected.
-
         </div>
         `;
-
 
     return;
 
@@ -5820,84 +5092,74 @@ async function renderTitledMembers(){
   $("#titledMembers")
     .innerHTML =
 
-      players
-        .map(
-          player =>`
+      players.map(
+        player =>`
 
-          <a
-            class="member"
+        <a
+          class="member"
 
-            href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
+          href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
 
-            target="_blank"
+          target="_blank"
 
-            rel="noopener">
+          rel="noopener">
 
+          <img
+            class="avatar"
 
-            <img
-              class="avatar"
+            src="${
+              player.profile?.avatar
+              ||
+              FALLBACK
+            }"
 
-              src="${
-                player.profile?.avatar
-                ||
-                FALLBACK
-              }"
+            alt=""
 
-              alt=""
+            loading="lazy"
 
-              loading="lazy"
+            onerror="
+              this.src='${FALLBACK}'
+            ">
 
-              onerror="
-                this.src='${FALLBACK}'
-              ">
+          <div class="member-copy">
 
+            <div class="username">
 
-            <div class="member-copy">
-
-
-              <div class="username">
-
-                ${escapeHTML(player.username)}
-
-              </div>
-
-
-              <div class="meta">
-
-                Officially titled member
-
-              </div>
-
-
-              <div class="member-rating">
-
-                ${
-                  player.rating
-                    ?
-                    `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
-                    :
-                    "Rating unavailable"
-                }
-
-              </div>
-
+              ${escapeHTML(player.username)}
 
             </div>
 
+            <div class="meta">
 
-            <span class="title">
+              Officially titled member
 
-              ${escapeHTML(player.title)}
+            </div>
 
-            </span>
+            <div class="member-rating">
 
+              ${
+                player.rating
+                  ?
+                  `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+                  :
+                  "Rating unavailable"
+              }
 
-          </a>
+            </div>
 
-          `
-        )
+          </div>
 
-        .join("");
+          <span class="title">
+
+            ${escapeHTML(player.title)}
+
+          </span>
+
+        </a>
+
+        `
+      )
+      .join("");
 
 }
 
@@ -5911,18 +5173,14 @@ function roleClass(
 ){
 
   return (
-
     "role-"
-
     +
-
     role
       .toLowerCase()
       .replace(
         /\s+/g,
         "-"
       )
-
   );
 
 }
@@ -5933,29 +5191,19 @@ function staffPriority(
 ){
 
   const priority = {
-
     "Owner":100,
-
     "Co-Owner":95,
-
     "Head of Staff":90,
-
     "Super Admin":80,
-
     "Admin":70,
-
     "Coordinator":60,
-
     "Mascot":50
-
   };
 
 
   return priority[
     role
-  ]
-  ||
-  0;
+  ] || 0;
 
 }
 
@@ -5963,236 +5211,210 @@ function staffPriority(
 async function renderStaff(){
 
   const staff =
-
     [
       ...(DATA.staff || [])
     ]
-
     .sort(
       (
         a,
         b
       ) =>
-
         staffPriority(
           b.role
         )
-
         -
-
         staffPriority(
           a.role
         )
-
     );
 
 
   const cards =
-
     await Promise.all(
 
-      staff
-        .map(
-          async staffMember =>{
+      staff.map(
+        async staffMember =>{
+
+          let profile =
+            null;
+
+          let stats =
+            null;
 
 
-            let profile =
-              null;
+          try{
 
+            if(
+              staffMember.username
+                .toLowerCase()
+              ===
+              "devilsgambit22"
+            ){
 
-            let stats =
-              null;
-
-
-            try{
-
-              if(
-                staffMember.username
-                  .toLowerCase()
-                ===
-                "devilsgambit22"
-              ){
-
-                profile =
-
-                  await fetchFreshProfile(
-                    staffMember.username
-                  );
-
-              }
-
-              else{
-
-                profile =
-
-                  await getProfile(
-                    staffMember.username
-                  );
-
-              }
-
-            }
-
-            catch{
-            }
-
-
-            try{
-
-              stats =
-
-                await getStats(
+              profile =
+                await fetchFreshProfile(
                   staffMember.username
                 );
 
             }
 
-            catch{
+            else{
+
+              profile =
+                await getProfile(
+                  staffMember.username
+                );
+
             }
 
+          }
 
-            const rating =
+          catch{
+          }
 
-              highestRating(
-                stats
+
+          try{
+
+            stats =
+              await getStats(
+                staffMember.username
               );
 
+          }
 
-            const isHead =
-
-              staffMember.role
-              ===
-              "Head of Staff";
+          catch{
+          }
 
 
-            return `
+          const rating =
+            highestRating(
+              stats
+            );
 
-            <a
-              class="
-                staff-card
+
+          const isHead =
+            staffMember.role
+            ===
+            "Head of Staff";
+
+
+          return `
+
+          <a
+            class="
+              staff-card
+              ${
+                isHead
+                  ?
+                  "head-staff"
+                  :
+                  ""
+              }
+            "
+
+            href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
+
+            target="_blank"
+
+            rel="noopener">
+
+            <img
+              class="staff-avatar"
+
+              src="${
+                profile?.avatar
+                ||
+                FALLBACK
+              }"
+
+              alt=""
+
+              loading="lazy"
+
+              onerror="
+                this.src='${FALLBACK}'
+              ">
+
+            <div class="staff-main">
+
+              <div class="staff-name">
+
                 ${
-                  isHead
+                  profile?.title
                     ?
-                    "head-staff"
+                    `${escapeHTML(profile.title)} `
                     :
                     ""
                 }
-              "
 
-              href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
+                ${
+                  escapeHTML(
+                    profile?.username
+                    ||
+                    staffMember.username
+                  )
+                }
 
-              target="_blank"
+              </div>
 
-              rel="noopener">
+              <div class="staff-role">
 
+                ${escapeHTML(staffMember.role)}
 
-              <img
-                class="staff-avatar"
+              </div>
 
-                src="${
-                  profile?.avatar
-                  ||
-                  FALLBACK
-                }"
+              <div class="staff-rating">
 
-                alt=""
+                ${
+                  rating
+                    ?
+                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
 
-                loading="lazy"
+              </div>
 
-                onerror="
-                  this.src='${FALLBACK}'
+            </div>
+
+            <div class="staff-badges">
+
+              <span
+                class="
+                  role-badge
+                  ${roleClass(staffMember.role)}
                 ">
 
+                ${escapeHTML(staffMember.role)}
 
-              <div class="staff-main">
+              </span>
 
+              ${
+                staffMember.secondaryRole
+                  ?
+                  `
+                  <span
+                    class="
+                      role-badge
+                      ${roleClass(staffMember.secondaryRole)}
+                    ">
 
-                <div class="staff-name">
+                    ${escapeHTML(staffMember.secondaryRole)}
 
-                  ${
-                    profile?.title
-                      ?
-                      `${escapeHTML(profile.title)} `
-                      :
-                      ""
-                  }
+                  </span>
+                  `
+                  :
+                  ""
+              }
 
-                  ${
-                    escapeHTML(
-                      profile?.username
-                      ||
-                      staffMember.username
-                    )
-                  }
+            </div>
 
-                </div>
+          </a>
 
+          `;
 
-                <div class="staff-role">
-
-                  ${escapeHTML(staffMember.role)}
-
-                </div>
-
-
-                <div class="staff-rating">
-
-                  ${
-                    rating
-                      ?
-                      `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
-                      :
-                      "Rating unavailable"
-                  }
-
-                </div>
-
-
-              </div>
-
-
-              <div class="staff-badges">
-
-
-                <span
-                  class="
-                    role-badge
-                    ${roleClass(staffMember.role)}
-                  ">
-
-                  ${escapeHTML(staffMember.role)}
-
-                </span>
-
-
-                ${
-                  staffMember.secondaryRole
-                    ?
-                    `
-                    <span
-                      class="
-                        role-badge
-                        ${roleClass(staffMember.secondaryRole)}
-                      ">
-
-                      ${escapeHTML(staffMember.secondaryRole)}
-
-                    </span>
-                    `
-                    :
-                    ""
-                }
-
-
-              </div>
-
-
-            </a>
-
-            `;
-
-          }
-        )
+        }
+      )
 
     );
 
@@ -6227,54 +5449,33 @@ function emptyPodiumCard(
       }
     ">
 
-
     <div class="place-medal">
-
       ${placement}
-
     </div>
-
 
     <div class="empty-avatar">
-
       ♔
-
     </div>
-
 
     <div class="awaiting">
-
       Awaiting Champion
-
     </div>
-
 
     <div class="awaiting-sub">
-
       ACFA Seasonal Winner
-
     </div>
-
 
     <div class="podium-block">
 
-
       <strong>
-
         —
-
       </strong>
 
-
       <span>
-
         rating
-
       </span>
 
-
     </div>
-
 
   </div>
 
@@ -6287,12 +5488,9 @@ function renderEmptyPodium(){
 
   $("#podium")
     .innerHTML =
-
       `
       ${emptyPodiumCard("2",false)}
-
       ${emptyPodiumCard("1",true)}
-
       ${emptyPodiumCard("3",false)}
       `;
 
@@ -6308,15 +5506,12 @@ async function hydrateChampion(
 ){
 
   if(!champion){
-
     return null;
-
   }
 
 
   let profile =
     null;
-
 
   let stats =
     null;
@@ -6328,7 +5523,6 @@ async function hydrateChampion(
       profile,
       stats
     ] =
-
       await Promise.all([
 
         getProfile(
@@ -6348,17 +5542,12 @@ async function hydrateChampion(
 
 
   return {
-
     ...champion,
-
-    profile:
-      profile,
-
+    profile:profile,
     rating:
       highestRating(
         stats
       )
-
   };
 
 }
@@ -6367,7 +5556,6 @@ async function hydrateChampion(
 async function renderChampions(){
 
   const champions =
-
     DATA.tournament
       ?.champions
     ||
@@ -6383,7 +5571,6 @@ async function renderChampions(){
 
     $("#archive")
       .innerHTML =
-
         `
         <div class="empty">
 
@@ -6393,35 +5580,27 @@ async function renderChampions(){
         </div>
         `;
 
-
     return;
 
   }
 
 
   const seasonRank = {
-
     Spring:1,
-
     Summer:2,
-
     Fall:3
-
   };
 
 
   const sorted =
-
     [
       ...champions
     ]
-
     .sort(
       (
         a,
         b
       ) =>{
-
 
         if(
           Number(b.year)
@@ -6430,32 +5609,26 @@ async function renderChampions(){
         ){
 
           return (
-
             Number(b.year)
             -
             Number(a.year)
-
           );
 
         }
 
 
         return (
-
           (
             seasonRank[b.season]
             ||
             0
           )
-
           -
-
           (
             seasonRank[a.season]
             ||
             0
           )
-
         );
 
       }
@@ -6463,41 +5636,25 @@ async function renderChampions(){
 
 
   const podiumOrder = [
-
-    sorted[1]
-    ||
-    null,
-
-    sorted[0]
-    ||
-    null,
-
-    sorted[2]
-    ||
-    null
-
+    sorted[1] || null,
+    sorted[0] || null,
+    sorted[2] || null
   ];
 
 
   const placements = [
-
     "2",
-
     "1",
-
     "3"
-
   ];
 
 
   const hydrated =
-
     await Promise.all(
 
-      podiumOrder
-        .map(
-          hydrateChampion
-        )
+      podiumOrder.map(
+        hydrateChampion
+      )
 
     );
 
@@ -6505,173 +5662,39 @@ async function renderChampions(){
   $("#podium")
     .innerHTML =
 
-      hydrated
-        .map(
-          (
-            champion,
-            index
-          ) =>{
+      hydrated.map(
+        (
+          champion,
+          index
+        ) =>{
+
+          const center =
+            index === 1;
 
 
-            const center =
-              index === 1;
+          if(!champion){
 
-
-            if(!champion){
-
-              return emptyPodiumCard(
-
-                placements[index],
-
-                center
-
-              );
-
-            }
-
-
-            return `
-
-            <a
-              class="
-                podium-card
-                ${
-                  center
-                    ?
-                    "center"
-                    :
-                    ""
-                }
-              "
-
-              href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
-
-              target="_blank"
-
-              rel="noopener">
-
-
-              <div class="place-medal">
-
-                ${placements[index]}
-
-              </div>
-
-
-              <img
-                class="podium-avatar"
-
-                src="${
-                  champion.profile?.avatar
-                  ||
-                  FALLBACK
-                }"
-
-                alt=""
-
-                onerror="
-                  this.src='${FALLBACK}'
-                ">
-
-
-              <div class="podium-name">
-
-                ${
-                  champion.profile?.title
-                    ?
-                    `${escapeHTML(champion.profile.title)} `
-                    :
-                    ""
-                }
-
-                ${escapeHTML(champion.username)}
-
-              </div>
-
-
-              <div class="podium-meta">
-
-                ${escapeHTML(champion.season)}
-
-                ${escapeHTML(champion.year)}
-
-                Champion
-
-              </div>
-
-
-              <div class="podium-rating-type">
-
-                ${
-                  champion.rating
-                    ?
-                    `${escapeHTML(champion.rating.label)} rating`
-                    :
-                    "Rating unavailable"
-                }
-
-              </div>
-
-
-              <div class="podium-block">
-
-
-                <strong>
-
-                  ${
-                    champion.rating
-                      ?
-                      escapeHTML(
-                        champion.rating.rating
-                      )
-                      :
-                      "—"
-                  }
-
-                </strong>
-
-
-                <span>
-
-                  rating
-
-                </span>
-
-
-              </div>
-
-
-            </a>
-
-            `;
+            return emptyPodiumCard(
+              placements[index],
+              center
+            );
 
           }
-        )
-
-        .join("");
 
 
-  const archive =
-
-    await Promise.all(
-
-      sorted
-        .map(
-          hydrateChampion
-        )
-
-    );
-
-
-  $("#archive")
-    .innerHTML =
-
-      archive
-        .map(
-          champion =>`
+          return `
 
           <a
-            class="archive-row"
+            class="
+              podium-card
+              ${
+                center
+                  ?
+                  "center"
+                  :
+                  ""
+              }
+            "
 
             href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
 
@@ -6679,8 +5702,15 @@ async function renderChampions(){
 
             rel="noopener">
 
+            <div class="place-medal">
+
+              ${placements[index]}
+
+            </div>
 
             <img
+              class="podium-avatar"
+
               src="${
                 champion.profile?.avatar
                 ||
@@ -6689,58 +5719,156 @@ async function renderChampions(){
 
               alt=""
 
-              loading="lazy"
-
               onerror="
                 this.src='${FALLBACK}'
               ">
 
+            <div class="podium-name">
 
-            <div>
+              ${
+                champion.profile?.title
+                  ?
+                  `${escapeHTML(champion.profile.title)} `
+                  :
+                  ""
+              }
 
-
-              <div class="username">
-
-                ${escapeHTML(champion.username)}
-
-              </div>
-
-
-              <div class="meta">
-
-                ${escapeHTML(champion.season)}
-
-                ${escapeHTML(champion.year)}
-
-                Champion
-
-              </div>
-
+              ${escapeHTML(champion.username)}
 
             </div>
 
+            <div class="podium-meta">
 
-            <div class="archive-rating">
+              ${escapeHTML(champion.season)}
+
+              ${escapeHTML(champion.year)}
+
+              Champion
+
+            </div>
+
+            <div class="podium-rating-type">
 
               ${
                 champion.rating
                   ?
-                  escapeHTML(
-                    champion.rating.rating
-                  )
+                  `${escapeHTML(champion.rating.label)} rating`
                   :
-                  "—"
+                  "Rating unavailable"
               }
 
             </div>
 
+            <div class="podium-block">
+
+              <strong>
+
+                ${
+                  champion.rating
+                    ?
+                    escapeHTML(
+                      champion.rating.rating
+                    )
+                    :
+                    "—"
+                }
+
+              </strong>
+
+              <span>
+                rating
+              </span>
+
+            </div>
 
           </a>
 
-          `
-        )
+          `;
 
-        .join("");
+        }
+      )
+      .join("");
+
+
+  const archive =
+    await Promise.all(
+
+      sorted.map(
+        hydrateChampion
+      )
+
+    );
+
+
+  $("#archive")
+    .innerHTML =
+
+      archive.map(
+        champion =>`
+
+        <a
+          class="archive-row"
+
+          href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+
+          target="_blank"
+
+          rel="noopener">
+
+          <img
+            src="${
+              champion.profile?.avatar
+              ||
+              FALLBACK
+            }"
+
+            alt=""
+
+            loading="lazy"
+
+            onerror="
+              this.src='${FALLBACK}'
+            ">
+
+          <div>
+
+            <div class="username">
+
+              ${escapeHTML(champion.username)}
+
+            </div>
+
+            <div class="meta">
+
+              ${escapeHTML(champion.season)}
+
+              ${escapeHTML(champion.year)}
+
+              Champion
+
+            </div>
+
+          </div>
+
+          <div class="archive-rating">
+
+            ${
+              champion.rating
+                ?
+                escapeHTML(
+                  champion.rating.rating
+                )
+                :
+                "—"
+            }
+
+          </div>
+
+        </a>
+
+        `
+      )
+      .join("");
 
 }
 
@@ -6753,21 +5881,15 @@ async function initialize(){
 
   renderQuickLinks();
 
-
   renderAnnouncements();
-
 
   renderEvents();
 
-
   renderRules();
-
 
   renderTournament();
 
-
   renderChampions();
-
 
   renderStaff();
 
@@ -6775,12 +5897,10 @@ async function initialize(){
   try{
 
     CLUB_MEMBERS =
-
       await getClubMembers();
 
 
     renderNewestMembers();
-
 
     renderTitledMembers();
 
@@ -6795,7 +5915,6 @@ async function initialize(){
 
     $("#newMembers")
       .innerHTML =
-
         `
         <div class="empty">
 
@@ -6808,11 +5927,6 @@ async function initialize(){
     CLUB_MEMBERS =
       [];
 
-
-    /*
-       Verified titled players
-       still render.
-    */
 
     renderTitledMembers();
 
