@@ -45,7 +45,6 @@
 
   --line:rgba(82,159,255,.27);
   --gold-line:rgba(255,214,107,.36);
-
 }
 
 
@@ -60,18 +59,14 @@
 html{
   margin:0;
   min-height:100%;
-
   background:#000;
-
   scrollbar-width:thin;
   scrollbar-color:#ffd66b #05070c;
 }
 
 body{
   margin:0;
-
   min-height:100vh;
-
   overflow-x:hidden;
   overflow-y:auto;
 
@@ -126,7 +121,6 @@ body::-webkit-scrollbar-track{
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb{
-
   background:
     linear-gradient(
       180deg,
@@ -135,7 +129,6 @@ body::-webkit-scrollbar-thumb{
     );
 
   border-radius:999px;
-
   border:1px solid #07172b;
 }
 
@@ -147,7 +140,6 @@ body::-webkit-scrollbar-thumb{
 .shell{
   width:100%;
   max-width:760px;
-
   margin:0 auto;
 }
 
@@ -160,13 +152,11 @@ body::-webkit-scrollbar-thumb{
   isolation:isolate;
 
   background:
-
     radial-gradient(
       circle at 50% -8%,
       rgba(45,140,255,.18),
       transparent 34%
     ),
-
     linear-gradient(
       180deg,
       #020305,
@@ -181,13 +171,9 @@ body::-webkit-scrollbar-thumb{
 
 .ambient{
   position:absolute;
-
   inset:0;
-
   z-index:-1;
-
   overflow:hidden;
-
   pointer-events:none;
 }
 
@@ -201,7 +187,6 @@ body::-webkit-scrollbar-thumb{
   height:5px;
 
   border-radius:50%;
-
   opacity:0;
 
   background:var(--gold2);
@@ -221,7 +206,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .spark.blue{
-
   width:4px;
   height:4px;
 
@@ -261,7 +245,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   100%{
-
     transform:
       translate3d(
         var(--drift),
@@ -272,7 +255,6 @@ body::-webkit-scrollbar-thumb{
 
     opacity:0;
   }
-
 }
 
 
@@ -308,7 +290,6 @@ body::-webkit-scrollbar-thumb{
 .page{
   width:33.333333%;
   min-width:33.333333%;
-
   padding:12px;
 }
 
@@ -334,7 +315,6 @@ body::-webkit-scrollbar-thumb{
     20px;
 
   overflow:hidden;
-
   text-align:center;
 }
 
@@ -353,7 +333,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   background:
-
     radial-gradient(
       circle,
       rgba(45,140,255,.25),
@@ -373,14 +352,12 @@ body::-webkit-scrollbar-thumb{
 @keyframes heroPulse{
 
   50%{
-
     transform:
       translate(-50%,-50%)
       scale(1.07);
 
     opacity:.7;
   }
-
 }
 
 .orbit{
@@ -411,7 +388,6 @@ body::-webkit-scrollbar-thumb{
 
 .orbit::before,
 .orbit::after{
-
   content:"";
 
   position:absolute;
@@ -439,7 +415,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .orbit.two{
-
   width:min(63vw,300px);
 
   border-style:dashed;
@@ -454,21 +429,16 @@ body::-webkit-scrollbar-thumb{
 @keyframes orbitSpin{
 
   from{
-
     transform:
       translate(-50%,-50%)
       rotate(0deg);
-
   }
 
   to{
-
     transform:
       translate(-50%,-50%)
       rotate(360deg);
-
   }
-
 }
 
 
@@ -499,7 +469,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .logo-stage::after{
-
   content:"";
 
   position:absolute;
@@ -543,21 +512,16 @@ body::-webkit-scrollbar-thumb{
 
   0%,
   100%{
-
     transform:
       translateY(0)
       rotate(-.25deg);
-
   }
 
   50%{
-
     transform:
       translateY(-7px)
       rotate(.25deg);
-
   }
-
 }
 
 
@@ -576,7 +540,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .greeting{
-
   color:var(--gold2);
 
   font-family:
@@ -595,7 +558,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .clock{
-
   margin-top:6px;
 
   color:#fff;
@@ -610,7 +572,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .date{
-
   margin-top:3px;
 
   color:#d4deec;
@@ -624,7 +585,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .dashboard-switcher{
-
   display:grid;
 
   grid-template-columns:
@@ -646,7 +606,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:16px;
 
   background:
-
     linear-gradient(
       180deg,
       rgba(11,32,61,.93),
@@ -655,7 +614,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .dashboard-btn{
-
   border:
     1px solid
     rgba(105,183,255,.16);
@@ -678,14 +636,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 .dashboard-btn.active{
-
   color:#111;
 
   border-color:
     rgba(255,214,107,.8);
 
   background:
-
     linear-gradient(
       180deg,
       #ffe390,
@@ -714,13 +670,11 @@ body::-webkit-scrollbar-thumb{
     var(--line);
 
   background:
-
     radial-gradient(
       circle at 100% 0%,
       rgba(45,140,255,.1),
       transparent 31%
     ),
-
     linear-gradient(
       180deg,
       rgba(11,32,61,.97),
@@ -729,7 +683,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section::before{
-
   content:"";
 
   position:absolute;
@@ -741,7 +694,6 @@ body::-webkit-scrollbar-thumb{
   height:1px;
 
   background:
-
     linear-gradient(
       90deg,
       transparent,
@@ -753,7 +705,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section-head{
-
   position:relative;
 
   z-index:4;
@@ -769,7 +720,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section h2{
-
   margin:0;
 
   color:var(--gold2);
@@ -783,7 +733,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section-kicker{
-
   margin-bottom:3px;
 
   color:var(--blue3);
@@ -802,7 +751,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .live-dot{
-
   display:inline-flex;
 
   align-items:center;
@@ -815,7 +763,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .live-dot::before{
-
   content:"";
 
   width:7px;
@@ -838,21 +785,16 @@ body::-webkit-scrollbar-thumb{
 @keyframes pulseDot{
 
   70%{
-
     box-shadow:
       0 0 0 7px
       rgba(105,183,255,0);
-
   }
 
   100%{
-
     box-shadow:
       0 0 0 0
       rgba(105,183,255,0);
-
   }
-
 }
 
 
@@ -861,7 +803,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .quick-links{
-
   display:grid;
 
   grid-template-columns:
@@ -871,7 +812,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .quick-link{
-
   min-height:76px;
 
   display:flex;
@@ -893,7 +833,6 @@ body::-webkit-scrollbar-thumb{
     rgba(105,183,255,.18);
 
   background:
-
     linear-gradient(
       180deg,
       rgba(17,48,88,.92),
@@ -910,7 +849,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .quick-label{
-
   color:#fff;
 
   text-align:center;
@@ -925,14 +863,11 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .announcement-list{
-
   display:grid;
-
   gap:8px;
 }
 
 .announcement{
-
   padding:10px;
 
   border-radius:13px;
@@ -942,7 +877,6 @@ body::-webkit-scrollbar-thumb{
     rgba(105,183,255,.12);
 
   background:
-
     linear-gradient(
       180deg,
       rgba(14,42,79,.86),
@@ -951,13 +885,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement.pinned{
-
   border-color:
     rgba(255,214,107,.33);
 }
 
 .announcement-top{
-
   display:flex;
 
   justify-content:space-between;
@@ -967,7 +899,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement-title{
-
   min-width:0;
 
   color:#fff;
@@ -979,7 +910,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement-date{
-
   flex:0 0 auto;
 
   color:var(--gold3);
@@ -988,14 +918,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 .pin{
-
   color:var(--gold2);
 
   margin-right:3px;
 }
 
 .announcement-body{
-
   margin-top:5px;
 
   color:#c5d2e3;
@@ -1005,7 +933,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement-link{
-
   display:inline-flex;
 
   margin-top:7px;
@@ -1037,14 +964,11 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .events{
-
   display:grid;
-
   gap:7px;
 }
 
 .event{
-
   display:flex;
 
   align-items:center;
@@ -1068,7 +992,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .event-date{
-
   width:45px;
   min-width:45px;
 
@@ -1096,14 +1019,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 .event-main{
-
   flex:1;
 
   min-width:0;
 }
 
 .event-title{
-
   color:#fff;
 
   font-size:13px;
@@ -1115,7 +1036,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .event-meta{
-
   margin-top:2px;
 
   color:var(--muted);
@@ -1129,7 +1049,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .members-showcase{
-
   display:grid;
 
   grid-template-columns:1fr;
@@ -1140,7 +1059,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .art-board{
-
   position:relative;
 
   width:100%;
@@ -1156,14 +1074,7 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
-/*
-  IMPORTANT:
-  No forced aspect ratio here.
-  The actual PNG determines the board height.
-*/
-
 .board-art{
-
   position:relative;
 
   z-index:1;
@@ -1182,12 +1093,10 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   NEW MEMBER BOARD
-   EXACT SLOT CALIBRATION
+   NEW MEMBERS — RECALIBRATED
    ========================================================= */
 
 .new-members-overlay{
-
   position:absolute;
 
   inset:0;
@@ -1198,23 +1107,20 @@ body::-webkit-scrollbar-thumb{
 }
 
 .art-member{
-
   position:absolute;
 
-  left:20.3%;
-  right:9.1%;
+  left:23.4%;
+  right:10.2%;
 
-  height:6.7%;
+  height:5.7%;
 
   display:flex;
 
   align-items:center;
 
-  gap:8px;
+  gap:7px;
 
-  padding:
-    0
-    7px;
+  padding:0;
 
   color:#081527;
 
@@ -1228,7 +1134,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .art-member:hover{
-
   transform:
     translateX(3px)
     scale(1.008);
@@ -1241,47 +1146,34 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* SLOT 1 */
+/* Exact marble slot positions */
 
 .art-member.slot-1{
-  top:41.55%;
+  top:44.7%;
 }
-
-
-/* SLOT 2 */
 
 .art-member.slot-2{
-  top:48.85%;
+  top:51.6%;
 }
-
-
-/* SLOT 3 */
 
 .art-member.slot-3{
-  top:56.15%;
+  top:58.55%;
 }
-
-
-/* SLOT 4 */
 
 .art-member.slot-4{
-  top:63.45%;
+  top:65.5%;
 }
 
-
-/* SLOT 5 */
-
 .art-member.slot-5{
-  top:70.75%;
+  top:72.45%;
 }
 
 
 .art-member-avatar{
+  width:31px;
+  height:31px;
 
-  width:39px;
-  height:39px;
-
-  flex:0 0 39px;
+  flex:0 0 31px;
 
   border-radius:50%;
 
@@ -1294,30 +1186,26 @@ body::-webkit-scrollbar-thumb{
     #d2a23a;
 
   box-shadow:
-    0 2px 7px
-    rgba(0,0,0,.28);
+    0 2px 6px
+    rgba(0,0,0,.3);
 }
 
 .art-member-info{
-
   flex:1;
 
   min-width:0;
-
-  padding-left:2px;
 }
 
 .art-member-name{
-
   max-width:100%;
 
   color:#0b1830;
 
   font-size:
     clamp(
-      11px,
-      2.6vw,
-      18px
+      10px,
+      2.35vw,
+      16px
     );
 
   font-weight:950;
@@ -1329,23 +1217,18 @@ body::-webkit-scrollbar-thumb{
   overflow:hidden;
 
   text-overflow:ellipsis;
-
-  text-shadow:
-    0 1px 0
-    rgba(255,255,255,.5);
 }
 
 .art-member-rating{
-
-  margin-top:5px;
+  margin-top:3px;
 
   color:#6f501d;
 
   font-size:
     clamp(
-      8px,
-      1.8vw,
-      12px
+      7px,
+      1.65vw,
+      11px
     );
 
   font-weight:950;
@@ -1354,7 +1237,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .art-member-title{
-
   flex:0 0 auto;
 
   padding:
@@ -1377,12 +1259,10 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   TITLED PLAYERS BOARD
-   EXACT SLOT CALIBRATION
+   TITLED PLAYERS — UNCHANGED
    ========================================================= */
 
 .titled-members-overlay{
-
   position:absolute;
 
   inset:0;
@@ -1393,7 +1273,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-member{
-
   position:absolute;
 
   left:19.7%;
@@ -1423,7 +1302,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-member:hover{
-
   transform:
     translateX(3px)
     scale(1.008);
@@ -1435,23 +1313,15 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
-
-/* FIRST MARBLE SLOT */
-
 .titled-art-member.slot-1{
   top:59.45%;
 }
-
-
-/* SECOND MARBLE SLOT */
 
 .titled-art-member.slot-2{
   top:70.95%;
 }
 
-
 .titled-art-avatar{
-
   width:44px;
   height:44px;
 
@@ -1473,14 +1343,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-copy{
-
   flex:1;
 
   min-width:0;
 }
 
 .titled-art-name{
-
   max-width:100%;
 
   color:#0a1730;
@@ -1504,7 +1372,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-rating{
-
   margin-top:5px;
 
   color:#71521e;
@@ -1522,7 +1389,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-title{
-
   flex:0 0 auto;
 
   min-width:46px;
@@ -1542,7 +1408,6 @@ body::-webkit-scrollbar-thumb{
     #d7a63e;
 
   background:
-
     linear-gradient(
       180deg,
       #12345f,
@@ -1557,11 +1422,10 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   LOADING / EMPTY STATE
+   LOADING / EMPTY
    ========================================================= */
 
 .art-board-loading{
-
   position:absolute;
 
   left:23%;
@@ -1572,7 +1436,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:10px;
 
   background:
-
     linear-gradient(
       90deg,
       rgba(255,255,255,.04),
@@ -1591,7 +1454,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .art-empty{
-
   position:absolute;
 
   left:23%;
@@ -1612,7 +1474,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .rules-window{
-
   position:relative;
 
   height:200px;
@@ -1631,7 +1492,6 @@ body::-webkit-scrollbar-thumb{
 
 .rules-window::before,
 .rules-window::after{
-
   content:"";
 
   position:absolute;
@@ -1647,11 +1507,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rules-window::before{
-
   top:0;
 
   background:
-
     linear-gradient(
       180deg,
       #081a32,
@@ -1660,11 +1518,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rules-window::after{
-
   bottom:0;
 
   background:
-
     linear-gradient(
       0deg,
       #07172b,
@@ -1673,7 +1529,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rules-track{
-
   display:grid;
 
   gap:7px;
@@ -1689,23 +1544,18 @@ body::-webkit-scrollbar-thumb{
 
 .rules-window:hover
 .rules-track{
-
   animation-play-state:paused;
 }
 
 @keyframes rulesScroll{
 
   to{
-
     transform:
       translateY(-50%);
-
   }
-
 }
 
 .rule{
-
   display:flex;
 
   align-items:flex-start;
@@ -1730,7 +1580,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rule i{
-
   display:grid;
 
   place-items:center;
@@ -1743,7 +1592,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   background:
-
     linear-gradient(
       180deg,
       var(--gold2),
@@ -1764,7 +1612,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .staff-hero{
-
   position:relative;
 
   padding:
@@ -1776,7 +1623,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-eyebrow{
-
   color:var(--blue3);
 
   font-size:11px;
@@ -1788,7 +1634,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-title{
-
   margin:
     5px
     0
@@ -1805,7 +1650,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-subtitle{
-
   max-width:470px;
 
   margin:
@@ -1819,14 +1663,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-grid{
-
   display:grid;
 
   gap:8px;
 }
 
 .staff-card{
-
   display:grid;
 
   grid-template-columns:
@@ -1847,7 +1689,6 @@ body::-webkit-scrollbar-thumb{
     rgba(105,183,255,.13);
 
   background:
-
     linear-gradient(
       180deg,
       rgba(15,45,82,.9),
@@ -1860,13 +1701,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-card.head-staff{
-
   border-color:
     rgba(255,214,107,.45);
 }
 
 .staff-avatar{
-
   width:48px;
   height:48px;
 
@@ -1886,7 +1725,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-name{
-
   color:#fff;
 
   font-size:14px;
@@ -1898,7 +1736,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-role{
-
   margin-top:3px;
 
   color:var(--gold3);
@@ -1908,7 +1745,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-rating{
-
   margin-top:3px;
 
   color:#aab8cb;
@@ -1917,7 +1753,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-badges{
-
   display:flex;
 
   flex-direction:column;
@@ -1928,7 +1763,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-badge{
-
   padding:
     4px
     7px;
@@ -1942,11 +1776,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-owner{
-
   color:#15110a;
 
   background:
-
     linear-gradient(
       180deg,
       #ffe493,
@@ -1955,11 +1787,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-co-owner{
-
   color:#fff;
 
   background:
-
     linear-gradient(
       180deg,
       #3b96ff,
@@ -1968,11 +1798,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-head-of-staff{
-
   color:#101827;
 
   background:
-
     linear-gradient(
       180deg,
       #a9e3ff,
@@ -1981,11 +1809,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-super-admin{
-
   color:#fff;
 
   background:
-
     linear-gradient(
       180deg,
       #775dff,
@@ -1994,11 +1820,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-admin{
-
   color:#fff;
 
   background:
-
     linear-gradient(
       180deg,
       #2e8cdf,
@@ -2007,11 +1831,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-coordinator{
-
   color:#061326;
 
   background:
-
     linear-gradient(
       180deg,
       #88d5ff,
@@ -2020,11 +1842,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-mascot{
-
   color:#15110a;
 
   background:
-
     linear-gradient(
       180deg,
       #fff1b7,
@@ -2038,7 +1858,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .tournament-hero{
-
   position:relative;
 
   min-height:360px;
@@ -2060,7 +1879,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .eyebrow{
-
   color:var(--blue3);
 
   font-size:11px;
@@ -2072,7 +1890,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .season-title{
-
   margin:
     5px
     0
@@ -2096,7 +1913,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .status{
-
   display:inline-flex;
 
   align-items:center;
@@ -2123,7 +1939,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .facts{
-
   display:grid;
 
   grid-template-columns:
@@ -2136,7 +1951,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fact{
-
   padding:8px;
 
   border-radius:11px;
@@ -2150,7 +1964,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fact b{
-
   display:block;
 
   margin-bottom:3px;
@@ -2161,7 +1974,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fact span{
-
   color:#fff;
 
   font-size:12px;
@@ -2169,7 +1981,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .actions{
-
   display:flex;
 
   flex-wrap:wrap;
@@ -2180,7 +1991,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .action{
-
   display:inline-flex;
 
   align-items:center;
@@ -2208,7 +2018,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .justice-wrap{
-
   position:relative;
 
   min-height:320px;
@@ -2219,7 +2028,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .justice{
-
   position:relative;
 
   z-index:3;
@@ -2245,18 +2053,15 @@ body::-webkit-scrollbar-thumb{
 @keyframes justiceFloat{
 
   50%{
-
     transform:
       translateY(-6px)
       rotate(.2deg);
-
   }
-
 }
 
 
 /* =========================================================
-   CHAMPIONS PODIUM ARTWORK
+   CHAMPIONS PODIUM
    ========================================================= */
 
 .champions-section{
@@ -2264,7 +2069,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .champions-stage{
-
   position:relative;
 
   width:100%;
@@ -2275,7 +2079,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .champions-podium-art{
-
   position:relative;
 
   z-index:1;
@@ -2289,7 +2092,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .champions-overlay{
-
   position:absolute;
 
   inset:0;
@@ -2300,7 +2102,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-winner{
-
   position:absolute;
 
   display:flex;
@@ -2324,7 +2125,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-winner:hover{
-
   transform:
     translateY(-5px)
     scale(1.03);
@@ -2336,36 +2136,22 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
-
-/* 2ND */
-
 .podium-second{
-
   left:8.5%;
   top:12%;
 }
 
-
-/* 1ST */
-
 .podium-first{
-
   left:38%;
   top:1.5%;
 }
 
-
-/* 3RD */
-
 .podium-third{
-
   right:8.5%;
   top:14%;
 }
 
-
 .winner-avatar{
-
   width:
     clamp(
       48px,
@@ -2397,7 +2183,6 @@ body::-webkit-scrollbar-thumb{
 
 .podium-first
 .winner-avatar{
-
   width:
     clamp(
       58px,
@@ -2417,12 +2202,10 @@ body::-webkit-scrollbar-thumb{
 
 .podium-third
 .winner-avatar{
-
   border-color:#c98043;
 }
 
 .winner-name{
-
   max-width:100%;
 
   margin-top:4px;
@@ -2452,7 +2235,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .winner-meta{
-
   margin-top:3px;
 
   color:#f4d58a;
@@ -2472,7 +2254,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .winner-rating{
-
   margin-top:3px;
 
   padding:
@@ -2501,7 +2282,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-placeholder-avatar{
-
   display:grid;
 
   place-items:center;
@@ -2523,7 +2303,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   background:
-
     radial-gradient(
       circle,
       #183c69,
@@ -2546,7 +2325,6 @@ body::-webkit-scrollbar-thumb{
 
 .podium-first
 .podium-placeholder-avatar{
-
   width:
     clamp(
       58px,
@@ -2571,14 +2349,12 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .archive{
-
   display:grid;
 
   gap:6px;
 }
 
 .archive-row{
-
   display:grid;
 
   grid-template-columns:
@@ -2607,7 +2383,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .archive-row img{
-
   width:38px;
   height:38px;
 
@@ -2621,7 +2396,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .archive-rating{
-
   color:var(--gold2);
 
   font-size:11px;
@@ -2634,13 +2408,11 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .skeleton{
-
   height:56px;
 
   border-radius:11px;
 
   background:
-
     linear-gradient(
       90deg,
       #07172b 20%,
@@ -2661,16 +2433,12 @@ body::-webkit-scrollbar-thumb{
 @keyframes shimmer{
 
   to{
-
     background-position:
       -220% 0;
-
   }
-
 }
 
 .empty{
-
   padding:16px;
 
   color:#9faec2;
@@ -2681,7 +2449,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .footer-note{
-
   padding:
     16px
     4px
@@ -2696,7 +2463,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   MOBILE SIDEBAR
+   MOBILE
    ========================================================= */
 
 @media(max-width:430px){
@@ -2711,7 +2478,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .hero{
-
     min-height:330px;
 
     padding:
@@ -2721,7 +2487,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .hero-glow{
-
     width:285px;
     height:285px;
 
@@ -2729,7 +2494,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .orbit{
-
     width:240px;
 
     top:42%;
@@ -2756,7 +2520,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .dashboard-switcher{
-
     gap:5px;
 
     padding:5px;
@@ -2765,7 +2528,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .dashboard-btn{
-
     padding:
       9px
       4px;
@@ -2774,7 +2536,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .section{
-
     margin-top:8px;
 
     padding:10px;
@@ -2791,7 +2552,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .quick-links{
-
     grid-template-columns:
       1fr
       1fr;
@@ -2802,61 +2562,9 @@ body::-webkit-scrollbar-thumb{
   }
 
 
-  /* -------------------------
-     NEW MEMBERS MOBILE
-     ------------------------- */
-
-  .art-member{
-
-    left:20%;
-    right:8.6%;
-
-    height:6.9%;
-
-    gap:6px;
-
-    padding:
-      0
-      4px;
-  }
-
-  .art-member-avatar{
-
-    width:34px;
-    height:34px;
-
-    flex-basis:34px;
-  }
-
-  .art-member-name{
-
-    font-size:
-      clamp(
-        11px,
-        3.6vw,
-        15px
-      );
-  }
-
-  .art-member-rating{
-
-    margin-top:3px;
-
-    font-size:
-      clamp(
-        8px,
-        2.7vw,
-        11px
-      );
-  }
-
-
-  /* -------------------------
-     TITLED MOBILE
-     ------------------------- */
+  /* TITLED PLAYERS KEPT UNCHANGED */
 
   .titled-art-member{
-
     left:19.4%;
     right:8%;
 
@@ -2870,7 +2578,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .titled-art-avatar{
-
     width:37px;
     height:37px;
 
@@ -2878,7 +2585,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .titled-art-name{
-
     font-size:
       clamp(
         11px,
@@ -2888,7 +2594,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .titled-art-rating{
-
     margin-top:3px;
 
     font-size:
@@ -2900,7 +2605,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .titled-art-title{
-
     min-width:38px;
 
     padding:
@@ -2911,12 +2615,7 @@ body::-webkit-scrollbar-thumb{
   }
 
 
-  /* -------------------------
-     STAFF MOBILE
-     ------------------------- */
-
   .staff-card{
-
     grid-template-columns:
       46px
       minmax(0,1fr)
@@ -2926,7 +2625,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .staff-avatar{
-
     width:46px;
     height:46px;
   }
@@ -2947,13 +2645,7 @@ body::-webkit-scrollbar-thumb{
     font-size:9px;
   }
 
-
-  /* -------------------------
-     TOURNAMENT MOBILE
-     ------------------------- */
-
   .tournament-hero{
-
     grid-template-columns:1fr;
 
     min-height:0;
@@ -2974,7 +2666,6 @@ body::-webkit-scrollbar-thumb{
   }
 
   .champions-section{
-
     padding-left:6px;
     padding-right:6px;
   }
@@ -3000,24 +2691,15 @@ body::-webkit-scrollbar-thumb{
     display:none;
   }
 
-  .art-member-avatar{
-
-    width:29px;
-    height:29px;
-
-    flex-basis:29px;
+  .art-member-title{
+    display:none;
   }
 
   .titled-art-avatar{
-
     width:32px;
     height:32px;
 
     flex-basis:32px;
-  }
-
-  .art-member-title{
-    display:none;
   }
 
 }
@@ -3218,7 +2900,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     NEW MEMBERS ARTWORK
+     NEW MEMBERS
      ====================================================== -->
 
 <div class="members-showcase">
@@ -3238,27 +2920,27 @@ body::-webkit-scrollbar-thumb{
 
     <div
       class="art-board-loading"
-      style="top:42%">
+      style="top:44.7%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:49.3%">
+      style="top:51.6%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:56.6%">
+      style="top:58.55%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:63.9%">
+      style="top:65.5%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:71.2%">
+      style="top:72.45%">
     </div>
 
   </div>
@@ -3268,7 +2950,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     TITLED PLAYER ARTWORK
+     TITLED PLAYERS
      ====================================================== -->
 
 <section class="art-board">
@@ -3347,7 +3029,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     TOURNAMENT DASHBOARD
+     TOURNAMENT
      ====================================================== -->
 
 <section class="page">
@@ -3588,7 +3270,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     STAFF DASHBOARD
+     STAFF
      ====================================================== -->
 
 <section class="page">
@@ -3857,106 +3539,54 @@ body::-webkit-scrollbar-thumb{
   "staff": [
 
     {
-
-      "username":
-        "DevilsGambit22",
-
-      "role":
-        "Owner"
-
+      "username":"DevilsGambit22",
+      "role":"Owner"
     },
 
     {
-
-      "username":
-        "SaintsGambit98",
-
-      "role":
-        "Co-Owner"
-
+      "username":"SaintsGambit98",
+      "role":"Co-Owner"
     },
 
     {
-
-      "username":
-        "Bgeerr",
-
-      "role":
-        "Head of Staff"
-
+      "username":"Bgeerr",
+      "role":"Head of Staff"
     },
 
     {
-
-      "username":
-        "OfficialLadyJustice",
-
-      "role":
-        "Mascot",
-
-      "secondaryRole":
-        "Super Admin"
-
+      "username":"OfficialLadyJustice",
+      "role":"Mascot",
+      "secondaryRole":"Super Admin"
     },
 
     {
-
-      "username":
-        "Stefan-Mazarine",
-
-      "role":
-        "Super Admin"
-
+      "username":"Stefan-Mazarine",
+      "role":"Super Admin"
     },
 
     {
-
-      "username":
-        "Cookie00190",
-
-      "role":
-        "Admin"
-
+      "username":"Cookie00190",
+      "role":"Admin"
     },
 
     {
-
-      "username":
-        "NtsakoCloy",
-
-      "role":
-        "Admin"
-
+      "username":"NtsakoCloy",
+      "role":"Admin"
     },
 
     {
-
-      "username":
-        "roheemo_h",
-
-      "role":
-        "Admin"
-
+      "username":"roheemo_h",
+      "role":"Admin"
     },
 
     {
-
-      "username":
-        "Xtreme-Ninja-100",
-
-      "role":
-        "Admin"
-
+      "username":"Xtreme-Ninja-100",
+      "role":"Admin"
     },
 
     {
-
-      "username":
-        "Kissenschlach",
-
-      "role":
-        "Coordinator"
-
+      "username":"Kissenschlach",
+      "role":"Coordinator"
     }
 
   ],
@@ -3965,13 +3595,8 @@ body::-webkit-scrollbar-thumb{
   "verifiedTitledMembers": [
 
     {
-
-      "username":
-        "ChanelinmyYSL",
-
-      "title":
-        "IM"
-
+      "username":"ChanelinmyYSL",
+      "title":"IM"
     }
 
   ],
@@ -4000,35 +3625,25 @@ body::-webkit-scrollbar-thumb{
 
   "tournament": {
 
-    "activeSeason":
-      "Fall",
+    "activeSeason":"Fall",
 
-    "year":
-      2026,
+    "year":2026,
 
-    "status":
-      "Planning",
+    "status":"Planning",
 
-    "registrationDeadline":
-      "",
+    "registrationDeadline":"",
 
-    "startDate":
-      "",
+    "startDate":"",
 
-    "endDate":
-      "",
+    "endDate":"",
 
-    "format":
-      "Seasonal ACFA Championship",
+    "format":"Seasonal ACFA Championship",
 
-    "eventUrl":
-      "",
+    "eventUrl":"",
 
-    "detailsUrl":
-      "",
+    "detailsUrl":"",
 
-    "champions":
-      []
+    "champions":[]
 
   }
 
@@ -4063,7 +3678,6 @@ const DATA =
 
 
 const TITLE_CODES = [
-
   "GM",
   "WGM",
   "IM",
@@ -4072,24 +3686,18 @@ const TITLE_CODES = [
   "WFM",
   "CM",
   "WCM"
-
 ];
 
 
 const TITLE_RANK = {
-
   GM:8,
   WGM:7,
-
   IM:6,
   WIM:5,
-
   FM:4,
   WFM:3,
-
   CM:2,
   WCM:1
-
 };
 
 
@@ -4106,7 +3714,7 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v24";
+  "acfa-dashboard-v25";
 
 
 let CLUB_MEMBERS =
@@ -4130,7 +3738,7 @@ const $$ =
 
 
 /* =========================================================
-   ESCAPE
+   HELPERS
    ========================================================= */
 
 function escapeHTML(
@@ -4139,11 +3747,8 @@ function escapeHTML(
 
   return String(value)
     .replace(
-
       /[&<>"']/g,
-
       character =>
-
         ({
           "&":"&amp;",
           "<":"&lt;",
@@ -4151,15 +3756,10 @@ function escapeHTML(
           "\"":"&quot;",
           "'":"&#039;"
         })[character]
-
     );
 
 }
 
-
-/* =========================================================
-   SAFE VALUE
-   ========================================================= */
 
 function safe(
   value,
@@ -4201,9 +3801,7 @@ function cacheGet(
 
 
     if(!raw){
-
       return null;
-
     }
 
 
@@ -4220,9 +3818,7 @@ function cacheGet(
       >
       lifetime
     ){
-
       return null;
-
     }
 
 
@@ -4285,8 +3881,7 @@ async function fetchJSON(
       url,
 
       {
-        cache:
-          "no-store"
+        cache:"no-store"
       }
 
     );
@@ -4316,8 +3911,7 @@ async function fetchFreshProfile(
       `${API}/player/${encodeURIComponent(username)}?acfa=${Date.now()}`,
 
       {
-        cache:
-          "no-store"
+        cache:"no-store"
       }
 
     );
@@ -4392,38 +3986,26 @@ function buildParticles(){
 
 
     spark.style.setProperty(
-
       "--x",
-
       `${Math.random()*100}%`
-
     );
 
 
     spark.style.setProperty(
-
       "--drift",
-
       `${(Math.random()-.5)*150}px`
-
     );
 
 
     spark.style.setProperty(
-
       "--dur",
-
       `${7+Math.random()*11}s`
-
     );
 
 
     spark.style.setProperty(
-
       "--delay",
-
       `${-Math.random()*22}s`
-
     );
 
 
@@ -4499,44 +4081,24 @@ function updateClock(){
   $("#clock")
     .textContent =
       now.toLocaleTimeString(
-
         [],
-
         {
-
-          hour:
-            "numeric",
-
-          minute:
-            "2-digit",
-
-          second:
-            "2-digit"
-
+          hour:"numeric",
+          minute:"2-digit",
+          second:"2-digit"
         }
-
       );
 
 
   $("#dateLine")
     .textContent =
       now.toLocaleDateString(
-
         undefined,
-
         {
-
-          weekday:
-            "long",
-
-          month:
-            "long",
-
-          day:
-            "numeric"
-
+          weekday:"long",
+          month:"long",
+          day:"numeric"
         }
-
       );
 
 }
@@ -4552,7 +4114,7 @@ setInterval(
 
 
 /* =========================================================
-   DASHBOARD NAVIGATION
+   DASHBOARD NAV
    ========================================================= */
 
 function setDashboard(
@@ -4564,17 +4126,13 @@ function setDashboard(
 
 
   track.classList.remove(
-
     "view-tournaments",
-
     "view-staff"
-
   );
 
 
   if(
-    dashboard
-    ===
+    dashboard ===
     "tournaments"
   ){
 
@@ -4586,8 +4144,7 @@ function setDashboard(
 
 
   if(
-    dashboard
-    ===
+    dashboard ===
     "staff"
   ){
 
@@ -4600,31 +4157,22 @@ function setDashboard(
 
   $$(".dashboard-btn")
     .forEach(
-
       button =>{
 
         button.classList.toggle(
-
           "active",
-
           button.dataset.dashboard
           ===
           dashboard
-
         );
 
       }
-
     );
 
 
   window.scrollTo({
-
     top:0,
-
-    behavior:
-      "smooth"
-
+    behavior:"smooth"
   });
 
 }
@@ -4632,23 +4180,17 @@ function setDashboard(
 
 $$(".dashboard-btn")
   .forEach(
-
     button =>{
 
       button.addEventListener(
-
         "click",
-
         () =>
-
           setDashboard(
             button.dataset.dashboard
           )
-
       );
 
     }
-
   );
 
 
@@ -4661,15 +4203,12 @@ function niceDate(
 ){
 
   if(!value){
-
     return "TBA";
-
   }
 
 
   const date =
     new Date(
-
       value
       +
       (
@@ -4679,7 +4218,6 @@ function niceDate(
           :
           ""
       )
-
     );
 
 
@@ -4688,30 +4226,18 @@ function niceDate(
       date.getTime()
     )
   ){
-
     return value;
-
   }
 
 
   return date
     .toLocaleDateString(
-
       undefined,
-
       {
-
-        month:
-          "short",
-
-        day:
-          "numeric",
-
-        year:
-          "numeric"
-
+        month:"short",
+        day:"numeric",
+        year:"numeric"
       }
-
     );
 
 }
@@ -4733,11 +4259,8 @@ function monthDay(
 
   const date =
     new Date(
-
-      value
-      +
+      value +
       "T12:00:00"
-
     );
 
 
@@ -4745,14 +4268,10 @@ function monthDay(
 
     date
       .toLocaleDateString(
-
         undefined,
-
         {
-          month:
-            "short"
+          month:"short"
         }
-
       )
       .toUpperCase(),
 
@@ -4835,22 +4354,17 @@ function renderAnnouncements(){
 
 
   announcements.sort(
-
     (
       a,
       b
     ) =>
-
       Number(
         Boolean(b.pinned)
       )
-
       -
-
       Number(
         Boolean(a.pinned)
       )
-
   );
 
 
@@ -4860,7 +4374,6 @@ function renderAnnouncements(){
 
     $("#announcementBoard")
       .innerHTML =
-
         `
         <div class="empty">
 
@@ -4868,7 +4381,6 @@ function renderAnnouncements(){
 
         </div>
         `;
-
 
     return;
 
@@ -4977,7 +4489,6 @@ function renderEvents(){
 
     $("#events")
       .innerHTML =
-
         `
         <div class="empty">
 
@@ -4985,7 +4496,6 @@ function renderEvents(){
 
         </div>
         `;
-
 
     return;
 
@@ -5101,15 +4611,11 @@ function renderRules(){
         <div class="rule">
 
           <i>
-
             ${index+1}
-
           </i>
 
           <span>
-
             ${escapeHTML(rule)}
-
           </span>
 
         </div>
@@ -5141,7 +4647,6 @@ function renderTournament(){
 
   $("#seasonTitle")
     .textContent =
-
       `
       ${safe(tournament.activeSeason,"Season")}
       ${safe(tournament.year,"")}
@@ -5151,7 +4656,6 @@ function renderTournament(){
 
   $("#seasonStatus")
     .textContent =
-
       safe(
         tournament.status,
         "Planning"
@@ -5160,7 +4664,6 @@ function renderTournament(){
 
   $("#registrationDeadline")
     .textContent =
-
       niceDate(
         tournament.registrationDeadline
       );
@@ -5168,7 +4671,6 @@ function renderTournament(){
 
   $("#startDate")
     .textContent =
-
       niceDate(
         tournament.startDate
       );
@@ -5176,7 +4678,6 @@ function renderTournament(){
 
   $("#endDate")
     .textContent =
-
       niceDate(
         tournament.endDate
       );
@@ -5184,7 +4685,6 @@ function renderTournament(){
 
   $("#format")
     .textContent =
-
       safe(
         tournament.format,
         "Seasonal Championship"
@@ -5241,26 +4741,19 @@ async function getClubMembers(){
 
 
   if(cached){
-
     return cached;
-
   }
 
 
   const response =
     await fetchJSON(
-
       `${API}/club/${DATA.club.slug}/members`
-
     );
 
 
   const combined = [
-
     ...(response.weekly || []),
-
     ...(response.all_time || [])
-
   ];
 
 
@@ -5289,9 +4782,7 @@ async function getClubMembers(){
         normalized
       )
     ){
-
       continue;
-
     }
 
 
@@ -5340,17 +4831,13 @@ async function getProfile(
 
 
   if(cached){
-
     return cached;
-
   }
 
 
   const profile =
     await fetchJSON(
-
       `${API}/player/${encodeURIComponent(username)}`
-
     );
 
 
@@ -5387,17 +4874,13 @@ async function getStats(
 
 
   if(cached){
-
     return cached;
-
   }
 
 
   const stats =
     await fetchJSON(
-
       `${API}/player/${encodeURIComponent(username)}/stats`
-
     );
 
 
@@ -5423,43 +4906,23 @@ function highestRating(
   const categories = [
 
     {
-
-      key:
-        "chess_daily",
-
-      label:
-        "Daily"
-
+      key:"chess_daily",
+      label:"Daily"
     },
 
     {
-
-      key:
-        "chess_rapid",
-
-      label:
-        "Rapid"
-
+      key:"chess_rapid",
+      label:"Rapid"
     },
 
     {
-
-      key:
-        "chess_blitz",
-
-      label:
-        "Blitz"
-
+      key:"chess_blitz",
+      label:"Blitz"
     },
 
     {
-
-      key:
-        "chess_bullet",
-
-      label:
-        "Bullet"
-
+      key:"chess_bullet",
+      label:"Bullet"
     }
 
   ];
@@ -5482,9 +4945,7 @@ function highestRating(
 
 
     if(!rating){
-
       continue;
-
     }
 
 
@@ -5549,16 +5010,13 @@ async function mapLimited(
         >=
         items.length
       ){
-
         return;
-
       }
 
 
       try{
 
         results[current] =
-
           await worker(
             items[current],
             current
@@ -5618,18 +5076,13 @@ async function renderNewestMembers(){
   ]
 
   .sort(
-
     (
       a,
       b
     ) =>
-
       (b.joined || 0)
-
       -
-
       (a.joined || 0)
-
   )
 
   .slice(
@@ -5871,9 +5324,7 @@ async function renderTitledMembers(){
 
             const result =
               await fetchJSON(
-
                 `${API}/titled/${title}`
-
               );
 
 
@@ -6138,7 +5589,6 @@ async function renderTitledMembers(){
 
 
   players.sort(
-
     (
       a,
       b
@@ -6179,13 +5629,8 @@ async function renderTitledMembers(){
         );
 
     }
-
   );
 
-
-  /*
-    THIS ARTWORK HAS TWO SLOTS.
-  */
 
   players =
     players.slice(
@@ -6200,7 +5645,6 @@ async function renderTitledMembers(){
 
     $("#titledMembers")
       .innerHTML =
-
         `
         <div class="art-empty">
 
@@ -6208,7 +5652,6 @@ async function renderTitledMembers(){
 
         </div>
         `;
-
 
     return;
 
@@ -6369,22 +5812,17 @@ async function renderStaff(){
   ]
 
   .sort(
-
     (
       a,
       b
     ) =>
-
       staffPriority(
         b.role
       )
-
       -
-
       staffPriority(
         a.role
       )
-
   );
 
 
@@ -6600,7 +6038,7 @@ async function renderStaff(){
 
 
 /* =========================================================
-   CHAMPION HYDRATION
+   CHAMPIONS
    ========================================================= */
 
 async function hydrateChampion(
@@ -6664,10 +6102,6 @@ async function hydrateChampion(
 }
 
 
-/* =========================================================
-   EMPTY CHAMPION
-   ========================================================= */
-
 function emptyWinner(
   placement
 ){
@@ -6726,7 +6160,6 @@ function renderEmptyPodium(){
 
   $("#podium")
     .innerHTML =
-
       `
       ${emptyWinner(2)}
       ${emptyWinner(1)}
@@ -6735,10 +6168,6 @@ function renderEmptyPodium(){
 
 }
 
-
-/* =========================================================
-   CHAMPIONS
-   ========================================================= */
 
 async function renderChampions(){
 
@@ -6758,7 +6187,6 @@ async function renderChampions(){
 
     $("#archive")
       .innerHTML =
-
         `
         <div class="empty">
 
@@ -6767,7 +6195,6 @@ async function renderChampions(){
 
         </div>
         `;
-
 
     return;
 
@@ -6792,12 +6219,10 @@ async function renderChampions(){
   ]
 
   .sort(
-
     (
       a,
       b
     ) =>{
-
 
       if(
         Number(b.year)
@@ -6837,46 +6262,33 @@ async function renderChampions(){
       );
 
     }
-
   );
 
 
   const podiumOrder = [
 
     {
-
-      placement:
-        2,
-
+      placement:2,
       champion:
         sorted[1]
         ||
         null
-
     },
 
     {
-
-      placement:
-        1,
-
+      placement:1,
       champion:
         sorted[0]
         ||
         null
-
     },
 
     {
-
-      placement:
-        3,
-
+      placement:3,
       champion:
         sorted[2]
         ||
         null
-
     }
 
   ];
@@ -7168,7 +6580,6 @@ async function initialize(){
 
     $("#newMembers")
       .innerHTML =
-
         `
         <div class="art-empty">
 
