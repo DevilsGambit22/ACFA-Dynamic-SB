@@ -46,10 +46,6 @@
   --line:rgba(82,159,255,.27);
   --gold-line:rgba(255,214,107,.36);
 
-  --shadow:
-    0 18px 46px rgba(0,0,0,.55),
-    0 0 30px rgba(45,140,255,.08);
-
 }
 
 
@@ -115,7 +111,7 @@ img{
 
 
 /* =========================================================
-   THIN ATTACHED SCROLLBAR
+   THIN SCROLLBAR
    ========================================================= */
 
 html::-webkit-scrollbar,
@@ -130,6 +126,7 @@ body::-webkit-scrollbar-track{
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb{
+
   background:
     linear-gradient(
       180deg,
@@ -140,10 +137,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:999px;
 
   border:1px solid #07172b;
-
-  box-shadow:
-    0 0 8px rgba(45,140,255,.3),
-    0 0 8px rgba(255,214,107,.2);
 }
 
 
@@ -156,8 +149,6 @@ body::-webkit-scrollbar-thumb{
   max-width:760px;
 
   margin:0 auto;
-
-  padding:0;
 }
 
 .app{
@@ -169,11 +160,13 @@ body::-webkit-scrollbar-thumb{
   isolation:isolate;
 
   background:
+
     radial-gradient(
       circle at 50% -8%,
       rgba(45,140,255,.18),
       transparent 34%
     ),
+
     linear-gradient(
       180deg,
       #020305,
@@ -188,6 +181,7 @@ body::-webkit-scrollbar-thumb{
 
 .ambient{
   position:absolute;
+
   inset:0;
 
   z-index:-1;
@@ -227,6 +221,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .spark.blue{
+
   width:4px;
   height:4px;
 
@@ -266,6 +261,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   100%{
+
     transform:
       translate3d(
         var(--drift),
@@ -281,7 +277,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   THREE DASHBOARDS
+   DASHBOARD SLIDER
    ========================================================= */
 
 .viewport{
@@ -357,6 +353,7 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   background:
+
     radial-gradient(
       circle,
       rgba(45,140,255,.25),
@@ -376,6 +373,7 @@ body::-webkit-scrollbar-thumb{
 @keyframes heroPulse{
 
   50%{
+
     transform:
       translate(-50%,-50%)
       scale(1.07);
@@ -392,6 +390,7 @@ body::-webkit-scrollbar-thumb{
   top:44%;
 
   width:min(76vw,360px);
+
   aspect-ratio:1;
 
   transform:
@@ -412,6 +411,7 @@ body::-webkit-scrollbar-thumb{
 
 .orbit::before,
 .orbit::after{
+
   content:"";
 
   position:absolute;
@@ -439,6 +439,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .orbit.two{
+
   width:min(63vw,300px);
 
   border-style:dashed;
@@ -453,15 +454,19 @@ body::-webkit-scrollbar-thumb{
 @keyframes orbitSpin{
 
   from{
+
     transform:
       translate(-50%,-50%)
       rotate(0deg);
+
   }
 
   to{
+
     transform:
       translate(-50%,-50%)
       rotate(360deg);
+
   }
 
 }
@@ -482,6 +487,7 @@ body::-webkit-scrollbar-thumb{
   margin-right:auto;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -493,6 +499,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .logo-stage::after{
+
   content:"";
 
   position:absolute;
@@ -519,8 +526,6 @@ body::-webkit-scrollbar-thumb{
   width:100%;
   height:auto;
 
-  margin:0 auto;
-
   object-fit:contain;
 
   filter:
@@ -538,15 +543,19 @@ body::-webkit-scrollbar-thumb{
 
   0%,
   100%{
+
     transform:
       translateY(0)
       rotate(-.25deg);
+
   }
 
   50%{
+
     transform:
       translateY(-7px)
       rotate(.25deg);
+
   }
 
 }
@@ -567,6 +576,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .greeting{
+
   color:var(--gold2);
 
   font-family:
@@ -582,13 +592,10 @@ body::-webkit-scrollbar-thumb{
     );
 
   line-height:1.1;
-
-  text-shadow:
-    0 0 20px
-    rgba(215,166,62,.23);
 }
 
 .clock{
+
   margin-top:6px;
 
   color:#fff;
@@ -598,10 +605,12 @@ body::-webkit-scrollbar-thumb{
 
   letter-spacing:.035em;
 
-  font-variant-numeric:tabular-nums;
+  font-variant-numeric:
+    tabular-nums;
 }
 
 .date{
+
   margin-top:3px;
 
   color:#d4deec;
@@ -611,10 +620,11 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   DASHBOARD SWITCHER
+   DASHBOARD BUTTONS
    ========================================================= */
 
 .dashboard-switcher{
+
   display:grid;
 
   grid-template-columns:
@@ -636,18 +646,16 @@ body::-webkit-scrollbar-thumb{
   border-radius:16px;
 
   background:
+
     linear-gradient(
       180deg,
       rgba(11,32,61,.93),
       rgba(4,14,29,.93)
     );
-
-  box-shadow:
-    0 12px 25px
-    rgba(0,0,0,.22);
 }
 
 .dashboard-btn{
+
   border:
     1px solid
     rgba(105,183,255,.16);
@@ -670,32 +678,31 @@ body::-webkit-scrollbar-thumb{
 }
 
 .dashboard-btn.active{
+
   color:#111;
 
   border-color:
     rgba(255,214,107,.8);
 
   background:
+
     linear-gradient(
       180deg,
       #ffe390,
       #d7a63e
     );
-
-  box-shadow:
-    0 5px 16px
-    rgba(215,166,62,.28);
 }
 
 
 /* =========================================================
-   STANDARD CARD
+   STANDARD SECTION
    ========================================================= */
 
 .section{
   position:relative;
 
   margin-top:11px;
+
   padding:13px;
 
   overflow:hidden;
@@ -707,23 +714,22 @@ body::-webkit-scrollbar-thumb{
     var(--line);
 
   background:
+
     radial-gradient(
       circle at 100% 0%,
       rgba(45,140,255,.1),
       transparent 31%
     ),
+
     linear-gradient(
       180deg,
       rgba(11,32,61,.97),
       rgba(4,14,29,.97)
     );
-
-  box-shadow:
-    0 12px 28px
-    rgba(0,0,0,.22);
 }
 
 .section::before{
+
   content:"";
 
   position:absolute;
@@ -735,6 +741,7 @@ body::-webkit-scrollbar-thumb{
   height:1px;
 
   background:
+
     linear-gradient(
       90deg,
       transparent,
@@ -746,6 +753,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section-head{
+
   position:relative;
 
   z-index:4;
@@ -761,6 +769,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section h2{
+
   margin:0;
 
   color:var(--gold2);
@@ -774,6 +783,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .section-kicker{
+
   margin-bottom:3px;
 
   color:var(--blue3);
@@ -782,6 +792,7 @@ body::-webkit-scrollbar-thumb{
   font-weight:950;
 
   letter-spacing:.14em;
+
   text-transform:uppercase;
 }
 
@@ -791,6 +802,7 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .live-dot{
+
   display:inline-flex;
 
   align-items:center;
@@ -803,6 +815,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .live-dot::before{
+
   content:"";
 
   width:7px;
@@ -825,15 +838,19 @@ body::-webkit-scrollbar-thumb{
 @keyframes pulseDot{
 
   70%{
+
     box-shadow:
       0 0 0 7px
       rgba(105,183,255,0);
+
   }
 
   100%{
+
     box-shadow:
       0 0 0 0
       rgba(105,183,255,0);
+
   }
 
 }
@@ -844,6 +861,7 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .quick-links{
+
   display:grid;
 
   grid-template-columns:
@@ -853,6 +871,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .quick-link{
+
   min-height:76px;
 
   display:flex;
@@ -874,6 +893,7 @@ body::-webkit-scrollbar-thumb{
     rgba(105,183,255,.18);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(17,48,88,.92),
@@ -890,6 +910,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .quick-label{
+
   color:#fff;
 
   text-align:center;
@@ -904,11 +925,14 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .announcement-list{
+
   display:grid;
+
   gap:8px;
 }
 
 .announcement{
+
   padding:10px;
 
   border-radius:13px;
@@ -918,6 +942,7 @@ body::-webkit-scrollbar-thumb{
     rgba(105,183,255,.12);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(14,42,79,.86),
@@ -926,11 +951,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement.pinned{
+
   border-color:
     rgba(255,214,107,.33);
 }
 
 .announcement-top{
+
   display:flex;
 
   justify-content:space-between;
@@ -940,6 +967,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement-title{
+
   min-width:0;
 
   color:#fff;
@@ -947,13 +975,11 @@ body::-webkit-scrollbar-thumb{
   font-size:14px;
   font-weight:950;
 
-  white-space:normal;
-
   overflow-wrap:anywhere;
-  word-break:break-word;
 }
 
 .announcement-date{
+
   flex:0 0 auto;
 
   color:var(--gold3);
@@ -962,12 +988,14 @@ body::-webkit-scrollbar-thumb{
 }
 
 .pin{
+
   color:var(--gold2);
 
   margin-right:3px;
 }
 
 .announcement-body{
+
   margin-top:5px;
 
   color:#c5d2e3;
@@ -977,6 +1005,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .announcement-link{
+
   display:inline-flex;
 
   margin-top:7px;
@@ -1008,11 +1037,14 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .events{
+
   display:grid;
+
   gap:7px;
 }
 
 .event{
+
   display:flex;
 
   align-items:center;
@@ -1036,6 +1068,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .event-date{
+
   width:45px;
   min-width:45px;
 
@@ -1063,11 +1096,14 @@ body::-webkit-scrollbar-thumb{
 }
 
 .event-main{
+
   flex:1;
+
   min-width:0;
 }
 
 .event-title{
+
   color:#fff;
 
   font-size:13px;
@@ -1079,6 +1115,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .event-meta{
+
   margin-top:2px;
 
   color:var(--muted);
@@ -1092,30 +1129,25 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .members-showcase{
+
   display:grid;
 
   grid-template-columns:1fr;
 
-  gap:12px;
+  gap:14px;
 
   margin-top:12px;
 }
 
 .art-board{
+
   position:relative;
 
   width:100%;
 
   overflow:hidden;
 
-  border-radius:18px;
-
-  background:
-    radial-gradient(
-      circle at 50% 20%,
-      rgba(45,140,255,.12),
-      transparent 55%
-    );
+  background:transparent;
 
   filter:
     drop-shadow(
@@ -1124,7 +1156,14 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
+/*
+  IMPORTANT:
+  No forced aspect ratio here.
+  The actual PNG determines the board height.
+*/
+
 .board-art{
+
   position:relative;
 
   z-index:1;
@@ -1134,60 +1173,50 @@ body::-webkit-scrollbar-thumb{
   width:100%;
   height:auto;
 
+  margin:0;
+
   pointer-events:none;
+
   user-select:none;
 }
 
 
 /* =========================================================
-   NEW MEMBERS ART OVERLAY
+   NEW MEMBER BOARD
+   EXACT SLOT CALIBRATION
    ========================================================= */
 
-.new-members-art-board{
-  aspect-ratio:1275 / 1365;
-}
-
-.new-members-art-board
-.board-art{
-  position:absolute;
-
-  inset:0;
-
-  width:100%;
-  height:100%;
-
-  object-fit:contain;
-}
-
 .new-members-overlay{
+
   position:absolute;
 
   inset:0;
 
-  z-index:4;
+  z-index:5;
 
   pointer-events:none;
 }
 
 .art-member{
+
   position:absolute;
 
-  left:21.5%;
-  right:10%;
+  left:20.3%;
+  right:9.1%;
 
-  height:7.7%;
+  height:6.7%;
 
   display:flex;
 
   align-items:center;
 
-  gap:2.1%;
+  gap:8px;
 
   padding:
     0
-    2%;
+    7px;
 
-  color:#07172b;
+  color:#081527;
 
   text-decoration:none;
 
@@ -1199,42 +1228,60 @@ body::-webkit-scrollbar-thumb{
 }
 
 .art-member:hover{
+
   transform:
     translateX(3px)
-    scale(1.012);
+    scale(1.008);
 
   filter:
     drop-shadow(
-      0 0 8px
-      rgba(255,214,107,.42)
+      0 0 7px
+      rgba(255,214,107,.4)
     );
 }
 
-.art-member:nth-child(1){
-  top:43.5%;
+
+/* SLOT 1 */
+
+.art-member.slot-1{
+  top:41.55%;
 }
 
-.art-member:nth-child(2){
-  top:51.5%;
+
+/* SLOT 2 */
+
+.art-member.slot-2{
+  top:48.85%;
 }
 
-.art-member:nth-child(3){
-  top:59.55%;
+
+/* SLOT 3 */
+
+.art-member.slot-3{
+  top:56.15%;
 }
 
-.art-member:nth-child(4){
-  top:67.65%;
+
+/* SLOT 4 */
+
+.art-member.slot-4{
+  top:63.45%;
 }
 
-.art-member:nth-child(5){
-  top:75.7%;
+
+/* SLOT 5 */
+
+.art-member.slot-5{
+  top:70.75%;
 }
+
 
 .art-member-avatar{
-  width:8.4%;
-  aspect-ratio:1;
 
-  flex:0 0 auto;
+  width:39px;
+  height:39px;
+
+  flex:0 0 39px;
 
   border-radius:50%;
 
@@ -1244,54 +1291,70 @@ body::-webkit-scrollbar-thumb{
 
   border:
     2px solid
-    rgba(18,102,200,.7);
+    #d2a23a;
 
   box-shadow:
     0 2px 7px
-    rgba(0,0,0,.25);
+    rgba(0,0,0,.28);
 }
 
 .art-member-info{
+
   flex:1;
+
   min-width:0;
+
+  padding-left:2px;
 }
 
 .art-member-name{
-  color:#07172b;
+
+  max-width:100%;
+
+  color:#0b1830;
 
   font-size:
     clamp(
-      10px,
-      2.4vw,
-      19px
+      11px,
+      2.6vw,
+      18px
     );
 
   font-weight:950;
 
-  line-height:1.05;
+  line-height:1;
 
   white-space:nowrap;
 
   overflow:hidden;
+
   text-overflow:ellipsis;
+
+  text-shadow:
+    0 1px 0
+    rgba(255,255,255,.5);
 }
 
 .art-member-rating{
-  margin-top:3px;
 
-  color:#74531a;
+  margin-top:5px;
+
+  color:#6f501d;
 
   font-size:
     clamp(
-      7px,
-      1.75vw,
-      13px
+      8px,
+      1.8vw,
+      12px
     );
 
-  font-weight:900;
+  font-weight:950;
+
+  line-height:1;
 }
 
 .art-member-title{
+
   flex:0 0 auto;
 
   padding:
@@ -1300,72 +1363,53 @@ body::-webkit-scrollbar-thumb{
 
   border-radius:7px;
 
-  background:#07172b;
+  border:
+    1px solid
+    #d4a43c;
+
+  background:#061326;
 
   color:#ffd66b;
 
-  border:
-    1px solid
-    rgba(215,166,62,.7);
-
-  font-size:
-    clamp(
-      7px,
-      1.6vw,
-      11px
-    );
-
+  font-size:10px;
   font-weight:950;
 }
 
 
 /* =========================================================
-   TITLED PLAYERS ART OVERLAY
+   TITLED PLAYERS BOARD
+   EXACT SLOT CALIBRATION
    ========================================================= */
 
-.titled-members-art-board{
-  aspect-ratio:1192 / 1280;
-}
-
-.titled-members-art-board
-.board-art{
-  position:absolute;
-
-  inset:0;
-
-  width:100%;
-  height:100%;
-
-  object-fit:contain;
-}
-
 .titled-members-overlay{
+
   position:absolute;
 
   inset:0;
 
-  z-index:4;
+  z-index:5;
 
   pointer-events:none;
 }
 
 .titled-art-member{
+
   position:absolute;
 
-  left:22%;
-  right:10%;
+  left:19.7%;
+  right:8.3%;
 
-  height:10%;
+  height:8.1%;
 
   display:flex;
 
   align-items:center;
 
-  gap:2%;
+  gap:9px;
 
   padding:
     0
-    2%;
+    8px;
 
   color:#07172b;
 
@@ -1379,9 +1423,10 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-member:hover{
+
   transform:
     translateX(3px)
-    scale(1.012);
+    scale(1.008);
 
   filter:
     drop-shadow(
@@ -1390,19 +1435,27 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
-.titled-art-member:nth-child(1){
-  top:59.1%;
+
+/* FIRST MARBLE SLOT */
+
+.titled-art-member.slot-1{
+  top:59.45%;
 }
 
-.titled-art-member:nth-child(2){
-  top:71.3%;
+
+/* SECOND MARBLE SLOT */
+
+.titled-art-member.slot-2{
+  top:70.95%;
 }
+
 
 .titled-art-avatar{
-  width:11%;
-  aspect-ratio:1;
 
-  flex:0 0 auto;
+  width:44px;
+  height:44px;
+
+  flex:0 0 44px;
 
   border-radius:50%;
 
@@ -1411,8 +1464,8 @@ body::-webkit-scrollbar-thumb{
   background:#10294a;
 
   border:
-    3px solid
-    rgba(215,166,62,.72);
+    2px solid
+    #d7a63e;
 
   box-shadow:
     0 3px 8px
@@ -1420,109 +1473,111 @@ body::-webkit-scrollbar-thumb{
 }
 
 .titled-art-copy{
+
   flex:1;
+
   min-width:0;
 }
 
 .titled-art-name{
-  color:#07172b;
+
+  max-width:100%;
+
+  color:#0a1730;
 
   font-size:
     clamp(
       11px,
-      2.6vw,
-      20px
+      2.7vw,
+      19px
     );
 
   font-weight:950;
 
-  line-height:1.05;
-
-  overflow:hidden;
-  text-overflow:ellipsis;
+  line-height:1;
 
   white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
 }
 
 .titled-art-rating{
-  margin-top:4px;
 
-  color:#76571f;
+  margin-top:5px;
+
+  color:#71521e;
 
   font-size:
     clamp(
       8px,
       1.8vw,
-      13px
+      12px
     );
 
-  font-weight:900;
+  font-weight:950;
+
+  line-height:1;
 }
 
 .titled-art-title{
+
   flex:0 0 auto;
 
+  min-width:46px;
+
   display:grid;
+
   place-items:center;
 
-  min-width:34px;
-  min-height:26px;
-
   padding:
-    4px
-    7px;
+    7px
+    8px;
 
-  border-radius:8px;
+  border-radius:9px;
+
+  border:
+    1px solid
+    #d7a63e;
 
   background:
+
     linear-gradient(
       180deg,
       #12345f,
       #061326
     );
 
-  border:
-    1px solid
-    #d7a63e;
-
   color:#ffd66b;
 
-  font-size:
-    clamp(
-      8px,
-      1.8vw,
-      13px
-    );
-
+  font-size:12px;
   font-weight:950;
 }
 
 
 /* =========================================================
-   BOARD LOADING STATES
+   LOADING / EMPTY STATE
    ========================================================= */
 
 .art-board-loading{
+
   position:absolute;
 
-  left:24%;
+  left:23%;
   right:10%;
 
-  display:grid;
-  place-items:center;
+  height:5.4%;
 
-  height:7%;
-
-  border-radius:12px;
-
-  color:#061326;
+  border-radius:10px;
 
   background:
+
     linear-gradient(
       90deg,
-      rgba(255,255,255,.1),
-      rgba(255,255,255,.45),
-      rgba(255,255,255,.1)
+      rgba(255,255,255,.04),
+      rgba(255,255,255,.32),
+      rgba(255,255,255,.04)
     );
 
   background-size:
@@ -1530,26 +1585,25 @@ body::-webkit-scrollbar-thumb{
 
   animation:
     shimmer
-    1.1s
+    1.08s
     linear
     infinite;
 }
 
 .art-empty{
+
   position:absolute;
 
-  left:25%;
+  left:23%;
   right:10%;
   top:64%;
-
-  padding:10px;
 
   color:#07172b;
 
   text-align:center;
 
-  font-size:13px;
-  font-weight:900;
+  font-size:12px;
+  font-weight:950;
 }
 
 
@@ -1558,6 +1612,7 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .rules-window{
+
   position:relative;
 
   height:200px;
@@ -1576,6 +1631,7 @@ body::-webkit-scrollbar-thumb{
 
 .rules-window::before,
 .rules-window::after{
+
   content:"";
 
   position:absolute;
@@ -1591,9 +1647,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rules-window::before{
+
   top:0;
 
   background:
+
     linear-gradient(
       180deg,
       #081a32,
@@ -1602,9 +1660,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rules-window::after{
+
   bottom:0;
 
   background:
+
     linear-gradient(
       0deg,
       #07172b,
@@ -1613,6 +1673,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rules-track{
+
   display:grid;
 
   gap:7px;
@@ -1628,19 +1689,23 @@ body::-webkit-scrollbar-thumb{
 
 .rules-window:hover
 .rules-track{
+
   animation-play-state:paused;
 }
 
 @keyframes rulesScroll{
 
   to{
+
     transform:
       translateY(-50%);
+
   }
 
 }
 
 .rule{
+
   display:flex;
 
   align-items:flex-start;
@@ -1665,7 +1730,9 @@ body::-webkit-scrollbar-thumb{
 }
 
 .rule i{
+
   display:grid;
+
   place-items:center;
 
   flex:0 0 auto;
@@ -1676,6 +1743,7 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   background:
+
     linear-gradient(
       180deg,
       var(--gold2),
@@ -1696,6 +1764,7 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .staff-hero{
+
   position:relative;
 
   padding:
@@ -1707,16 +1776,19 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-eyebrow{
+
   color:var(--blue3);
 
   font-size:11px;
   font-weight:950;
 
   text-transform:uppercase;
+
   letter-spacing:.18em;
 }
 
 .staff-title{
+
   margin:
     5px
     0
@@ -1733,6 +1805,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-subtitle{
+
   max-width:470px;
 
   margin:
@@ -1746,11 +1819,14 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-grid{
+
   display:grid;
+
   gap:8px;
 }
 
 .staff-card{
+
   display:grid;
 
   grid-template-columns:
@@ -1771,6 +1847,7 @@ body::-webkit-scrollbar-thumb{
     rgba(105,183,255,.13);
 
   background:
+
     linear-gradient(
       180deg,
       rgba(15,45,82,.9),
@@ -1783,11 +1860,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-card.head-staff{
+
   border-color:
     rgba(255,214,107,.45);
 }
 
 .staff-avatar{
+
   width:48px;
   height:48px;
 
@@ -1807,6 +1886,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-name{
+
   color:#fff;
 
   font-size:14px;
@@ -1818,6 +1898,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-role{
+
   margin-top:3px;
 
   color:var(--gold3);
@@ -1827,6 +1908,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-rating{
+
   margin-top:3px;
 
   color:#aab8cb;
@@ -1835,6 +1917,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .staff-badges{
+
   display:flex;
 
   flex-direction:column;
@@ -1845,6 +1928,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-badge{
+
   padding:
     4px
     7px;
@@ -1858,9 +1942,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-owner{
+
   color:#15110a;
 
   background:
+
     linear-gradient(
       180deg,
       #ffe493,
@@ -1869,9 +1955,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-co-owner{
+
   color:#fff;
 
   background:
+
     linear-gradient(
       180deg,
       #3b96ff,
@@ -1880,9 +1968,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-head-of-staff{
+
   color:#101827;
 
   background:
+
     linear-gradient(
       180deg,
       #a9e3ff,
@@ -1891,9 +1981,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-super-admin{
+
   color:#fff;
 
   background:
+
     linear-gradient(
       180deg,
       #775dff,
@@ -1902,9 +1994,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-admin{
+
   color:#fff;
 
   background:
+
     linear-gradient(
       180deg,
       #2e8cdf,
@@ -1913,9 +2007,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-coordinator{
+
   color:#061326;
 
   background:
+
     linear-gradient(
       180deg,
       #88d5ff,
@@ -1924,9 +2020,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .role-mascot{
+
   color:#15110a;
 
   background:
+
     linear-gradient(
       180deg,
       #fff1b7,
@@ -1940,6 +2038,7 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .tournament-hero{
+
   position:relative;
 
   min-height:360px;
@@ -1961,16 +2060,19 @@ body::-webkit-scrollbar-thumb{
 }
 
 .eyebrow{
+
   color:var(--blue3);
 
   font-size:11px;
   font-weight:950;
 
   text-transform:uppercase;
+
   letter-spacing:.16em;
 }
 
 .season-title{
+
   margin:
     5px
     0
@@ -1994,6 +2096,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .status{
+
   display:inline-flex;
 
   align-items:center;
@@ -2020,6 +2123,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .facts{
+
   display:grid;
 
   grid-template-columns:
@@ -2032,6 +2136,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fact{
+
   padding:8px;
 
   border-radius:11px;
@@ -2045,6 +2150,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fact b{
+
   display:block;
 
   margin-bottom:3px;
@@ -2055,6 +2161,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fact span{
+
   color:#fff;
 
   font-size:12px;
@@ -2062,6 +2169,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .actions{
+
   display:flex;
 
   flex-wrap:wrap;
@@ -2072,6 +2180,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .action{
+
   display:inline-flex;
 
   align-items:center;
@@ -2099,15 +2208,18 @@ body::-webkit-scrollbar-thumb{
 }
 
 .justice-wrap{
+
   position:relative;
 
   min-height:320px;
 
   display:grid;
+
   place-items:center;
 }
 
 .justice{
+
   position:relative;
 
   z-index:3;
@@ -2133,16 +2245,18 @@ body::-webkit-scrollbar-thumb{
 @keyframes justiceFloat{
 
   50%{
+
     transform:
       translateY(-6px)
       rotate(.2deg);
+
   }
 
 }
 
 
 /* =========================================================
-   ARTWORK CHAMPIONS PODIUM
+   CHAMPIONS PODIUM ARTWORK
    ========================================================= */
 
 .champions-section{
@@ -2150,39 +2264,32 @@ body::-webkit-scrollbar-thumb{
 }
 
 .champions-stage{
+
   position:relative;
 
   width:100%;
 
-  aspect-ratio:16 / 9;
-
-  overflow:visible;
-
   margin-top:8px;
 
-  filter:
-    drop-shadow(
-      0 18px 30px
-      rgba(0,0,0,.5)
-    );
+  overflow:visible;
 }
 
 .champions-podium-art{
-  position:absolute;
 
-  inset:0;
+  position:relative;
 
   z-index:1;
 
-  width:100%;
-  height:100%;
+  display:block;
 
-  object-fit:contain;
+  width:100%;
+  height:auto;
 
   pointer-events:none;
 }
 
 .champions-overlay{
+
   position:absolute;
 
   inset:0;
@@ -2193,6 +2300,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-winner{
+
   position:absolute;
 
   display:flex;
@@ -2200,7 +2308,7 @@ body::-webkit-scrollbar-thumb{
 
   align-items:center;
 
-  width:25%;
+  width:24%;
 
   color:#fff;
 
@@ -2216,9 +2324,10 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-winner:hover{
+
   transform:
     translateY(-5px)
-    scale(1.035);
+    scale(1.03);
 
   filter:
     drop-shadow(
@@ -2227,34 +2336,48 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
+
+/* 2ND */
+
 .podium-second{
-  left:9%;
-  top:11%;
+
+  left:8.5%;
+  top:12%;
 }
+
+
+/* 1ST */
 
 .podium-first{
-  left:37.5%;
-  top:-2%;
+
+  left:38%;
+  top:1.5%;
 }
+
+
+/* 3RD */
 
 .podium-third{
-  right:9%;
-  top:13%;
+
+  right:8.5%;
+  top:14%;
 }
 
+
 .winner-avatar{
+
   width:
     clamp(
-      50px,
-      12vw,
-      92px
+      48px,
+      11vw,
+      88px
     );
 
   height:
     clamp(
-      50px,
-      12vw,
-      92px
+      48px,
+      11vw,
+      88px
     );
 
   border-radius:50%;
@@ -2269,42 +2392,37 @@ body::-webkit-scrollbar-thumb{
 
   box-shadow:
     0 7px 18px
-    rgba(0,0,0,.55),
-    0 0 0 2px
-    rgba(6,19,38,.5);
+    rgba(0,0,0,.55);
 }
 
 .podium-first
 .winner-avatar{
+
   width:
     clamp(
       58px,
-      14vw,
-      106px
+      13vw,
+      102px
     );
 
   height:
     clamp(
       58px,
-      14vw,
-      106px
+      13vw,
+      102px
     );
 
   border-color:#ffd66b;
-
-  box-shadow:
-    0 8px 22px
-    rgba(0,0,0,.58),
-    0 0 18px
-    rgba(255,214,107,.23);
 }
 
 .podium-third
 .winner-avatar{
+
   border-color:#c98043;
 }
 
 .winner-name{
+
   max-width:100%;
 
   margin-top:4px;
@@ -2314,33 +2432,35 @@ body::-webkit-scrollbar-thumb{
   font-size:
     clamp(
       8px,
-      2vw,
+      1.9vw,
       14px
     );
 
   font-weight:950;
 
-  line-height:1.1;
+  line-height:1.05;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
 
   text-shadow:
     0 2px 4px
     rgba(0,0,0,.9);
-
-  overflow:hidden;
-  text-overflow:ellipsis;
-
-  white-space:nowrap;
 }
 
 .winner-meta{
-  margin-top:2px;
+
+  margin-top:3px;
 
   color:#f4d58a;
 
   font-size:
     clamp(
       6px,
-      1.45vw,
+      1.4vw,
       10px
     );
 
@@ -2352,7 +2472,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 .winner-rating{
-  margin-top:2px;
+
+  margin-top:3px;
 
   padding:
     2px
@@ -2361,7 +2482,7 @@ body::-webkit-scrollbar-thumb{
   border-radius:999px;
 
   background:
-    rgba(3,12,24,.76);
+    rgba(3,12,24,.82);
 
   border:
     1px solid
@@ -2372,7 +2493,7 @@ body::-webkit-scrollbar-thumb{
   font-size:
     clamp(
       6px,
-      1.4vw,
+      1.35vw,
       10px
     );
 
@@ -2380,26 +2501,29 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-placeholder-avatar{
+
   display:grid;
+
   place-items:center;
 
   width:
     clamp(
-      50px,
-      12vw,
-      92px
+      48px,
+      11vw,
+      88px
     );
 
   height:
     clamp(
-      50px,
-      12vw,
-      92px
+      48px,
+      11vw,
+      88px
     );
 
   border-radius:50%;
 
   background:
+
     radial-gradient(
       circle,
       #183c69,
@@ -2414,30 +2538,27 @@ body::-webkit-scrollbar-thumb{
 
   font-size:
     clamp(
-      22px,
-      6vw,
-      42px
+      20px,
+      5vw,
+      38px
     );
-
-  box-shadow:
-    0 7px 18px
-    rgba(0,0,0,.5);
 }
 
 .podium-first
 .podium-placeholder-avatar{
+
   width:
     clamp(
       58px,
-      14vw,
-      106px
+      13vw,
+      102px
     );
 
   height:
     clamp(
       58px,
-      14vw,
-      106px
+      13vw,
+      102px
     );
 
   border-color:
@@ -2450,11 +2571,14 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .archive{
+
   display:grid;
+
   gap:6px;
 }
 
 .archive-row{
+
   display:grid;
 
   grid-template-columns:
@@ -2478,10 +2602,12 @@ body::-webkit-scrollbar-thumb{
     rgba(0,0,0,.2);
 
   color:inherit;
+
   text-decoration:none;
 }
 
 .archive-row img{
+
   width:38px;
   height:38px;
 
@@ -2495,6 +2621,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .archive-rating{
+
   color:var(--gold2);
 
   font-size:11px;
@@ -2507,11 +2634,13 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 .skeleton{
+
   height:56px;
 
   border-radius:11px;
 
   background:
+
     linear-gradient(
       90deg,
       #07172b 20%,
@@ -2532,13 +2661,16 @@ body::-webkit-scrollbar-thumb{
 @keyframes shimmer{
 
   to{
+
     background-position:
       -220% 0;
+
   }
 
 }
 
 .empty{
+
   padding:16px;
 
   color:#9faec2;
@@ -2549,6 +2681,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .footer-note{
+
   padding:
     16px
     4px
@@ -2563,7 +2696,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   CHESS.COM SIDEBAR WIDTH
+   MOBILE SIDEBAR
    ========================================================= */
 
 @media(max-width:430px){
@@ -2578,6 +2711,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .hero{
+
     min-height:330px;
 
     padding:
@@ -2587,6 +2721,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .hero-glow{
+
     width:285px;
     height:285px;
 
@@ -2594,6 +2729,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .orbit{
+
     width:240px;
 
     top:42%;
@@ -2620,6 +2756,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .dashboard-switcher{
+
     gap:5px;
 
     padding:5px;
@@ -2628,6 +2765,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .dashboard-btn{
+
     padding:
       9px
       4px;
@@ -2636,6 +2774,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .section{
+
     margin-top:8px;
 
     padding:10px;
@@ -2651,11 +2790,8 @@ body::-webkit-scrollbar-thumb{
     font-size:9px;
   }
 
-  .live-dot{
-    font-size:10px;
-  }
-
   .quick-links{
+
     grid-template-columns:
       1fr
       1fr;
@@ -2665,7 +2801,122 @@ body::-webkit-scrollbar-thumb{
     min-height:65px;
   }
 
+
+  /* -------------------------
+     NEW MEMBERS MOBILE
+     ------------------------- */
+
+  .art-member{
+
+    left:20%;
+    right:8.6%;
+
+    height:6.9%;
+
+    gap:6px;
+
+    padding:
+      0
+      4px;
+  }
+
+  .art-member-avatar{
+
+    width:34px;
+    height:34px;
+
+    flex-basis:34px;
+  }
+
+  .art-member-name{
+
+    font-size:
+      clamp(
+        11px,
+        3.6vw,
+        15px
+      );
+  }
+
+  .art-member-rating{
+
+    margin-top:3px;
+
+    font-size:
+      clamp(
+        8px,
+        2.7vw,
+        11px
+      );
+  }
+
+
+  /* -------------------------
+     TITLED MOBILE
+     ------------------------- */
+
+  .titled-art-member{
+
+    left:19.4%;
+    right:8%;
+
+    height:8.2%;
+
+    gap:6px;
+
+    padding:
+      0
+      5px;
+  }
+
+  .titled-art-avatar{
+
+    width:37px;
+    height:37px;
+
+    flex-basis:37px;
+  }
+
+  .titled-art-name{
+
+    font-size:
+      clamp(
+        11px,
+        3.7vw,
+        15px
+      );
+  }
+
+  .titled-art-rating{
+
+    margin-top:3px;
+
+    font-size:
+      clamp(
+        8px,
+        2.6vw,
+        11px
+      );
+  }
+
+  .titled-art-title{
+
+    min-width:38px;
+
+    padding:
+      5px
+      6px;
+
+    font-size:10px;
+  }
+
+
+  /* -------------------------
+     STAFF MOBILE
+     ------------------------- */
+
   .staff-card{
+
     grid-template-columns:
       46px
       minmax(0,1fr)
@@ -2675,6 +2926,7 @@ body::-webkit-scrollbar-thumb{
   }
 
   .staff-avatar{
+
     width:46px;
     height:46px;
   }
@@ -2695,7 +2947,13 @@ body::-webkit-scrollbar-thumb{
     font-size:9px;
   }
 
+
+  /* -------------------------
+     TOURNAMENT MOBILE
+     ------------------------- */
+
   .tournament-hero{
+
     grid-template-columns:1fr;
 
     min-height:0;
@@ -2715,29 +2973,8 @@ body::-webkit-scrollbar-thumb{
     max-height:260px;
   }
 
-  .art-board{
-    border-radius:10px;
-  }
-
-  .art-member-avatar{
-    border-width:1px;
-  }
-
-  .titled-art-avatar{
-    border-width:2px;
-  }
-
-  .art-member{
-    left:21%;
-    right:8%;
-  }
-
-  .titled-art-member{
-    left:21%;
-    right:8%;
-  }
-
   .champions-section{
+
     padding-left:6px;
     padding-right:6px;
   }
@@ -2763,15 +3000,24 @@ body::-webkit-scrollbar-thumb{
     display:none;
   }
 
-  .art-member-title{
-    padding:
-      2px
-      4px;
+  .art-member-avatar{
+
+    width:29px;
+    height:29px;
+
+    flex-basis:29px;
   }
 
-  .titled-art-title{
-    min-width:27px;
-    min-height:21px;
+  .titled-art-avatar{
+
+    width:32px;
+    height:32px;
+
+    flex-basis:32px;
+  }
+
+  .art-member-title{
+    display:none;
   }
 
 }
@@ -2787,6 +3033,7 @@ body::-webkit-scrollbar-thumb{
 
 <main class="app">
 
+
 <div
   class="ambient"
   id="ambient">
@@ -2801,7 +3048,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     HOME DASHBOARD
+     HOME
      ====================================================== -->
 
 <section class="page">
@@ -2814,6 +3061,7 @@ body::-webkit-scrollbar-thumb{
   <div class="orbit"></div>
 
   <div class="orbit two"></div>
+
 
   <div class="logo-stage">
 
@@ -2835,6 +3083,7 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
+
     <div
       class="clock"
       id="clock">
@@ -2842,6 +3091,7 @@ body::-webkit-scrollbar-thumb{
       --:--:--
 
     </div>
+
 
     <div
       class="date"
@@ -2902,6 +3152,7 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
+
   <div
     class="quick-links"
     id="quickLinks">
@@ -2926,11 +3177,13 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
+
     <span class="live-dot">
       Updates
     </span>
 
   </div>
+
 
   <div
     class="announcement-list"
@@ -2954,6 +3207,7 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
+
   <div
     class="events"
     id="events">
@@ -2962,21 +3216,21 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
+
 <!-- ======================================================
-     ARTWORK MEMBER BOARDS
+     NEW MEMBERS ARTWORK
      ====================================================== -->
 
 <div class="members-showcase">
 
 
-<section
-  class="art-board
-         new-members-art-board">
+<section class="art-board">
 
   <img
     class="board-art"
     src="./assets/acfa-new-members-board.PNG"
     alt="ACFA New Members">
+
 
   <div
     class="new-members-overlay"
@@ -2984,27 +3238,27 @@ body::-webkit-scrollbar-thumb{
 
     <div
       class="art-board-loading"
-      style="top:43.5%">
+      style="top:42%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:51.5%">
+      style="top:49.3%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:59.55%">
+      style="top:56.6%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:67.65%">
+      style="top:63.9%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:75.7%">
+      style="top:71.2%">
     </div>
 
   </div>
@@ -3012,14 +3266,18 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
-<section
-  class="art-board
-         titled-members-art-board">
+
+<!-- ======================================================
+     TITLED PLAYER ARTWORK
+     ====================================================== -->
+
+<section class="art-board">
 
   <img
     class="board-art"
     src="./assets/acfa-titled-members-board.PNG"
     alt="ACFA Titled Players">
+
 
   <div
     class="titled-members-overlay"
@@ -3032,7 +3290,7 @@ body::-webkit-scrollbar-thumb{
 
     <div
       class="art-board-loading"
-      style="top:72%">
+      style="top:71.5%">
     </div>
 
   </div>
@@ -3042,6 +3300,11 @@ body::-webkit-scrollbar-thumb{
 
 </div>
 
+
+
+<!-- ======================================================
+     RULES
+     ====================================================== -->
 
 <section class="section">
 
@@ -3056,6 +3319,7 @@ body::-webkit-scrollbar-thumb{
     </span>
 
   </div>
+
 
   <div class="rules-window">
 
@@ -3122,11 +3386,15 @@ body::-webkit-scrollbar-thumb{
 
 <section class="tournament-hero">
 
+
   <div class="tournament-copy">
 
     <div class="eyebrow">
+
       ACFA Seasonal Championships
+
     </div>
+
 
     <h1
       class="season-title"
@@ -3135,6 +3403,7 @@ body::-webkit-scrollbar-thumb{
       Fall 2026
 
     </h1>
+
 
     <span
       class="status"
@@ -3146,6 +3415,7 @@ body::-webkit-scrollbar-thumb{
 
 
     <div class="facts">
+
 
       <div class="fact">
 
@@ -3159,6 +3429,7 @@ body::-webkit-scrollbar-thumb{
 
       </div>
 
+
       <div class="fact">
 
         <b>
@@ -3170,6 +3441,7 @@ body::-webkit-scrollbar-thumb{
         </span>
 
       </div>
+
 
       <div class="fact">
 
@@ -3183,6 +3455,7 @@ body::-webkit-scrollbar-thumb{
 
       </div>
 
+
       <div class="fact">
 
         <b>
@@ -3194,6 +3467,7 @@ body::-webkit-scrollbar-thumb{
         </span>
 
       </div>
+
 
     </div>
 
@@ -3210,6 +3484,7 @@ body::-webkit-scrollbar-thumb{
         Open Tournament
 
       </a>
+
 
       <a
         class="action"
@@ -3236,8 +3511,14 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
+
 </section>
 
+
+
+<!-- ======================================================
+     CHAMPIONS PODIUM
+     ====================================================== -->
 
 <section
   class="section
@@ -3263,6 +3544,7 @@ body::-webkit-scrollbar-thumb{
       src="./assets/acfa-champions-podium.PNG"
       alt="ACFA Season Champions Podium">
 
+
     <div
       class="champions-overlay"
       id="podium">
@@ -3272,6 +3554,11 @@ body::-webkit-scrollbar-thumb{
 
 </section>
 
+
+
+<!-- ======================================================
+     CHAMPION ARCHIVE
+     ====================================================== -->
 
 <section class="section">
 
@@ -3286,6 +3573,7 @@ body::-webkit-scrollbar-thumb{
     </span>
 
   </div>
+
 
   <div
     class="archive"
@@ -3340,12 +3628,18 @@ body::-webkit-scrollbar-thumb{
 <section class="staff-hero">
 
   <div class="staff-eyebrow">
+
     ACFA Leadership
+
   </div>
 
+
   <h1 class="staff-title">
+
     Staff Board
+
   </h1>
+
 
   <div class="staff-subtitle">
 
@@ -3364,27 +3658,37 @@ body::-webkit-scrollbar-thumb{
     <div>
 
       <div class="section-kicker">
+
         Leadership Directory
+
       </div>
 
       <h2>
+
         ACFA Staff
+
       </h2>
 
     </div>
 
+
     <span class="live-dot">
+
       API Profiles
+
     </span>
 
   </div>
+
 
   <div
     class="staff-grid"
     id="staffBoard">
 
     <div class="skeleton"></div>
+
     <div class="skeleton"></div>
+
     <div class="skeleton"></div>
 
   </div>
@@ -3404,8 +3708,9 @@ body::-webkit-scrollbar-thumb{
 </div>
 
 
+
 <!-- =========================================================
-     EASY UPDATE DATA
+     DATA
      ========================================================= -->
 
 <script
@@ -3415,133 +3720,262 @@ body::-webkit-scrollbar-thumb{
 {
 
   "club": {
-    "name": "And Chess For All Official",
-    "slug": "and-chess-for-all-official",
-    "motto": "Every Player Belongs • Every Move Matters"
+
+    "name":
+      "And Chess For All Official",
+
+    "slug":
+      "and-chess-for-all-official",
+
+    "motto":
+      "Every Player Belongs • Every Move Matters"
+
   },
+
 
   "quickLinks": [
 
     {
-      "label": "Club Events",
-      "icon": "♟",
-      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
+
+      "label":
+        "Club Events",
+
+      "icon":
+        "♟",
+
+      "url":
+        "https://www.chess.com/clubs/events/and-chess-for-all-official"
+
     },
 
     {
-      "label": "Forums",
-      "icon": "✦",
-      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+
+      "label":
+        "Forums",
+
+      "icon":
+        "✦",
+
+      "url":
+        "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+
     },
 
     {
-      "label": "Announcements",
-      "icon": "★",
-      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
+
+      "label":
+        "Announcements",
+
+      "icon":
+        "★",
+
+      "url":
+        "https://www.chess.com/club/and-chess-for-all-official/announcements"
+
     },
 
     {
-      "label": "Notes",
-      "icon": "✎",
-      "url": "https://www.chess.com/club/notes/and-chess-for-all-official"
+
+      "label":
+        "Notes",
+
+      "icon":
+        "✎",
+
+      "url":
+        "https://www.chess.com/club/notes/and-chess-for-all-official"
+
     }
 
   ],
+
 
   "announcements": [
 
     {
-      "title": "ACFA Fall Championship",
-      "date": "September 2026",
-      "body": "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
-      "url": "",
-      "pinned": true
+
+      "title":
+        "ACFA Fall Championship",
+
+      "date":
+        "September 2026",
+
+      "body":
+        "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
+
+      "url":
+        "",
+
+      "pinned":
+        true
+
     },
 
     {
-      "title": "Welcome to the ACFA Dashboard",
-      "date": "September 2026",
-      "body": "Important club news, tournament updates, seasonal announcements, and community information will appear here.",
-      "url": "",
-      "pinned": false
+
+      "title":
+        "Welcome to the ACFA Dashboard",
+
+      "date":
+        "September 2026",
+
+      "body":
+        "Important club news, tournament updates, seasonal announcements, and community information will appear here.",
+
+      "url":
+        "",
+
+      "pinned":
+        false
+
     }
 
   ],
+
 
   "events": [
 
     {
-      "title": "ACFA Fall Championship",
-      "date": "2026-10-05",
-      "status": "Coming Soon",
-      "url": ""
+
+      "title":
+        "ACFA Fall Championship",
+
+      "date":
+        "2026-10-05",
+
+      "status":
+        "Coming Soon",
+
+      "url":
+        ""
+
     }
 
   ],
+
 
   "staff": [
 
     {
-      "username": "DevilsGambit22",
-      "role": "Owner"
+
+      "username":
+        "DevilsGambit22",
+
+      "role":
+        "Owner"
+
     },
 
     {
-      "username": "SaintsGambit98",
-      "role": "Co-Owner"
+
+      "username":
+        "SaintsGambit98",
+
+      "role":
+        "Co-Owner"
+
     },
 
     {
-      "username": "Bgeerr",
-      "role": "Head of Staff"
+
+      "username":
+        "Bgeerr",
+
+      "role":
+        "Head of Staff"
+
     },
 
     {
-      "username": "OfficialLadyJustice",
-      "role": "Mascot",
-      "secondaryRole": "Super Admin"
+
+      "username":
+        "OfficialLadyJustice",
+
+      "role":
+        "Mascot",
+
+      "secondaryRole":
+        "Super Admin"
+
     },
 
     {
-      "username": "Stefan-Mazarine",
-      "role": "Super Admin"
+
+      "username":
+        "Stefan-Mazarine",
+
+      "role":
+        "Super Admin"
+
     },
 
     {
-      "username": "Cookie00190",
-      "role": "Admin"
+
+      "username":
+        "Cookie00190",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "NtsakoCloy",
-      "role": "Admin"
+
+      "username":
+        "NtsakoCloy",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "roheemo_h",
-      "role": "Admin"
+
+      "username":
+        "roheemo_h",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "Xtreme-Ninja-100",
-      "role": "Admin"
+
+      "username":
+        "Xtreme-Ninja-100",
+
+      "role":
+        "Admin"
+
     },
 
     {
-      "username": "Kissenschlach",
-      "role": "Coordinator"
+
+      "username":
+        "Kissenschlach",
+
+      "role":
+        "Coordinator"
+
     }
 
   ],
+
 
   "verifiedTitledMembers": [
 
     {
-      "username": "ChanelinmyYSL",
-      "title": "IM"
+
+      "username":
+        "ChanelinmyYSL",
+
+      "title":
+        "IM"
+
     }
 
   ],
+
 
   "rules": [
 
@@ -3563,27 +3997,38 @@ body::-webkit-scrollbar-thumb{
 
   ],
 
+
   "tournament": {
 
-    "activeSeason": "Fall",
+    "activeSeason":
+      "Fall",
 
-    "year": 2026,
+    "year":
+      2026,
 
-    "status": "Planning",
+    "status":
+      "Planning",
 
-    "registrationDeadline": "",
+    "registrationDeadline":
+      "",
 
-    "startDate": "",
+    "startDate":
+      "",
 
-    "endDate": "",
+    "endDate":
+      "",
 
-    "format": "Seasonal ACFA Championship",
+    "format":
+      "Seasonal ACFA Championship",
 
-    "eventUrl": "",
+    "eventUrl":
+      "",
 
-    "detailsUrl": "",
+    "detailsUrl":
+      "",
 
-    "champions": []
+    "champions":
+      []
 
   }
 
@@ -3592,10 +4037,11 @@ body::-webkit-scrollbar-thumb{
 </script>
 
 
+
 <script>
 
 /* =========================================================
-   CORE CONFIG
+   CORE
    ========================================================= */
 
 const API =
@@ -3617,6 +4063,7 @@ const DATA =
 
 
 const TITLE_CODES = [
+
   "GM",
   "WGM",
   "IM",
@@ -3625,18 +4072,24 @@ const TITLE_CODES = [
   "WFM",
   "CM",
   "WCM"
+
 ];
 
 
 const TITLE_RANK = {
+
   GM:8,
   WGM:7,
+
   IM:6,
   WIM:5,
+
   FM:4,
   WFM:3,
+
   CM:2,
   WCM:1
+
 };
 
 
@@ -3653,7 +4106,7 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v23";
+  "acfa-dashboard-v24";
 
 
 let CLUB_MEMBERS =
@@ -3677,7 +4130,7 @@ const $$ =
 
 
 /* =========================================================
-   HELPERS
+   ESCAPE
    ========================================================= */
 
 function escapeHTML(
@@ -3686,8 +4139,11 @@ function escapeHTML(
 
   return String(value)
     .replace(
+
       /[&<>"']/g,
+
       character =>
+
         ({
           "&":"&amp;",
           "<":"&lt;",
@@ -3695,10 +4151,15 @@ function escapeHTML(
           "\"":"&quot;",
           "'":"&#039;"
         })[character]
+
     );
 
 }
 
+
+/* =========================================================
+   SAFE VALUE
+   ========================================================= */
 
 function safe(
   value,
@@ -3711,10 +4172,19 @@ function safe(
     )
     .trim();
 
-  return text || fallback;
+
+  return (
+    text
+    ||
+    fallback
+  );
 
 }
 
+
+/* =========================================================
+   CACHE
+   ========================================================= */
 
 function cacheGet(
   key,
@@ -3729,8 +4199,11 @@ function cacheGet(
           `${CACHE_VERSION}:${key}`
         );
 
+
     if(!raw){
+
       return null;
+
     }
 
 
@@ -3747,7 +4220,9 @@ function cacheGet(
       >
       lifetime
     ){
+
       return null;
+
     }
 
 
@@ -3777,8 +4252,13 @@ function cacheSet(
         `${CACHE_VERSION}:${key}`,
 
         JSON.stringify({
-          time:Date.now(),
-          value:value
+
+          time:
+            Date.now(),
+
+          value:
+            value
+
         })
 
       );
@@ -3791,16 +4271,24 @@ function cacheSet(
 }
 
 
+/* =========================================================
+   FETCH
+   ========================================================= */
+
 async function fetchJSON(
   url
 ){
 
   const response =
     await fetch(
+
       url,
+
       {
-        cache:"no-store"
+        cache:
+          "no-store"
       }
+
     );
 
 
@@ -3818,10 +4306,6 @@ async function fetchJSON(
 }
 
 
-/* =========================================================
-   FORCE FRESH PROFILE
-   ========================================================= */
-
 async function fetchFreshProfile(
   username
 ){
@@ -3832,7 +4316,8 @@ async function fetchFreshProfile(
       `${API}/player/${encodeURIComponent(username)}?acfa=${Date.now()}`,
 
       {
-        cache:"no-store"
+        cache:
+          "no-store"
       }
 
     );
@@ -3875,24 +4360,30 @@ function buildParticles(){
 
 
     const classes =
-      ["spark"];
+      [
+        "spark"
+      ];
 
 
     if(
       i % 4 === 0
     ){
+
       classes.push(
         "blue"
       );
+
     }
 
 
     if(
       i % 10 === 0
     ){
+
       classes.push(
         "large"
       );
+
     }
 
 
@@ -3901,26 +4392,38 @@ function buildParticles(){
 
 
     spark.style.setProperty(
+
       "--x",
+
       `${Math.random()*100}%`
+
     );
 
 
     spark.style.setProperty(
+
       "--drift",
+
       `${(Math.random()-.5)*150}px`
+
     );
 
 
     spark.style.setProperty(
+
       "--dur",
+
       `${7+Math.random()*11}s`
+
     );
 
 
     spark.style.setProperty(
+
       "--delay",
+
       `${-Math.random()*22}s`
+
     );
 
 
@@ -3996,24 +4499,44 @@ function updateClock(){
   $("#clock")
     .textContent =
       now.toLocaleTimeString(
+
         [],
+
         {
-          hour:"numeric",
-          minute:"2-digit",
-          second:"2-digit"
+
+          hour:
+            "numeric",
+
+          minute:
+            "2-digit",
+
+          second:
+            "2-digit"
+
         }
+
       );
 
 
   $("#dateLine")
     .textContent =
       now.toLocaleDateString(
+
         undefined,
+
         {
-          weekday:"long",
-          month:"long",
-          day:"numeric"
+
+          weekday:
+            "long",
+
+          month:
+            "long",
+
+          day:
+            "numeric"
+
         }
+
       );
 
 }
@@ -4029,7 +4552,7 @@ setInterval(
 
 
 /* =========================================================
-   DASHBOARD NAV
+   DASHBOARD NAVIGATION
    ========================================================= */
 
 function setDashboard(
@@ -4041,13 +4564,17 @@ function setDashboard(
 
 
   track.classList.remove(
+
     "view-tournaments",
+
     "view-staff"
+
   );
 
 
   if(
-    dashboard ===
+    dashboard
+    ===
     "tournaments"
   ){
 
@@ -4059,7 +4586,8 @@ function setDashboard(
 
 
   if(
-    dashboard ===
+    dashboard
+    ===
     "staff"
   ){
 
@@ -4072,22 +4600,31 @@ function setDashboard(
 
   $$(".dashboard-btn")
     .forEach(
+
       button =>{
 
         button.classList.toggle(
+
           "active",
+
           button.dataset.dashboard
           ===
           dashboard
+
         );
 
       }
+
     );
 
 
   window.scrollTo({
+
     top:0,
-    behavior:"smooth"
+
+    behavior:
+      "smooth"
+
   });
 
 }
@@ -4095,22 +4632,28 @@ function setDashboard(
 
 $$(".dashboard-btn")
   .forEach(
+
     button =>{
 
       button.addEventListener(
+
         "click",
+
         () =>
+
           setDashboard(
             button.dataset.dashboard
           )
+
       );
 
     }
+
   );
 
 
 /* =========================================================
-   DATE HELPERS
+   DATES
    ========================================================= */
 
 function niceDate(
@@ -4118,12 +4661,15 @@ function niceDate(
 ){
 
   if(!value){
+
     return "TBA";
+
   }
 
 
   const date =
     new Date(
+
       value
       +
       (
@@ -4133,6 +4679,7 @@ function niceDate(
           :
           ""
       )
+
     );
 
 
@@ -4141,18 +4688,31 @@ function niceDate(
       date.getTime()
     )
   ){
+
     return value;
+
   }
 
 
-  return date.toLocaleDateString(
-    undefined,
-    {
-      month:"short",
-      day:"numeric",
-      year:"numeric"
-    }
-  );
+  return date
+    .toLocaleDateString(
+
+      undefined,
+
+      {
+
+        month:
+          "short",
+
+        day:
+          "numeric",
+
+        year:
+          "numeric"
+
+      }
+
+    );
 
 }
 
@@ -4173,8 +4733,11 @@ function monthDay(
 
   const date =
     new Date(
-      value +
+
+      value
+      +
       "T12:00:00"
+
     );
 
 
@@ -4182,10 +4745,14 @@ function monthDay(
 
     date
       .toLocaleDateString(
+
         undefined,
+
         {
-          month:"short"
+          month:
+            "short"
         }
+
       )
       .toUpperCase(),
 
@@ -4205,43 +4772,47 @@ function renderQuickLinks(){
   $("#quickLinks")
     .innerHTML =
 
-      (DATA.quickLinks || [])
+      (
+        DATA.quickLinks
+        ||
+        []
+      )
 
-        .filter(
-          item =>
-            item.url
-        )
+      .filter(
+        item =>
+          item.url
+      )
 
-        .map(
-          item =>`
+      .map(
+        item =>`
 
-          <a
-            class="quick-link"
+        <a
+          class="quick-link"
 
-            href="${item.url}"
+          href="${item.url}"
 
-            target="_blank"
+          target="_blank"
 
-            rel="noopener">
+          rel="noopener">
 
-            <div class="quick-icon">
+          <div class="quick-icon">
 
-              ${escapeHTML(item.icon || "•")}
+            ${escapeHTML(item.icon || "•")}
 
-            </div>
+          </div>
 
-            <div class="quick-label">
+          <div class="quick-label">
 
-              ${escapeHTML(item.label)}
+            ${escapeHTML(item.label)}
 
-            </div>
+          </div>
 
-          </a>
+        </a>
 
-          `
-        )
+        `
+      )
 
-        .join("");
+      .join("");
 
 }
 
@@ -4252,24 +4823,34 @@ function renderQuickLinks(){
 
 function renderAnnouncements(){
 
-  const announcements =
-    [
-      ...(DATA.announcements || [])
-    ];
+  const announcements = [
+
+    ...(
+      DATA.announcements
+      ||
+      []
+    )
+
+  ];
 
 
   announcements.sort(
+
     (
       a,
       b
     ) =>
+
       Number(
         Boolean(b.pinned)
       )
+
       -
+
       Number(
         Boolean(a.pinned)
       )
+
   );
 
 
@@ -4279,11 +4860,15 @@ function renderAnnouncements(){
 
     $("#announcementBoard")
       .innerHTML =
+
         `
         <div class="empty">
+
           No announcements posted.
+
         </div>
         `;
+
 
     return;
 
@@ -4294,6 +4879,7 @@ function renderAnnouncements(){
     .innerHTML =
 
       announcements
+
         .map(
           announcement =>`
 
@@ -4325,6 +4911,7 @@ function renderAnnouncements(){
 
               </div>
 
+
               <div class="announcement-date">
 
                 ${escapeHTML(announcement.date || "")}
@@ -4333,11 +4920,13 @@ function renderAnnouncements(){
 
             </div>
 
+
             <div class="announcement-body">
 
               ${escapeHTML(announcement.body || "")}
 
             </div>
+
 
             ${
               announcement.url
@@ -4364,6 +4953,7 @@ function renderAnnouncements(){
 
           `
         )
+
         .join("");
 
 }
@@ -4376,7 +4966,9 @@ function renderAnnouncements(){
 function renderEvents(){
 
   const events =
-    DATA.events || [];
+    DATA.events
+    ||
+    [];
 
 
   if(
@@ -4385,11 +4977,15 @@ function renderEvents(){
 
     $("#events")
       .innerHTML =
+
         `
         <div class="empty">
+
           No current club events.
+
         </div>
         `;
+
 
     return;
 
@@ -4399,77 +4995,83 @@ function renderEvents(){
   $("#events")
     .innerHTML =
 
-      events.map(
-        event =>{
+      events
 
-          const [
-            month,
-            day
-          ] =
-            monthDay(
-              event.date
-            );
+        .map(
+          event =>{
 
-
-          const tag =
-            event.url
-              ?
-              "a"
-              :
-              "div";
+            const [
+              month,
+              day
+            ] =
+              monthDay(
+                event.date
+              );
 
 
-          const href =
-            event.url
-              ?
-              `
-              href="${event.url}"
-              target="_blank"
-              rel="noopener"
-              `
-              :
-              "";
+            const tag =
+              event.url
+                ?
+                "a"
+                :
+                "div";
 
 
-          return `
+            const href =
+              event.url
+                ?
+                `
+                href="${event.url}"
+                target="_blank"
+                rel="noopener"
+                `
+                :
+                "";
 
-          <${tag}
-            class="event"
-            ${href}>
 
-            <div class="event-date">
+            return `
 
-              ${escapeHTML(month)}
+            <${tag}
+              class="event"
+              ${href}>
 
-              <br>
+              <div class="event-date">
 
-              ${escapeHTML(day)}
+                ${escapeHTML(month)}
 
-            </div>
+                <br>
 
-            <div class="event-main">
-
-              <div class="event-title">
-
-                ${escapeHTML(event.title)}
+                ${escapeHTML(day)}
 
               </div>
 
-              <div class="event-meta">
 
-                ${escapeHTML(event.status || "")}
+              <div class="event-main">
+
+                <div class="event-title">
+
+                  ${escapeHTML(event.title)}
+
+                </div>
+
+
+                <div class="event-meta">
+
+                  ${escapeHTML(event.status || "")}
+
+                </div>
 
               </div>
 
-            </div>
+            </${tag}>
 
-          </${tag}>
+            `;
 
-          `;
+          }
 
-        }
-      )
-      .join("");
+        )
+
+        .join("");
 
 }
 
@@ -4481,36 +5083,48 @@ function renderEvents(){
 function renderRules(){
 
   const rules =
-    DATA.rules || [];
+    DATA.rules
+    ||
+    [];
 
 
   const html =
-    rules.map(
-      (
-        rule,
-        index
-      ) =>`
 
-      <div class="rule">
+    rules
 
-        <i>
-          ${index+1}
-        </i>
+      .map(
+        (
+          rule,
+          index
+        ) =>`
 
-        <span>
-          ${escapeHTML(rule)}
-        </span>
+        <div class="rule">
 
-      </div>
+          <i>
 
-      `
-    )
-    .join("");
+            ${index+1}
+
+          </i>
+
+          <span>
+
+            ${escapeHTML(rule)}
+
+          </span>
+
+        </div>
+
+        `
+      )
+
+      .join("");
 
 
   $("#rulesTrack")
     .innerHTML =
-      html + html;
+      html
+      +
+      html;
 
 }
 
@@ -4527,6 +5141,7 @@ function renderTournament(){
 
   $("#seasonTitle")
     .textContent =
+
       `
       ${safe(tournament.activeSeason,"Season")}
       ${safe(tournament.year,"")}
@@ -4536,6 +5151,7 @@ function renderTournament(){
 
   $("#seasonStatus")
     .textContent =
+
       safe(
         tournament.status,
         "Planning"
@@ -4544,6 +5160,7 @@ function renderTournament(){
 
   $("#registrationDeadline")
     .textContent =
+
       niceDate(
         tournament.registrationDeadline
       );
@@ -4551,6 +5168,7 @@ function renderTournament(){
 
   $("#startDate")
     .textContent =
+
       niceDate(
         tournament.startDate
       );
@@ -4558,6 +5176,7 @@ function renderTournament(){
 
   $("#endDate")
     .textContent =
+
       niceDate(
         tournament.endDate
       );
@@ -4565,6 +5184,7 @@ function renderTournament(){
 
   $("#format")
     .textContent =
+
       safe(
         tournament.format,
         "Seasonal Championship"
@@ -4577,6 +5197,7 @@ function renderTournament(){
 
     $("#eventBtn").href =
       tournament.eventUrl;
+
 
     $("#eventBtn")
       .style.display =
@@ -4592,6 +5213,7 @@ function renderTournament(){
     $("#detailsBtn").href =
       tournament.detailsUrl;
 
+
     $("#detailsBtn")
       .style.display =
         "inline-flex";
@@ -4602,7 +5224,7 @@ function renderTournament(){
 
 
 /* =========================================================
-   API
+   CHESS.COM API
    ========================================================= */
 
 async function getClubMembers(){
@@ -4619,19 +5241,26 @@ async function getClubMembers(){
 
 
   if(cached){
+
     return cached;
+
   }
 
 
   const response =
     await fetchJSON(
+
       `${API}/club/${DATA.club.slug}/members`
+
     );
 
 
   const combined = [
+
     ...(response.weekly || []),
+
     ...(response.all_time || [])
+
   ];
 
 
@@ -4660,7 +5289,9 @@ async function getClubMembers(){
         normalized
       )
     ){
+
       continue;
+
     }
 
 
@@ -4709,13 +5340,17 @@ async function getProfile(
 
 
   if(cached){
+
     return cached;
+
   }
 
 
   const profile =
     await fetchJSON(
+
       `${API}/player/${encodeURIComponent(username)}`
+
     );
 
 
@@ -4752,13 +5387,17 @@ async function getStats(
 
 
   if(cached){
+
     return cached;
+
   }
 
 
   const stats =
     await fetchJSON(
+
       `${API}/player/${encodeURIComponent(username)}/stats`
+
     );
 
 
@@ -4784,23 +5423,43 @@ function highestRating(
   const categories = [
 
     {
-      key:"chess_daily",
-      label:"Daily"
+
+      key:
+        "chess_daily",
+
+      label:
+        "Daily"
+
     },
 
     {
-      key:"chess_rapid",
-      label:"Rapid"
+
+      key:
+        "chess_rapid",
+
+      label:
+        "Rapid"
+
     },
 
     {
-      key:"chess_blitz",
-      label:"Blitz"
+
+      key:
+        "chess_blitz",
+
+      label:
+        "Blitz"
+
     },
 
     {
-      key:"chess_bullet",
-      label:"Bullet"
+
+      key:
+        "chess_bullet",
+
+      label:
+        "Bullet"
+
     }
 
   ];
@@ -4823,19 +5482,28 @@ function highestRating(
 
 
     if(!rating){
+
       continue;
+
     }
 
 
     if(
       !best
       ||
-      rating > best.rating
+      rating
+      >
+      best.rating
     ){
 
       best = {
-        rating:rating,
-        label:category.label
+
+        rating:
+          rating,
+
+        label:
+          category.label
+
       };
 
     }
@@ -4877,15 +5545,20 @@ async function mapLimited(
 
 
       if(
-        current >= items.length
+        current
+        >=
+        items.length
       ){
+
         return;
+
       }
 
 
       try{
 
         results[current] =
+
           await worker(
             items[current],
             current
@@ -4908,15 +5581,20 @@ async function mapLimited(
   await Promise.all(
 
     Array.from(
+
       {
+
         length:
           Math.min(
             limit,
             items.length
           )
+
       },
+
       () =>
         runner()
+
     )
 
   );
@@ -4928,38 +5606,49 @@ async function mapLimited(
 
 
 /* =========================================================
-   NEWEST MEMBERS
+   NEW MEMBERS
    ========================================================= */
 
 async function renderNewestMembers(){
 
-  const newest =
-    [
-      ...CLUB_MEMBERS
-    ]
-    .sort(
-      (
-        a,
-        b
-      ) =>
-        (b.joined || 0)
-        -
-        (a.joined || 0)
-    )
-    .slice(
-      0,
-      5
-    );
+  const newest = [
+
+    ...CLUB_MEMBERS
+
+  ]
+
+  .sort(
+
+    (
+      a,
+      b
+    ) =>
+
+      (b.joined || 0)
+
+      -
+
+      (a.joined || 0)
+
+  )
+
+  .slice(
+    0,
+    5
+  );
 
 
   const players =
+
     await Promise.all(
 
       newest.map(
+
         async member =>{
 
           let profile =
             null;
+
 
           let stats =
             null;
@@ -4971,6 +5660,7 @@ async function renderNewestMembers(){
               profile,
               stats
             ] =
+
               await Promise.all([
 
                 getProfile(
@@ -5007,6 +5697,7 @@ async function renderNewestMembers(){
           };
 
         }
+
       )
 
     );
@@ -5015,82 +5706,97 @@ async function renderNewestMembers(){
   $("#newMembers")
     .innerHTML =
 
-      players.map(
-        player =>`
+      players
 
-        <a
-          class="art-member"
+        .map(
+          (
+            player,
+            index
+          ) =>`
 
-          href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
+          <a
+            class="
+              art-member
+              slot-${index+1}
+            "
 
-          target="_blank"
+            href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
 
-          rel="noopener">
+            target="_blank"
 
-          <img
-            class="art-member-avatar"
+            rel="noopener">
 
-            src="${
-              player.profile?.avatar
-              ||
-              FALLBACK
-            }"
+            <img
+              class="art-member-avatar"
 
-            alt=""
+              src="${
+                player.profile?.avatar
+                ||
+                FALLBACK
+              }"
 
-            loading="lazy"
+              alt=""
 
-            onerror="
-              this.src='${FALLBACK}'
-            ">
+              loading="lazy"
 
-          <div class="art-member-info">
+              onerror="
+                this.src='${FALLBACK}'
+              ">
 
-            <div class="art-member-name">
 
-              ${escapeHTML(player.username)}
+            <div class="art-member-info">
+
+
+              <div class="art-member-name">
+
+                ${escapeHTML(player.username)}
+
+              </div>
+
+
+              <div class="art-member-rating">
+
+                ${
+                  player.rating
+                    ?
+                    `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
+
+              </div>
+
 
             </div>
 
-            <div class="art-member-rating">
 
-              ${
-                player.rating
-                  ?
-                  `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
-                  :
-                  "Rating unavailable"
-              }
+            ${
+              player.profile?.title
+                ?
+                `
+                <span class="art-member-title">
 
-            </div>
+                  ${escapeHTML(player.profile.title)}
 
-          </div>
+                </span>
+                `
+                :
+                ""
+            }
 
-          ${
-            player.profile?.title
-              ?
-              `
-              <span class="art-member-title">
 
-                ${escapeHTML(player.profile.title)}
+          </a>
 
-              </span>
-              `
-              :
-              ""
-          }
+          `
+        )
 
-        </a>
-
-        `
-      )
-      .join("");
+        .join("");
 
 }
 
 
 /* =========================================================
-   TITLED MEMBERS
+   TITLED PLAYERS
    ========================================================= */
 
 async function renderTitledMembers(){
@@ -5116,11 +5822,13 @@ async function renderTitledMembers(){
         .toLowerCase(),
 
       {
+
         username:
           player.username,
 
         title:
           player.title
+
       }
 
     );
@@ -5133,6 +5841,7 @@ async function renderTitledMembers(){
 
 
   CLUB_MEMBERS.forEach(
+
     member =>{
 
       clubMap.set(
@@ -5146,26 +5855,32 @@ async function renderTitledMembers(){
       );
 
     }
+
   );
 
 
   const titleGroups =
+
     await Promise.all(
 
       TITLE_CODES.map(
+
         async title =>{
 
           try{
 
             const result =
               await fetchJSON(
+
                 `${API}/titled/${title}`
+
               );
 
 
             return {
 
-              title:title,
+              title:
+                title,
 
               players:
                 result.players
@@ -5180,15 +5895,18 @@ async function renderTitledMembers(){
 
             return {
 
-              title:title,
+              title:
+                title,
 
-              players:[]
+              players:
+                []
 
             };
 
           }
 
         }
+
       )
 
     );
@@ -5223,6 +5941,7 @@ async function renderTitledMembers(){
           normalized,
 
           {
+
             username:
               clubMap.get(
                 normalized
@@ -5230,6 +5949,7 @@ async function renderTitledMembers(){
 
             title:
               group.title
+
           }
 
         );
@@ -5242,6 +5962,7 @@ async function renderTitledMembers(){
 
 
   const profileScan =
+
     await mapLimited(
 
       CLUB_MEMBERS,
@@ -5259,7 +5980,9 @@ async function renderTitledMembers(){
         if(
           !profile?.title
         ){
+
           return null;
+
         }
 
 
@@ -5273,6 +5996,7 @@ async function renderTitledMembers(){
 
           profile:
             profile
+
         };
 
       }
@@ -5299,22 +6023,26 @@ async function renderTitledMembers(){
   }
 
 
-  let players =
-    [
-      ...found.values()
-    ];
+  let players = [
+
+    ...found.values()
+
+  ];
 
 
   players =
+
     await Promise.all(
 
       players.map(
+
         async player =>{
 
           let profile =
             player.profile
             ||
             null;
+
 
           let stats =
             null;
@@ -5373,6 +6101,7 @@ async function renderTitledMembers(){
           };
 
         }
+
       )
 
     );
@@ -5401,13 +6130,15 @@ async function renderTitledMembers(){
   }
 
 
-  players =
-    [
-      ...finalMap.values()
-    ];
+  players = [
+
+    ...finalMap.values()
+
+  ];
 
 
   players.sort(
+
     (
       a,
       b
@@ -5448,8 +6179,13 @@ async function renderTitledMembers(){
         );
 
     }
+
   );
 
+
+  /*
+    THIS ARTWORK HAS TWO SLOTS.
+  */
 
   players =
     players.slice(
@@ -5464,6 +6200,7 @@ async function renderTitledMembers(){
 
     $("#titledMembers")
       .innerHTML =
+
         `
         <div class="art-empty">
 
@@ -5471,6 +6208,7 @@ async function renderTitledMembers(){
 
         </div>
         `;
+
 
     return;
 
@@ -5480,68 +6218,84 @@ async function renderTitledMembers(){
   $("#titledMembers")
     .innerHTML =
 
-      players.map(
-        player =>`
+      players
 
-        <a
-          class="titled-art-member"
+        .map(
+          (
+            player,
+            index
+          ) =>`
 
-          href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
+          <a
+            class="
+              titled-art-member
+              slot-${index+1}
+            "
 
-          target="_blank"
+            href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
 
-          rel="noopener">
+            target="_blank"
 
-          <img
-            class="titled-art-avatar"
+            rel="noopener">
 
-            src="${
-              player.profile?.avatar
-              ||
-              FALLBACK
-            }"
 
-            alt=""
+            <img
+              class="titled-art-avatar"
 
-            loading="lazy"
+              src="${
+                player.profile?.avatar
+                ||
+                FALLBACK
+              }"
 
-            onerror="
-              this.src='${FALLBACK}'
-            ">
+              alt=""
 
-          <div class="titled-art-copy">
+              loading="lazy"
 
-            <div class="titled-art-name">
+              onerror="
+                this.src='${FALLBACK}'
+              ">
 
-              ${escapeHTML(player.username)}
+
+            <div class="titled-art-copy">
+
+
+              <div class="titled-art-name">
+
+                ${escapeHTML(player.username)}
+
+              </div>
+
+
+              <div class="titled-art-rating">
+
+                ${
+                  player.rating
+                    ?
+                    `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
+
+              </div>
+
 
             </div>
 
-            <div class="titled-art-rating">
 
-              ${
-                player.rating
-                  ?
-                  `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
-                  :
-                  "Rating unavailable"
-              }
+            <span class="titled-art-title">
 
-            </div>
+              ${escapeHTML(player.title)}
 
-          </div>
+            </span>
 
-          <span class="titled-art-title">
 
-            ${escapeHTML(player.title)}
+          </a>
 
-          </span>
+          `
+        )
 
-        </a>
-
-        `
-      )
-      .join("");
+        .join("");
 
 }
 
@@ -5555,14 +6309,18 @@ function roleClass(
 ){
 
   return (
+
     "role-"
+
     +
+
     role
       .toLowerCase()
       .replace(
         /\s+/g,
         "-"
       )
+
   );
 
 }
@@ -5575,11 +6333,17 @@ function staffPriority(
   const priority = {
 
     "Owner":100,
+
     "Co-Owner":95,
+
     "Head of Staff":90,
+
     "Super Admin":80,
+
     "Admin":70,
+
     "Coordinator":60,
+
     "Mascot":50
 
   };
@@ -5598,33 +6362,43 @@ function staffPriority(
 
 async function renderStaff(){
 
-  const staff =
-    [
-      ...(DATA.staff || [])
-    ]
-    .sort(
-      (
-        a,
-        b
-      ) =>
-        staffPriority(
-          b.role
-        )
-        -
-        staffPriority(
-          a.role
-        )
-    );
+  const staff = [
+
+    ...(DATA.staff || [])
+
+  ]
+
+  .sort(
+
+    (
+      a,
+      b
+    ) =>
+
+      staffPriority(
+        b.role
+      )
+
+      -
+
+      staffPriority(
+        a.role
+      )
+
+  );
 
 
   const cards =
+
     await Promise.all(
 
       staff.map(
+
         async staffMember =>{
 
           let profile =
             null;
+
 
           let stats =
             null;
@@ -5706,6 +6480,7 @@ async function renderStaff(){
 
             rel="noopener">
 
+
             <img
               class="staff-avatar"
 
@@ -5723,7 +6498,9 @@ async function renderStaff(){
                 this.src='${FALLBACK}'
               ">
 
+
             <div class="staff-main">
+
 
               <div class="staff-name">
 
@@ -5745,11 +6522,13 @@ async function renderStaff(){
 
               </div>
 
+
               <div class="staff-role">
 
                 ${escapeHTML(staffMember.role)}
 
               </div>
+
 
               <div class="staff-rating">
 
@@ -5763,7 +6542,9 @@ async function renderStaff(){
 
               </div>
 
+
             </div>
+
 
             <div class="staff-badges">
 
@@ -5776,6 +6557,7 @@ async function renderStaff(){
                 ${escapeHTML(staffMember.role)}
 
               </span>
+
 
               ${
                 staffMember.secondaryRole
@@ -5795,13 +6577,16 @@ async function renderStaff(){
                   ""
               }
 
+
             </div>
+
 
           </a>
 
           `;
 
         }
+
       )
 
     );
@@ -5815,7 +6600,7 @@ async function renderStaff(){
 
 
 /* =========================================================
-   CHAMPION HELPERS
+   CHAMPION HYDRATION
    ========================================================= */
 
 async function hydrateChampion(
@@ -5823,12 +6608,15 @@ async function hydrateChampion(
 ){
 
   if(!champion){
+
     return null;
+
   }
 
 
   let profile =
     null;
+
 
   let stats =
     null;
@@ -5840,6 +6628,7 @@ async function hydrateChampion(
       profile,
       stats
     ] =
+
       await Promise.all([
 
         getProfile(
@@ -5876,7 +6665,7 @@ async function hydrateChampion(
 
 
 /* =========================================================
-   EMPTY PODIUM
+   EMPTY CHAMPION
    ========================================================= */
 
 function emptyWinner(
@@ -5904,9 +6693,13 @@ function emptyWinner(
       ${positionClass}
     ">
 
+
     <div class="podium-placeholder-avatar">
+
       ♔
+
     </div>
+
 
     <div class="winner-name">
 
@@ -5914,11 +6707,13 @@ function emptyWinner(
 
     </div>
 
+
     <div class="winner-meta">
 
       ACFA Seasonal Winner
 
     </div>
+
 
   </div>
 
@@ -5931,6 +6726,7 @@ function renderEmptyPodium(){
 
   $("#podium")
     .innerHTML =
+
       `
       ${emptyWinner(2)}
       ${emptyWinner(1)}
@@ -5962,6 +6758,7 @@ async function renderChampions(){
 
     $("#archive")
       .innerHTML =
+
         `
         <div class="empty">
 
@@ -5971,6 +6768,7 @@ async function renderChampions(){
         </div>
         `;
 
+
     return;
 
   }
@@ -5979,96 +6777,117 @@ async function renderChampions(){
   const seasonRank = {
 
     Spring:1,
+
     Summer:2,
+
     Fall:3
 
   };
 
 
-  const sorted =
-    [
-      ...champions
-    ]
-    .sort(
-      (
-        a,
-        b
-      ) =>{
+  const sorted = [
 
-        if(
-          Number(b.year)
-          !==
-          Number(a.year)
-        ){
+    ...champions
 
-          return (
-            Number(b.year)
-            -
-            Number(a.year)
-          );
+  ]
 
-        }
+  .sort(
 
+    (
+      a,
+      b
+    ) =>{
+
+
+      if(
+        Number(b.year)
+        !==
+        Number(a.year)
+      ){
 
         return (
-
-          (
-            seasonRank[
-              b.season
-            ]
-            ||
-            0
-          )
-
+          Number(b.year)
           -
-
-          (
-            seasonRank[
-              a.season
-            ]
-            ||
-            0
-          )
-
+          Number(a.year)
         );
 
       }
-    );
+
+
+      return (
+
+        (
+          seasonRank[
+            b.season
+          ]
+          ||
+          0
+        )
+
+        -
+
+        (
+          seasonRank[
+            a.season
+          ]
+          ||
+          0
+        )
+
+      );
+
+    }
+
+  );
 
 
   const podiumOrder = [
 
     {
-      placement:2,
+
+      placement:
+        2,
+
       champion:
         sorted[1]
         ||
         null
+
     },
 
     {
-      placement:1,
+
+      placement:
+        1,
+
       champion:
         sorted[0]
         ||
         null
+
     },
 
     {
-      placement:3,
+
+      placement:
+        3,
+
       champion:
         sorted[2]
         ||
         null
+
     }
 
   ];
 
 
   const hydrated =
+
     await Promise.all(
 
       podiumOrder.map(
+
         async item =>({
 
           placement:
@@ -6080,6 +6899,7 @@ async function renderChampions(){
             )
 
         })
+
       )
 
     );
@@ -6088,110 +6908,120 @@ async function renderChampions(){
   $("#podium")
     .innerHTML =
 
-      hydrated.map(
-        item =>{
+      hydrated
 
-          const champion =
-            item.champion;
+        .map(
+          item =>{
+
+            const champion =
+              item.champion;
 
 
-          if(!champion){
+            if(!champion){
 
-            return emptyWinner(
-              item.placement
-            );
+              return emptyWinner(
+                item.placement
+              );
+
+            }
+
+
+            const positionClass =
+
+              item.placement === 1
+                ?
+                "podium-first"
+                :
+                item.placement === 2
+                  ?
+                  "podium-second"
+                  :
+                  "podium-third";
+
+
+            return `
+
+            <a
+              class="
+                podium-winner
+                ${positionClass}
+              "
+
+              href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+
+              target="_blank"
+
+              rel="noopener">
+
+
+              <img
+                class="winner-avatar"
+
+                src="${
+                  champion.profile?.avatar
+                  ||
+                  FALLBACK
+                }"
+
+                alt=""
+
+                onerror="
+                  this.src='${FALLBACK}'
+                ">
+
+
+              <div class="winner-name">
+
+                ${
+                  champion.profile?.title
+                    ?
+                    `${escapeHTML(champion.profile.title)} `
+                    :
+                    ""
+                }
+
+                ${escapeHTML(champion.username)}
+
+              </div>
+
+
+              <div class="winner-meta">
+
+                ${escapeHTML(champion.season)}
+
+                ${escapeHTML(champion.year)}
+
+                Champion
+
+              </div>
+
+
+              <div class="winner-rating">
+
+                ${
+                  champion.rating
+                    ?
+                    `${escapeHTML(champion.rating.rating)} • ${escapeHTML(champion.rating.label)}`
+                    :
+                    "Rating unavailable"
+                }
+
+              </div>
+
+
+            </a>
+
+            `;
 
           }
 
+        )
 
-          const positionClass =
-
-            item.placement === 1
-              ?
-              "podium-first"
-              :
-              item.placement === 2
-                ?
-                "podium-second"
-                :
-                "podium-third";
-
-
-          return `
-
-          <a
-            class="
-              podium-winner
-              ${positionClass}
-            "
-
-            href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
-
-            target="_blank"
-
-            rel="noopener">
-
-            <img
-              class="winner-avatar"
-
-              src="${
-                champion.profile?.avatar
-                ||
-                FALLBACK
-              }"
-
-              alt=""
-
-              onerror="
-                this.src='${FALLBACK}'
-              ">
-
-            <div class="winner-name">
-
-              ${
-                champion.profile?.title
-                  ?
-                  `${escapeHTML(champion.profile.title)} `
-                  :
-                  ""
-              }
-
-              ${escapeHTML(champion.username)}
-
-            </div>
-
-            <div class="winner-meta">
-
-              ${escapeHTML(champion.season)}
-
-              ${escapeHTML(champion.year)}
-
-              Champion
-
-            </div>
-
-            <div class="winner-rating">
-
-              ${
-                champion.rating
-                  ?
-                  `${escapeHTML(champion.rating.rating)} • ${escapeHTML(champion.rating.label)}`
-                  :
-                  "Rating unavailable"
-              }
-
-            </div>
-
-          </a>
-
-          `;
-
-        }
-      )
-      .join("");
+        .join("");
 
 
   const archive =
+
     await Promise.all(
 
       sorted.map(
@@ -6204,80 +7034,90 @@ async function renderChampions(){
   $("#archive")
     .innerHTML =
 
-      archive.map(
-        champion =>`
+      archive
 
-        <a
-          class="archive-row"
+        .map(
+          champion =>`
 
-          href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+          <a
+            class="archive-row"
 
-          target="_blank"
+            href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
 
-          rel="noopener">
+            target="_blank"
 
-          <img
-            src="${
-              champion.profile?.avatar
-              ||
-              FALLBACK
-            }"
+            rel="noopener">
 
-            alt=""
 
-            loading="lazy"
+            <img
+              src="${
+                champion.profile?.avatar
+                ||
+                FALLBACK
+              }"
 
-            onerror="
-              this.src='${FALLBACK}'
-            ">
+              alt=""
 
-          <div>
+              loading="lazy"
 
-            <div class="staff-name">
+              onerror="
+                this.src='${FALLBACK}'
+              ">
+
+
+            <div>
+
+
+              <div class="staff-name">
+
+                ${
+                  champion.profile?.title
+                    ?
+                    `${escapeHTML(champion.profile.title)} `
+                    :
+                    ""
+                }
+
+                ${escapeHTML(champion.username)}
+
+              </div>
+
+
+              <div class="meta">
+
+                ${escapeHTML(champion.season)}
+
+                ${escapeHTML(champion.year)}
+
+                Champion
+
+              </div>
+
+
+            </div>
+
+
+            <div class="archive-rating">
 
               ${
-                champion.profile?.title
+                champion.rating
                   ?
-                  `${escapeHTML(champion.profile.title)} `
+                  escapeHTML(
+                    champion.rating.rating
+                  )
                   :
-                  ""
+                  "—"
               }
 
-              ${escapeHTML(champion.username)}
-
             </div>
 
-            <div class="meta">
 
-              ${escapeHTML(champion.season)}
+          </a>
 
-              ${escapeHTML(champion.year)}
+          `
+        )
 
-              Champion
-
-            </div>
-
-          </div>
-
-          <div class="archive-rating">
-
-            ${
-              champion.rating
-                ?
-                escapeHTML(
-                  champion.rating.rating
-                )
-                :
-                "—"
-            }
-
-          </div>
-
-        </a>
-
-        `
-      )
-      .join("");
+        .join("");
 
 }
 
@@ -6328,6 +7168,7 @@ async function initialize(){
 
     $("#newMembers")
       .innerHTML =
+
         `
         <div class="art-empty">
 
