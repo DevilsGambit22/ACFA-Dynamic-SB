@@ -22,7 +22,6 @@
    ========================================================= */
 
 :root{
-
   --black:#000000;
   --black2:#03060b;
 
@@ -44,7 +43,6 @@
   --muted:#aab8cb;
 
   --line:rgba(82,159,255,.27);
-  --gold-line:rgba(255,214,107,.36);
 }
 
 
@@ -59,14 +57,18 @@
 html{
   margin:0;
   min-height:100%;
+
   background:#000;
+
   scrollbar-width:thin;
   scrollbar-color:#ffd66b #05070c;
 }
 
 body{
   margin:0;
+
   min-height:100vh;
+
   overflow-x:hidden;
   overflow-y:auto;
 
@@ -106,7 +108,7 @@ img{
 
 
 /* =========================================================
-   THIN SCROLLBAR
+   SCROLLBAR
    ========================================================= */
 
 html::-webkit-scrollbar,
@@ -129,6 +131,7 @@ body::-webkit-scrollbar-thumb{
     );
 
   border-radius:999px;
+
   border:1px solid #07172b;
 }
 
@@ -140,6 +143,7 @@ body::-webkit-scrollbar-thumb{
 .shell{
   width:100%;
   max-width:760px;
+
   margin:0 auto;
 }
 
@@ -171,9 +175,13 @@ body::-webkit-scrollbar-thumb{
 
 .ambient{
   position:absolute;
+
   inset:0;
+
   z-index:-1;
+
   overflow:hidden;
+
   pointer-events:none;
 }
 
@@ -187,6 +195,7 @@ body::-webkit-scrollbar-thumb{
   height:5px;
 
   border-radius:50%;
+
   opacity:0;
 
   background:var(--gold2);
@@ -223,7 +232,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes emberRise{
-
   0%{
     transform:
       translate3d(0,0,0)
@@ -259,7 +267,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   DASHBOARD SLIDER
+   DASHBOARDS
    ========================================================= */
 
 .viewport{
@@ -290,12 +298,13 @@ body::-webkit-scrollbar-thumb{
 .page{
   width:33.333333%;
   min-width:33.333333%;
+
   padding:12px;
 }
 
 
 /* =========================================================
-   HOME HERO
+   HERO
    ========================================================= */
 
 .hero{
@@ -315,6 +324,7 @@ body::-webkit-scrollbar-thumb{
     20px;
 
   overflow:hidden;
+
   text-align:center;
 }
 
@@ -350,7 +360,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes heroPulse{
-
   50%{
     transform:
       translate(-50%,-50%)
@@ -367,7 +376,6 @@ body::-webkit-scrollbar-thumb{
   top:44%;
 
   width:min(76vw,360px);
-
   aspect-ratio:1;
 
   transform:
@@ -427,7 +435,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes orbitSpin{
-
   from{
     transform:
       translate(-50%,-50%)
@@ -509,7 +516,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes logoFloat{
-
   0%,
   100%{
     transform:
@@ -581,7 +587,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   DASHBOARD BUTTONS
+   DASHBOARD SWITCHER
    ========================================================= */
 
 .dashboard-switcher{
@@ -783,7 +789,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes pulseDot{
-
   70%{
     box-shadow:
       0 0 0 7px
@@ -1045,7 +1050,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   ARTWORK MEMBER BOARDS
+   ART BOARDS
    ========================================================= */
 
 .members-showcase{
@@ -1093,7 +1098,8 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   NEW MEMBERS — RECALIBRATED
+   NEW MEMBERS
+   EACH AVATAR / USERNAME / RATING HAS ITS OWN POSITION
    ========================================================= */
 
 .new-members-overlay{
@@ -1101,79 +1107,33 @@ body::-webkit-scrollbar-thumb{
 
   inset:0;
 
-  z-index:5;
+  z-index:6;
 
   pointer-events:none;
 }
 
-.art-member{
+.new-member-slot{
   position:absolute;
 
-  left:23.4%;
-  right:10.2%;
+  inset:0;
 
-  height:5.7%;
+  display:block;
 
-  display:flex;
-
-  align-items:center;
-
-  gap:7px;
-
-  padding:0;
-
-  color:#081527;
+  color:#07172b;
 
   text-decoration:none;
 
-  pointer-events:auto;
-
-  transition:
-    transform .2s ease,
-    filter .2s ease;
-}
-
-.art-member:hover{
-  transform:
-    translateX(3px)
-    scale(1.008);
-
-  filter:
-    drop-shadow(
-      0 0 7px
-      rgba(255,214,107,.4)
-    );
+  pointer-events:none;
 }
 
 
-/* Exact marble slot positions */
+/* Avatar circles */
 
-.art-member.slot-1{
-  top:44.7%;
-}
+.new-member-avatar{
+  position:absolute;
 
-.art-member.slot-2{
-  top:51.6%;
-}
-
-.art-member.slot-3{
-  top:58.55%;
-}
-
-.art-member.slot-4{
-  top:65.5%;
-}
-
-.art-member.slot-5{
-  top:72.45%;
-}
-
-
-.art-member-avatar{
-  width:31px;
-  height:31px;
-
-  flex:0 0 31px;
+  width:6.1%;
+  aspect-ratio:1 / 1;
 
   border-radius:50%;
 
@@ -1183,29 +1143,45 @@ body::-webkit-scrollbar-thumb{
 
   border:
     2px solid
-    #d2a23a;
+    #d7a63e;
 
   box-shadow:
-    0 2px 6px
+    0 2px 7px
     rgba(0,0,0,.3);
+
+  pointer-events:auto;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
 }
 
-.art-member-info{
-  flex:1;
+.new-member-avatar:hover{
+  transform:scale(1.08);
 
-  min-width:0;
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(255,214,107,.55)
+    );
 }
 
-.art-member-name{
-  max-width:100%;
 
-  color:#0b1830;
+/* Username */
+
+.new-member-username{
+  position:absolute;
+
+  left:31.2%;
+  right:13%;
+
+  color:#0b1932;
 
   font-size:
     clamp(
       10px,
       2.35vw,
-      16px
+      17px
     );
 
   font-weight:950;
@@ -1215,29 +1191,52 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   overflow:hidden;
-
   text-overflow:ellipsis;
+
+  pointer-events:auto;
+
+  text-shadow:
+    0 1px 0
+    rgba(255,255,255,.55);
 }
 
-.art-member-rating{
-  margin-top:3px;
 
-  color:#6f501d;
+/* Rating */
+
+.new-member-rating{
+  position:absolute;
+
+  left:31.2%;
+  right:13%;
+
+  color:#76541d;
 
   font-size:
     clamp(
       7px,
-      1.65vw,
+      1.55vw,
       11px
     );
 
   font-weight:950;
 
   line-height:1;
+
+  white-space:nowrap;
+
+  pointer-events:auto;
 }
 
-.art-member-title{
-  flex:0 0 auto;
+
+/* Optional Chess title */
+
+.new-member-title{
+  position:absolute;
+
+  right:11%;
+
+  transform:
+    translateY(-50%);
 
   padding:
     3px
@@ -1247,19 +1246,158 @@ body::-webkit-scrollbar-thumb{
 
   border:
     1px solid
-    #d4a43c;
+    #d7a63e;
 
   background:#061326;
 
   color:#ffd66b;
 
-  font-size:10px;
+  font-size:
+    clamp(
+      7px,
+      1.5vw,
+      10px
+    );
+
   font-weight:950;
+
+  pointer-events:auto;
 }
 
 
 /* =========================================================
-   TITLED PLAYERS — UNCHANGED
+   NEW MEMBER SLOT 1
+   ========================================================= */
+
+.new-member-slot.slot-1
+.new-member-avatar{
+  left:22.45%;
+  top:43.35%;
+}
+
+.new-member-slot.slot-1
+.new-member-username{
+  top:43.95%;
+}
+
+.new-member-slot.slot-1
+.new-member-rating{
+  top:46.55%;
+}
+
+.new-member-slot.slot-1
+.new-member-title{
+  top:45.4%;
+}
+
+
+/* =========================================================
+   NEW MEMBER SLOT 2
+   ========================================================= */
+
+.new-member-slot.slot-2
+.new-member-avatar{
+  left:22.45%;
+  top:52.05%;
+}
+
+.new-member-slot.slot-2
+.new-member-username{
+  top:52.65%;
+}
+
+.new-member-slot.slot-2
+.new-member-rating{
+  top:55.25%;
+}
+
+.new-member-slot.slot-2
+.new-member-title{
+  top:54.1%;
+}
+
+
+/* =========================================================
+   NEW MEMBER SLOT 3
+   ========================================================= */
+
+.new-member-slot.slot-3
+.new-member-avatar{
+  left:22.45%;
+  top:60.75%;
+}
+
+.new-member-slot.slot-3
+.new-member-username{
+  top:61.35%;
+}
+
+.new-member-slot.slot-3
+.new-member-rating{
+  top:63.95%;
+}
+
+.new-member-slot.slot-3
+.new-member-title{
+  top:62.8%;
+}
+
+
+/* =========================================================
+   NEW MEMBER SLOT 4
+   ========================================================= */
+
+.new-member-slot.slot-4
+.new-member-avatar{
+  left:22.45%;
+  top:69.45%;
+}
+
+.new-member-slot.slot-4
+.new-member-username{
+  top:70.05%;
+}
+
+.new-member-slot.slot-4
+.new-member-rating{
+  top:72.65%;
+}
+
+.new-member-slot.slot-4
+.new-member-title{
+  top:71.5%;
+}
+
+
+/* =========================================================
+   NEW MEMBER SLOT 5
+   ========================================================= */
+
+.new-member-slot.slot-5
+.new-member-avatar{
+  left:22.45%;
+  top:78.15%;
+}
+
+.new-member-slot.slot-5
+.new-member-username{
+  top:78.75%;
+}
+
+.new-member-slot.slot-5
+.new-member-rating{
+  top:81.35%;
+}
+
+.new-member-slot.slot-5
+.new-member-title{
+  top:80.2%;
+}
+
+
+/* =========================================================
+   TITLED PLAYERS
+   LEFT AS-IS
    ========================================================= */
 
 .titled-members-overlay{
@@ -1367,7 +1505,6 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   overflow:hidden;
-
   text-overflow:ellipsis;
 }
 
@@ -1422,16 +1559,16 @@ body::-webkit-scrollbar-thumb{
 
 
 /* =========================================================
-   LOADING / EMPTY
+   LOADING
    ========================================================= */
 
 .art-board-loading{
   position:absolute;
 
-  left:23%;
+  left:24%;
   right:10%;
 
-  height:5.4%;
+  height:5%;
 
   border-radius:10px;
 
@@ -1548,7 +1685,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes rulesScroll{
-
   to{
     transform:
       translateY(-50%);
@@ -2051,7 +2187,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes justiceFloat{
-
   50%{
     transform:
       translateY(-6px)
@@ -2118,22 +2253,6 @@ body::-webkit-scrollbar-thumb{
   text-align:center;
 
   pointer-events:auto;
-
-  transition:
-    transform .22s ease,
-    filter .22s ease;
-}
-
-.podium-winner:hover{
-  transform:
-    translateY(-5px)
-    scale(1.03);
-
-  filter:
-    drop-shadow(
-      0 0 10px
-      rgba(255,214,107,.5)
-    );
 }
 
 .podium-second{
@@ -2175,10 +2294,6 @@ body::-webkit-scrollbar-thumb{
   border:
     4px solid
     #c7d4e2;
-
-  box-shadow:
-    0 7px 18px
-    rgba(0,0,0,.55);
 }
 
 .podium-first
@@ -2221,12 +2336,9 @@ body::-webkit-scrollbar-thumb{
 
   font-weight:950;
 
-  line-height:1.05;
-
   white-space:nowrap;
 
   overflow:hidden;
-
   text-overflow:ellipsis;
 
   text-shadow:
@@ -2247,10 +2359,6 @@ body::-webkit-scrollbar-thumb{
     );
 
   font-weight:850;
-
-  text-shadow:
-    0 1px 3px
-    rgba(0,0,0,.9);
 }
 
 .winner-rating{
@@ -2338,9 +2446,6 @@ body::-webkit-scrollbar-thumb{
       13vw,
       102px
     );
-
-  border-color:
-    rgba(255,214,107,.75);
 }
 
 
@@ -2431,7 +2536,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes shimmer{
-
   to{
     background-position:
       -220% 0;
@@ -2523,8 +2627,6 @@ body::-webkit-scrollbar-thumb{
     gap:5px;
 
     padding:5px;
-
-    border-radius:13px;
   }
 
   .dashboard-btn{
@@ -2539,16 +2641,6 @@ body::-webkit-scrollbar-thumb{
     margin-top:8px;
 
     padding:10px;
-
-    border-radius:15px;
-  }
-
-  .section h2{
-    font-size:16px;
-  }
-
-  .section-kicker{
-    font-size:9px;
   }
 
   .quick-links{
@@ -2562,7 +2654,11 @@ body::-webkit-scrollbar-thumb{
   }
 
 
-  /* TITLED PLAYERS KEPT UNCHANGED */
+  /* New-member coordinates stay percentage-based.
+     Do not override positions here. */
+
+
+  /* Titled board stays as previously working */
 
   .titled-art-member{
     left:19.4%;
@@ -2629,22 +2725,6 @@ body::-webkit-scrollbar-thumb{
     height:46px;
   }
 
-  .staff-name{
-    font-size:14px;
-  }
-
-  .staff-role{
-    font-size:12px;
-  }
-
-  .staff-rating{
-    font-size:11px;
-  }
-
-  .role-badge{
-    font-size:9px;
-  }
-
   .tournament-hero{
     grid-template-columns:1fr;
 
@@ -2663,11 +2743,6 @@ body::-webkit-scrollbar-thumb{
 
   .justice{
     max-height:260px;
-  }
-
-  .champions-section{
-    padding-left:6px;
-    padding-right:6px;
   }
 
 }
@@ -2691,15 +2766,8 @@ body::-webkit-scrollbar-thumb{
     display:none;
   }
 
-  .art-member-title{
+  .new-member-title{
     display:none;
-  }
-
-  .titled-art-avatar{
-    width:32px;
-    height:32px;
-
-    flex-basis:32px;
   }
 
 }
@@ -2900,7 +2968,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     NEW MEMBERS
+     NEW MEMBERS BOARD
      ====================================================== -->
 
 <div class="members-showcase">
@@ -2920,27 +2988,27 @@ body::-webkit-scrollbar-thumb{
 
     <div
       class="art-board-loading"
-      style="top:44.7%">
+      style="top:44%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:51.6%">
+      style="top:52.7%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:58.55%">
+      style="top:61.4%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:65.5%">
+      style="top:70.1%">
     </div>
 
     <div
       class="art-board-loading"
-      style="top:72.45%">
+      style="top:78.8%">
     </div>
 
   </div>
@@ -2950,7 +3018,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     TITLED PLAYERS
+     TITLED BOARD
      ====================================================== -->
 
 <section class="art-board">
@@ -3029,7 +3097,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     TOURNAMENT
+     TOURNAMENT DASHBOARD
      ====================================================== -->
 
 <section class="page">
@@ -3199,7 +3267,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     CHAMPIONS PODIUM
+     CHAMPIONS
      ====================================================== -->
 
 <section
@@ -3237,11 +3305,6 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
-
-<!-- ======================================================
-     CHAMPION ARCHIVE
-     ====================================================== -->
-
 <section class="section">
 
   <div class="section-head">
@@ -3270,7 +3333,7 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     STAFF
+     STAFF DASHBOARD
      ====================================================== -->
 
 <section class="page">
@@ -3402,141 +3465,71 @@ body::-webkit-scrollbar-thumb{
 {
 
   "club": {
-
-    "name":
-      "And Chess For All Official",
-
-    "slug":
-      "and-chess-for-all-official",
-
-    "motto":
-      "Every Player Belongs • Every Move Matters"
-
+    "name":"And Chess For All Official",
+    "slug":"and-chess-for-all-official",
+    "motto":"Every Player Belongs • Every Move Matters"
   },
 
-
-  "quickLinks": [
+  "quickLinks":[
 
     {
-
-      "label":
-        "Club Events",
-
-      "icon":
-        "♟",
-
-      "url":
-        "https://www.chess.com/clubs/events/and-chess-for-all-official"
-
+      "label":"Club Events",
+      "icon":"♟",
+      "url":"https://www.chess.com/clubs/events/and-chess-for-all-official"
     },
 
     {
-
-      "label":
-        "Forums",
-
-      "icon":
-        "✦",
-
-      "url":
-        "https://www.chess.com/clubs/forum/and-chess-for-all-official"
-
+      "label":"Forums",
+      "icon":"✦",
+      "url":"https://www.chess.com/clubs/forum/and-chess-for-all-official"
     },
 
     {
-
-      "label":
-        "Announcements",
-
-      "icon":
-        "★",
-
-      "url":
-        "https://www.chess.com/club/and-chess-for-all-official/announcements"
-
+      "label":"Announcements",
+      "icon":"★",
+      "url":"https://www.chess.com/club/and-chess-for-all-official/announcements"
     },
 
     {
-
-      "label":
-        "Notes",
-
-      "icon":
-        "✎",
-
-      "url":
-        "https://www.chess.com/club/notes/and-chess-for-all-official"
-
+      "label":"Notes",
+      "icon":"✎",
+      "url":"https://www.chess.com/club/notes/and-chess-for-all-official"
     }
 
   ],
 
-
-  "announcements": [
+  "announcements":[
 
     {
-
-      "title":
-        "ACFA Fall Championship",
-
-      "date":
-        "September 2026",
-
-      "body":
-        "Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
-
-      "url":
-        "",
-
-      "pinned":
-        true
-
+      "title":"ACFA Fall Championship",
+      "date":"September 2026",
+      "body":"Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
+      "url":"",
+      "pinned":true
     },
 
     {
-
-      "title":
-        "Welcome to the ACFA Dashboard",
-
-      "date":
-        "September 2026",
-
-      "body":
-        "Important club news, tournament updates, seasonal announcements, and community information will appear here.",
-
-      "url":
-        "",
-
-      "pinned":
-        false
-
+      "title":"Welcome to the ACFA Dashboard",
+      "date":"September 2026",
+      "body":"Important club news, tournament updates, seasonal announcements, and community information will appear here.",
+      "url":"",
+      "pinned":false
     }
 
   ],
 
-
-  "events": [
+  "events":[
 
     {
-
-      "title":
-        "ACFA Fall Championship",
-
-      "date":
-        "2026-10-05",
-
-      "status":
-        "Coming Soon",
-
-      "url":
-        ""
-
+      "title":"ACFA Fall Championship",
+      "date":"2026-10-05",
+      "status":"Coming Soon",
+      "url":""
     }
 
   ],
 
-
-  "staff": [
+  "staff":[
 
     {
       "username":"DevilsGambit22",
@@ -3591,8 +3584,7 @@ body::-webkit-scrollbar-thumb{
 
   ],
 
-
-  "verifiedTitledMembers": [
+  "verifiedTitledMembers":[
 
     {
       "username":"ChanelinmyYSL",
@@ -3601,8 +3593,7 @@ body::-webkit-scrollbar-thumb{
 
   ],
 
-
-  "rules": [
+  "rules":[
 
     "Respect every member.",
 
@@ -3622,8 +3613,7 @@ body::-webkit-scrollbar-thumb{
 
   ],
 
-
-  "tournament": {
+  "tournament":{
 
     "activeSeason":"Fall",
 
@@ -3714,7 +3704,7 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v25";
+  "acfa-dashboard-v26";
 
 
 let CLUB_MEMBERS =
@@ -4195,7 +4185,7 @@ $$(".dashboard-btn")
 
 
 /* =========================================================
-   DATES
+   DATE HELPERS
    ========================================================= */
 
 function niceDate(
@@ -4376,9 +4366,7 @@ function renderAnnouncements(){
       .innerHTML =
         `
         <div class="empty">
-
           No announcements posted.
-
         </div>
         `;
 
@@ -4491,9 +4479,7 @@ function renderEvents(){
       .innerHTML =
         `
         <div class="empty">
-
           No current club events.
-
         </div>
         `;
 
@@ -4724,7 +4710,7 @@ function renderTournament(){
 
 
 /* =========================================================
-   CHESS.COM API
+   API
    ========================================================= */
 
 async function getClubMembers(){
@@ -4958,13 +4944,8 @@ function highestRating(
     ){
 
       best = {
-
-        rating:
-          rating,
-
-        label:
-          category.label
-
+        rating:rating,
+        label:category.label
       };
 
     }
@@ -5165,49 +5146,74 @@ async function renderNewestMembers(){
           (
             player,
             index
-          ) =>`
+          ) =>{
 
-          <a
-            class="
-              art-member
-              slot-${index+1}
-            "
+            const slot =
+              index + 1;
 
-            href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
 
-            target="_blank"
+            const profileURL =
+              `https://www.chess.com/member/${encodeURIComponent(player.username)}`;
 
-            rel="noopener">
 
-            <img
-              class="art-member-avatar"
+            return `
 
-              src="${
-                player.profile?.avatar
-                ||
-                FALLBACK
-              }"
-
-              alt=""
-
-              loading="lazy"
-
-              onerror="
-                this.src='${FALLBACK}'
+            <div
+              class="
+                new-member-slot
+                slot-${slot}
               ">
 
 
-            <div class="art-member-info">
+              <a
+                href="${profileURL}"
+
+                target="_blank"
+
+                rel="noopener">
+
+                <img
+                  class="new-member-avatar"
+
+                  src="${
+                    player.profile?.avatar
+                    ||
+                    FALLBACK
+                  }"
+
+                  alt="${escapeHTML(player.username)}"
+
+                  loading="lazy"
+
+                  onerror="
+                    this.src='${FALLBACK}'
+                  ">
+
+              </a>
 
 
-              <div class="art-member-name">
+              <a
+                class="new-member-username"
+
+                href="${profileURL}"
+
+                target="_blank"
+
+                rel="noopener">
 
                 ${escapeHTML(player.username)}
 
-              </div>
+              </a>
 
 
-              <div class="art-member-rating">
+              <a
+                class="new-member-rating"
+
+                href="${profileURL}"
+
+                target="_blank"
+
+                rel="noopener">
 
                 ${
                   player.rating
@@ -5217,30 +5223,37 @@ async function renderNewestMembers(){
                     "Rating unavailable"
                 }
 
-              </div>
+              </a>
+
+
+              ${
+                player.profile?.title
+                  ?
+                  `
+                  <a
+                    class="new-member-title"
+
+                    href="${profileURL}"
+
+                    target="_blank"
+
+                    rel="noopener">
+
+                    ${escapeHTML(player.profile.title)}
+
+                  </a>
+                  `
+                  :
+                  ""
+              }
 
 
             </div>
 
+            `;
 
-            ${
-              player.profile?.title
-                ?
-                `
-                <span class="art-member-title">
+          }
 
-                  ${escapeHTML(player.profile.title)}
-
-                </span>
-                `
-                :
-                ""
-            }
-
-
-          </a>
-
-          `
         )
 
         .join("");
@@ -5275,13 +5288,11 @@ async function renderTitledMembers(){
         .toLowerCase(),
 
       {
-
         username:
           player.username,
 
         title:
           player.title
-
       }
 
     );
@@ -5329,15 +5340,12 @@ async function renderTitledMembers(){
 
 
             return {
-
-              title:
-                title,
+              title:title,
 
               players:
                 result.players
                 ||
                 []
-
             };
 
           }
@@ -5345,13 +5353,8 @@ async function renderTitledMembers(){
           catch{
 
             return {
-
-              title:
-                title,
-
-              players:
-                []
-
+              title:title,
+              players:[]
             };
 
           }
@@ -5392,7 +5395,6 @@ async function renderTitledMembers(){
           normalized,
 
           {
-
             username:
               clubMap.get(
                 normalized
@@ -5400,7 +5402,6 @@ async function renderTitledMembers(){
 
             title:
               group.title
-
           }
 
         );
@@ -5431,14 +5432,11 @@ async function renderTitledMembers(){
         if(
           !profile?.title
         ){
-
           return null;
-
         }
 
 
         return {
-
           username:
             member.username,
 
@@ -5447,7 +5445,6 @@ async function renderTitledMembers(){
 
           profile:
             profile
-
         };
 
       }
@@ -5647,9 +5644,7 @@ async function renderTitledMembers(){
       .innerHTML =
         `
         <div class="art-empty">
-
           No titled members detected.
-
         </div>
         `;
 
@@ -5702,7 +5697,6 @@ async function renderTitledMembers(){
 
             <div class="titled-art-copy">
 
-
               <div class="titled-art-name">
 
                 ${escapeHTML(player.username)}
@@ -5722,7 +5716,6 @@ async function renderTitledMembers(){
 
               </div>
 
-
             </div>
 
 
@@ -5731,7 +5724,6 @@ async function renderTitledMembers(){
               ${escapeHTML(player.title)}
 
             </span>
-
 
           </a>
 
@@ -5752,18 +5744,14 @@ function roleClass(
 ){
 
   return (
-
     "role-"
-
     +
-
     role
       .toLowerCase()
       .replace(
         /\s+/g,
         "-"
       )
-
   );
 
 }
@@ -5774,21 +5762,13 @@ function staffPriority(
 ){
 
   const priority = {
-
     "Owner":100,
-
     "Co-Owner":95,
-
     "Head of Staff":90,
-
     "Super Admin":80,
-
     "Admin":70,
-
     "Coordinator":60,
-
     "Mascot":50
-
   };
 
 
@@ -5980,7 +5960,6 @@ async function renderStaff(){
 
               </div>
 
-
             </div>
 
 
@@ -6015,9 +5994,7 @@ async function renderStaff(){
                   ""
               }
 
-
             </div>
-
 
           </a>
 
@@ -6046,9 +6023,7 @@ async function hydrateChampion(
 ){
 
   if(!champion){
-
     return null;
-
   }
 
 
@@ -6127,27 +6102,17 @@ function emptyWinner(
       ${positionClass}
     ">
 
-
     <div class="podium-placeholder-avatar">
-
       ♔
-
     </div>
-
 
     <div class="winner-name">
-
       Awaiting Champion
-
     </div>
-
 
     <div class="winner-meta">
-
       ACFA Seasonal Winner
-
     </div>
-
 
   </div>
 
@@ -6202,13 +6167,9 @@ async function renderChampions(){
 
 
   const seasonRank = {
-
     Spring:1,
-
     Summer:2,
-
     Fall:3
-
   };
 
 
@@ -6400,9 +6361,7 @@ async function renderChampions(){
               <div class="winner-meta">
 
                 ${escapeHTML(champion.season)}
-
                 ${escapeHTML(champion.year)}
-
                 Champion
 
               </div>
@@ -6495,12 +6454,10 @@ async function renderChampions(){
               </div>
 
 
-              <div class="meta">
+              <div class="event-meta">
 
                 ${escapeHTML(champion.season)}
-
                 ${escapeHTML(champion.year)}
-
                 Champion
 
               </div>
@@ -6582,9 +6539,7 @@ async function initialize(){
       .innerHTML =
         `
         <div class="art-empty">
-
           Member data temporarily unavailable.
-
         </div>
         `;
 
