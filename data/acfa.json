@@ -10,8 +10,8 @@
       {
         "title": "ACFA Fall Championship",
         "date": "2026-10-05",
-        "status": "Coming Soon",
-        "url": ""
+        "status": "Register Now",
+        "url": "https://www.chess.com/tournament/open-fall-championship-tournament"
       }
     ],
     "rules": [
@@ -28,12 +28,12 @@
   "tournament": {
     "activeSeason": "Fall",
     "year": 2026,
-    "status": "Planning",
-    "registrationDeadline": "",
-    "startDate": "",
-    "endDate": "",
+    "status": "Registration Open",
+    "registrationDeadline": "Oct 4th",
+    "startDate": "Oct 5th",
+    "endDate": "TBD",
     "format": "Seasonal ACFA Championship",
-    "eventUrl": "",
+    "eventUrl": "https://www.chess.com/tournament/open-fall-championship-tournament",
     "detailsUrl": "",
     "champions": []
   }
