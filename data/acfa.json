@@ -5,7 +5,6 @@
     "clubUrl": "https://www.chess.com/club/and-chess-for-all-official",
     "motto": "Every Player Belongs • Every Move Matters"
   },
-
   "home": {
     "announcements": [
       {
@@ -25,7 +24,6 @@
         "pinned": false
       }
     ],
-
     "events": [
       {
         "title": "ACFA Fall Championship",
@@ -34,7 +32,6 @@
         "url": "https://www.chess.com/tournament/open-fall-championship-tournament"
       }
     ],
-
     "rules": [
       "Respect every member.",
       "No harassment, bullying, or personal attacks.",
@@ -46,7 +43,6 @@
       "Handle disputes respectfully through the proper admin channels."
     ]
   },
-
   "quickLinks": [
     {
       "label": "Club Events",
@@ -69,7 +65,6 @@
       "url": "https://www.chess.com/club/notes/and-chess-for-all-official"
     }
   ],
-
   "staff": [
     {
       "username": "DevilsGambit22",
@@ -113,22 +108,20 @@
       "role": "Coordinator"
     }
   ],
-
   "verifiedTitledMembers": [
     {
       "username": "ChanelinmyYSL",
       "title": "IM"
     }
   ],
-
   "tournament": {
     "activeSeason": "Fall",
     "year": 2026,
     "status": "Registration Open",
-    "registrationDeadline": "Oct 4th",
+    "registrationDeadline": "Sept 9th",
     "startDate": "Oct 5th",
     "endDate": "TBD",
-    "format": "Seasonal ACFA Championship",
+    "format": "Daily",
     "eventUrl": "https://www.chess.com/tournament/open-fall-championship-tournament",
     "detailsUrl": "",
     "champions": []
