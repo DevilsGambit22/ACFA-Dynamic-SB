@@ -3,9 +3,52 @@
     "name": "And Chess For All Official",
     "slug": "and-chess-for-all-official",
     "clubUrl": "https://www.chess.com/club/and-chess-for-all-official",
-    "motto": "Every Player Belongs \u2022 Every Move Matters"
+    "motto": "Every Player Belongs • Every Move Matters"
   },
+
+  "quickLinks": [
+    {
+      "label": "Club Events",
+      "icon": "♟",
+      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
+    },
+    {
+      "label": "Forums",
+      "icon": "✦",
+      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+    },
+    {
+      "label": "Announcements",
+      "icon": "★",
+      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
+    },
+    {
+      "label": "Notes",
+      "icon": "✎",
+      "url": "https://www.chess.com/club/notes/and-chess-for-all-official"
+    }
+  ],
+
   "home": {
+    "announcements": [
+      {
+        "title": "ACFA Fall Championship Registration",
+        "date": "September 2026",
+        "body": "Registration is now open for the first-ever ACFA Fall Championship. Join the tournament and compete for the inaugural seasonal championship title.",
+        "url": "https://www.chess.com/tournament/open-fall-championship-tournament",
+        "linkText": "Register Now",
+        "pinned": true
+      },
+      {
+        "title": "Welcome to the ACFA Dashboard",
+        "date": "September 2026",
+        "body": "Important club news, tournament updates, seasonal announcements, events, and community information will appear here.",
+        "url": "",
+        "linkText": "",
+        "pinned": false
+      }
+    ],
+
     "events": [
       {
         "title": "ACFA Fall Championship",
@@ -14,6 +57,7 @@
         "url": "https://www.chess.com/tournament/open-fall-championship-tournament"
       }
     ],
+
     "rules": [
       "Respect every member.",
       "No harassment, bullying, or personal attacks.",
@@ -25,6 +69,58 @@
       "Handle disputes respectfully through the proper admin channels."
     ]
   },
+
+  "staff": [
+    {
+      "username": "DevilsGambit22",
+      "role": "Owner"
+    },
+    {
+      "username": "SaintsGambit98",
+      "role": "Co-Owner"
+    },
+    {
+      "username": "Bgeerr",
+      "role": "Head of Staff"
+    },
+    {
+      "username": "OfficialLadyJustice",
+      "role": "Mascot",
+      "secondaryRole": "Super Admin"
+    },
+    {
+      "username": "Stefan-Mazarine",
+      "role": "Super Admin"
+    },
+    {
+      "username": "Cookie00190",
+      "role": "Admin"
+    },
+    {
+      "username": "NtsakoCloy",
+      "role": "Admin"
+    },
+    {
+      "username": "roheemo_h",
+      "role": "Admin"
+    },
+    {
+      "username": "Xtreme-Ninja-100",
+      "role": "Admin"
+    },
+    {
+      "username": "Kissenschlach",
+      "role": "Coordinator"
+    }
+  ],
+
+  "verifiedTitledMembers": [
+    {
+      "username": "ChanelinmyYSL",
+      "title": "IM"
+    }
+  ],
+
   "tournament": {
     "activeSeason": "Fall",
     "year": 2026,
