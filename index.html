@@ -1,15 +1,21 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
 
 <meta charset="utf-8">
 
 <meta
+
   name="viewport"
+
   content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta
+
   name="theme-color"
+
   content="#000000">
 
 <title>And Chess For All | Dynamic Sidebar</title>
@@ -17,163 +23,241 @@
 <style>
 
 /* =========================================================
+
    ACFA DYNAMIC SIDEBAR
+
    HOME • TOURNAMENTS • STAFF
+
    ========================================================= */
 
 :root{
+
   --black:#000000;
+
   --black2:#03060b;
 
   --blue:#1266c8;
+
   --blue2:#2d8cff;
+
   --blue3:#69b7ff;
+
   --blue4:#b9e0ff;
 
   --navy:#061326;
+
   --navy2:#0a203d;
+
   --navy3:#102e56;
 
   --gold:#d7a63e;
+
   --gold2:#ffd66b;
+
   --gold3:#f4d58a;
 
   --white:#ffffff;
+
   --soft:#e7edf6;
+
   --muted:#aab8cb;
 
   --line:rgba(82,159,255,.27);
+
 }
 
-
 /* =========================================================
+
    RESET
+
    ========================================================= */
 
 *{
+
   box-sizing:border-box;
+
 }
 
 html{
+
   margin:0;
+
   min-height:100%;
 
   background:#000;
 
   scrollbar-width:thin;
+
   scrollbar-color:#ffd66b #05070c;
+
 }
 
 body{
+
   margin:0;
 
   min-height:100vh;
 
   overflow-x:hidden;
+
   overflow-y:auto;
 
   background:#000;
+
   color:#fff;
 
   font-family:
+
     Inter,
+
     ui-sans-serif,
+
     system-ui,
+
     -apple-system,
+
     BlinkMacSystemFont,
+
     "Segoe UI",
+
     Arial,
+
     sans-serif;
 
   scrollbar-width:thin;
+
   scrollbar-color:#ffd66b #05070c;
+
 }
 
 button,
+
 a{
+
   font:inherit;
+
 }
 
 button{
+
   -webkit-tap-highlight-color:transparent;
+
 }
 
 a{
+
   color:inherit;
+
 }
 
 img{
+
   max-width:100%;
+
 }
 
-
 /* =========================================================
+
    SCROLLBAR
+
    ========================================================= */
 
 html::-webkit-scrollbar,
+
 body::-webkit-scrollbar{
+
   width:5px;
+
 }
 
 html::-webkit-scrollbar-track,
+
 body::-webkit-scrollbar-track{
+
   background:#05070c;
+
 }
 
 html::-webkit-scrollbar-thumb,
+
 body::-webkit-scrollbar-thumb{
+
   background:
+
     linear-gradient(
+
       180deg,
+
       #69b7ff,
+
       #ffd66b
+
     );
 
   border-radius:999px;
 
   border:1px solid #07172b;
+
 }
 
-
 /* =========================================================
+
    APP
+
    ========================================================= */
 
 .shell{
+
   width:100%;
+
   max-width:760px;
 
   margin:0 auto;
+
 }
 
 .app{
+
   position:relative;
 
   min-height:100vh;
 
   overflow:hidden;
+
   isolation:isolate;
 
   background:
+
     radial-gradient(
+
       circle at 50% -8%,
+
       rgba(45,140,255,.18),
+
       transparent 34%
+
     ),
+
     linear-gradient(
+
       180deg,
+
       #020305,
+
       #000
+
     );
+
 }
 
-
 /* =========================================================
+
    PARTICLES
+
    ========================================================= */
 
 .ambient{
+
   position:absolute;
 
   inset:0;
@@ -183,15 +267,19 @@ body::-webkit-scrollbar-thumb{
   overflow:hidden;
 
   pointer-events:none;
+
 }
 
 .spark{
+
   position:absolute;
 
   left:var(--x);
+
   bottom:-18px;
 
   width:5px;
+
   height:5px;
 
   border-radius:50%;
@@ -201,80 +289,121 @@ body::-webkit-scrollbar-thumb{
   background:var(--gold2);
 
   box-shadow:
+
     0 0 7px rgba(255,214,107,1),
+
     0 0 17px rgba(255,186,47,.82),
+
     0 0 29px rgba(255,186,47,.28);
 
   animation:
+
     emberRise
+
     var(--dur)
+
     linear
+
     infinite;
 
   animation-delay:var(--delay);
+
 }
 
 .spark.blue{
+
   width:4px;
+
   height:4px;
 
   background:var(--blue3);
 
   box-shadow:
+
     0 0 7px rgba(105,183,255,1),
+
     0 0 17px rgba(45,140,255,.9),
+
     0 0 29px rgba(45,140,255,.4);
+
 }
 
 .spark.large{
+
   width:7px;
+
   height:7px;
+
 }
 
 @keyframes emberRise{
+
   0%{
+
     transform:
+
       translate3d(0,0,0)
+
       scale(.35);
 
     opacity:0;
+
   }
 
   7%{
+
     opacity:1;
+
   }
 
   55%{
+
     opacity:.8;
+
   }
 
   82%{
+
     opacity:.35;
+
   }
 
   100%{
+
     transform:
+
       translate3d(
+
         var(--drift),
+
         -115vh,
+
         0
+
       )
+
       scale(1.3);
 
     opacity:0;
+
   }
+
 }
 
-
 /* =========================================================
+
    DASHBOARDS
+
    ========================================================= */
 
 .viewport{
+
   overflow:hidden;
+
 }
 
 .track{
+
   display:flex;
 
   width:300%;
@@ -282,125 +411,179 @@ body::-webkit-scrollbar-thumb{
   transform:translateX(0);
 
   transition:
+
     transform
+
     .55s
+
     cubic-bezier(.2,.86,.22,1);
+
 }
 
 .track.view-tournaments{
+
   transform:translateX(-33.333333%);
+
 }
 
 .track.view-staff{
+
   transform:translateX(-66.666666%);
+
 }
 
 .page{
+
   width:33.333333%;
+
   min-width:33.333333%;
 
   padding:12px;
+
 }
 
-
 /* =========================================================
+
    HERO
+
    ========================================================= */
 
 .hero{
+
   position:relative;
 
   min-height:400px;
 
   display:flex;
+
   flex-direction:column;
 
   align-items:center;
+
   justify-content:center;
 
   padding:
+
     18px
+
     0
+
     20px;
 
   overflow:hidden;
 
   text-align:center;
+
 }
 
 .hero-glow{
+
   position:absolute;
 
   left:50%;
+
   top:44%;
 
   width:390px;
+
   height:390px;
 
   transform:
+
     translate(-50%,-50%);
 
   border-radius:50%;
 
   background:
+
     radial-gradient(
+
       circle,
+
       rgba(45,140,255,.25),
+
       rgba(18,102,200,.09) 35%,
+
       transparent 70%
+
     );
 
   filter:blur(4px);
 
   animation:
+
     heroPulse
+
     5s
+
     ease-in-out
+
     infinite;
+
 }
 
 @keyframes heroPulse{
+
   50%{
+
     transform:
+
       translate(-50%,-50%)
+
       scale(1.07);
 
     opacity:.7;
+
   }
+
 }
 
 .orbit{
+
   position:absolute;
 
   left:50%;
+
   top:44%;
 
   width:min(76vw,360px);
+
   aspect-ratio:1;
 
   transform:
+
     translate(-50%,-50%);
 
   border-radius:50%;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.24);
 
   animation:
+
     orbitSpin
+
     18s
+
     linear
+
     infinite;
+
 }
 
 .orbit::before,
+
 .orbit::after{
+
   content:"";
 
   position:absolute;
 
   width:9px;
+
   height:9px;
 
   border-radius:50%;
@@ -408,52 +591,77 @@ body::-webkit-scrollbar-thumb{
   background:var(--gold2);
 
   box-shadow:
+
     0 0 7px rgba(255,214,107,1),
+
     0 0 20px rgba(255,214,107,.85);
+
 }
 
 .orbit::before{
+
   top:8%;
+
   left:20%;
+
 }
 
 .orbit::after{
+
   right:14%;
+
   bottom:10%;
+
 }
 
 .orbit.two{
+
   width:min(63vw,300px);
 
   border-style:dashed;
 
   border-color:
+
     rgba(255,214,107,.19);
 
   animation-duration:27s;
+
   animation-direction:reverse;
+
 }
 
 @keyframes orbitSpin{
+
   from{
+
     transform:
+
       translate(-50%,-50%)
+
       rotate(0deg);
+
   }
 
   to{
+
     transform:
+
       translate(-50%,-50%)
+
       rotate(360deg);
+
   }
+
 }
 
-
 /* =========================================================
+
    LOGO
+
    ========================================================= */
 
 .logo-stage{
+
   position:relative;
 
   z-index:5;
@@ -461,27 +669,37 @@ body::-webkit-scrollbar-thumb{
   width:min(72%,300px);
 
   margin-left:auto;
+
   margin-right:auto;
 
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   animation:
+
     logoFloat
+
     5.4s
+
     ease-in-out
+
     infinite;
+
 }
 
 .logo-stage::after{
+
   content:"";
 
   position:absolute;
 
   left:18%;
+
   right:18%;
+
   bottom:-5px;
 
   height:17px;
@@ -489,53 +707,79 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   background:
+
     rgba(0,0,0,.65);
 
   filter:blur(10px);
 
   z-index:-1;
+
 }
 
 .logo{
+
   display:block;
 
   width:100%;
+
   height:auto;
 
   object-fit:contain;
 
   filter:
+
     drop-shadow(
+
       0 14px 20px
+
       rgba(0,0,0,.53)
+
     )
+
     drop-shadow(
+
       0 0 20px
+
       rgba(255,214,107,.17)
+
     );
+
 }
 
 @keyframes logoFloat{
+
   0%,
+
   100%{
+
     transform:
+
       translateY(0)
+
       rotate(-.25deg);
+
   }
 
   50%{
+
     transform:
+
       translateY(-7px)
+
       rotate(.25deg);
+
   }
+
 }
 
-
 /* =========================================================
+
    HERO TEXT
+
    ========================================================= */
 
 .hero-copy{
+
   position:relative;
 
   z-index:6;
@@ -543,94 +787,131 @@ body::-webkit-scrollbar-thumb{
   width:100%;
 
   margin-top:7px;
+
 }
 
 .greeting{
+
   color:var(--gold2);
 
   font-family:
+
     Georgia,
+
     "Times New Roman",
+
     serif;
 
   font-size:
+
     clamp(
+
       1.5rem,
+
       5vw,
+
       2rem
+
     );
 
   line-height:1.1;
+
 }
 
 .clock{
+
   margin-top:6px;
 
   color:#fff;
 
   font-size:1.15rem;
+
   font-weight:950;
 
   letter-spacing:.035em;
 
   font-variant-numeric:
+
     tabular-nums;
+
 }
 
 .date{
+
   margin-top:3px;
 
   color:#d4deec;
 
   font-size:.76rem;
+
 }
 
-
 /* =========================================================
+
    DASHBOARD SWITCHER
+
    ========================================================= */
 
 .dashboard-switcher{
+
   display:grid;
 
   grid-template-columns:
+
     repeat(3,1fr);
 
   gap:7px;
 
   margin:
+
     0
+
     0
+
     10px;
 
   padding:6px;
 
   border:
+
     1px solid
+
     rgba(45,140,255,.22);
 
   border-radius:16px;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       rgba(11,32,61,.93),
+
       rgba(4,14,29,.93)
+
     );
+
 }
 
 .dashboard-btn{
+
   border:
+
     1px solid
+
     rgba(105,183,255,.16);
 
   padding:
+
     10px
+
     6px;
 
   border-radius:11px;
 
   background:
+
     rgba(5,20,40,.74);
 
   color:#c8d3e3;
@@ -638,29 +919,41 @@ body::-webkit-scrollbar-thumb{
   cursor:pointer;
 
   font-size:13px;
+
   font-weight:900;
+
 }
 
 .dashboard-btn.active{
+
   color:#111;
 
   border-color:
+
     rgba(255,214,107,.8);
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #ffe390,
+
       #d7a63e
+
     );
+
 }
 
-
 /* =========================================================
+
    STANDARD SECTION
+
    ========================================================= */
 
 .section{
+
   position:relative;
 
   margin-top:11px;
@@ -672,45 +965,69 @@ body::-webkit-scrollbar-thumb{
   border-radius:18px;
 
   border:
+
     1px solid
+
     var(--line);
 
   background:
+
     radial-gradient(
+
       circle at 100% 0%,
+
       rgba(45,140,255,.1),
+
       transparent 31%
+
     ),
+
     linear-gradient(
+
       180deg,
+
       rgba(11,32,61,.97),
+
       rgba(4,14,29,.97)
+
     );
+
 }
 
 .section::before{
+
   content:"";
 
   position:absolute;
 
   top:0;
+
   left:15%;
+
   right:15%;
 
   height:1px;
 
   background:
+
     linear-gradient(
+
       90deg,
+
       transparent,
+
       rgba(255,214,107,.76),
+
       transparent
+
     );
 
   opacity:.5;
+
 }
 
 .section-head{
+
   position:relative;
 
   z-index:4;
@@ -718,45 +1035,57 @@ body::-webkit-scrollbar-thumb{
   display:flex;
 
   align-items:center;
+
   justify-content:space-between;
 
   gap:8px;
 
   margin-bottom:10px;
+
 }
 
 .section h2{
+
   margin:0;
 
   color:var(--gold2);
 
   font-family:
+
     Georgia,
+
     "Times New Roman",
+
     serif;
 
   font-size:17px;
+
 }
 
 .section-kicker{
+
   margin-bottom:3px;
 
   color:var(--blue3);
 
   font-size:10px;
+
   font-weight:950;
 
   letter-spacing:.14em;
 
   text-transform:uppercase;
+
 }
 
-
 /* =========================================================
+
    LIVE DOT
+
    ========================================================= */
 
 .live-dot{
+
   display:inline-flex;
 
   align-items:center;
@@ -766,12 +1095,15 @@ body::-webkit-scrollbar-thumb{
   color:#d7e5f7;
 
   font-size:10px;
+
 }
 
 .live-dot::before{
+
   content:"";
 
   width:7px;
+
   height:7px;
 
   border-radius:50%;
@@ -779,180 +1111,253 @@ body::-webkit-scrollbar-thumb{
   background:var(--blue3);
 
   box-shadow:
+
     0 0 0 0
+
     rgba(105,183,255,.65);
 
   animation:
+
     pulseDot
+
     1.9s
+
     infinite;
+
 }
 
 @keyframes pulseDot{
+
   70%{
+
     box-shadow:
+
       0 0 0 7px
+
       rgba(105,183,255,0);
+
   }
 
   100%{
+
     box-shadow:
+
       0 0 0 0
+
       rgba(105,183,255,0);
+
   }
+
 }
 
-
 /* =========================================================
+
    QUICK LINKS
+
    ========================================================= */
 
 .quick-links{
+
   display:grid;
 
   grid-template-columns:
+
     repeat(4,1fr);
 
   gap:7px;
+
 }
 
 .quick-link{
+
   min-height:76px;
 
   display:flex;
+
   flex-direction:column;
 
   align-items:center;
+
   justify-content:center;
 
   gap:5px;
 
   padding:
+
     10px
+
     5px;
 
   border-radius:13px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.18);
 
   background:
+
     linear-gradient(
+
       180deg,
+
       rgba(17,48,88,.92),
+
       rgba(6,22,43,.92)
+
     );
 
   text-decoration:none;
+
 }
 
 .quick-icon{
+
   color:var(--gold2);
 
   font-size:20px;
+
 }
 
 .quick-label{
+
   color:#fff;
 
   text-align:center;
 
   font-size:12px;
+
   font-weight:900;
+
 }
 
-
 /* =========================================================
+
    ANNOUNCEMENTS
+
    ========================================================= */
 
 .announcement-list{
+
   display:grid;
+
   gap:8px;
+
 }
 
 .announcement{
+
   padding:10px;
 
   border-radius:13px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.12);
 
   background:
+
     linear-gradient(
+
       180deg,
+
       rgba(14,42,79,.86),
+
       rgba(6,22,43,.86)
+
     );
+
 }
 
 .announcement.pinned{
+
   border-color:
+
     rgba(255,214,107,.33);
+
 }
 
 .announcement-top{
+
   display:flex;
 
   justify-content:space-between;
+
   align-items:center;
 
   gap:8px;
+
 }
 
 .announcement-title{
+
   min-width:0;
 
   color:#fff;
 
   font-size:14px;
+
   font-weight:950;
 
   overflow-wrap:anywhere;
+
 }
 
 .announcement-date{
+
   flex:0 0 auto;
 
   color:var(--gold3);
 
   font-size:10px;
+
 }
 
 .pin{
+
   color:var(--gold2);
 
   margin-right:3px;
+
 }
 
 .announcement-body{
+
   margin-top:5px;
 
   color:#c5d2e3;
 
   font-size:12px;
+
   line-height:1.45;
+
 }
 
 .announcement-link{
+
   display:inline-flex;
 
   margin-top:7px;
 
   padding:
+
     6px
+
     9px;
 
   border-radius:8px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.22);
 
   background:
+
     rgba(45,140,255,.09);
 
   color:var(--blue4);
@@ -960,20 +1365,27 @@ body::-webkit-scrollbar-thumb{
   text-decoration:none;
 
   font-size:11px;
+
   font-weight:900;
+
 }
 
-
 /* =========================================================
+
    EVENTS
+
    ========================================================= */
 
 .events{
+
   display:grid;
+
   gap:7px;
+
 }
 
 .event{
+
   display:flex;
 
   align-items:center;
@@ -985,23 +1397,31 @@ body::-webkit-scrollbar-thumb{
   border-radius:13px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.12);
 
   background:
+
     rgba(255,255,255,.035);
 
   color:inherit;
 
   text-decoration:none;
+
 }
 
 .event-date{
+
   width:45px;
+
   min-width:45px;
 
   padding:
+
     7px
+
     4px;
 
   text-align:center;
@@ -1009,51 +1429,65 @@ body::-webkit-scrollbar-thumb{
   border-radius:10px;
 
   border:
+
     1px solid
+
     rgba(255,214,107,.3);
 
   background:
+
     rgba(215,166,62,.08);
 
   color:var(--gold2);
 
   font-size:11px;
+
   font-weight:950;
 
   line-height:1.15;
+
 }
 
 .event-main{
+
   flex:1;
 
   min-width:0;
+
 }
 
 .event-title{
+
   color:#fff;
 
   font-size:13px;
+
   font-weight:900;
 
   overflow-wrap:anywhere;
 
   line-height:1.25;
+
 }
 
 .event-meta{
+
   margin-top:2px;
 
   color:var(--muted);
 
   font-size:11px;
+
 }
 
-
 /* =========================================================
+
    ART BOARDS
+
    ========================================================= */
 
 .members-showcase{
+
   display:grid;
 
   grid-template-columns:1fr;
@@ -1061,9 +1495,11 @@ body::-webkit-scrollbar-thumb{
   gap:14px;
 
   margin-top:12px;
+
 }
 
 .art-board{
+
   position:relative;
 
   width:100%;
@@ -1073,13 +1509,19 @@ body::-webkit-scrollbar-thumb{
   background:transparent;
 
   filter:
+
     drop-shadow(
+
       0 18px 25px
+
       rgba(0,0,0,.45)
+
     );
+
 }
 
 .board-art{
+
   position:relative;
 
   z-index:1;
@@ -1087,6 +1529,7 @@ body::-webkit-scrollbar-thumb{
   display:block;
 
   width:100%;
+
   height:auto;
 
   margin:0;
@@ -1094,15 +1537,17 @@ body::-webkit-scrollbar-thumb{
   pointer-events:none;
 
   user-select:none;
+
 }
 
-
 /* =========================================================
+
    NEW MEMBERS
-   EACH AVATAR / USERNAME / RATING HAS ITS OWN POSITION
+
    ========================================================= */
 
 .new-members-overlay{
+
   position:absolute;
 
   inset:0;
@@ -1110,9 +1555,11 @@ body::-webkit-scrollbar-thumb{
   z-index:6;
 
   pointer-events:none;
+
 }
 
 .new-member-slot{
+
   position:absolute;
 
   inset:0;
@@ -1124,15 +1571,15 @@ body::-webkit-scrollbar-thumb{
   text-decoration:none;
 
   pointer-events:none;
+
 }
 
-
-/* Avatar circles */
-
 .new-member-avatar{
+
   position:absolute;
 
   width:6.1%;
+
   aspect-ratio:1 / 1;
 
   border-radius:50%;
@@ -1142,46 +1589,63 @@ body::-webkit-scrollbar-thumb{
   background:#10294a;
 
   border:
+
     2px solid
+
     #d7a63e;
 
   box-shadow:
+
     0 2px 7px
+
     rgba(0,0,0,.3);
 
   pointer-events:auto;
 
   transition:
+
     transform .2s ease,
+
     filter .2s ease;
+
 }
 
 .new-member-avatar:hover{
+
   transform:scale(1.08);
 
   filter:
+
     drop-shadow(
+
       0 0 7px
+
       rgba(255,214,107,.55)
+
     );
+
 }
 
-
-/* Username */
-
 .new-member-username{
+
   position:absolute;
 
   left:31.2%;
+
   right:13%;
 
   color:#0b1932;
 
   font-size:
+
     clamp(
+
       10px,
+
       2.35vw,
+
       17px
+
     );
 
   font-weight:950;
@@ -1191,31 +1655,39 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   overflow:hidden;
+
   text-overflow:ellipsis;
 
   pointer-events:auto;
 
   text-shadow:
+
     0 1px 0
+
     rgba(255,255,255,.55);
+
 }
 
-
-/* Rating */
-
 .new-member-rating{
+
   position:absolute;
 
   left:31.2%;
+
   right:13%;
 
   color:#76541d;
 
   font-size:
+
     clamp(
+
       7px,
+
       1.55vw,
+
       11px
+
     );
 
   font-weight:950;
@@ -1225,27 +1697,31 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   pointer-events:auto;
+
 }
 
-
-/* Optional Chess title */
-
 .new-member-title{
+
   position:absolute;
 
   right:11%;
 
   transform:
+
     translateY(-50%);
 
   padding:
+
     3px
+
     6px;
 
   border-radius:7px;
 
   border:
+
     1px solid
+
     #d7a63e;
 
   background:#061326;
@@ -1253,154 +1729,211 @@ body::-webkit-scrollbar-thumb{
   color:#ffd66b;
 
   font-size:
+
     clamp(
+
       7px,
+
       1.5vw,
+
       10px
+
     );
 
   font-weight:950;
 
   pointer-events:auto;
+
 }
 
-
-/* =========================================================
-   NEW MEMBER SLOT 1
-   ========================================================= */
+/* SLOT 1 */
 
 .new-member-slot.slot-1
+
 .new-member-avatar{
+
   left:22.45%;
+
   top:43.35%;
+
 }
 
 .new-member-slot.slot-1
+
 .new-member-username{
+
   top:43.95%;
+
 }
 
 .new-member-slot.slot-1
+
 .new-member-rating{
+
   top:46.55%;
+
 }
 
 .new-member-slot.slot-1
+
 .new-member-title{
+
   top:45.4%;
+
 }
 
-
-/* =========================================================
-   NEW MEMBER SLOT 2
-   ========================================================= */
+/* SLOT 2 */
 
 .new-member-slot.slot-2
+
 .new-member-avatar{
+
   left:22.45%;
+
   top:52.05%;
+
 }
 
 .new-member-slot.slot-2
+
 .new-member-username{
+
   top:52.65%;
+
 }
 
 .new-member-slot.slot-2
+
 .new-member-rating{
+
   top:55.25%;
+
 }
 
 .new-member-slot.slot-2
+
 .new-member-title{
+
   top:54.1%;
+
 }
 
-
-/* =========================================================
-   NEW MEMBER SLOT 3
-   ========================================================= */
+/* SLOT 3 */
 
 .new-member-slot.slot-3
+
 .new-member-avatar{
+
   left:22.45%;
+
   top:60.75%;
+
 }
 
 .new-member-slot.slot-3
+
 .new-member-username{
+
   top:61.35%;
+
 }
 
 .new-member-slot.slot-3
+
 .new-member-rating{
+
   top:63.95%;
+
 }
 
 .new-member-slot.slot-3
+
 .new-member-title{
+
   top:62.8%;
+
 }
 
-
-/* =========================================================
-   NEW MEMBER SLOT 4
-   ========================================================= */
+/* SLOT 4 */
 
 .new-member-slot.slot-4
+
 .new-member-avatar{
+
   left:22.45%;
+
   top:69.45%;
+
 }
 
 .new-member-slot.slot-4
+
 .new-member-username{
+
   top:70.05%;
+
 }
 
 .new-member-slot.slot-4
+
 .new-member-rating{
+
   top:72.65%;
+
 }
 
 .new-member-slot.slot-4
+
 .new-member-title{
+
   top:71.5%;
+
 }
 
-
-/* =========================================================
-   NEW MEMBER SLOT 5
-   ========================================================= */
+/* SLOT 5 */
 
 .new-member-slot.slot-5
+
 .new-member-avatar{
+
   left:22.45%;
+
   top:78.15%;
+
 }
 
 .new-member-slot.slot-5
+
 .new-member-username{
+
   top:78.75%;
+
 }
 
 .new-member-slot.slot-5
+
 .new-member-rating{
+
   top:81.35%;
+
 }
 
 .new-member-slot.slot-5
-.new-member-title{
-  top:80.2%;
-}
 
+.new-member-title{
+
+  top:80.2%;
+
+}
 
 /* =========================================================
+
    TITLED PLAYERS
-   LEFT AS-IS
+
    ========================================================= */
 
 .titled-members-overlay{
+
   position:absolute;
 
   inset:0;
@@ -1408,12 +1941,15 @@ body::-webkit-scrollbar-thumb{
   z-index:5;
 
   pointer-events:none;
+
 }
 
 .titled-art-member{
+
   position:absolute;
 
   left:19.7%;
+
   right:8.3%;
 
   height:8.1%;
@@ -1425,7 +1961,9 @@ body::-webkit-scrollbar-thumb{
   gap:9px;
 
   padding:
+
     0
+
     8px;
 
   color:#07172b;
@@ -1435,32 +1973,49 @@ body::-webkit-scrollbar-thumb{
   pointer-events:auto;
 
   transition:
+
     transform .2s ease,
+
     filter .2s ease;
+
 }
 
 .titled-art-member:hover{
+
   transform:
+
     translateX(3px)
+
     scale(1.008);
 
   filter:
+
     drop-shadow(
+
       0 0 8px
+
       rgba(255,214,107,.45)
+
     );
+
 }
 
 .titled-art-member.slot-1{
+
   top:59.45%;
+
 }
 
 .titled-art-member.slot-2{
+
   top:70.95%;
+
 }
 
 .titled-art-avatar{
+
   width:44px;
+
   height:44px;
 
   flex:0 0 44px;
@@ -1472,30 +2027,43 @@ body::-webkit-scrollbar-thumb{
   background:#10294a;
 
   border:
+
     2px solid
+
     #d7a63e;
 
   box-shadow:
+
     0 3px 8px
+
     rgba(0,0,0,.25);
+
 }
 
 .titled-art-copy{
+
   flex:1;
 
   min-width:0;
+
 }
 
 .titled-art-name{
+
   max-width:100%;
 
   color:#0a1730;
 
   font-size:
+
     clamp(
+
       11px,
+
       2.7vw,
+
       19px
+
     );
 
   font-weight:950;
@@ -1505,27 +2073,37 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   overflow:hidden;
+
   text-overflow:ellipsis;
+
 }
 
 .titled-art-rating{
+
   margin-top:5px;
 
   color:#71521e;
 
   font-size:
+
     clamp(
+
       8px,
+
       1.8vw,
+
       12px
+
     );
 
   font-weight:950;
 
   line-height:1;
+
 }
 
 .titled-art-title{
+
   flex:0 0 auto;
 
   min-width:46px;
@@ -1535,37 +2113,51 @@ body::-webkit-scrollbar-thumb{
   place-items:center;
 
   padding:
+
     7px
+
     8px;
 
   border-radius:9px;
 
   border:
+
     1px solid
+
     #d7a63e;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #12345f,
+
       #061326
+
     );
 
   color:#ffd66b;
 
   font-size:12px;
+
   font-weight:950;
+
 }
 
-
 /* =========================================================
-   LOADING
+
+   LOADING / EMPTY
+
    ========================================================= */
 
 .art-board-loading{
+
   position:absolute;
 
   left:24%;
+
   right:10%;
 
   height:5%;
@@ -1573,28 +2165,43 @@ body::-webkit-scrollbar-thumb{
   border-radius:10px;
 
   background:
+
     linear-gradient(
+
       90deg,
+
       rgba(255,255,255,.04),
+
       rgba(255,255,255,.32),
+
       rgba(255,255,255,.04)
+
     );
 
   background-size:
+
     220% 100%;
 
   animation:
+
     shimmer
+
     1.08s
+
     linear
+
     infinite;
+
 }
 
 .art-empty{
+
   position:absolute;
 
   left:23%;
+
   right:10%;
+
   top:64%;
 
   color:#07172b;
@@ -1602,15 +2209,19 @@ body::-webkit-scrollbar-thumb{
   text-align:center;
 
   font-size:12px;
+
   font-weight:950;
+
 }
 
-
 /* =========================================================
+
    RULES
+
    ========================================================= */
 
 .rules-window{
+
   position:relative;
 
   height:200px;
@@ -1620,20 +2231,27 @@ body::-webkit-scrollbar-thumb{
   border-radius:13px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.1);
 
   background:
+
     rgba(0,0,0,.23);
+
 }
 
 .rules-window::before,
+
 .rules-window::after{
+
   content:"";
 
   position:absolute;
 
   left:0;
+
   right:0;
 
   height:32px;
@@ -1641,31 +2259,47 @@ body::-webkit-scrollbar-thumb{
   z-index:8;
 
   pointer-events:none;
+
 }
 
 .rules-window::before{
+
   top:0;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #081a32,
+
       transparent
+
     );
+
 }
 
 .rules-window::after{
+
   bottom:0;
 
   background:
+
     linear-gradient(
+
       0deg,
+
       #07172b,
+
       transparent
+
     );
+
 }
 
 .rules-track{
+
   display:grid;
 
   gap:7px;
@@ -1673,25 +2307,39 @@ body::-webkit-scrollbar-thumb{
   padding:10px;
 
   animation:
+
     rulesScroll
+
     25s
+
     linear
+
     infinite;
+
 }
 
 .rules-window:hover
+
 .rules-track{
+
   animation-play-state:paused;
+
 }
 
 @keyframes rulesScroll{
+
   to{
+
     transform:
+
       translateY(-50%);
+
   }
+
 }
 
 .rule{
+
   display:flex;
 
   align-items:flex-start;
@@ -1699,23 +2347,31 @@ body::-webkit-scrollbar-thumb{
   gap:8px;
 
   padding:
+
     8px
+
     9px;
 
   border-radius:11px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.06);
 
   background:
+
     rgba(255,255,255,.03);
 
   font-size:12px;
+
   line-height:1.4;
+
 }
 
 .rule i{
+
   display:grid;
 
   place-items:center;
@@ -1723,15 +2379,21 @@ body::-webkit-scrollbar-thumb{
   flex:0 0 auto;
 
   width:20px;
+
   height:20px;
 
   border-radius:50%;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       var(--gold2),
+
       var(--gold)
+
     );
 
   color:#111;
@@ -1739,77 +2401,107 @@ body::-webkit-scrollbar-thumb{
   font-style:normal;
 
   font-size:10px;
+
   font-weight:950;
+
 }
 
-
 /* =========================================================
+
    STAFF
+
    ========================================================= */
 
 .staff-hero{
+
   position:relative;
 
   padding:
+
     26px
+
     12px
+
     18px;
 
   text-align:center;
+
 }
 
 .staff-eyebrow{
+
   color:var(--blue3);
 
   font-size:11px;
+
   font-weight:950;
 
   text-transform:uppercase;
 
   letter-spacing:.18em;
+
 }
 
 .staff-title{
+
   margin:
+
     5px
+
     0
+
     5px;
 
   color:var(--gold2);
 
   font-family:
+
     Georgia,
+
     "Times New Roman",
+
     serif;
 
   font-size:28px;
+
 }
 
 .staff-subtitle{
+
   max-width:470px;
 
   margin:
+
     0
+
     auto;
 
   color:#c1ccda;
 
   font-size:12px;
+
   line-height:1.5;
+
 }
 
 .staff-grid{
+
   display:grid;
 
   gap:8px;
+
 }
 
 .staff-card{
+
   display:grid;
 
   grid-template-columns:
+
     48px
+
     minmax(0,1fr)
+
     auto;
 
   gap:10px;
@@ -1821,28 +2513,41 @@ body::-webkit-scrollbar-thumb{
   border-radius:14px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.13);
 
   background:
+
     linear-gradient(
+
       180deg,
+
       rgba(15,45,82,.9),
+
       rgba(7,23,43,.9)
+
     );
 
   color:inherit;
 
   text-decoration:none;
+
 }
 
 .staff-card.head-staff{
+
   border-color:
+
     rgba(255,214,107,.45);
+
 }
 
 .staff-avatar{
+
   width:48px;
+
   height:48px;
 
   border-radius:50%;
@@ -1852,43 +2557,57 @@ body::-webkit-scrollbar-thumb{
   background:#0d1b2f;
 
   border:
+
     2px solid
+
     rgba(255,214,107,.42);
+
 }
 
 .staff-main{
+
   min-width:0;
+
 }
 
 .staff-name{
+
   color:#fff;
 
   font-size:14px;
+
   font-weight:950;
 
   overflow-wrap:anywhere;
 
   line-height:1.2;
+
 }
 
 .staff-role{
+
   margin-top:3px;
 
   color:var(--gold3);
 
   font-size:12px;
+
   font-weight:850;
+
 }
 
 .staff-rating{
+
   margin-top:3px;
 
   color:#aab8cb;
 
   font-size:11px;
+
 }
 
 .staff-badges{
+
   display:flex;
 
   flex-direction:column;
@@ -1896,11 +2615,15 @@ body::-webkit-scrollbar-thumb{
   align-items:flex-end;
 
   gap:4px;
+
 }
 
 .role-badge{
+
   padding:
+
     4px
+
     7px;
 
   border-radius:999px;
@@ -1908,92 +2631,145 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   font-size:10px;
+
   font-weight:950;
+
 }
 
 .role-owner{
+
   color:#15110a;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #ffe493,
+
       #d7a63e
+
     );
+
 }
 
 .role-co-owner{
+
   color:#fff;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #3b96ff,
+
       #1266c8
+
     );
+
 }
 
 .role-head-of-staff{
+
   color:#101827;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #a9e3ff,
+
       #57bde9
+
     );
+
 }
 
 .role-super-admin{
+
   color:#fff;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #775dff,
+
       #4932c8
+
     );
+
 }
 
 .role-admin{
+
   color:#fff;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #2e8cdf,
+
       #125a9b
+
     );
+
 }
 
 .role-coordinator{
+
   color:#061326;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #88d5ff,
+
       #51a7dc
+
     );
+
 }
 
 .role-mascot{
+
   color:#15110a;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #fff1b7,
+
       #dfb950
+
     );
+
 }
 
-
 /* =========================================================
+
    TOURNAMENT HERO
+
    ========================================================= */
 
 .tournament-hero{
+
   position:relative;
 
   min-height:360px;
@@ -2001,7 +2777,9 @@ body::-webkit-scrollbar-thumb{
   display:grid;
 
   grid-template-columns:
+
     1fr
+
     .9fr;
 
   gap:7px;
@@ -2009,46 +2787,67 @@ body::-webkit-scrollbar-thumb{
   align-items:center;
 
   padding:
+
     16px
+
     6px
+
     8px;
+
 }
 
 .eyebrow{
+
   color:var(--blue3);
 
   font-size:11px;
+
   font-weight:950;
 
   text-transform:uppercase;
 
   letter-spacing:.16em;
+
 }
 
 .season-title{
+
   margin:
+
     5px
+
     0
+
     8px;
 
   color:var(--gold2);
 
   font-family:
+
     Georgia,
+
     "Times New Roman",
+
     serif;
 
   font-size:
+
     clamp(
+
       2rem,
+
       6vw,
+
       3rem
+
     );
 
   line-height:1;
+
 }
 
 .status{
+
   display:inline-flex;
 
   align-items:center;
@@ -2056,50 +2855,67 @@ body::-webkit-scrollbar-thumb{
   gap:6px;
 
   padding:
+
     6px
+
     9px;
 
   border-radius:999px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.3);
 
   background:
+
     rgba(45,140,255,.11);
 
   color:#d8ecff;
 
   font-size:11px;
+
   font-weight:900;
+
 }
 
 .facts{
+
   display:grid;
 
   grid-template-columns:
+
     1fr
+
     1fr;
 
   gap:7px;
 
   margin-top:10px;
+
 }
 
 .fact{
+
   padding:8px;
 
   border-radius:11px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.14);
 
   background:
+
     rgba(9,30,58,.82);
+
 }
 
 .fact b{
+
   display:block;
 
   margin-bottom:3px;
@@ -2107,16 +2923,21 @@ body::-webkit-scrollbar-thumb{
   color:var(--blue3);
 
   font-size:10px;
+
 }
 
 .fact span{
+
   color:#fff;
 
   font-size:12px;
+
   font-weight:800;
+
 }
 
 .actions{
+
   display:flex;
 
   flex-wrap:wrap;
@@ -2124,25 +2945,33 @@ body::-webkit-scrollbar-thumb{
   gap:6px;
 
   margin-top:9px;
+
 }
 
 .action{
+
   display:inline-flex;
 
   align-items:center;
+
   justify-content:center;
 
   padding:
+
     7px
+
     9px;
 
   border-radius:9px;
 
   border:
+
     1px solid
+
     rgba(255,214,107,.3);
 
   background:
+
     rgba(215,166,62,.09);
 
   color:var(--gold2);
@@ -2150,10 +2979,13 @@ body::-webkit-scrollbar-thumb{
   text-decoration:none;
 
   font-size:11px;
+
   font-weight:900;
+
 }
 
 .justice-wrap{
+
   position:relative;
 
   min-height:320px;
@@ -2161,49 +2993,71 @@ body::-webkit-scrollbar-thumb{
   display:grid;
 
   place-items:center;
+
 }
 
 .justice{
+
   position:relative;
 
   z-index:3;
 
   width:100%;
+
   max-height:330px;
 
   object-fit:contain;
 
   filter:
+
     drop-shadow(
+
       0 14px 18px
+
       rgba(0,0,0,.5)
+
     );
 
   animation:
+
     justiceFloat
+
     6s
+
     ease-in-out
+
     infinite;
+
 }
 
 @keyframes justiceFloat{
+
   50%{
+
     transform:
+
       translateY(-6px)
+
       rotate(.2deg);
+
   }
+
 }
 
-
 /* =========================================================
+
    CHAMPIONS PODIUM
+
    ========================================================= */
 
 .champions-section{
+
   overflow:visible;
+
 }
 
 .champions-stage{
+
   position:relative;
 
   width:100%;
@@ -2211,9 +3065,11 @@ body::-webkit-scrollbar-thumb{
   margin-top:8px;
 
   overflow:visible;
+
 }
 
 .champions-podium-art{
+
   position:relative;
 
   z-index:1;
@@ -2221,12 +3077,15 @@ body::-webkit-scrollbar-thumb{
   display:block;
 
   width:100%;
+
   height:auto;
 
   pointer-events:none;
+
 }
 
 .champions-overlay{
+
   position:absolute;
 
   inset:0;
@@ -2234,12 +3093,15 @@ body::-webkit-scrollbar-thumb{
   z-index:5;
 
   pointer-events:none;
+
 }
 
 .podium-winner{
+
   position:absolute;
 
   display:flex;
+
   flex-direction:column;
 
   align-items:center;
@@ -2253,36 +3115,57 @@ body::-webkit-scrollbar-thumb{
   text-align:center;
 
   pointer-events:auto;
+
 }
 
 .podium-second{
+
   left:8.5%;
+
   top:12%;
+
 }
 
 .podium-first{
+
   left:38%;
+
   top:1.5%;
+
 }
 
 .podium-third{
+
   right:8.5%;
+
   top:14%;
+
 }
 
 .winner-avatar{
+
   width:
+
     clamp(
+
       48px,
+
       11vw,
+
       88px
+
     );
 
   height:
+
     clamp(
+
       48px,
+
       11vw,
+
       88px
+
     );
 
   border-radius:50%;
@@ -2292,35 +3175,55 @@ body::-webkit-scrollbar-thumb{
   background:#061326;
 
   border:
+
     4px solid
+
     #c7d4e2;
+
 }
 
 .podium-first
+
 .winner-avatar{
+
   width:
+
     clamp(
+
       58px,
+
       13vw,
+
       102px
+
     );
 
   height:
+
     clamp(
+
       58px,
+
       13vw,
+
       102px
+
     );
 
   border-color:#ffd66b;
+
 }
 
 .podium-third
+
 .winner-avatar{
+
   border-color:#c98043;
+
 }
 
 .winner-name{
+
   max-width:100%;
 
   margin-top:4px;
@@ -2328,10 +3231,15 @@ body::-webkit-scrollbar-thumb{
   color:#fff;
 
   font-size:
+
     clamp(
+
       8px,
+
       1.9vw,
+
       14px
+
     );
 
   font-weight:950;
@@ -2339,132 +3247,199 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   overflow:hidden;
+
   text-overflow:ellipsis;
 
   text-shadow:
+
     0 2px 4px
+
     rgba(0,0,0,.9);
+
 }
 
 .winner-meta{
+
   margin-top:3px;
 
   color:#f4d58a;
 
   font-size:
+
     clamp(
+
       6px,
+
       1.4vw,
+
       10px
+
     );
 
   font-weight:850;
+
 }
 
 .winner-rating{
+
   margin-top:3px;
 
   padding:
+
     2px
+
     5px;
 
   border-radius:999px;
 
   background:
+
     rgba(3,12,24,.82);
 
   border:
+
     1px solid
+
     rgba(255,214,107,.35);
 
   color:#fff3bd;
 
   font-size:
+
     clamp(
+
       6px,
+
       1.35vw,
+
       10px
+
     );
 
   font-weight:900;
+
 }
 
 .podium-placeholder-avatar{
+
   display:grid;
 
   place-items:center;
 
   width:
+
     clamp(
+
       48px,
+
       11vw,
+
       88px
+
     );
 
   height:
+
     clamp(
+
       48px,
+
       11vw,
+
       88px
+
     );
 
   border-radius:50%;
 
   background:
+
     radial-gradient(
+
       circle,
+
       #183c69,
+
       #061326
+
     );
 
   border:
+
     3px dashed
+
     rgba(255,255,255,.5);
 
   color:#ffd66b;
 
   font-size:
+
     clamp(
+
       20px,
+
       5vw,
+
       38px
+
     );
+
 }
 
 .podium-first
+
 .podium-placeholder-avatar{
+
   width:
+
     clamp(
+
       58px,
+
       13vw,
+
       102px
+
     );
 
   height:
+
     clamp(
+
       58px,
+
       13vw,
+
       102px
+
     );
+
 }
 
-
 /* =========================================================
+
    ARCHIVE
+
    ========================================================= */
 
 .archive{
+
   display:grid;
 
   gap:6px;
+
 }
 
 .archive-row{
+
   display:grid;
 
   grid-template-columns:
+
     40px
+
     minmax(0,1fr)
+
     auto;
 
   gap:8px;
@@ -2476,19 +3451,25 @@ body::-webkit-scrollbar-thumb{
   border-radius:11px;
 
   border:
+
     1px solid
+
     rgba(105,183,255,.08);
 
   background:
+
     rgba(0,0,0,.2);
 
   color:inherit;
 
   text-decoration:none;
+
 }
 
 .archive-row img{
+
   width:38px;
+
   height:38px;
 
   border-radius:50%;
@@ -2496,53 +3477,79 @@ body::-webkit-scrollbar-thumb{
   object-fit:cover;
 
   border:
+
     1px solid
+
     rgba(255,214,107,.25);
+
 }
 
 .archive-rating{
+
   color:var(--gold2);
 
   font-size:11px;
+
   font-weight:950;
+
 }
 
-
 /* =========================================================
-   MISC
+
+   STATUS / MISC
+
    ========================================================= */
 
 .skeleton{
+
   height:56px;
 
   border-radius:11px;
 
   background:
+
     linear-gradient(
+
       90deg,
+
       #07172b 20%,
+
       #102b4f 50%,
+
       #07172b 80%
+
     );
 
   background-size:
+
     220% 100%;
 
   animation:
+
     shimmer
+
     1.08s
+
     linear
+
     infinite;
+
 }
 
 @keyframes shimmer{
+
   to{
+
     background-position:
+
       -220% 0;
+
   }
+
 }
 
 .empty{
+
   padding:16px;
 
   color:#9faec2;
@@ -2550,12 +3557,43 @@ body::-webkit-scrollbar-thumb{
   text-align:center;
 
   font-size:12px;
+
+}
+
+.data-error{
+
+  margin:12px;
+
+  padding:14px;
+
+  border:
+
+    1px solid
+
+    rgba(255,104,104,.4);
+
+  border-radius:14px;
+
+  background:
+
+    rgba(89,11,20,.45);
+
+  color:#ffd8d8;
+
+  font-size:12px;
+
+  line-height:1.5;
+
 }
 
 .footer-note{
+
   padding:
+
     16px
+
     4px
+
     7px;
 
   color:#65748a;
@@ -2563,105 +3601,143 @@ body::-webkit-scrollbar-thumb{
   text-align:center;
 
   font-size:10px;
+
 }
 
-
 /* =========================================================
+
    MOBILE
+
    ========================================================= */
 
 @media(max-width:430px){
 
   html::-webkit-scrollbar,
+
   body::-webkit-scrollbar{
+
     width:4px;
+
   }
 
   .page{
+
     padding:8px;
+
   }
 
   .hero{
+
     min-height:330px;
 
     padding:
+
       8px
+
       0
+
       12px;
+
   }
 
   .hero-glow{
+
     width:285px;
+
     height:285px;
 
     top:42%;
+
   }
 
   .orbit{
+
     width:240px;
 
     top:42%;
+
   }
 
   .orbit.two{
+
     width:200px;
+
   }
 
   .logo-stage{
+
     width:185px;
+
   }
 
   .greeting{
+
     font-size:20px;
+
   }
 
   .clock{
+
     font-size:17px;
+
   }
 
   .date{
+
     font-size:12px;
+
   }
 
   .dashboard-switcher{
+
     gap:5px;
 
     padding:5px;
+
   }
 
   .dashboard-btn{
+
     padding:
+
       9px
+
       4px;
 
     font-size:11px;
+
   }
 
   .section{
+
     margin-top:8px;
 
     padding:10px;
+
   }
 
   .quick-links{
+
     grid-template-columns:
+
       1fr
+
       1fr;
+
   }
 
   .quick-link{
+
     min-height:65px;
+
   }
 
-
-  /* New-member coordinates stay percentage-based.
-     Do not override positions here. */
-
-
-  /* Titled board stays as previously working */
+  /* Titled board kept as previously working */
 
   .titled-art-member{
+
     left:19.4%;
+
     right:8%;
 
     height:8.2%;
@@ -2669,105 +3745,153 @@ body::-webkit-scrollbar-thumb{
     gap:6px;
 
     padding:
+
       0
+
       5px;
+
   }
 
   .titled-art-avatar{
+
     width:37px;
+
     height:37px;
 
     flex-basis:37px;
+
   }
 
   .titled-art-name{
+
     font-size:
+
       clamp(
+
         11px,
+
         3.7vw,
+
         15px
+
       );
+
   }
 
   .titled-art-rating{
+
     margin-top:3px;
 
     font-size:
+
       clamp(
+
         8px,
+
         2.6vw,
+
         11px
+
       );
+
   }
 
   .titled-art-title{
+
     min-width:38px;
 
     padding:
+
       5px
+
       6px;
 
     font-size:10px;
+
   }
 
-
   .staff-card{
+
     grid-template-columns:
+
       46px
+
       minmax(0,1fr)
+
       auto;
 
     gap:8px;
+
   }
 
   .staff-avatar{
+
     width:46px;
+
     height:46px;
+
   }
 
   .tournament-hero{
+
     grid-template-columns:1fr;
 
     min-height:0;
 
     text-align:center;
+
   }
 
   .actions{
+
     justify-content:center;
+
   }
 
   .justice-wrap{
+
     min-height:250px;
+
   }
 
   .justice{
+
     max-height:260px;
+
   }
 
 }
 
-
 /* =========================================================
+
    VERY NARROW
+
    ========================================================= */
 
 @media(max-width:340px){
 
   .dashboard-btn{
+
     font-size:10px;
+
   }
 
   .logo-stage{
+
     width:170px;
+
   }
 
   .staff-badges{
+
     display:none;
+
   }
 
   .new-member-title{
+
     display:none;
+
   }
 
 }
@@ -2776,33 +3900,45 @@ body::-webkit-scrollbar-thumb{
 
 </head>
 
-
 <body>
 
 <div class="shell">
 
 <main class="app">
 
-
 <div
+
   class="ambient"
+
   id="ambient">
+
 </div>
 
+<div
+
+  id="dataError"
+
+  class="data-error"
+
+  hidden>
+
+</div>
 
 <div class="viewport">
 
 <div
+
   class="track"
+
   id="track">
 
-
 <!-- ======================================================
+
      HOME
+
      ====================================================== -->
 
 <section class="page">
-
 
 <section class="hero">
 
@@ -2812,53 +3948,62 @@ body::-webkit-scrollbar-thumb{
 
   <div class="orbit two"></div>
 
-
   <div class="logo-stage">
 
     <img
+
       class="logo"
+
       src="./assets/acfa-logo.png"
+
       alt="And Chess For All">
 
   </div>
 
-
   <div class="hero-copy">
 
     <div
+
       class="greeting"
+
       id="greeting">
 
       Welcome to ACFA
 
     </div>
 
-
     <div
+
       class="clock"
+
       id="clock">
 
       --:--:--
 
     </div>
 
-
     <div
+
       class="date"
+
       id="dateLine">
+
     </div>
 
   </div>
 
 </section>
 
-
 <nav
+
   class="dashboard-switcher"
+
   aria-label="ACFA dashboards">
 
   <button
+
     class="dashboard-btn active"
+
     data-dashboard="home">
 
     Home
@@ -2866,7 +4011,9 @@ body::-webkit-scrollbar-thumb{
   </button>
 
   <button
+
     class="dashboard-btn"
+
     data-dashboard="tournaments">
 
     Tournaments
@@ -2874,7 +4021,9 @@ body::-webkit-scrollbar-thumb{
   </button>
 
   <button
+
     class="dashboard-btn"
+
     data-dashboard="staff">
 
     Staff
@@ -2883,7 +4032,6 @@ body::-webkit-scrollbar-thumb{
 
 </nav>
 
-
 <section class="section">
 
   <div class="section-head">
@@ -2891,26 +4039,31 @@ body::-webkit-scrollbar-thumb{
     <div>
 
       <div class="section-kicker">
+
         Navigate ACFA
+
       </div>
 
       <h2>
+
         Quick Links
+
       </h2>
 
     </div>
 
   </div>
 
-
   <div
+
     class="quick-links"
+
     id="quickLinks">
+
   </div>
 
 </section>
 
-
 <section class="section">
 
   <div class="section-head">
@@ -2918,142 +4071,181 @@ body::-webkit-scrollbar-thumb{
     <div>
 
       <div class="section-kicker">
+
         Latest From ACFA
+
       </div>
 
       <h2>
+
         Announcements
+
       </h2>
 
     </div>
 
-
     <span class="live-dot">
+
       Updates
+
     </span>
 
   </div>
 
-
   <div
+
     class="announcement-list"
+
     id="announcementBoard">
+
+    <div class="skeleton"></div>
+
+    <div class="skeleton"></div>
+
   </div>
 
 </section>
-
 
 <section class="section">
 
   <div class="section-head">
 
     <h2>
+
       Club Events
+
     </h2>
 
     <span class="live-dot">
+
       Current
+
     </span>
 
   </div>
 
-
   <div
+
     class="events"
+
     id="events">
+
+    <div class="skeleton"></div>
+
   </div>
 
 </section>
 
-
-
 <!-- ======================================================
-     NEW MEMBERS BOARD
+
+     MEMBER BOARDS
+
      ====================================================== -->
 
 <div class="members-showcase">
 
-
 <section class="art-board">
 
   <img
+
     class="board-art"
+
     src="./assets/acfa-new-members-board.PNG"
+
     alt="ACFA New Members">
 
-
   <div
+
     class="new-members-overlay"
+
     id="newMembers">
 
     <div
+
       class="art-board-loading"
+
       style="top:44%">
+
     </div>
 
     <div
+
       class="art-board-loading"
+
       style="top:52.7%">
+
     </div>
 
     <div
+
       class="art-board-loading"
+
       style="top:61.4%">
+
     </div>
 
     <div
+
       class="art-board-loading"
+
       style="top:70.1%">
+
     </div>
 
     <div
+
       class="art-board-loading"
+
       style="top:78.8%">
+
     </div>
 
   </div>
 
 </section>
-
-
-
-<!-- ======================================================
-     TITLED BOARD
-     ====================================================== -->
 
 <section class="art-board">
 
   <img
+
     class="board-art"
+
     src="./assets/acfa-titled-members-board.PNG"
+
     alt="ACFA Titled Players">
 
-
   <div
+
     class="titled-members-overlay"
+
     id="titledMembers">
 
     <div
+
       class="art-board-loading"
+
       style="top:60%">
+
     </div>
 
     <div
+
       class="art-board-loading"
+
       style="top:71.5%">
+
     </div>
 
   </div>
 
 </section>
 
-
 </div>
 
-
-
 <!-- ======================================================
+
      RULES
+
      ====================================================== -->
 
 <section class="section">
@@ -3061,54 +4253,63 @@ body::-webkit-scrollbar-thumb{
   <div class="section-head">
 
     <h2>
+
       Club Rules
+
     </h2>
 
     <span class="meta">
+
       Hover to pause
+
     </span>
 
   </div>
 
-
   <div class="rules-window">
 
     <div
+
       class="rules-track"
+
       id="rulesTrack">
+
     </div>
 
   </div>
 
 </section>
 
-
 <div class="footer-note">
 
   And Chess For All •
+
   Every Player Belongs •
+
   Every Move Matters
 
 </div>
 
-
 </section>
 
-
-
 <!-- ======================================================
-     TOURNAMENT DASHBOARD
+
+     TOURNAMENTS
+
      ====================================================== -->
 
 <section class="page">
 
-
 <nav
+
   class="dashboard-switcher"
+
   aria-label="ACFA dashboards">
 
   <button
+
     class="dashboard-btn"
+
     data-dashboard="home">
 
     Home
@@ -3116,7 +4317,9 @@ body::-webkit-scrollbar-thumb{
   </button>
 
   <button
+
     class="dashboard-btn active"
+
     data-dashboard="tournaments">
 
     Tournaments
@@ -3124,7 +4327,9 @@ body::-webkit-scrollbar-thumb{
   </button>
 
   <button
+
     class="dashboard-btn"
+
     data-dashboard="staff">
 
     Staff
@@ -3133,9 +4338,7 @@ body::-webkit-scrollbar-thumb{
 
 </nav>
 
-
 <section class="tournament-hero">
-
 
   <div class="tournament-copy">
 
@@ -3145,102 +4348,122 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
-
     <h1
+
       class="season-title"
+
       id="seasonTitle">
 
-      Fall 2026
+      Loading...
 
     </h1>
 
-
     <span
+
       class="status"
+
       id="seasonStatus">
 
-      Planning
+      Loading
 
     </span>
 
-
     <div class="facts">
-
 
       <div class="fact">
 
         <b>
+
           Registration
+
         </b>
 
         <span id="registrationDeadline">
-          TBA
+
+          Loading...
+
         </span>
 
       </div>
 
-
       <div class="fact">
 
         <b>
+
           Starts
+
         </b>
 
         <span id="startDate">
-          TBA
+
+          Loading...
+
         </span>
 
       </div>
 
-
       <div class="fact">
 
         <b>
+
           Ends
+
         </b>
 
         <span id="endDate">
-          TBA
+
+          Loading...
+
         </span>
 
       </div>
-
 
       <div class="fact">
 
         <b>
+
           Format
+
         </b>
 
         <span id="format">
-          Seasonal Championship
+
+          Loading...
+
         </span>
 
       </div>
 
-
     </div>
-
 
     <div class="actions">
 
       <a
+
         class="action"
+
         id="eventBtn"
+
         target="_blank"
+
         rel="noopener"
+
         style="display:none">
 
         Open Tournament
 
       </a>
 
-
       <a
+
         class="action"
+
         id="detailsBtn"
+
         target="_blank"
+
         rel="noopener"
+
         style="display:none">
 
         Event Details
@@ -3251,100 +4474,112 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
-
   <div class="justice-wrap">
 
     <img
+
       class="justice"
+
       src="./assets/lady-justice.png"
+
       alt="ACFA Lady Justice">
 
   </div>
 
-
 </section>
 
-
-
-<!-- ======================================================
-     CHAMPIONS
-     ====================================================== -->
-
 <section
+
   class="section
+
          champions-section">
 
   <div class="section-head">
 
     <h2>
+
       Season Champions
+
     </h2>
 
     <span class="meta">
+
       Latest Three
+
     </span>
 
   </div>
 
-
   <div class="champions-stage">
 
     <img
+
       class="champions-podium-art"
+
       src="./assets/acfa-champions-podium.PNG"
+
       alt="ACFA Season Champions Podium">
 
-
     <div
+
       class="champions-overlay"
+
       id="podium">
+
     </div>
 
   </div>
 
 </section>
 
-
 <section class="section">
 
   <div class="section-head">
 
     <h2>
+
       Champions Archive
+
     </h2>
 
     <span class="meta">
+
       All Seasons
+
     </span>
 
   </div>
 
-
   <div
+
     class="archive"
+
     id="archive">
+
   </div>
 
 </section>
 
-
 </section>
 
-
-
 <!-- ======================================================
-     STAFF DASHBOARD
+
+     STAFF
+
      ====================================================== -->
 
 <section class="page">
 
-
 <nav
+
   class="dashboard-switcher"
+
   aria-label="ACFA dashboards">
 
   <button
+
     class="dashboard-btn"
+
     data-dashboard="home">
 
     Home
@@ -3352,7 +4587,9 @@ body::-webkit-scrollbar-thumb{
   </button>
 
   <button
+
     class="dashboard-btn"
+
     data-dashboard="tournaments">
 
     Tournaments
@@ -3360,7 +4597,9 @@ body::-webkit-scrollbar-thumb{
   </button>
 
   <button
+
     class="dashboard-btn active"
+
     data-dashboard="staff">
 
     Staff
@@ -3368,7 +4607,6 @@ body::-webkit-scrollbar-thumb{
   </button>
 
 </nav>
-
 
 <section class="staff-hero">
 
@@ -3378,23 +4616,21 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
-
   <h1 class="staff-title">
 
     Staff Board
 
   </h1>
 
-
   <div class="staff-subtitle">
 
     Meet the team helping manage And Chess For All,
+
     organize the community, and keep the club moving forward.
 
   </div>
 
 </section>
-
 
 <section class="section">
 
@@ -3416,7 +4652,6 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
-
     <span class="live-dot">
 
       API Profiles
@@ -3425,9 +4660,10 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
-
   <div
+
     class="staff-grid"
+
     id="staffBoard">
 
     <div class="skeleton"></div>
@@ -3440,9 +4676,7 @@ body::-webkit-scrollbar-thumb{
 
 </section>
 
-
 </section>
-
 
 </div>
 
@@ -3452,365 +4686,315 @@ body::-webkit-scrollbar-thumb{
 
 </div>
 
-
-
-<!-- =========================================================
-     DATA
-     ========================================================= -->
-
-<script
-  id="acfaData"
-  type="application/json">
-
-{
-
-  "club": {
-    "name":"And Chess For All Official",
-    "slug":"and-chess-for-all-official",
-    "motto":"Every Player Belongs • Every Move Matters"
-  },
-
-  "quickLinks":[
-
-    {
-      "label":"Club Events",
-      "icon":"♟",
-      "url":"https://www.chess.com/clubs/events/and-chess-for-all-official"
-    },
-
-    {
-      "label":"Forums",
-      "icon":"✦",
-      "url":"https://www.chess.com/clubs/forum/and-chess-for-all-official"
-    },
-
-    {
-      "label":"Announcements",
-      "icon":"★",
-      "url":"https://www.chess.com/club/and-chess-for-all-official/announcements"
-    },
-
-    {
-      "label":"Notes",
-      "icon":"✎",
-      "url":"https://www.chess.com/club/notes/and-chess-for-all-official"
-    }
-
-  ],
-
-  "announcements":[
-
-    {
-      "title":"ACFA Fall Championship",
-      "date":"September 2026",
-      "body":"Planning is underway for our Fall seasonal championship. Tournament details will be posted as soon as registration opens.",
-      "url":"",
-      "pinned":true
-    },
-
-    {
-      "title":"Welcome to the ACFA Dashboard",
-      "date":"September 2026",
-      "body":"Important club news, tournament updates, seasonal announcements, and community information will appear here.",
-      "url":"",
-      "pinned":false
-    }
-
-  ],
-
-  "events":[
-
-    {
-      "title":"ACFA Fall Championship",
-      "date":"2026-10-05",
-      "status":"Coming Soon",
-      "url":""
-    }
-
-  ],
-
-  "staff":[
-
-    {
-      "username":"DevilsGambit22",
-      "role":"Owner"
-    },
-
-    {
-      "username":"SaintsGambit98",
-      "role":"Co-Owner"
-    },
-
-    {
-      "username":"Bgeerr",
-      "role":"Head of Staff"
-    },
-
-    {
-      "username":"OfficialLadyJustice",
-      "role":"Mascot",
-      "secondaryRole":"Super Admin"
-    },
-
-    {
-      "username":"Stefan-Mazarine",
-      "role":"Super Admin"
-    },
-
-    {
-      "username":"Cookie00190",
-      "role":"Admin"
-    },
-
-    {
-      "username":"NtsakoCloy",
-      "role":"Admin"
-    },
-
-    {
-      "username":"roheemo_h",
-      "role":"Admin"
-    },
-
-    {
-      "username":"Xtreme-Ninja-100",
-      "role":"Admin"
-    },
-
-    {
-      "username":"Kissenschlach",
-      "role":"Coordinator"
-    }
-
-  ],
-
-  "verifiedTitledMembers":[
-
-    {
-      "username":"ChanelinmyYSL",
-      "title":"IM"
-    }
-
-  ],
-
-  "rules":[
-
-    "Respect every member.",
-
-    "No harassment, bullying, or personal attacks.",
-
-    "Keep discussions constructive and appropriate.",
-
-    "No cheating, sandbagging, or fair-play violations.",
-
-    "Follow Chess.com Community Guidelines.",
-
-    "Do not spam club notes, forums, or messages.",
-
-    "Tournament participants are expected to complete their games.",
-
-    "Handle disputes respectfully through the proper admin channels."
-
-  ],
-
-  "tournament":{
-
-    "activeSeason":"Fall",
-
-    "year":2026,
-
-    "status":"Planning",
-
-    "registrationDeadline":"",
-
-    "startDate":"",
-
-    "endDate":"",
-
-    "format":"Seasonal ACFA Championship",
-
-    "eventUrl":"",
-
-    "detailsUrl":"",
-
-    "champions":[]
-
-  }
-
-}
-
-</script>
-
-
-
 <script>
 
 /* =========================================================
+
    CORE
+
    ========================================================= */
 
 const API =
+
   "https://api.chess.com/pub";
 
-
 const FALLBACK =
+
   "./assets/acfa-logo.png";
 
+const DATA_URL =
 
-const DATA =
-  JSON.parse(
-    document
-      .getElementById(
-        "acfaData"
-      )
-      .textContent
-  );
-
+  "./data.json";
 
 const TITLE_CODES = [
+
   "GM",
+
   "WGM",
+
   "IM",
+
   "WIM",
+
   "FM",
+
   "WFM",
+
   "CM",
+
   "WCM"
+
 ];
 
-
 const TITLE_RANK = {
+
   GM:8,
+
   WGM:7,
+
   IM:6,
+
   WIM:5,
+
   FM:4,
+
   WFM:3,
+
   CM:2,
+
   WCM:1
+
 };
 
-
 const MEMBER_CACHE =
+
   1000 * 60 * 10;
 
-
 const PLAYER_CACHE =
+
   1000 * 60 * 30;
 
-
 const PROFILE_CONCURRENCY =
+
   6;
 
-
 const CACHE_VERSION =
-  "acfa-dashboard-v26";
 
+  "acfa-dashboard-v27";
+
+let DATA =
+
+  null;
 
 let CLUB_MEMBERS =
+
   [];
 
-
 const $ =
+
   selector =>
+
     document.querySelector(
+
       selector
+
     );
 
-
 const $$ =
+
   selector =>
+
     [
+
       ...document.querySelectorAll(
+
         selector
+
       )
+
     ];
 
-
 /* =========================================================
+
    HELPERS
+
    ========================================================= */
 
 function escapeHTML(
+
   value=""
+
 ){
 
   return String(value)
+
     .replace(
+
       /[&<>"']/g,
+
       character =>
+
         ({
+
           "&":"&amp;",
+
           "<":"&lt;",
+
           ">":"&gt;",
+
           "\"":"&quot;",
+
           "'":"&#039;"
+
         })[character]
+
     );
 
 }
 
-
 function safe(
+
   value,
+
   fallback="TBA"
+
 ){
 
   const text =
+
     String(
+
       value ?? ""
+
     )
+
     .trim();
 
-
   return (
+
     text
+
     ||
+
     fallback
+
   );
 
 }
 
+/* =========================================================
+
+   EXTERNAL DATA.JSON
+
+   ========================================================= */
+
+async function loadData(){
+
+  /*
+
+    Date.now() is intentionally appended.
+
+    This prevents the browser / GitHub Pages
+
+    from serving an older cached data.json.
+
+  */
+
+  const url =
+
+    `${DATA_URL}?acfa=${Date.now()}`;
+
+  const response =
+
+    await fetch(
+
+      url,
+
+      {
+
+        cache:"no-store"
+
+      }
+
+    );
+
+  if(!response.ok){
+
+    throw new Error(
+
+      `Could not load data.json (${response.status})`
+
+    );
+
+  }
+
+  const data =
+
+    await response.json();
+
+  if(
+
+    !data
+
+    ||
+
+    typeof data !== "object"
+
+  ){
+
+    throw new Error(
+
+      "data.json did not contain a valid JSON object."
+
+    );
+
+  }
+
+  DATA =
+
+    data;
+
+  return DATA;
+
+}
 
 /* =========================================================
+
    CACHE
+
    ========================================================= */
 
 function cacheGet(
+
   key,
+
   lifetime
+
 ){
 
   try{
 
     const raw =
+
       localStorage
+
         .getItem(
+
           `${CACHE_VERSION}:${key}`
+
         );
 
-
     if(!raw){
-      return null;
-    }
 
+      return null;
+
+    }
 
     const cached =
+
       JSON.parse(
+
         raw
+
       );
 
-
     if(
-      Date.now()
-      -
-      cached.time
-      >
-      lifetime
-    ){
-      return null;
-    }
 
+      Date.now()
+
+      -
+
+      cached.time
+
+      >
+
+      lifetime
+
+    ){
+
+      return null;
+
+    }
 
     return cached.value;
 
@@ -3824,26 +5008,27 @@ function cacheGet(
 
 }
 
-
 function cacheSet(
+
   key,
+
   value
+
 ){
 
   try{
 
     localStorage
+
       .setItem(
 
         `${CACHE_VERSION}:${key}`,
 
         JSON.stringify({
 
-          time:
-            Date.now(),
+          time:Date.now(),
 
-          value:
-            value
+          value:value
 
         })
 
@@ -3852,417 +5037,557 @@ function cacheSet(
   }
 
   catch{
+
   }
 
 }
 
-
 /* =========================================================
+
    FETCH
+
    ========================================================= */
 
 async function fetchJSON(
+
   url
+
 ){
 
   const response =
+
     await fetch(
 
       url,
 
       {
+
         cache:"no-store"
+
       }
 
     );
 
-
   if(!response.ok){
 
     throw new Error(
+
       `${response.status} ${url}`
+
     );
 
   }
-
 
   return response.json();
 
 }
 
-
 async function fetchFreshProfile(
+
   username
+
 ){
 
   const response =
+
     await fetch(
 
       `${API}/player/${encodeURIComponent(username)}?acfa=${Date.now()}`,
 
       {
+
         cache:"no-store"
+
       }
 
     );
 
-
   if(!response.ok){
 
     throw new Error(
+
       `Profile unavailable: ${username}`
+
     );
 
   }
-
 
   return response.json();
 
 }
 
-
 /* =========================================================
+
    PARTICLES
+
    ========================================================= */
 
 function buildParticles(){
 
   const root =
+
     $("#ambient");
 
-
   for(
+
     let i=0;
+
     i<95;
+
     i++
+
   ){
 
     const spark =
-      document.createElement(
-        "i"
-      );
 
+      document.createElement(
+
+        "i"
+
+      );
 
     const classes =
+
       [
+
         "spark"
+
       ];
 
-
     if(
+
       i % 4 === 0
+
     ){
 
       classes.push(
+
         "blue"
+
       );
 
     }
-
 
     if(
+
       i % 10 === 0
+
     ){
 
       classes.push(
+
         "large"
+
       );
 
     }
-
 
     spark.className =
+
       classes.join(" ");
 
-
     spark.style.setProperty(
+
       "--x",
+
       `${Math.random()*100}%`
+
     );
 
-
     spark.style.setProperty(
+
       "--drift",
+
       `${(Math.random()-.5)*150}px`
+
     );
 
-
     spark.style.setProperty(
+
       "--dur",
-      `${7+Math.random()*11}s`
-    );
 
+      `${7+Math.random()*11}s`
+
+    );
 
     spark.style.setProperty(
-      "--delay",
-      `${-Math.random()*22}s`
-    );
 
+      "--delay",
+
+      `${-Math.random()*22}s`
+
+    );
 
     root.appendChild(
+
       spark
+
     );
 
   }
 
 }
 
-
 buildParticles();
 
-
 /* =========================================================
+
    CLOCK
+
    ========================================================= */
 
 function updateClock(){
 
   const now =
+
     new Date();
 
-
   const hour =
+
     now.getHours();
 
-
   let greeting =
+
     "Good Night";
 
-
   if(
+
     hour >= 5
+
     &&
+
     hour < 12
+
   ){
 
     greeting =
+
       "Good Morning";
 
   }
 
   else if(
+
     hour >= 12
+
     &&
+
     hour < 17
+
   ){
 
     greeting =
+
       "Good Afternoon";
 
   }
 
   else if(
+
     hour >= 17
+
     &&
+
     hour < 21
+
   ){
 
     greeting =
+
       "Good Evening";
 
   }
 
-
   $("#greeting")
+
     .textContent =
+
       `${greeting}, ACFA`;
 
-
   $("#clock")
+
     .textContent =
+
       now.toLocaleTimeString(
+
         [],
+
         {
+
           hour:"numeric",
+
           minute:"2-digit",
+
           second:"2-digit"
+
         }
+
       );
 
-
   $("#dateLine")
+
     .textContent =
+
       now.toLocaleDateString(
+
         undefined,
+
         {
+
           weekday:"long",
+
           month:"long",
+
           day:"numeric"
+
         }
+
       );
 
 }
 
-
 updateClock();
 
-
 setInterval(
+
   updateClock,
+
   1000
+
 );
 
-
 /* =========================================================
-   DASHBOARD NAV
+
+   DASHBOARD NAVIGATION
+
    ========================================================= */
 
 function setDashboard(
+
   dashboard
+
 ){
 
   const track =
+
     $("#track");
 
-
   track.classList.remove(
+
     "view-tournaments",
+
     "view-staff"
+
   );
 
-
   if(
+
     dashboard ===
+
     "tournaments"
+
   ){
 
     track.classList.add(
+
       "view-tournaments"
+
     );
 
   }
-
 
   if(
+
     dashboard ===
+
     "staff"
+
   ){
 
     track.classList.add(
+
       "view-staff"
+
     );
 
   }
-
 
   $$(".dashboard-btn")
+
     .forEach(
+
       button =>{
 
         button.classList.toggle(
+
           "active",
+
           button.dataset.dashboard
+
           ===
+
           dashboard
+
         );
 
       }
+
     );
 
-
   window.scrollTo({
+
     top:0,
+
     behavior:"smooth"
+
   });
 
 }
 
-
 $$(".dashboard-btn")
+
   .forEach(
+
     button =>{
 
       button.addEventListener(
+
         "click",
+
         () =>
+
           setDashboard(
+
             button.dataset.dashboard
+
           )
+
       );
 
     }
+
   );
 
-
 /* =========================================================
+
    DATE HELPERS
+
    ========================================================= */
 
 function niceDate(
+
   value
+
 ){
 
   if(!value){
-    return "TBA";
-  }
 
+    return "TBA";
+
+  }
 
   const date =
+
     new Date(
+
       value
+
       +
+
       (
-        value.length === 10
+
+        String(value).length === 10
+
           ?
+
           "T12:00:00"
+
           :
+
           ""
+
       )
+
     );
 
-
   if(
+
     Number.isNaN(
+
       date.getTime()
+
     )
+
   ){
+
     return value;
+
   }
 
-
   return date
+
     .toLocaleDateString(
+
       undefined,
+
       {
+
         month:"short",
+
         day:"numeric",
+
         year:"numeric"
+
       }
+
     );
 
 }
 
-
 function monthDay(
+
   value
+
 ){
 
   if(!value){
 
     return [
+
       "TBA",
+
       ""
+
     ];
 
   }
 
-
   const date =
-    new Date(
-      value +
-      "T12:00:00"
-    );
 
+    new Date(
+
+      value +
+
+      "T12:00:00"
+
+    );
 
   return [
 
     date
+
       .toLocaleDateString(
+
         undefined,
+
         {
+
           month:"short"
+
         }
+
       )
+
       .toUpperCase(),
 
     date.getDate()
@@ -4271,34 +5596,69 @@ function monthDay(
 
 }
 
-
 /* =========================================================
+
    QUICK LINKS
+
    ========================================================= */
 
 function renderQuickLinks(){
 
+  const links =
+
+    DATA.quickLinks
+
+    ||
+
+    [];
+
+  if(
+
+    !links.length
+
+  ){
+
+    $("#quickLinks")
+
+      .innerHTML =
+
+        `
+
+        <div class="empty">
+
+          No quick links configured.
+
+        </div>
+
+        `;
+
+    return;
+
+  }
+
   $("#quickLinks")
+
     .innerHTML =
 
-      (
-        DATA.quickLinks
-        ||
-        []
-      )
+      links
 
       .filter(
+
         item =>
+
           item.url
+
       )
 
       .map(
+
         item =>`
 
         <a
+
           class="quick-link"
 
-          href="${item.url}"
+          href="${escapeHTML(item.url)}"
 
           target="_blank"
 
@@ -4319,15 +5679,17 @@ function renderQuickLinks(){
         </a>
 
         `
+
       )
 
       .join("");
 
 }
 
-
 /* =========================================================
+
    ANNOUNCEMENTS
+
    ========================================================= */
 
 function renderAnnouncements(){
@@ -4335,64 +5697,97 @@ function renderAnnouncements(){
   const announcements = [
 
     ...(
+
       DATA.announcements
+
       ||
+
       []
+
     )
 
   ];
 
-
   announcements.sort(
+
     (
+
       a,
+
       b
+
     ) =>
+
       Number(
+
         Boolean(b.pinned)
+
       )
+
       -
+
       Number(
+
         Boolean(a.pinned)
+
       )
+
   );
 
-
   if(
+
     !announcements.length
+
   ){
 
     $("#announcementBoard")
+
       .innerHTML =
+
         `
+
         <div class="empty">
+
           No announcements posted.
+
         </div>
+
         `;
 
     return;
 
   }
 
-
   $("#announcementBoard")
+
     .innerHTML =
 
       announcements
 
         .map(
+
           announcement =>`
 
           <article
+
             class="
+
               announcement
+
               ${
+
                 announcement.pinned
+
                   ?
+
                   "pinned"
+
                   :
+
                   ""
+
               }
+
             ">
 
             <div class="announcement-top">
@@ -4400,17 +5795,22 @@ function renderAnnouncements(){
               <div class="announcement-title">
 
                 ${
+
                   announcement.pinned
+
                     ?
+
                     `<span class="pin">★</span>`
+
                     :
+
                     ""
+
                 }
 
-                ${escapeHTML(announcement.title)}
+                ${escapeHTML(announcement.title || "Announcement")}
 
               </div>
-
 
               <div class="announcement-date">
 
@@ -4420,22 +5820,25 @@ function renderAnnouncements(){
 
             </div>
 
-
             <div class="announcement-body">
 
               ${escapeHTML(announcement.body || "")}
 
             </div>
 
-
             ${
+
               announcement.url
+
                 ?
+
                 `
+
                 <a
+
                   class="announcement-link"
 
-                  href="${announcement.url}"
+                  href="${escapeHTML(announcement.url)}"
 
                   target="_blank"
 
@@ -4444,91 +5847,127 @@ function renderAnnouncements(){
                   Read More
 
                 </a>
+
                 `
+
                 :
+
                 ""
+
             }
 
           </article>
 
           `
+
         )
 
         .join("");
 
 }
 
-
 /* =========================================================
+
    EVENTS
+
    ========================================================= */
 
 function renderEvents(){
 
   const events =
+
     DATA.events
+
     ||
+
     [];
 
-
   if(
+
     !events.length
+
   ){
 
     $("#events")
+
       .innerHTML =
+
         `
+
         <div class="empty">
+
           No current club events.
+
         </div>
+
         `;
 
     return;
 
   }
 
-
   $("#events")
+
     .innerHTML =
 
       events
 
         .map(
+
           event =>{
 
             const [
+
               month,
+
               day
+
             ] =
+
               monthDay(
+
                 event.date
+
               );
 
-
             const tag =
+
               event.url
+
                 ?
+
                 "a"
+
                 :
+
                 "div";
 
-
             const href =
-              event.url
-                ?
-                `
-                href="${event.url}"
-                target="_blank"
-                rel="noopener"
-                `
-                :
-                "";
 
+              event.url
+
+                ?
+
+                `
+
+                href="${escapeHTML(event.url)}"
+
+                target="_blank"
+
+                rel="noopener"
+
+                `
+
+                :
+
+                "";
 
             return `
 
             <${tag}
+
               class="event"
+
               ${href}>
 
               <div class="event-date">
@@ -4541,15 +5980,13 @@ function renderEvents(){
 
               </div>
 
-
               <div class="event-main">
 
                 <div class="event-title">
 
-                  ${escapeHTML(event.title)}
+                  ${escapeHTML(event.title || "Club Event")}
 
                 </div>
-
 
                 <div class="event-meta">
 
@@ -4571,436 +6008,638 @@ function renderEvents(){
 
 }
 
-
 /* =========================================================
+
    RULES
+
    ========================================================= */
 
 function renderRules(){
 
   const rules =
+
     DATA.rules
+
     ||
+
     [];
 
+  if(
+
+    !rules.length
+
+  ){
+
+    $("#rulesTrack")
+
+      .innerHTML =
+
+        `
+
+        <div class="rule">
+
+          <i>1</i>
+
+          <span>
+
+            Club rules have not been added yet.
+
+          </span>
+
+        </div>
+
+        `;
+
+    return;
+
+  }
 
   const html =
 
     rules
 
       .map(
+
         (
+
           rule,
+
           index
+
         ) =>`
 
         <div class="rule">
 
           <i>
+
             ${index+1}
+
           </i>
 
           <span>
+
             ${escapeHTML(rule)}
+
           </span>
 
         </div>
 
         `
+
       )
 
       .join("");
 
-
   $("#rulesTrack")
+
     .innerHTML =
+
       html
+
       +
+
       html;
 
 }
 
-
 /* =========================================================
-   TOURNAMENT
+
+   TOURNAMENT INFO FROM DATA.JSON
+
    ========================================================= */
 
 function renderTournament(){
 
   const tournament =
-    DATA.tournament;
 
+    DATA.tournament
+
+    ||
+
+    {};
 
   $("#seasonTitle")
+
     .textContent =
+
       `
+
       ${safe(tournament.activeSeason,"Season")}
+
       ${safe(tournament.year,"")}
+
       `
+
       .trim();
 
-
   $("#seasonStatus")
-    .textContent =
-      safe(
-        tournament.status,
-        "Planning"
-      );
 
+    .textContent =
+
+      safe(
+
+        tournament.status,
+
+        "Planning"
+
+      );
 
   $("#registrationDeadline")
-    .textContent =
-      niceDate(
-        tournament.registrationDeadline
-      );
 
+    .textContent =
+
+      niceDate(
+
+        tournament.registrationDeadline
+
+      );
 
   $("#startDate")
-    .textContent =
-      niceDate(
-        tournament.startDate
-      );
 
+    .textContent =
+
+      niceDate(
+
+        tournament.startDate
+
+      );
 
   $("#endDate")
-    .textContent =
-      niceDate(
-        tournament.endDate
-      );
 
+    .textContent =
+
+      niceDate(
+
+        tournament.endDate
+
+      );
 
   $("#format")
+
     .textContent =
+
       safe(
+
         tournament.format,
+
         "Seasonal Championship"
+
       );
 
+  $("#eventBtn")
+
+    .style.display =
+
+      "none";
+
+  $("#detailsBtn")
+
+    .style.display =
+
+      "none";
 
   if(
+
     tournament.eventUrl
+
   ){
 
     $("#eventBtn").href =
+
       tournament.eventUrl;
 
-
     $("#eventBtn")
+
       .style.display =
+
         "inline-flex";
 
   }
 
-
   if(
+
     tournament.detailsUrl
+
   ){
 
     $("#detailsBtn").href =
+
       tournament.detailsUrl;
 
-
     $("#detailsBtn")
+
       .style.display =
+
         "inline-flex";
 
   }
 
 }
 
-
 /* =========================================================
-   API
+
+   CHESS.COM API
+
    ========================================================= */
 
 async function getClubMembers(){
 
   const key =
+
     "members";
 
-
   const cached =
-    cacheGet(
-      key,
-      MEMBER_CACHE
-    );
 
+    cacheGet(
+
+      key,
+
+      MEMBER_CACHE
+
+    );
 
   if(cached){
+
     return cached;
+
   }
 
+  const clubSlug =
 
-  const response =
-    await fetchJSON(
-      `${API}/club/${DATA.club.slug}/members`
+    DATA.club
+
+      ?.slug;
+
+  if(
+
+    !clubSlug
+
+  ){
+
+    throw new Error(
+
+      "Missing club.slug in data.json"
+
     );
 
+  }
+
+  const response =
+
+    await fetchJSON(
+
+      `${API}/club/${clubSlug}/members`
+
+    );
 
   const combined = [
+
     ...(response.weekly || []),
+
     ...(response.all_time || [])
+
   ];
 
-
   const seen =
+
     new Set();
 
-
   const unique =
+
     [];
 
-
   for(
+
     const member
+
     of
+
     combined
+
   ){
 
     const normalized =
+
       member.username
+
         .trim()
+
         .toLowerCase();
 
-
     if(
+
       seen.has(
+
         normalized
+
       )
+
     ){
+
       continue;
+
     }
 
-
     seen.add(
+
       normalized
+
     );
 
-
     unique.push(
+
       member
+
     );
 
   }
 
-
   cacheSet(
-    key,
-    unique
-  );
 
+    key,
+
+    unique
+
+  );
 
   return unique;
 
 }
 
-
 async function getProfile(
+
   username
+
 ){
 
   const normalized =
+
     username
+
       .trim()
+
       .toLowerCase();
 
-
   const key =
+
     `profile:${normalized}`;
 
-
   const cached =
-    cacheGet(
-      key,
-      PLAYER_CACHE
-    );
 
+    cacheGet(
+
+      key,
+
+      PLAYER_CACHE
+
+    );
 
   if(cached){
+
     return cached;
+
   }
 
-
   const profile =
+
     await fetchJSON(
+
       `${API}/player/${encodeURIComponent(username)}`
+
     );
 
-
   cacheSet(
-    key,
-    profile
-  );
 
+    key,
+
+    profile
+
+  );
 
   return profile;
 
 }
 
-
 async function getStats(
+
   username
+
 ){
 
   const normalized =
+
     username
+
       .trim()
+
       .toLowerCase();
 
-
   const key =
+
     `stats:${normalized}`;
 
-
   const cached =
-    cacheGet(
-      key,
-      PLAYER_CACHE
-    );
 
+    cacheGet(
+
+      key,
+
+      PLAYER_CACHE
+
+    );
 
   if(cached){
+
     return cached;
+
   }
 
-
   const stats =
+
     await fetchJSON(
+
       `${API}/player/${encodeURIComponent(username)}/stats`
+
     );
 
-
   cacheSet(
-    key,
-    stats
-  );
 
+    key,
+
+    stats
+
+  );
 
   return stats;
 
 }
 
-
 /* =========================================================
+
    HIGHEST RATING
+
    ========================================================= */
 
 function highestRating(
+
   stats
+
 ){
 
   const categories = [
 
     {
+
       key:"chess_daily",
+
       label:"Daily"
+
     },
 
     {
+
       key:"chess_rapid",
+
       label:"Rapid"
+
     },
 
     {
+
       key:"chess_blitz",
+
       label:"Blitz"
+
     },
 
     {
+
       key:"chess_bullet",
+
       label:"Bullet"
+
     }
 
   ];
 
-
   let best =
+
     null;
 
-
   for(
+
     const category
+
     of
+
     categories
+
   ){
 
     const rating =
+
       stats?.[
+
         category.key
+
       ]?.last?.rating;
 
-
     if(!rating){
+
       continue;
+
     }
 
-
     if(
+
       !best
+
       ||
+
       rating
+
       >
+
       best.rating
+
     ){
 
       best = {
+
         rating:rating,
+
         label:category.label
+
       };
 
     }
 
   }
 
-
   return best;
 
 }
 
-
 /* =========================================================
+
    CONCURRENCY
+
    ========================================================= */
 
 async function mapLimited(
+
   items,
+
   limit,
+
   worker
+
 ){
 
   const results =
+
     new Array(
+
       items.length
+
     );
 
-
   let index =
-    0;
 
+    0;
 
   async function runner(){
 
     while(true){
 
       const current =
+
         index++;
 
-
       if(
-        current
-        >=
-        items.length
-      ){
-        return;
-      }
 
+        current
+
+        >=
+
+        items.length
+
+      ){
+
+        return;
+
+      }
 
       try{
 
         results[current] =
+
           await worker(
+
             items[current],
+
             current
+
           );
 
       }
@@ -5008,6 +6647,7 @@ async function mapLimited(
       catch{
 
         results[current] =
+
           null;
 
       }
@@ -5016,7 +6656,6 @@ async function mapLimited(
 
   }
 
-
   await Promise.all(
 
     Array.from(
@@ -5024,28 +6663,33 @@ async function mapLimited(
       {
 
         length:
+
           Math.min(
+
             limit,
+
             items.length
+
           )
 
       },
 
       () =>
+
         runner()
 
     )
 
   );
 
-
   return results;
 
 }
 
-
 /* =========================================================
-   NEW MEMBERS
+
+   NEWEST MEMBERS
+
    ========================================================= */
 
 async function renderNewestMembers(){
@@ -5057,20 +6701,30 @@ async function renderNewestMembers(){
   ]
 
   .sort(
+
     (
+
       a,
+
       b
+
     ) =>
+
       (b.joined || 0)
+
       -
+
       (a.joined || 0)
+
   )
 
   .slice(
-    0,
-    5
-  );
 
+    0,
+
+    5
+
+  );
 
   const players =
 
@@ -5081,28 +6735,35 @@ async function renderNewestMembers(){
         async member =>{
 
           let profile =
-            null;
 
+            null;
 
           let stats =
-            null;
 
+            null;
 
           try{
 
             [
+
               profile,
+
               stats
+
             ] =
 
               await Promise.all([
 
                 getProfile(
+
                   member.username
+
                 ),
 
                 getStats(
+
                   member.username
+
                 )
 
               ]);
@@ -5110,22 +6771,29 @@ async function renderNewestMembers(){
           }
 
           catch{
-          }
 
+          }
 
           return {
 
             username:
+
               profile?.username
+
               ||
+
               member.username,
 
             profile:
+
               profile,
 
             rating:
+
               highestRating(
+
                 stats
+
               )
 
           };
@@ -5136,36 +6804,44 @@ async function renderNewestMembers(){
 
     );
 
-
   $("#newMembers")
+
     .innerHTML =
 
       players
 
         .map(
+
           (
+
             player,
+
             index
+
           ) =>{
 
             const slot =
+
               index + 1;
 
-
             const profileURL =
-              `https://www.chess.com/member/${encodeURIComponent(player.username)}`;
 
+              `https://www.chess.com/member/${encodeURIComponent(player.username)}`;
 
             return `
 
             <div
+
               class="
+
                 new-member-slot
+
                 slot-${slot}
+
               ">
 
-
               <a
+
                 href="${profileURL}"
 
                 target="_blank"
@@ -5173,12 +6849,17 @@ async function renderNewestMembers(){
                 rel="noopener">
 
                 <img
+
                   class="new-member-avatar"
 
                   src="${
+
                     player.profile?.avatar
+
                     ||
+
                     FALLBACK
+
                   }"
 
                   alt="${escapeHTML(player.username)}"
@@ -5186,13 +6867,15 @@ async function renderNewestMembers(){
                   loading="lazy"
 
                   onerror="
+
                     this.src='${FALLBACK}'
+
                   ">
 
               </a>
 
-
               <a
+
                 class="new-member-username"
 
                 href="${profileURL}"
@@ -5205,8 +6888,8 @@ async function renderNewestMembers(){
 
               </a>
 
-
               <a
+
                 class="new-member-rating"
 
                 href="${profileURL}"
@@ -5216,21 +6899,31 @@ async function renderNewestMembers(){
                 rel="noopener">
 
                 ${
+
                   player.rating
+
                     ?
+
                     `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+
                     :
+
                     "Rating unavailable"
+
                 }
 
               </a>
 
-
               ${
+
                 player.profile?.title
+
                   ?
+
                   `
+
                   <a
+
                     class="new-member-title"
 
                     href="${profileURL}"
@@ -5242,11 +6935,14 @@ async function renderNewestMembers(){
                     ${escapeHTML(player.profile.title)}
 
                   </a>
-                  `
-                  :
-                  ""
-              }
 
+                  `
+
+                  :
+
+                  ""
+
+              }
 
             </div>
 
@@ -5260,49 +6956,63 @@ async function renderNewestMembers(){
 
 }
 
-
 /* =========================================================
+
    TITLED PLAYERS
+
    ========================================================= */
 
 async function renderTitledMembers(){
 
   const found =
+
     new Map();
 
-
   for(
+
     const player
+
     of
+
     (
+
       DATA.verifiedTitledMembers
+
       ||
+
       []
+
     )
+
   ){
 
     found.set(
 
       player.username
+
         .trim()
+
         .toLowerCase(),
 
       {
+
         username:
+
           player.username,
 
         title:
+
           player.title
+
       }
 
     );
 
   }
 
-
   const clubMap =
-    new Map();
 
+    new Map();
 
   CLUB_MEMBERS.forEach(
 
@@ -5311,7 +7021,9 @@ async function renderTitledMembers(){
       clubMap.set(
 
         member.username
+
           .trim()
+
           .toLowerCase(),
 
         member.username
@@ -5321,7 +7033,6 @@ async function renderTitledMembers(){
     }
 
   );
-
 
   const titleGroups =
 
@@ -5334,18 +7045,25 @@ async function renderTitledMembers(){
           try{
 
             const result =
+
               await fetchJSON(
+
                 `${API}/titled/${title}`
+
               );
 
-
             return {
+
               title:title,
 
               players:
+
                 result.players
+
                 ||
+
                 []
+
             };
 
           }
@@ -5353,8 +7071,11 @@ async function renderTitledMembers(){
           catch{
 
             return {
+
               title:title,
+
               players:[]
+
             };
 
           }
@@ -5365,29 +7086,42 @@ async function renderTitledMembers(){
 
     );
 
-
   for(
+
     const group
+
     of
+
     titleGroups
+
   ){
 
     for(
+
       const username
+
       of
+
       group.players
+
     ){
 
       const normalized =
+
         username
+
           .trim()
+
           .toLowerCase();
 
-
       if(
+
         clubMap.has(
+
           normalized
+
         )
+
       ){
 
         found.set(
@@ -5395,13 +7129,19 @@ async function renderTitledMembers(){
           normalized,
 
           {
+
             username:
+
               clubMap.get(
+
                 normalized
+
               ),
 
             title:
+
               group.title
+
           }
 
         );
@@ -5411,7 +7151,6 @@ async function renderTitledMembers(){
     }
 
   }
-
 
   const profileScan =
 
@@ -5424,44 +7163,59 @@ async function renderTitledMembers(){
       async member =>{
 
         const profile =
+
           await getProfile(
+
             member.username
+
           );
 
-
         if(
+
           !profile?.title
+
         ){
+
           return null;
+
         }
 
-
         return {
+
           username:
+
             member.username,
 
           title:
+
             profile.title,
 
           profile:
+
             profile
+
         };
 
       }
 
     );
 
-
   for(
+
     const player
+
     of
+
     profileScan.filter(Boolean)
+
   ){
 
     found.set(
 
       player.username
+
         .trim()
+
         .toLowerCase(),
 
       player
@@ -5470,13 +7224,11 @@ async function renderTitledMembers(){
 
   }
 
-
   let players = [
 
     ...found.values()
 
   ];
-
 
   players =
 
@@ -5487,22 +7239,27 @@ async function renderTitledMembers(){
         async player =>{
 
           let profile =
-            player.profile
-            ||
-            null;
 
+            player.profile
+
+            ||
+
+            null;
 
           let stats =
-            null;
 
+            null;
 
           try{
 
             if(!profile){
 
               profile =
+
                 await getProfile(
+
                   player.username
+
                 );
 
             }
@@ -5510,40 +7267,53 @@ async function renderTitledMembers(){
           }
 
           catch{
-          }
 
+          }
 
           try{
 
             stats =
+
               await getStats(
+
                 player.username
+
               );
 
           }
 
           catch{
-          }
 
+          }
 
           return {
 
             username:
+
               profile?.username
+
               ||
+
               player.username,
 
             title:
+
               profile?.title
+
               ||
+
               player.title,
 
             profile:
+
               profile,
 
             rating:
+
               highestRating(
+
                 stats
+
               )
 
           };
@@ -5554,21 +7324,26 @@ async function renderTitledMembers(){
 
     );
 
-
   const finalMap =
+
     new Map();
 
-
   for(
+
     const player
+
     of
+
     players
+
   ){
 
     finalMap.set(
 
       player.username
+
         .trim()
+
         .toLowerCase(),
 
       player
@@ -5577,97 +7352,134 @@ async function renderTitledMembers(){
 
   }
 
-
   players = [
 
     ...finalMap.values()
 
   ];
 
-
   players.sort(
+
     (
+
       a,
+
       b
+
     ) =>{
 
       const aRank =
-        TITLE_RANK[
-          a.title
-        ]
-        ||
-        0;
 
+        TITLE_RANK[
+
+          a.title
+
+        ]
+
+        ||
+
+        0;
 
       const bRank =
+
         TITLE_RANK[
+
           b.title
+
         ]
+
         ||
+
         0;
 
-
       if(
+
         bRank !== aRank
+
       ){
 
         return (
+
           bRank
+
           -
+
           aRank
+
         );
 
       }
 
-
       return a.username
+
         .localeCompare(
+
           b.username
+
         );
 
     }
+
   );
 
-
   players =
+
     players.slice(
+
       0,
+
       2
+
     );
 
-
   if(
+
     !players.length
+
   ){
 
     $("#titledMembers")
+
       .innerHTML =
+
         `
+
         <div class="art-empty">
+
           No titled members detected.
+
         </div>
+
         `;
 
     return;
 
   }
 
-
   $("#titledMembers")
+
     .innerHTML =
 
       players
 
         .map(
+
           (
+
             player,
+
             index
+
           ) =>`
 
           <a
+
             class="
+
               titled-art-member
+
               slot-${index+1}
+
             "
 
             href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
@@ -5676,14 +7488,18 @@ async function renderTitledMembers(){
 
             rel="noopener">
 
-
             <img
+
               class="titled-art-avatar"
 
               src="${
+
                 player.profile?.avatar
+
                 ||
+
                 FALLBACK
+
               }"
 
               alt=""
@@ -5691,9 +7507,10 @@ async function renderTitledMembers(){
               loading="lazy"
 
               onerror="
-                this.src='${FALLBACK}'
-              ">
 
+                this.src='${FALLBACK}'
+
+              ">
 
             <div class="titled-art-copy">
 
@@ -5703,21 +7520,25 @@ async function renderTitledMembers(){
 
               </div>
 
-
               <div class="titled-art-rating">
 
                 ${
+
                   player.rating
+
                     ?
+
                     `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+
                     :
+
                     "Rating unavailable"
+
                 }
 
               </div>
 
             </div>
-
 
             <span class="titled-art-title">
 
@@ -5728,60 +7549,86 @@ async function renderTitledMembers(){
           </a>
 
           `
+
         )
 
         .join("");
 
 }
 
-
 /* =========================================================
+
    STAFF
+
    ========================================================= */
 
 function roleClass(
+
   role
+
 ){
 
   return (
+
     "role-"
+
     +
+
     role
+
       .toLowerCase()
+
       .replace(
+
         /\s+/g,
+
         "-"
+
       )
+
   );
 
 }
 
-
 function staffPriority(
+
   role
+
 ){
 
   const priority = {
+
     "Owner":100,
+
     "Co-Owner":95,
+
     "Head of Staff":90,
+
     "Super Admin":80,
+
     "Admin":70,
+
     "Coordinator":60,
+
     "Mascot":50
+
   };
 
-
   return (
+
     priority[
+
       role
+
     ]
+
     ||
+
     0
+
   );
 
 }
-
 
 async function renderStaff(){
 
@@ -5792,19 +7639,54 @@ async function renderStaff(){
   ]
 
   .sort(
+
     (
+
       a,
+
       b
+
     ) =>
+
       staffPriority(
+
         b.role
+
       )
+
       -
+
       staffPriority(
+
         a.role
+
       )
+
   );
 
+  if(
+
+    !staff.length
+
+  ){
+
+    $("#staffBoard")
+
+      .innerHTML =
+
+        `
+
+        <div class="empty">
+
+          No staff configured.
+
+        </div>
+
+        `;
+
+    return;
+
+  }
 
   const cards =
 
@@ -5815,25 +7697,33 @@ async function renderStaff(){
         async staffMember =>{
 
           let profile =
-            null;
 
+            null;
 
           let stats =
-            null;
 
+            null;
 
           try{
 
             if(
+
               staffMember.username
+
                 .toLowerCase()
+
               ===
+
               "devilsgambit22"
+
             ){
 
               profile =
+
                 await fetchFreshProfile(
+
                   staffMember.username
+
                 );
 
             }
@@ -5841,8 +7731,11 @@ async function renderStaff(){
             else{
 
               profile =
+
                 await getProfile(
+
                   staffMember.username
+
                 );
 
             }
@@ -5850,46 +7743,63 @@ async function renderStaff(){
           }
 
           catch{
-          }
 
+          }
 
           try{
 
             stats =
+
               await getStats(
+
                 staffMember.username
+
               );
 
           }
 
           catch{
+
           }
 
-
           const rating =
+
             highestRating(
+
               stats
+
             );
 
-
           const isHead =
-            staffMember.role
-            ===
-            "Head of Staff";
 
+            staffMember.role
+
+            ===
+
+            "Head of Staff";
 
           return `
 
           <a
+
             class="
+
               staff-card
+
               ${
+
                 isHead
+
                   ?
+
                   "head-staff"
+
                   :
+
                   ""
+
               }
+
             "
 
             href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
@@ -5898,14 +7808,18 @@ async function renderStaff(){
 
             rel="noopener">
 
-
             <img
+
               class="staff-avatar"
 
               src="${
+
                 profile?.avatar
+
                 ||
+
                 FALLBACK
+
               }"
 
               alt=""
@@ -5913,33 +7827,44 @@ async function renderStaff(){
               loading="lazy"
 
               onerror="
+
                 this.src='${FALLBACK}'
+
               ">
 
-
             <div class="staff-main">
-
 
               <div class="staff-name">
 
                 ${
+
                   profile?.title
+
                     ?
+
                     `${escapeHTML(profile.title)} `
+
                     :
+
                     ""
+
                 }
 
                 ${
+
                   escapeHTML(
+
                     profile?.username
+
                     ||
+
                     staffMember.username
+
                   )
+
                 }
 
               </div>
-
 
               <div class="staff-role">
 
@@ -5947,51 +7872,70 @@ async function renderStaff(){
 
               </div>
 
-
               <div class="staff-rating">
 
                 ${
+
                   rating
+
                     ?
+
                     `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+
                     :
+
                     "Rating unavailable"
+
                 }
 
               </div>
 
             </div>
 
-
             <div class="staff-badges">
 
               <span
+
                 class="
+
                   role-badge
+
                   ${roleClass(staffMember.role)}
+
                 ">
 
                 ${escapeHTML(staffMember.role)}
 
               </span>
 
-
               ${
+
                 staffMember.secondaryRole
+
                   ?
+
                   `
+
                   <span
+
                     class="
+
                       role-badge
+
                       ${roleClass(staffMember.secondaryRole)}
+
                     ">
 
                     ${escapeHTML(staffMember.secondaryRole)}
 
                   </span>
+
                   `
+
                   :
+
                   ""
+
               }
 
             </div>
@@ -6006,50 +7950,62 @@ async function renderStaff(){
 
     );
 
-
   $("#staffBoard")
+
     .innerHTML =
+
       cards.join("");
 
 }
 
-
 /* =========================================================
+
    CHAMPIONS
+
    ========================================================= */
 
 async function hydrateChampion(
+
   champion
+
 ){
 
   if(!champion){
+
     return null;
+
   }
 
-
   let profile =
-    null;
 
+    null;
 
   let stats =
-    null;
 
+    null;
 
   try{
 
     [
+
       profile,
+
       stats
+
     ] =
 
       await Promise.all([
 
         getProfile(
+
           champion.username
+
         ),
 
         getStats(
+
           champion.username
+
         )
 
       ]);
@@ -6057,61 +8013,83 @@ async function hydrateChampion(
   }
 
   catch{
-  }
 
+  }
 
   return {
 
     ...champion,
 
     profile:
+
       profile,
 
     rating:
+
       highestRating(
+
         stats
+
       )
 
   };
 
 }
 
-
 function emptyWinner(
+
   placement
+
 ){
 
   const positionClass =
 
     placement === 1
-      ?
-      "podium-first"
-      :
-      placement === 2
-        ?
-        "podium-second"
-        :
-        "podium-third";
 
+      ?
+
+      "podium-first"
+
+      :
+
+      placement === 2
+
+        ?
+
+        "podium-second"
+
+        :
+
+        "podium-third";
 
   return `
 
   <div
+
     class="
+
       podium-winner
+
       ${positionClass}
+
     ">
 
     <div class="podium-placeholder-avatar">
+
       ♔
+
     </div>
 
     <div class="winner-name">
+
       Awaiting Champion
+
     </div>
 
     <div class="winner-meta">
+
       ACFA Seasonal Winner
+
     </div>
 
   </div>
@@ -6120,58 +8098,73 @@ function emptyWinner(
 
 }
 
-
 function renderEmptyPodium(){
 
   $("#podium")
+
     .innerHTML =
+
       `
+
       ${emptyWinner(2)}
+
       ${emptyWinner(1)}
+
       ${emptyWinner(3)}
+
       `;
 
 }
 
-
 async function renderChampions(){
 
   const champions =
-    DATA.tournament
-      ?.champions
-    ||
-    [];
 
+    DATA.tournament
+
+      ?.champions
+
+    ||
+
+    [];
 
   renderEmptyPodium();
 
-
   if(
+
     !champions.length
+
   ){
 
     $("#archive")
+
       .innerHTML =
+
         `
+
         <div class="empty">
 
           The first ACFA seasonal
+
           champion will appear here.
 
         </div>
+
         `;
 
     return;
 
   }
 
-
   const seasonRank = {
-    Spring:1,
-    Summer:2,
-    Fall:3
-  };
 
+    Spring:1,
+
+    Summer:2,
+
+    Fall:3
+
+  };
 
   const sorted = [
 
@@ -6180,80 +8173,120 @@ async function renderChampions(){
   ]
 
   .sort(
+
     (
+
       a,
+
       b
+
     ) =>{
 
       if(
+
         Number(b.year)
+
         !==
+
         Number(a.year)
+
       ){
 
         return (
+
           Number(b.year)
+
           -
+
           Number(a.year)
+
         );
 
       }
 
-
       return (
 
         (
+
           seasonRank[
+
             b.season
+
           ]
+
           ||
+
           0
+
         )
 
         -
 
         (
+
           seasonRank[
+
             a.season
+
           ]
+
           ||
+
           0
+
         )
 
       );
 
     }
-  );
 
+  );
 
   const podiumOrder = [
 
     {
+
       placement:2,
+
       champion:
+
         sorted[1]
+
         ||
+
         null
+
     },
 
     {
+
       placement:1,
+
       champion:
+
         sorted[0]
+
         ||
+
         null
+
     },
 
     {
+
       placement:3,
+
       champion:
+
         sorted[2]
+
         ||
+
         null
+
     }
 
   ];
-
 
   const hydrated =
 
@@ -6264,11 +8297,15 @@ async function renderChampions(){
         async item =>({
 
           placement:
+
             item.placement,
 
           champion:
+
             await hydrateChampion(
+
               item.champion
+
             )
 
         })
@@ -6277,47 +8314,60 @@ async function renderChampions(){
 
     );
 
-
   $("#podium")
+
     .innerHTML =
 
       hydrated
 
         .map(
+
           item =>{
 
             const champion =
-              item.champion;
 
+              item.champion;
 
             if(!champion){
 
               return emptyWinner(
+
                 item.placement
+
               );
 
             }
 
-
             const positionClass =
 
               item.placement === 1
-                ?
-                "podium-first"
-                :
-                item.placement === 2
-                  ?
-                  "podium-second"
-                  :
-                  "podium-third";
 
+                ?
+
+                "podium-first"
+
+                :
+
+                item.placement === 2
+
+                  ?
+
+                  "podium-second"
+
+                  :
+
+                  "podium-third";
 
             return `
 
             <a
+
               class="
+
                 podium-winner
+
                 ${positionClass}
+
               "
 
               href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
@@ -6326,59 +8376,75 @@ async function renderChampions(){
 
               rel="noopener">
 
-
               <img
+
                 class="winner-avatar"
 
                 src="${
+
                   champion.profile?.avatar
+
                   ||
+
                   FALLBACK
+
                 }"
 
                 alt=""
 
                 onerror="
-                  this.src='${FALLBACK}'
-                ">
 
+                  this.src='${FALLBACK}'
+
+                ">
 
               <div class="winner-name">
 
                 ${
+
                   champion.profile?.title
+
                     ?
+
                     `${escapeHTML(champion.profile.title)} `
+
                     :
+
                     ""
+
                 }
 
                 ${escapeHTML(champion.username)}
 
               </div>
 
-
               <div class="winner-meta">
 
                 ${escapeHTML(champion.season)}
+
                 ${escapeHTML(champion.year)}
+
                 Champion
 
               </div>
 
-
               <div class="winner-rating">
 
                 ${
+
                   champion.rating
+
                     ?
+
                     `${escapeHTML(champion.rating.rating)} • ${escapeHTML(champion.rating.label)}`
+
                     :
+
                     "Rating unavailable"
+
                 }
 
               </div>
-
 
             </a>
 
@@ -6390,27 +8456,30 @@ async function renderChampions(){
 
         .join("");
 
-
   const archive =
 
     await Promise.all(
 
       sorted.map(
+
         hydrateChampion
+
       )
 
     );
 
-
   $("#archive")
+
     .innerHTML =
 
       archive
 
         .map(
+
           champion =>`
 
           <a
+
             class="archive-row"
 
             href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
@@ -6419,12 +8488,16 @@ async function renderChampions(){
 
             rel="noopener">
 
-
             <img
+
               src="${
+
                 champion.profile?.avatar
+
                 ||
+
                 FALLBACK
+
               }"
 
               alt=""
@@ -6432,67 +8505,81 @@ async function renderChampions(){
               loading="lazy"
 
               onerror="
+
                 this.src='${FALLBACK}'
+
               ">
 
-
             <div>
-
 
               <div class="staff-name">
 
                 ${
+
                   champion.profile?.title
+
                     ?
+
                     `${escapeHTML(champion.profile.title)} `
+
                     :
+
                     ""
+
                 }
 
                 ${escapeHTML(champion.username)}
 
               </div>
 
-
               <div class="event-meta">
 
                 ${escapeHTML(champion.season)}
+
                 ${escapeHTML(champion.year)}
+
                 Champion
 
               </div>
 
-
             </div>
-
 
             <div class="archive-rating">
 
               ${
+
                 champion.rating
+
                   ?
+
                   escapeHTML(
+
                     champion.rating.rating
+
                   )
+
                   :
+
                   "—"
+
               }
 
             </div>
 
-
           </a>
 
           `
+
         )
 
         .join("");
 
 }
 
-
 /* =========================================================
+
    INITIALIZE
+
    ========================================================= */
 
 async function initialize(){
@@ -6511,12 +8598,11 @@ async function initialize(){
 
   renderStaff();
 
-
   try{
 
     CLUB_MEMBERS =
-      await getClubMembers();
 
+      await getClubMembers();
 
     await Promise.all([
 
@@ -6531,22 +8617,30 @@ async function initialize(){
   catch(error){
 
     console.warn(
+
+      "Chess.com member API error:",
+
       error
+
     );
 
-
     $("#newMembers")
+
       .innerHTML =
+
         `
+
         <div class="art-empty">
+
           Member data temporarily unavailable.
+
         </div>
+
         `;
 
-
     CLUB_MEMBERS =
-      [];
 
+      [];
 
     renderTitledMembers();
 
@@ -6554,11 +8648,120 @@ async function initialize(){
 
 }
 
+/* =========================================================
 
-initialize();
+   START
+
+   ========================================================= */
+
+async function start(){
+
+  try{
+
+    await loadData();
+
+    $("#dataError")
+
+      .hidden =
+
+        true;
+
+    await initialize();
+
+  }
+
+  catch(error){
+
+    console.error(
+
+      "ACFA dashboard failed to load:",
+
+      error
+
+    );
+
+    const errorBox =
+
+      $("#dataError");
+
+    errorBox.hidden =
+
+      false;
+
+    errorBox.innerHTML =
+
+      `
+
+      <strong>ACFA data.json could not be loaded.</strong><br>
+
+      ${escapeHTML(error.message)}<br><br>
+
+      Make sure <strong>data.json</strong> is in the same GitHub folder as <strong>index.html</strong> and contains valid JSON.
+
+      `;
+
+    $("#announcementBoard")
+
+      .innerHTML =
+
+        `
+
+        <div class="empty">
+
+          Could not load announcements.
+
+        </div>
+
+        `;
+
+    $("#events")
+
+      .innerHTML =
+
+        `
+
+        <div class="empty">
+
+          Could not load events.
+
+        </div>
+
+        `;
+
+    $("#staffBoard")
+
+      .innerHTML =
+
+        `
+
+        <div class="empty">
+
+          Could not load staff.
+
+        </div>
+
+        `;
+
+    $("#seasonTitle")
+
+      .textContent =
+
+        "Data unavailable";
+
+    $("#seasonStatus")
+
+      .textContent =
+
+        "Check data.json";
+
+  }
+
+}
+
+start();
 
 </script>
 
-
 </body>
+
 </html>
