@@ -54,6 +54,20 @@ on:
         required: false
         type: string
 
+      active_season:
+        description: "Tournament season, e.g. Fall"
+        required: false
+        type: string
+
+      year:
+        description: "Tournament year, e.g. 2026"
+        required: false
+        type: string
+
+      format:
+        description: "Tournament format"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -75,17 +89,17 @@ jobs:
           fetch-depth: 0
 
 
-      - name: Verify data.json exists
+      - name: Verify ACFA data file exists
         run: |
-          if [ ! -f "data.json" ]; then
-            echo "ERROR: data.json was not found in the repository root."
+          if [ ! -f "data/acfa.json" ]; then
+            echo "ERROR: data/acfa.json was not found."
             exit 1
           fi
 
-          echo "data.json found."
+          echo "Found data/acfa.json"
 
 
-      - name: Update data.json
+      - name: Update ACFA data
         env:
           ACTION_TYPE: ${{ github.event.inputs.action }}
           INPUT_TITLE: ${{ github.event.inputs.title }}
@@ -96,6 +110,9 @@ jobs:
           INPUT_REGISTRATION: ${{ github.event.inputs.registration_deadline }}
           INPUT_START: ${{ github.event.inputs.start_date }}
           INPUT_END: ${{ github.event.inputs.end_date }}
+          INPUT_SEASON: ${{ github.event.inputs.active_season }}
+          INPUT_YEAR: ${{ github.event.inputs.year }}
+          INPUT_FORMAT: ${{ github.event.inputs.format }}
 
         run: |
           python3 <<'PY'
@@ -103,11 +120,11 @@ jobs:
           import os
           import sys
 
-          FILE = "data.json"
+          FILE = "data/acfa.json"
 
 
           # ==================================================
-          # LOAD CURRENT DATA
+          # LOAD CURRENT JSON
           # ==================================================
 
           try:
@@ -115,11 +132,11 @@ jobs:
                   data = json.load(f)
 
           except FileNotFoundError:
-              print("ERROR: data.json was not found.")
+              print("ERROR: data/acfa.json was not found.")
               sys.exit(1)
 
           except json.JSONDecodeError as error:
-              print(f"ERROR: data.json is invalid JSON: {error}")
+              print(f"ERROR: data/acfa.json is invalid JSON: {error}")
               sys.exit(1)
 
 
@@ -128,27 +145,35 @@ jobs:
           # ==================================================
 
           data.setdefault("club", {})
+
           data.setdefault("home", {})
           data["home"].setdefault("announcements", [])
           data["home"].setdefault("events", [])
           data["home"].setdefault("rules", [])
+
           data.setdefault("tournament", {})
           data["tournament"].setdefault("champions", [])
 
 
           # ==================================================
-          # WORKFLOW INPUTS
+          # INPUTS
           # ==================================================
 
           action = os.environ.get("ACTION_TYPE", "").strip()
+
           title = os.environ.get("INPUT_TITLE", "").strip()
           body = os.environ.get("INPUT_BODY", "").strip()
           date = os.environ.get("INPUT_DATE", "").strip()
           status = os.environ.get("INPUT_STATUS", "").strip()
           url = os.environ.get("INPUT_URL", "").strip()
+
           registration = os.environ.get("INPUT_REGISTRATION", "").strip()
           start_date = os.environ.get("INPUT_START", "").strip()
           end_date = os.environ.get("INPUT_END", "").strip()
+
+          active_season = os.environ.get("INPUT_SEASON", "").strip()
+          year = os.environ.get("INPUT_YEAR", "").strip()
+          tournament_format = os.environ.get("INPUT_FORMAT", "").strip()
 
 
           # ==================================================
@@ -158,7 +183,7 @@ jobs:
           if action == "add_announcement":
 
               if not title:
-                  print("ERROR: A title is required to add an announcement.")
+                  print("ERROR: Announcement title is required.")
                   sys.exit(1)
 
               announcement = {
@@ -170,11 +195,9 @@ jobs:
                   "pinned": True
               }
 
-              # Unpin previous announcements so newest is featured.
               for item in data["home"]["announcements"]:
                   item["pinned"] = False
 
-              # Put newest announcement at the top.
               data["home"]["announcements"].insert(
                   0,
                   announcement
@@ -227,6 +250,16 @@ jobs:
 
               tournament = data["tournament"]
 
+              if active_season:
+                  tournament["activeSeason"] = active_season
+
+              if year:
+                  try:
+                      tournament["year"] = int(year)
+                  except ValueError:
+                      print("ERROR: Tournament year must be a number.")
+                      sys.exit(1)
+
               if status:
                   tournament["status"] = status
 
@@ -238,6 +271,9 @@ jobs:
 
               if end_date:
                   tournament["endDate"] = end_date
+
+              if tournament_format:
+                  tournament["format"] = tournament_format
 
               if url:
                   tournament["eventUrl"] = url
@@ -253,7 +289,7 @@ jobs:
 
               data["home"]["announcements"] = []
 
-              print("Cleared all ACFA announcements.")
+              print("Cleared ACFA announcements.")
 
 
           # ==================================================
@@ -264,7 +300,7 @@ jobs:
 
               data["home"]["events"] = []
 
-              print("Cleared all ACFA home events.")
+              print("Cleared ACFA events.")
 
 
           # ==================================================
@@ -278,7 +314,7 @@ jobs:
 
 
           # ==================================================
-          # SAVE DATA.JSON
+          # WRITE FILE
           # ==================================================
 
           with open(FILE, "w", encoding="utf-8") as f:
@@ -292,32 +328,34 @@ jobs:
               f.write("\n")
 
 
-          print("data.json updated successfully.")
+          print("data/acfa.json updated successfully.")
 
           PY
 
 
-      - name: Validate updated JSON
+      - name: Validate JSON
         run: |
-          python3 -m json.tool data.json > /dev/null
+          python3 -m json.tool data/acfa.json > /dev/null
 
-          echo "data.json is valid JSON."
+          echo "data/acfa.json is valid."
 
 
       - name: Show changes
         run: |
-          git diff -- data.json
+          git diff -- data/acfa.json
 
 
       - name: Commit dashboard update
         run: |
           git config user.name "ACFA Dashboard Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data.json
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/acfa.json
 
           if git diff --cached --quiet; then
-            echo "No changes were made to data.json."
+            echo "No changes were made."
             exit 0
           fi
 
