@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
 
 <meta
@@ -15,6 +14,10 @@
 <title>And Chess For All | Dynamic Sidebar</title>
 
 <style>
+
+/* =========================================================
+   ACFA SIDEBAR
+   ========================================================= */
 
 :root{
   --black:#000000;
@@ -476,27 +479,6 @@ body::-webkit-scrollbar-thumb{
     infinite;
 }
 
-.logo-stage::after{
-  content:"";
-
-  position:absolute;
-
-  left:18%;
-  right:18%;
-  bottom:-5px;
-
-  height:17px;
-
-  border-radius:50%;
-
-  background:
-    rgba(0,0,0,.65);
-
-  filter:blur(10px);
-
-  z-index:-1;
-}
-
 .logo{
   display:block;
 
@@ -513,6 +495,24 @@ body::-webkit-scrollbar-thumb{
     drop-shadow(
       0 0 20px
       rgba(255,214,107,.17)
+    );
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.logo-stage:hover .logo{
+  transform:scale(1.045);
+
+  filter:
+    drop-shadow(
+      0 16px 24px
+      rgba(0,0,0,.6)
+    )
+    drop-shadow(
+      0 0 25px
+      rgba(255,214,107,.32)
     );
 }
 
@@ -642,6 +642,25 @@ body::-webkit-scrollbar-thumb{
 
   font-size:13px;
   font-weight:900;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.dashboard-btn:hover{
+  transform:
+    translateY(-4px)
+    scale(1.035);
+
+  border-color:
+    rgba(255,214,107,.65);
+
+  box-shadow:
+    0 9px 20px rgba(0,0,0,.35),
+    0 0 16px rgba(45,140,255,.22);
 }
 
 .dashboard-btn.active{
@@ -781,6 +800,10 @@ body::-webkit-scrollbar-thumb{
 
   background:var(--blue3);
 
+  box-shadow:
+    0 0 0 0
+    rgba(105,183,255,.65);
+
   animation:
     pulseDot
     1.9s
@@ -840,12 +863,52 @@ body::-webkit-scrollbar-thumb{
     );
 
   text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.quick-link:hover{
+  transform:
+    translateY(-6px)
+    scale(1.045);
+
+  border-color:
+    rgba(255,214,107,.58);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(25,68,122,.98),
+      rgba(8,30,57,.98)
+    );
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.4),
+    0 0 18px rgba(45,140,255,.24);
 }
 
 .quick-icon{
   color:var(--gold2);
 
   font-size:20px;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.quick-link:hover .quick-icon{
+  transform:scale(1.18);
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(255,214,107,.7)
+    );
 }
 
 .quick-label{
@@ -882,6 +945,24 @@ body::-webkit-scrollbar-thumb{
       rgba(14,42,79,.86),
       rgba(6,22,43,.86)
     );
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.announcement:hover{
+  transform:
+    translateY(-5px)
+    scale(1.018);
+
+  border-color:
+    rgba(255,214,107,.42);
+
+  box-shadow:
+    0 11px 23px rgba(0,0,0,.35),
+    0 0 14px rgba(45,140,255,.17);
 }
 
 .announcement.pinned{
@@ -989,6 +1070,27 @@ body::-webkit-scrollbar-thumb{
   color:inherit;
 
   text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.event:hover{
+  transform:
+    translateX(6px)
+    scale(1.015);
+
+  border-color:
+    rgba(255,214,107,.4);
+
+  background:
+    rgba(45,140,255,.08);
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.3);
 }
 
 .event-date{
@@ -1020,7 +1122,6 @@ body::-webkit-scrollbar-thumb{
 
 .event-main{
   flex:1;
-
   min-width:0;
 }
 
@@ -1063,7 +1164,7 @@ body::-webkit-scrollbar-thumb{
 
   width:100%;
 
-  overflow:hidden;
+  overflow:visible;
 
   background:transparent;
 
@@ -1071,6 +1172,26 @@ body::-webkit-scrollbar-thumb{
     drop-shadow(
       0 18px 25px
       rgba(0,0,0,.45)
+    );
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.art-board:hover{
+  transform:
+    translateY(-7px)
+    scale(1.015);
+
+  filter:
+    drop-shadow(
+      0 23px 31px
+      rgba(0,0,0,.52)
+    )
+    drop-shadow(
+      0 0 15px
+      rgba(45,140,255,.18)
     );
 }
 
@@ -1111,18 +1232,16 @@ body::-webkit-scrollbar-thumb{
 
   inset:0;
 
-  display:block;
-
   pointer-events:none;
 }
 
 
-/* BIGGER AVATARS */
+/* larger than previous build */
 
 .new-member-avatar{
   position:absolute;
 
-  width:8.2%;
+  width:8.4%;
   aspect-ratio:1/1;
 
   border-radius:50%;
@@ -1136,28 +1255,43 @@ body::-webkit-scrollbar-thumb{
     #d7a63e;
 
   box-shadow:
-    0 2px 7px
+    0 3px 8px
     rgba(0,0,0,.35);
 
   pointer-events:auto;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
 }
 
+.new-member-avatar:hover{
+  transform:scale(1.19);
 
-/* BIGGER USERNAME */
+  z-index:20;
+
+  border-color:#ffd66b;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.45),
+    0 0 15px rgba(255,214,107,.52);
+}
+
 
 .new-member-username{
   position:absolute;
 
-  left:32.5%;
-  right:12%;
+  left:32.3%;
+  right:11%;
 
   color:#0b1932;
 
   font-size:
     clamp(
-      12px,
-      2.8vw,
-      19px
+      13px,
+      3vw,
+      20px
     );
 
   font-weight:950;
@@ -1173,25 +1307,35 @@ body::-webkit-scrollbar-thumb{
 
   text-shadow:
     0 1px 0
-    rgba(255,255,255,.55);
+    rgba(255,255,255,.6);
+
+  transition:
+    transform .2s ease,
+    color .2s ease;
 }
 
+.new-member-username:hover{
+  transform:
+    translateX(5px)
+    scale(1.035);
 
-/* BIGGER RATING */
+  color:#1266c8;
+}
+
 
 .new-member-rating{
   position:absolute;
 
-  left:32.5%;
-  right:12%;
+  left:32.3%;
+  right:11%;
 
   color:#76541d;
 
   font-size:
     clamp(
-      9px,
-      2vw,
-      13px
+      10px,
+      2.15vw,
+      14px
     );
 
   font-weight:950;
@@ -1201,15 +1345,25 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   pointer-events:auto;
+
+  transition:
+    transform .2s ease,
+    color .2s ease;
 }
 
+.new-member-rating:hover{
+  transform:
+    translateX(5px)
+    scale(1.04);
 
-/* OPTIONAL TITLE */
+  color:#a46c10;
+}
+
 
 .new-member-title{
   position:absolute;
 
-  right:11%;
+  right:10%;
 
   transform:
     translateY(-50%);
@@ -1230,9 +1384,9 @@ body::-webkit-scrollbar-thumb{
 
   font-size:
     clamp(
-      7px,
-      1.5vw,
-      10px
+      8px,
+      1.6vw,
+      11px
     );
 
   font-weight:950;
@@ -1245,113 +1399,93 @@ body::-webkit-scrollbar-thumb{
    NEW MEMBER POSITIONS
    ========================================================= */
 
-.new-member-slot.slot-1
-.new-member-avatar{
-  left:21.4%;
-  top:42.75%;
+.new-member-slot.slot-1 .new-member-avatar{
+  left:21.25%;
+  top:42.6%;
 }
 
-.new-member-slot.slot-1
-.new-member-username{
-  top:43.75%;
+.new-member-slot.slot-1 .new-member-username{
+  top:43.65%;
 }
 
-.new-member-slot.slot-1
-.new-member-rating{
-  top:46.7%;
+.new-member-slot.slot-1 .new-member-rating{
+  top:46.75%;
 }
 
-.new-member-slot.slot-1
-.new-member-title{
-  top:45.4%;
+.new-member-slot.slot-1 .new-member-title{
+  top:45.25%;
 }
 
 
-.new-member-slot.slot-2
-.new-member-avatar{
-  left:21.4%;
-  top:51.45%;
+.new-member-slot.slot-2 .new-member-avatar{
+  left:21.25%;
+  top:51.3%;
 }
 
-.new-member-slot.slot-2
-.new-member-username{
-  top:52.45%;
+.new-member-slot.slot-2 .new-member-username{
+  top:52.35%;
 }
 
-.new-member-slot.slot-2
-.new-member-rating{
-  top:55.4%;
+.new-member-slot.slot-2 .new-member-rating{
+  top:55.45%;
 }
 
-.new-member-slot.slot-2
-.new-member-title{
-  top:54.1%;
+.new-member-slot.slot-2 .new-member-title{
+  top:53.95%;
 }
 
 
-.new-member-slot.slot-3
-.new-member-avatar{
-  left:21.4%;
-  top:60.15%;
+.new-member-slot.slot-3 .new-member-avatar{
+  left:21.25%;
+  top:60%;
 }
 
-.new-member-slot.slot-3
-.new-member-username{
-  top:61.15%;
+.new-member-slot.slot-3 .new-member-username{
+  top:61.05%;
 }
 
-.new-member-slot.slot-3
-.new-member-rating{
-  top:64.1%;
+.new-member-slot.slot-3 .new-member-rating{
+  top:64.15%;
 }
 
-.new-member-slot.slot-3
-.new-member-title{
-  top:62.8%;
+.new-member-slot.slot-3 .new-member-title{
+  top:62.65%;
 }
 
 
-.new-member-slot.slot-4
-.new-member-avatar{
-  left:21.4%;
-  top:68.85%;
+.new-member-slot.slot-4 .new-member-avatar{
+  left:21.25%;
+  top:68.7%;
 }
 
-.new-member-slot.slot-4
-.new-member-username{
-  top:69.85%;
+.new-member-slot.slot-4 .new-member-username{
+  top:69.75%;
 }
 
-.new-member-slot.slot-4
-.new-member-rating{
-  top:72.8%;
+.new-member-slot.slot-4 .new-member-rating{
+  top:72.85%;
 }
 
-.new-member-slot.slot-4
-.new-member-title{
-  top:71.5%;
+.new-member-slot.slot-4 .new-member-title{
+  top:71.35%;
 }
 
 
-.new-member-slot.slot-5
-.new-member-avatar{
-  left:21.4%;
-  top:77.55%;
+.new-member-slot.slot-5 .new-member-avatar{
+  left:21.25%;
+  top:77.4%;
 }
 
-.new-member-slot.slot-5
-.new-member-username{
-  top:78.55%;
+.new-member-slot.slot-5 .new-member-username{
+  top:78.45%;
 }
 
-.new-member-slot.slot-5
-.new-member-rating{
-  top:81.5%;
+.new-member-slot.slot-5 .new-member-rating{
+  top:81.55%;
 }
 
-.new-member-slot.slot-5
-.new-member-title{
-  top:80.2%;
+.new-member-slot.slot-5 .new-member-title{
+  top:80.05%;
 }
 
 
@@ -1392,6 +1526,26 @@ body::-webkit-scrollbar-thumb{
   text-decoration:none;
 
   pointer-events:auto;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.titled-art-member:hover{
+  transform:
+    translateX(7px)
+    scale(1.03);
+
+  filter:
+    drop-shadow(
+      0 6px 11px
+      rgba(0,0,0,.34)
+    )
+    drop-shadow(
+      0 0 11px
+      rgba(255,214,107,.32)
+    );
 }
 
 .titled-art-member.slot-1{
@@ -1417,11 +1571,29 @@ body::-webkit-scrollbar-thumb{
   border:
     2px solid
     #d7a63e;
+
+  box-shadow:
+    0 3px 8px
+    rgba(0,0,0,.25);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.titled-art-member:hover .titled-art-avatar{
+  transform:scale(1.15);
+
+  border-color:#ffd66b;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.4),
+    0 0 13px rgba(255,214,107,.42);
 }
 
 .titled-art-copy{
   flex:1;
-
   min-width:0;
 }
 
@@ -1445,6 +1617,13 @@ body::-webkit-scrollbar-thumb{
 
   overflow:hidden;
   text-overflow:ellipsis;
+
+  transition:
+    color .2s ease;
+}
+
+.titled-art-member:hover .titled-art-name{
+  color:#1266c8;
 }
 
 .titled-art-rating{
@@ -1494,6 +1673,18 @@ body::-webkit-scrollbar-thumb{
 
   font-size:12px;
   font-weight:950;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.titled-art-member:hover .titled-art-title{
+  transform:scale(1.09);
+
+  box-shadow:
+    0 0 11px
+    rgba(255,214,107,.35);
 }
 
 
@@ -1580,8 +1771,7 @@ body::-webkit-scrollbar-thumb{
     infinite;
 }
 
-.rules-window:hover
-.rules-track{
+.rules-window:hover .rules-track{
   animation-play-state:paused;
 }
 
@@ -1616,6 +1806,23 @@ body::-webkit-scrollbar-thumb{
 
   font-size:12px;
   line-height:1.4;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.rule:hover{
+  transform:
+    translateX(5px)
+    scale(1.012);
+
+  background:
+    rgba(45,140,255,.08);
+
+  border-color:
+    rgba(255,214,107,.25);
 }
 
 .rule i{
@@ -1675,7 +1882,8 @@ body::-webkit-scrollbar-thumb{
 .staff-title{
   margin:
     5px
-    0;
+    0
+    5px;
 
   color:var(--gold2);
 
@@ -1733,6 +1941,33 @@ body::-webkit-scrollbar-thumb{
     );
 
   text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.staff-card:hover{
+  transform:
+    translateX(6px)
+    translateY(-3px)
+    scale(1.02);
+
+  border-color:
+    rgba(255,214,107,.45);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20,58,104,.96),
+      rgba(9,30,56,.96)
+    );
+
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.35),
+    0 0 15px rgba(45,140,255,.18);
 }
 
 .staff-avatar{
@@ -1748,6 +1983,21 @@ body::-webkit-scrollbar-thumb{
   border:
     2px solid
     rgba(255,214,107,.42);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.staff-card:hover .staff-avatar{
+  transform:scale(1.13);
+
+  border-color:#ffd66b;
+
+  box-shadow:
+    0 0 12px
+    rgba(255,214,107,.35);
 }
 
 .staff-main{
@@ -1761,6 +2011,8 @@ body::-webkit-scrollbar-thumb{
   font-weight:950;
 
   overflow-wrap:anywhere;
+
+  line-height:1.2;
 }
 
 .staff-role{
@@ -1894,10 +2146,16 @@ body::-webkit-scrollbar-thumb{
       6vw,
       3rem
     );
+
+  line-height:1;
 }
 
 .status{
   display:inline-flex;
+
+  align-items:center;
+
+  gap:6px;
 
   padding:
     6px
@@ -1916,6 +2174,18 @@ body::-webkit-scrollbar-thumb{
 
   font-size:11px;
   font-weight:900;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.status:hover{
+  transform:scale(1.06);
+
+  box-shadow:
+    0 0 14px
+    rgba(45,140,255,.25);
 }
 
 .facts{
@@ -1941,6 +2211,24 @@ body::-webkit-scrollbar-thumb{
 
   background:
     rgba(9,30,58,.82);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.fact:hover{
+  transform:
+    translateY(-4px)
+    scale(1.025);
+
+  border-color:
+    rgba(255,214,107,.4);
+
+  box-shadow:
+    0 8px 17px
+    rgba(0,0,0,.3);
 }
 
 .fact b{
@@ -1973,6 +2261,9 @@ body::-webkit-scrollbar-thumb{
 .action{
   display:inline-flex;
 
+  align-items:center;
+  justify-content:center;
+
   padding:
     7px
     9px;
@@ -1983,12 +2274,33 @@ body::-webkit-scrollbar-thumb{
     1px solid
     rgba(255,214,107,.3);
 
+  background:
+    rgba(215,166,62,.09);
+
   color:var(--gold2);
 
   text-decoration:none;
 
   font-size:11px;
   font-weight:900;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.action:hover{
+  transform:
+    translateY(-4px)
+    scale(1.05);
+
+  background:
+    rgba(215,166,62,.18);
+
+  box-shadow:
+    0 8px 17px rgba(0,0,0,.3),
+    0 0 12px rgba(255,214,107,.22);
 }
 
 .justice-wrap{
@@ -2001,10 +2313,35 @@ body::-webkit-scrollbar-thumb{
 
 .justice{
   width:100%;
-
   max-height:330px;
 
   object-fit:contain;
+
+  filter:
+    drop-shadow(
+      0 14px 18px
+      rgba(0,0,0,.5)
+    );
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.justice-wrap:hover .justice{
+  transform:
+    translateY(-7px)
+    scale(1.04);
+
+  filter:
+    drop-shadow(
+      0 18px 24px
+      rgba(0,0,0,.55)
+    )
+    drop-shadow(
+      0 0 16px
+      rgba(255,214,107,.22)
+    );
 }
 
 
@@ -2012,39 +2349,92 @@ body::-webkit-scrollbar-thumb{
    CHAMPIONS
    ========================================================= */
 
+.champions-section{
+  overflow:visible;
+}
+
 .champions-stage{
   position:relative;
 
   width:100%;
+
+  margin-top:8px;
+
+  overflow:visible;
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+.champions-stage:hover{
+  transform:
+    translateY(-6px)
+    scale(1.015);
+
+  filter:
+    drop-shadow(
+      0 14px 22px
+      rgba(0,0,0,.4)
+    );
 }
 
 .champions-podium-art{
+  position:relative;
+
+  z-index:1;
+
   display:block;
 
   width:100%;
   height:auto;
+
+  pointer-events:none;
 }
 
 .champions-overlay{
   position:absolute;
 
   inset:0;
+
+  z-index:5;
+
+  pointer-events:none;
 }
 
 .podium-winner{
   position:absolute;
 
   display:flex;
-
   flex-direction:column;
 
   align-items:center;
 
   width:24%;
 
-  text-align:center;
+  color:#fff;
 
   text-decoration:none;
+
+  text-align:center;
+
+  pointer-events:auto;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.podium-winner:hover{
+  transform:
+    translateY(-7px)
+    scale(1.055);
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(255,214,107,.3)
+    );
 }
 
 .podium-second{
@@ -2062,7 +2452,8 @@ body::-webkit-scrollbar-thumb{
   top:14%;
 }
 
-.winner-avatar{
+.winner-avatar,
+.podium-placeholder-avatar{
   width:
     clamp(
       48px,
@@ -2078,16 +2469,20 @@ body::-webkit-scrollbar-thumb{
     );
 
   border-radius:50%;
+}
 
+.winner-avatar{
   object-fit:cover;
+
+  background:#061326;
 
   border:
     4px solid
     #c7d4e2;
 }
 
-.podium-first
-.winner-avatar{
+.podium-first .winner-avatar,
+.podium-first .podium-placeholder-avatar{
   width:
     clamp(
       58px,
@@ -2101,16 +2496,36 @@ body::-webkit-scrollbar-thumb{
       13vw,
       102px
     );
+}
 
+.podium-first .winner-avatar{
   border-color:#ffd66b;
 }
 
-.podium-third
-.winner-avatar{
+.podium-third .winner-avatar{
   border-color:#c98043;
 }
 
+.podium-placeholder-avatar{
+  display:grid;
+
+  place-items:center;
+
+  background:
+    radial-gradient(
+      circle,
+      #183c69,
+      #061326
+    );
+
+  border:
+    3px dashed
+    rgba(255,255,255,.5);
+}
+
 .winner-name{
+  max-width:100%;
+
   margin-top:4px;
 
   color:#fff;
@@ -2123,6 +2538,15 @@ body::-webkit-scrollbar-thumb{
     );
 
   font-weight:950;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  text-shadow:
+    0 2px 4px
+    rgba(0,0,0,.9);
 }
 
 .winner-meta{
@@ -2136,10 +2560,25 @@ body::-webkit-scrollbar-thumb{
       1.4vw,
       10px
     );
+
+  font-weight:850;
 }
 
 .winner-rating{
   margin-top:3px;
+
+  padding:
+    2px
+    5px;
+
+  border-radius:999px;
+
+  background:
+    rgba(3,12,24,.82);
+
+  border:
+    1px solid
+    rgba(255,214,107,.35);
 
   color:#fff3bd;
 
@@ -2149,6 +2588,8 @@ body::-webkit-scrollbar-thumb{
       1.35vw,
       10px
     );
+
+  font-weight:900;
 }
 
 
@@ -2158,7 +2599,6 @@ body::-webkit-scrollbar-thumb{
 
 .archive{
   display:grid;
-
   gap:6px;
 }
 
@@ -2186,6 +2626,28 @@ body::-webkit-scrollbar-thumb{
     rgba(0,0,0,.2);
 
   text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.archive-row:hover{
+  transform:
+    translateX(6px)
+    scale(1.015);
+
+  border-color:
+    rgba(255,214,107,.4);
+
+  background:
+    rgba(45,140,255,.08);
+
+  box-shadow:
+    0 8px 18px
+    rgba(0,0,0,.3);
 }
 
 .archive-row img{
@@ -2283,6 +2745,14 @@ body::-webkit-scrollbar-thumb{
     width:185px;
   }
 
+  .greeting{
+    font-size:20px;
+  }
+
+  .clock{
+    font-size:17px;
+  }
+
   .quick-links{
     grid-template-columns:
       1fr
@@ -2294,6 +2764,10 @@ body::-webkit-scrollbar-thumb{
     right:8%;
 
     gap:6px;
+
+    padding:
+      0
+      5px;
   }
 
   .titled-art-avatar{
@@ -2303,17 +2777,68 @@ body::-webkit-scrollbar-thumb{
     flex-basis:37px;
   }
 
+  .titled-art-name{
+    font-size:
+      clamp(
+        11px,
+        3.7vw,
+        15px
+      );
+  }
+
+  .titled-art-rating{
+    margin-top:3px;
+
+    font-size:
+      clamp(
+        8px,
+        2.6vw,
+        11px
+      );
+  }
+
+  .titled-art-title{
+    min-width:38px;
+
+    padding:
+      5px
+      6px;
+
+    font-size:10px;
+  }
+
   .staff-card{
     grid-template-columns:
       46px
       minmax(0,1fr)
       auto;
+
+    gap:8px;
+  }
+
+  .staff-avatar{
+    width:46px;
+    height:46px;
   }
 
   .tournament-hero{
     grid-template-columns:1fr;
 
+    min-height:0;
+
     text-align:center;
+  }
+
+  .actions{
+    justify-content:center;
+  }
+
+  .justice-wrap{
+    min-height:250px;
+  }
+
+  .justice{
+    max-height:260px;
   }
 
 }
@@ -2325,6 +2850,14 @@ body::-webkit-scrollbar-thumb{
 
 @media(max-width:340px){
 
+  .dashboard-btn{
+    font-size:10px;
+  }
+
+  .logo-stage{
+    width:170px;
+  }
+
   .staff-badges{
     display:none;
   }
@@ -2335,8 +2868,24 @@ body::-webkit-scrollbar-thumb{
 
 }
 
-</style>
 
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+
+}
+
+</style>
 </head>
 
 
@@ -2374,6 +2923,7 @@ body::-webkit-scrollbar-thumb{
 
   <div class="orbit two"></div>
 
+
   <div class="logo-stage">
 
     <img
@@ -2394,6 +2944,7 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
+
     <div
       class="clock"
       id="clock">
@@ -2401,6 +2952,7 @@ body::-webkit-scrollbar-thumb{
       --:--:--
 
     </div>
+
 
     <div
       class="date"
@@ -2412,24 +2964,34 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
-<nav class="dashboard-switcher">
+<nav
+  class="dashboard-switcher"
+  aria-label="ACFA dashboards">
 
   <button
     class="dashboard-btn active"
     data-dashboard="home">
+
     Home
+
   </button>
+
 
   <button
     class="dashboard-btn"
     data-dashboard="tournaments">
+
     Tournaments
+
   </button>
+
 
   <button
     class="dashboard-btn"
     data-dashboard="staff">
+
     Staff
+
   </button>
 
 </nav>
@@ -2452,6 +3014,7 @@ body::-webkit-scrollbar-thumb{
     </div>
 
   </div>
+
 
   <div
     class="quick-links"
@@ -2477,11 +3040,13 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
+
     <span class="live-dot">
       Updates
     </span>
 
   </div>
+
 
   <div
     class="announcement-list"
@@ -2505,6 +3070,7 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
+
   <div
     class="events"
     id="events">
@@ -2513,8 +3079,9 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
+
 <!-- ======================================================
-     NEW MEMBERS
+     NEW MEMBER ART BOARD
      ====================================================== -->
 
 <div class="members-showcase">
@@ -2526,6 +3093,7 @@ body::-webkit-scrollbar-thumb{
     class="board-art"
     src="./assets/acfa-new-members-board.PNG"
     alt="ACFA New Members">
+
 
   <div
     class="new-members-overlay"
@@ -2561,8 +3129,9 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
+
 <!-- ======================================================
-     TITLED PLAYERS
+     TITLED PLAYER ART BOARD
      ====================================================== -->
 
 <section class="art-board">
@@ -2571,6 +3140,7 @@ body::-webkit-scrollbar-thumb{
     class="board-art"
     src="./assets/acfa-titled-members-board.PNG"
     alt="ACFA Titled Players">
+
 
   <div
     class="titled-members-overlay"
@@ -2594,6 +3164,7 @@ body::-webkit-scrollbar-thumb{
 </div>
 
 
+
 <section class="section">
 
   <div class="section-head">
@@ -2602,11 +3173,12 @@ body::-webkit-scrollbar-thumb{
       Club Rules
     </h2>
 
-    <span class="meta">
+    <span class="event-meta">
       Hover to pause
     </span>
 
   </div>
+
 
   <div class="rules-window">
 
@@ -2640,24 +3212,31 @@ body::-webkit-scrollbar-thumb{
 <section class="page">
 
 
-<nav class="dashboard-switcher">
+<nav
+  class="dashboard-switcher">
 
   <button
     class="dashboard-btn"
     data-dashboard="home">
+
     Home
+
   </button>
 
   <button
     class="dashboard-btn active"
     data-dashboard="tournaments">
+
     Tournaments
+
   </button>
 
   <button
     class="dashboard-btn"
     data-dashboard="staff">
+
     Staff
+
   </button>
 
 </nav>
@@ -2665,112 +3244,139 @@ body::-webkit-scrollbar-thumb{
 
 <section class="tournament-hero">
 
-  <div>
 
-    <div class="eyebrow">
-      ACFA Seasonal Championships
-    </div>
+<div>
 
-    <h1
-      class="season-title"
-      id="seasonTitle">
-    </h1>
+  <div class="eyebrow">
 
-    <span
-      class="status"
-      id="seasonStatus">
-    </span>
-
-
-    <div class="facts">
-
-      <div class="fact">
-
-        <b>
-          Registration
-        </b>
-
-        <span id="registrationDeadline">
-        </span>
-
-      </div>
-
-      <div class="fact">
-
-        <b>
-          Starts
-        </b>
-
-        <span id="startDate">
-        </span>
-
-      </div>
-
-      <div class="fact">
-
-        <b>
-          Ends
-        </b>
-
-        <span id="endDate">
-        </span>
-
-      </div>
-
-      <div class="fact">
-
-        <b>
-          Format
-        </b>
-
-        <span id="format">
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <div class="actions">
-
-      <a
-        class="action"
-        id="eventBtn"
-        target="_blank"
-        style="display:none">
-
-        Open Tournament
-
-      </a>
-
-      <a
-        class="action"
-        id="detailsBtn"
-        target="_blank"
-        style="display:none">
-
-        Event Details
-
-      </a>
-
-    </div>
+    ACFA Seasonal Championships
 
   </div>
 
 
-  <div class="justice-wrap">
+  <h1
+    class="season-title"
+    id="seasonTitle">
 
-    <img
-      class="justice"
-      src="./assets/lady-justice.png"
-      alt="ACFA Lady Justice">
+    Fall 2026
+
+  </h1>
+
+
+  <span
+    class="status"
+    id="seasonStatus">
+
+    Planning
+
+  </span>
+
+
+  <div class="facts">
+
+
+    <div class="fact">
+
+      <b>
+        Registration
+      </b>
+
+      <span id="registrationDeadline">
+        TBA
+      </span>
+
+    </div>
+
+
+    <div class="fact">
+
+      <b>
+        Starts
+      </b>
+
+      <span id="startDate">
+        TBA
+      </span>
+
+    </div>
+
+
+    <div class="fact">
+
+      <b>
+        Ends
+      </b>
+
+      <span id="endDate">
+        TBA
+      </span>
+
+    </div>
+
+
+    <div class="fact">
+
+      <b>
+        Format
+      </b>
+
+      <span id="format">
+        Seasonal Championship
+      </span>
+
+    </div>
+
 
   </div>
+
+
+  <div class="actions">
+
+    <a
+      class="action"
+      id="eventBtn"
+      target="_blank"
+      rel="noopener"
+      style="display:none">
+
+      Open Tournament
+
+    </a>
+
+
+    <a
+      class="action"
+      id="detailsBtn"
+      target="_blank"
+      rel="noopener"
+      style="display:none">
+
+      Event Details
+
+    </a>
+
+  </div>
+
+</div>
+
+
+<div class="justice-wrap">
+
+  <img
+    class="justice"
+    src="./assets/lady-justice.png"
+    alt="ACFA Lady Justice">
+
+</div>
+
 
 </section>
 
 
-<section class="section">
+
+<section
+  class="section
+         champions-section">
 
   <div class="section-head">
 
@@ -2778,14 +3384,20 @@ body::-webkit-scrollbar-thumb{
       Season Champions
     </h2>
 
+    <span class="event-meta">
+      Latest Three
+    </span>
+
   </div>
+
 
   <div class="champions-stage">
 
     <img
       class="champions-podium-art"
       src="./assets/acfa-champions-podium.PNG"
-      alt="ACFA Champions">
+      alt="ACFA Season Champions">
+
 
     <div
       class="champions-overlay"
@@ -2805,7 +3417,12 @@ body::-webkit-scrollbar-thumb{
       Champions Archive
     </h2>
 
+    <span class="event-meta">
+      All Seasons
+    </span>
+
   </div>
+
 
   <div
     class="archive"
@@ -2831,19 +3448,27 @@ body::-webkit-scrollbar-thumb{
   <button
     class="dashboard-btn"
     data-dashboard="home">
+
     Home
+
   </button>
+
 
   <button
     class="dashboard-btn"
     data-dashboard="tournaments">
+
     Tournaments
+
   </button>
+
 
   <button
     class="dashboard-btn active"
     data-dashboard="staff">
+
     Staff
+
   </button>
 
 </nav>
@@ -2855,9 +3480,11 @@ body::-webkit-scrollbar-thumb{
     ACFA Leadership
   </div>
 
+
   <h1 class="staff-title">
     Staff Board
   </h1>
+
 
   <div class="staff-subtitle">
 
@@ -2871,10 +3498,33 @@ body::-webkit-scrollbar-thumb{
 
 <section class="section">
 
+  <div class="section-head">
+
+    <div>
+
+      <div class="section-kicker">
+        Leadership Directory
+      </div>
+
+      <h2>
+        ACFA Staff
+      </h2>
+
+    </div>
+
+
+    <span class="live-dot">
+      API Profiles
+    </span>
+
+  </div>
+
+
   <div
     class="staff-grid"
     id="staffBoard">
 
+    <div class="skeleton"></div>
     <div class="skeleton"></div>
     <div class="skeleton"></div>
 
@@ -2887,12 +3537,10 @@ body::-webkit-scrollbar-thumb{
 
 
 </div>
-
 </div>
-
 </main>
-
 </div>
+
 
 
 <script>
@@ -2918,13 +3566,29 @@ const FALLBACK =
 
 
 /*
- * ChanelinmyYSL is still hydrated through Chess.com.
- * This only reserves the second visual slot for the known
- * ACFA titled player.
- */
+  These are fallback identities only.
 
-const SECOND_TITLED_PLAYER =
-  "ChanelinmyYSL";
+  Avatar, username casing and ratings are still pulled
+  from Chess.com's API.
+
+  This makes sure the two known titled ACFA members
+  do not disappear if Chess.com's titled-index request
+  temporarily misses one of them.
+*/
+
+const KNOWN_TITLED = [
+
+  {
+    username:"ashwin-2302",
+    title:"FM"
+  },
+
+  {
+    username:"ChanelinmyYSL",
+    title:"IM"
+  }
+
+];
 
 
 const TITLE_CODES = [
@@ -2964,11 +3628,11 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v50";
+  "acfa-dashboard-v60";
 
 
 let DATA =
-  null;
+  {};
 
 
 let CLUB_MEMBERS =
@@ -3122,10 +3786,13 @@ async function fetchJSON(
 
   const response =
     await fetch(
+
       url,
+
       {
         cache:"no-store"
       }
+
     );
 
 
@@ -3144,10 +3811,10 @@ async function fetchJSON(
 
 
 /* =========================================================
-   LOAD ACFA JSON
+   DATA.JSON
    ========================================================= */
 
-async function loadACFAData(){
+async function loadData(){
 
   const response =
     await fetch(
@@ -3164,7 +3831,7 @@ async function loadACFAData(){
   if(!response.ok){
 
     throw new Error(
-      `ACFA JSON HTTP ${response.status}`
+      `Unable to load data.json: ${response.status}`
     );
 
   }
@@ -3186,6 +3853,11 @@ function buildParticles(){
     $("#ambient");
 
 
+  if(!root){
+    return;
+  }
+
+
   for(
     let i=0;
     i<95;
@@ -3198,12 +3870,30 @@ function buildParticles(){
       );
 
 
-    spark.className =
+    const classes =
+      ["spark"];
+
+
+    if(
       i % 4 === 0
-        ?
-        "spark blue"
-        :
-        "spark";
+    ){
+      classes.push(
+        "blue"
+      );
+    }
+
+
+    if(
+      i % 10 === 0
+    ){
+      classes.push(
+        "large"
+      );
+    }
+
+
+    spark.className =
+      classes.join(" ");
 
 
     spark.style.setProperty(
@@ -3446,9 +4136,26 @@ function monthDay(
   }
 
 
+  const text =
+    String(value).trim();
+
+
+  if(
+    !/^\d{4}-\d{2}-\d{2}$/
+      .test(text)
+  ){
+
+    return [
+      text,
+      ""
+    ];
+
+  }
+
+
   const date =
     new Date(
-      `${value}T12:00:00`
+      `${text}T12:00:00`
     );
 
 
@@ -3471,44 +4178,164 @@ function monthDay(
 
 
 /* =========================================================
-   JSON CONTENT
+   DEFAULT LINKS
+   ========================================================= */
+
+const DEFAULT_LINKS = [
+
+  {
+    label:"Club Events",
+    icon:"♟",
+    url:
+      "https://www.chess.com/clubs/events/and-chess-for-all-official"
+  },
+
+  {
+    label:"Forums",
+    icon:"✦",
+    url:
+      "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+  },
+
+  {
+    label:"Announcements",
+    icon:"★",
+    url:
+      "https://www.chess.com/club/and-chess-for-all-official/announcements"
+  },
+
+  {
+    label:"Notes",
+    icon:"✎",
+    url:
+      "https://www.chess.com/club/notes/and-chess-for-all-official"
+  }
+
+];
+
+
+/* =========================================================
+   DEFAULT STAFF
+   ========================================================= */
+
+const DEFAULT_STAFF = [
+
+  {
+    username:"DevilsGambit22",
+    role:"Owner"
+  },
+
+  {
+    username:"SaintsGambit98",
+    role:"Co-Owner"
+  },
+
+  {
+    username:"Bgeerr",
+    role:"Head of Staff"
+  },
+
+  {
+    username:"OfficialLadyJustice",
+    role:"Mascot",
+    secondaryRole:"Super Admin"
+  },
+
+  {
+    username:"Stefan-Mazarine",
+    role:"Super Admin"
+  },
+
+  {
+    username:"Cookie00190",
+    role:"Admin"
+  },
+
+  {
+    username:"NtsakoCloy",
+    role:"Admin"
+  },
+
+  {
+    username:"roheemo_h",
+    role:"Admin"
+  },
+
+  {
+    username:"Xtreme-Ninja-100",
+    role:"Admin"
+  },
+
+  {
+    username:"Kissenschlach",
+    role:"Coordinator"
+  }
+
+];
+
+
+/* =========================================================
+   QUICK LINKS
    ========================================================= */
 
 function renderQuickLinks(){
 
   const links =
-    DATA?.quickLinks || [];
+    DATA?.quickLinks?.length
+      ?
+      DATA.quickLinks
+      :
+      DEFAULT_LINKS;
 
 
   $("#quickLinks")
     .innerHTML =
 
-      links.map(
-        item =>`
+      links
 
-        <a
-          class="quick-link"
+        .filter(
+          item =>
+            item.url
+        )
 
-          href="${escapeHTML(item.url)}"
+        .map(
+          item =>`
 
-          target="_blank">
+          <a
+            class="quick-link"
 
-          <div class="quick-icon">
-            ${escapeHTML(item.icon || "•")}
-          </div>
+            href="${escapeHTML(item.url)}"
 
-          <div class="quick-label">
-            ${escapeHTML(item.label)}
-          </div>
+            target="_blank"
 
-        </a>
+            rel="noopener">
 
-        `
-      )
-      .join("");
+            <div class="quick-icon">
+
+              ${escapeHTML(item.icon || "•")}
+
+            </div>
+
+            <div class="quick-label">
+
+              ${escapeHTML(item.label)}
+
+            </div>
+
+          </a>
+
+          `
+        )
+
+        .join("");
 
 }
 
+
+/* =========================================================
+   ANNOUNCEMENTS
+   Supports home.announcements OR old top-level announcements
+   ========================================================= */
 
 function renderAnnouncements(){
 
@@ -3516,6 +4343,8 @@ function renderAnnouncements(){
     [
       ...(
         DATA?.home?.announcements
+        ||
+        DATA?.announcements
         ||
         []
       )
@@ -3533,165 +4362,254 @@ function renderAnnouncements(){
   );
 
 
+  if(
+    !announcements.length
+  ){
+
+    $("#announcementBoard")
+      .innerHTML =
+        `
+        <div class="empty">
+          No announcements posted.
+        </div>
+        `;
+
+    return;
+
+  }
+
+
   $("#announcementBoard")
     .innerHTML =
 
-      announcements.length
-        ?
-        announcements.map(
-          announcement =>`
+      announcements.map(
+        announcement =>`
 
-          <article
-            class="
-              announcement
-              ${
-                announcement.pinned
-                  ?
-                  "pinned"
-                  :
-                  ""
-              }
-            ">
-
-            <div class="announcement-top">
-
-              <div class="announcement-title">
-
-                ${
-                  announcement.pinned
-                    ?
-                    `<span class="pin">★</span>`
-                    :
-                    ""
-                }
-
-                ${escapeHTML(announcement.title)}
-
-              </div>
-
-              <div class="announcement-date">
-                ${escapeHTML(announcement.date || "")}
-              </div>
-
-            </div>
-
-            <div class="announcement-body">
-              ${escapeHTML(announcement.body || "")}
-            </div>
-
+        <article
+          class="
+            announcement
             ${
-              announcement.url
+              announcement.pinned
                 ?
-                `
-                <a
-                  class="announcement-link"
-
-                  href="${escapeHTML(announcement.url)}"
-
-                  target="_blank">
-
-                  ${escapeHTML(
-                    announcement.linkText
-                    ||
-                    "Read More"
-                  )}
-
-                </a>
-                `
+                "pinned"
                 :
                 ""
             }
+          ">
 
-          </article>
+          <div class="announcement-top">
 
-          `
-        )
-        .join("")
-        :
+            <div class="announcement-title">
+
+              ${
+                announcement.pinned
+                  ?
+                  `<span class="pin">★</span>`
+                  :
+                  ""
+              }
+
+              ${escapeHTML(announcement.title)}
+
+            </div>
+
+
+            <div class="announcement-date">
+
+              ${escapeHTML(announcement.date || "")}
+
+            </div>
+
+          </div>
+
+
+          <div class="announcement-body">
+
+            ${escapeHTML(announcement.body || "")}
+
+          </div>
+
+
+          ${
+            announcement.url
+              ?
+              `
+              <a
+                class="announcement-link"
+
+                href="${escapeHTML(announcement.url)}"
+
+                target="_blank"
+
+                rel="noopener">
+
+                ${escapeHTML(
+                  announcement.linkText
+                  ||
+                  "Read More"
+                )}
+
+              </a>
+              `
+              :
+              ""
+          }
+
+        </article>
+
         `
-        <div class="empty">
-          No announcements.
-        </div>
-        `;
+      )
+
+      .join("");
 
 }
 
 
+/* =========================================================
+   EVENTS
+   Supports home.events OR old top-level events
+   ========================================================= */
+
 function renderEvents(){
 
   const events =
-    DATA?.home?.events || [];
+    DATA?.home?.events
+    ||
+    DATA?.events
+    ||
+    [];
+
+
+  if(
+    !events.length
+  ){
+
+    $("#events")
+      .innerHTML =
+        `
+        <div class="empty">
+          No current club events.
+        </div>
+        `;
+
+    return;
+
+  }
 
 
   $("#events")
     .innerHTML =
 
-      events.length
-        ?
-        events.map(
-          event =>{
+      events.map(
+        event =>{
 
-            const [
-              month,
-              day
-            ] =
-              monthDay(
-                event.date
-              );
+          const [
+            month,
+            day
+          ] =
+            monthDay(
+              event.date
+            );
 
 
-            return `
+          const tag =
+            event.url
+              ?
+              "a"
+              :
+              "div";
 
-            <a
-              class="event"
 
-              href="${escapeHTML(event.url || "#")}"
+          const href =
+            event.url
+              ?
+              `
+              href="${escapeHTML(event.url)}"
+              target="_blank"
+              rel="noopener"
+              `
+              :
+              "";
 
-              target="_blank">
 
-              <div class="event-date">
+          return `
 
-                ${escapeHTML(month)}
+          <${tag}
+            class="event"
+            ${href}>
 
-                <br>
+            <div class="event-date">
 
-                ${escapeHTML(day)}
+              ${escapeHTML(month)}
+
+              ${
+                day
+                  ?
+                  `<br>${escapeHTML(day)}`
+                  :
+                  ""
+              }
+
+            </div>
+
+
+            <div class="event-main">
+
+              <div class="event-title">
+
+                ${escapeHTML(event.title)}
 
               </div>
 
-              <div class="event-main">
+              <div class="event-meta">
 
-                <div class="event-title">
-                  ${escapeHTML(event.title)}
-                </div>
-
-                <div class="event-meta">
-                  ${escapeHTML(event.status || "")}
-                </div>
+                ${escapeHTML(event.status || "")}
 
               </div>
 
-            </a>
+            </div>
 
-            `;
+          </${tag}>
 
-          }
-        )
-        .join("")
-        :
-        `
-        <div class="empty">
-          No current events.
-        </div>
-        `;
+          `;
+
+        }
+      )
+
+      .join("");
 
 }
 
 
+/* =========================================================
+   RULES
+   ========================================================= */
+
 function renderRules(){
 
   const rules =
-    DATA?.home?.rules || [];
+    DATA?.home?.rules
+    ||
+    DATA?.rules
+    ||
+    [];
+
+
+  if(
+    !rules.length
+  ){
+
+    $("#rulesTrack")
+      .innerHTML =
+        `
+        <div class="empty">
+          No rules loaded.
+        </div>
+        `;
+
+    return;
+
+  }
 
 
   const html =
@@ -3704,7 +4622,7 @@ function renderRules(){
       <div class="rule">
 
         <i>
-          ${index + 1}
+          ${index+1}
         </i>
 
         <span>
@@ -3725,21 +4643,32 @@ function renderRules(){
 }
 
 
+/* =========================================================
+   TOURNAMENT
+   ========================================================= */
+
 function renderTournament(){
 
   const tournament =
-    DATA?.tournament || {};
+    DATA?.tournament
+    ||
+    {};
 
 
   $("#seasonTitle")
     .textContent =
-      `${safe(
-        tournament.activeSeason,
-        "Season"
-      )} ${safe(
-        tournament.year,
-        ""
-      )}`;
+      `${
+        safe(
+          tournament.activeSeason,
+          "Season"
+        )
+      } ${
+        safe(
+          tournament.year,
+          ""
+        )
+      }`
+      .trim();
 
 
   $("#seasonStatus")
@@ -3775,17 +4704,26 @@ function renderTournament(){
     .textContent =
       safe(
         tournament.format,
-        "Seasonal Championship"
+        "Seasonal ACFA Championship"
       );
+
+
+  $("#eventBtn")
+    .style.display =
+      "none";
+
+
+  $("#detailsBtn")
+    .style.display =
+      "none";
 
 
   if(
     tournament.eventUrl
   ){
 
-    $("#eventBtn")
-      .href =
-        tournament.eventUrl;
+    $("#eventBtn").href =
+      tournament.eventUrl;
 
 
     $("#eventBtn")
@@ -3799,9 +4737,8 @@ function renderTournament(){
     tournament.detailsUrl
   ){
 
-    $("#detailsBtn")
-      .href =
-        tournament.detailsUrl;
+    $("#detailsBtn").href =
+      tournament.detailsUrl;
 
 
     $("#detailsBtn")
@@ -3843,7 +4780,7 @@ async function getClubMembers(){
   ];
 
 
-  const map =
+  const found =
     new Map();
 
 
@@ -3854,15 +4791,20 @@ async function getClubMembers(){
   ){
 
     if(
-      !member.username
+      !member?.username
     ){
       continue;
     }
 
 
-    map.set(
-      member.username.toLowerCase(),
+    found.set(
+
+      member.username
+        .trim()
+        .toLowerCase(),
+
       member
+
     );
 
   }
@@ -3870,7 +4812,7 @@ async function getClubMembers(){
 
   const members =
     [
-      ...map.values()
+      ...found.values()
     ];
 
 
@@ -3889,8 +4831,14 @@ async function getProfile(
   username
 ){
 
+  const normalized =
+    username
+      .trim()
+      .toLowerCase();
+
+
   const key =
-    `profile:${username.toLowerCase()}`;
+    `profile:${normalized}`;
 
 
   const cached =
@@ -3926,8 +4874,14 @@ async function getStats(
   username
 ){
 
+  const normalized =
+    username
+      .trim()
+      .toLowerCase();
+
+
   const key =
-    `stats:${username.toLowerCase()}`;
+    `stats:${normalized}`;
 
 
   const cached =
@@ -3960,7 +4914,7 @@ async function getStats(
 
 
 /* =========================================================
-   RATINGS
+   HIGHEST RATING
    ========================================================= */
 
 function highestRating(
@@ -3969,13 +4923,25 @@ function highestRating(
 
   const categories = [
 
-    ["chess_daily","Daily"],
+    {
+      key:"chess_daily",
+      label:"Daily"
+    },
 
-    ["chess_rapid","Rapid"],
+    {
+      key:"chess_rapid",
+      label:"Rapid"
+    },
 
-    ["chess_blitz","Blitz"],
+    {
+      key:"chess_blitz",
+      label:"Blitz"
+    },
 
-    ["chess_bullet","Bullet"]
+    {
+      key:"chess_bullet",
+      label:"Bullet"
+    }
 
   ];
 
@@ -3985,16 +4951,15 @@ function highestRating(
 
 
   for(
-    const [
-      key,
-      label
-    ]
+    const category
     of
     categories
   ){
 
     const rating =
-      stats?.[key]?.last?.rating;
+      stats?.[
+        category.key
+      ]?.last?.rating;
 
 
     if(
@@ -4013,8 +4978,8 @@ function highestRating(
     ){
 
       best = {
-        rating,
-        label
+        rating:rating,
+        label:category.label
       };
 
     }
@@ -4028,7 +4993,7 @@ function highestRating(
 
 
 /* =========================================================
-   CONCURRENCY
+   LIMITED PROFILE REQUESTS
    ========================================================= */
 
 async function mapLimited(
@@ -4060,7 +5025,9 @@ async function mapLimited(
         >=
         items.length
       ){
+
         return;
+
       }
 
 
@@ -4068,7 +5035,8 @@ async function mapLimited(
 
         results[current] =
           await worker(
-            items[current]
+            items[current],
+            current
           );
 
       }
@@ -4085,17 +5053,30 @@ async function mapLimited(
   }
 
 
+  const runners =
+    Math.min(
+      limit,
+      items.length
+    );
+
+
+  if(
+    runners <= 0
+  ){
+
+    return results;
+
+  }
+
+
   await Promise.all(
 
     Array.from(
       {
-        length:
-          Math.min(
-            limit,
-            items.length
-          )
+        length:runners
       },
-      runner
+      () =>
+        runner()
     )
 
   );
@@ -4133,6 +5114,23 @@ async function renderNewestMembers(){
     );
 
 
+  if(
+    !newest.length
+  ){
+
+    $("#newMembers")
+      .innerHTML =
+        `
+        <div class="art-empty">
+          No member data available.
+        </div>
+        `;
+
+    return;
+
+  }
+
+
   const players =
     await Promise.all(
 
@@ -4149,21 +5147,23 @@ async function renderNewestMembers(){
 
           try{
 
-            [
-              profile,
-              stats
-            ] =
-              await Promise.all([
+            profile =
+              await getProfile(
+                member.username
+              );
 
-                getProfile(
-                  member.username
-                ),
+          }
 
-                getStats(
-                  member.username
-                )
+          catch{
+          }
 
-              ]);
+
+          try{
+
+            stats =
+              await getStats(
+                member.username
+              );
 
           }
 
@@ -4178,7 +5178,8 @@ async function renderNewestMembers(){
               ||
               member.username,
 
-            profile,
+            profile:
+              profile,
 
             rating:
               highestRating(
@@ -4221,7 +5222,10 @@ async function renderNewestMembers(){
 
             <a
               href="${profileURL}"
-              target="_blank">
+
+              target="_blank"
+
+              rel="noopener">
 
               <img
                 class="new-member-avatar"
@@ -4233,6 +5237,8 @@ async function renderNewestMembers(){
                 }"
 
                 alt="${escapeHTML(player.username)}"
+
+                loading="lazy"
 
                 onerror="
                   this.onerror=null;
@@ -4247,7 +5253,9 @@ async function renderNewestMembers(){
 
               href="${profileURL}"
 
-              target="_blank">
+              target="_blank"
+
+              rel="noopener">
 
               ${escapeHTML(player.username)}
 
@@ -4259,7 +5267,9 @@ async function renderNewestMembers(){
 
               href="${profileURL}"
 
-              target="_blank">
+              target="_blank"
+
+              rel="noopener">
 
               ${
                 player.rating
@@ -4281,7 +5291,9 @@ async function renderNewestMembers(){
 
                   href="${profileURL}"
 
-                  target="_blank">
+                  target="_blank"
+
+                  rel="noopener">
 
                   ${escapeHTML(player.profile.title)}
 
@@ -4298,6 +5310,7 @@ async function renderNewestMembers(){
 
         }
       )
+
       .join("");
 
 }
@@ -4305,7 +5318,6 @@ async function renderNewestMembers(){
 
 /* =========================================================
    TITLED PLAYERS
-   API DISCOVERY + CHANEL RESERVED FOR SLOT 2
    ========================================================= */
 
 async function renderTitledMembers(){
@@ -4322,7 +5334,7 @@ async function renderTitledMembers(){
     member =>{
 
       if(
-        !member.username
+        !member?.username
       ){
         return;
       }
@@ -4331,6 +5343,7 @@ async function renderTitledMembers(){
       clubMap.set(
 
         member.username
+          .trim()
           .toLowerCase(),
 
         member.username
@@ -4342,7 +5355,37 @@ async function renderTitledMembers(){
 
 
   /*
-   * Official Chess.com title lists.
+   * Seed the two known ACFA titled members.
+   * Their actual profiles and ratings are fetched below.
+   */
+
+  for(
+    const player
+    of
+    KNOWN_TITLED
+  ){
+
+    const normalized =
+      player.username
+        .toLowerCase();
+
+
+    found.set(
+      normalized,
+      {
+        username:
+          player.username,
+
+        title:
+          player.title
+      }
+    );
+
+  }
+
+
+  /*
+   * Official Chess.com titled lists.
    */
 
   const titleGroups =
@@ -4360,9 +5403,11 @@ async function renderTitledMembers(){
 
 
             return {
-              title,
+              title:title,
               players:
-                result.players || []
+                result.players
+                ||
+                []
             };
 
           }
@@ -4370,7 +5415,7 @@ async function renderTitledMembers(){
           catch{
 
             return {
-              title,
+              title:title,
               players:[]
             };
 
@@ -4395,7 +5440,9 @@ async function renderTitledMembers(){
     ){
 
       const normalized =
-        username.toLowerCase();
+        username
+          .trim()
+          .toLowerCase();
 
 
       if(
@@ -4405,9 +5452,7 @@ async function renderTitledMembers(){
       ){
 
         found.set(
-
           normalized,
-
           {
             username:
               clubMap.get(
@@ -4417,7 +5462,6 @@ async function renderTitledMembers(){
             title:
               group.title
           }
-
         );
 
       }
@@ -4428,10 +5472,10 @@ async function renderTitledMembers(){
 
 
   /*
-   * Also inspect ACFA player profiles.
+   * Profile-title scan of ACFA members.
    */
 
-  const profileScan =
+  const scan =
     await mapLimited(
 
       CLUB_MEMBERS,
@@ -4460,7 +5504,6 @@ async function renderTitledMembers(){
 
 
         return {
-
           username:
             profile.username
             ||
@@ -4469,8 +5512,8 @@ async function renderTitledMembers(){
           title:
             profile.title,
 
-          profile
-
+          profile:
+            profile
         };
 
       }
@@ -4481,7 +5524,7 @@ async function renderTitledMembers(){
   for(
     const player
     of
-    profileScan.filter(Boolean)
+    scan.filter(Boolean)
   ){
 
     found.set(
@@ -4491,7 +5534,8 @@ async function renderTitledMembers(){
 
       {
         ...found.get(
-          player.username.toLowerCase()
+          player.username
+            .toLowerCase()
         ),
 
         ...player
@@ -4503,64 +5547,7 @@ async function renderTitledMembers(){
 
 
   /*
-   * Explicitly API-check ChanelinmyYSL.
-   *
-   * We do NOT manually provide their title,
-   * avatar, or rating.
-   */
-
-  try{
-
-    const chanelProfile =
-      await getProfile(
-        SECOND_TITLED_PLAYER
-      );
-
-
-    if(
-      chanelProfile?.title
-      &&
-      TITLE_CODES.includes(
-        chanelProfile.title
-      )
-    ){
-
-      found.set(
-
-        SECOND_TITLED_PLAYER
-          .toLowerCase(),
-
-        {
-          username:
-            chanelProfile.username
-            ||
-            SECOND_TITLED_PLAYER,
-
-          title:
-            chanelProfile.title,
-
-          profile:
-            chanelProfile
-        }
-
-      );
-
-    }
-
-  }
-
-  catch(error){
-
-    console.warn(
-      "Unable to verify ChanelinmyYSL",
-      error
-    );
-
-  }
-
-
-  /*
-   * Hydrate every detected titled player.
+   * Hydrate all discovered titled players.
    */
 
   let players =
@@ -4569,6 +5556,7 @@ async function renderTitledMembers(){
       [
         ...found.values()
       ]
+
       .map(
         async player =>{
 
@@ -4582,11 +5570,11 @@ async function renderTitledMembers(){
             null;
 
 
-          if(
-            !profile
-          ){
+          try{
 
-            try{
+            if(
+              !profile
+            ){
 
               profile =
                 await getProfile(
@@ -4595,9 +5583,9 @@ async function renderTitledMembers(){
 
             }
 
-            catch{
-            }
+          }
 
+          catch{
           }
 
 
@@ -4626,7 +5614,8 @@ async function renderTitledMembers(){
               ||
               player.title,
 
-            profile,
+            profile:
+              profile,
 
             rating:
               highestRating(
@@ -4642,54 +5631,77 @@ async function renderTitledMembers(){
 
 
   /*
-   * Separate Chanel from all other titled players.
+   * Exact visual order requested:
+   * slot 1 = ashwin-2302
+   * slot 2 = ChanelinmyYSL
+   *
+   * If one is unavailable, another API-detected titled
+   * player may fill the missing slot.
    */
 
-  const chanelKey =
-    SECOND_TITLED_PLAYER
-      .toLowerCase();
+  const preferredOrder = [
+    "ashwin-2302",
+    "chanelinmyysl"
+  ];
 
 
-  let chanel =
-    players.find(
-      player =>
-        player.username
-          .toLowerCase()
-        ===
-        chanelKey
-    );
+  const ordered =
+    [];
 
 
-  let others =
+  for(
+    const username
+    of
+    preferredOrder
+  ){
+
+    const player =
+      players.find(
+        item =>
+          item.username
+            .toLowerCase()
+          ===
+          username
+      );
+
+
+    if(player){
+
+      ordered.push(
+        player
+      );
+
+    }
+
+  }
+
+
+  const remaining =
     players.filter(
       player =>
-        player.username
-          .toLowerCase()
-        !==
-        chanelKey
+        !preferredOrder.includes(
+          player.username
+            .toLowerCase()
+        )
     );
 
 
-  /*
-   * Sort other titled players normally.
-   */
-
-  others.sort(
+  remaining.sort(
     (
       a,
       b
     ) =>{
 
       const aRank =
-        TITLE_RANK[
-          a.title
-        ] || 0;
+        TITLE_RANK[a.title]
+        ||
+        0;
 
 
       const bRank =
-        TITLE_RANK[
-          b.title
-        ] || 0;
+        TITLE_RANK[b.title]
+        ||
+        0;
 
 
       if(
@@ -4712,39 +5724,35 @@ async function renderTitledMembers(){
   );
 
 
-  /*
-   * SLOT 1 = first other detected titled member.
-   * SLOT 2 = ChanelinmyYSL.
-   */
-
-  const displayPlayers =
-    [];
-
-
-  if(
-    others[0]
+  for(
+    const player
+    of
+    remaining
   ){
 
-    displayPlayers.push(
-      others[0]
+    if(
+      ordered.length >= 2
+    ){
+      break;
+    }
+
+
+    ordered.push(
+      player
     );
 
   }
 
 
-  if(
-    chanel
-  ){
-
-    displayPlayers.push(
-      chanel
+  players =
+    ordered.slice(
+      0,
+      2
     );
 
-  }
-
 
   if(
-    !displayPlayers.length
+    !players.length
   ){
 
     $("#titledMembers")
@@ -4763,7 +5771,7 @@ async function renderTitledMembers(){
   $("#titledMembers")
     .innerHTML =
 
-      displayPlayers.map(
+      players.map(
         (
           player,
           index
@@ -4772,12 +5780,14 @@ async function renderTitledMembers(){
         <a
           class="
             titled-art-member
-            slot-${index + 1}
+            slot-${index+1}
           "
 
           href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
 
-          target="_blank">
+          target="_blank"
+
+          rel="noopener">
 
 
           <img
@@ -4790,6 +5800,8 @@ async function renderTitledMembers(){
             }"
 
             alt="${escapeHTML(player.username)}"
+
+            loading="lazy"
 
             onerror="
               this.onerror=null;
@@ -4804,6 +5816,7 @@ async function renderTitledMembers(){
               ${escapeHTML(player.username)}
 
             </div>
+
 
             <div class="titled-art-rating">
 
@@ -4830,6 +5843,7 @@ async function renderTitledMembers(){
 
         `
       )
+
       .join("");
 
 }
@@ -4839,17 +5853,82 @@ async function renderTitledMembers(){
    STAFF
    ========================================================= */
 
+function roleClass(
+  role
+){
+
+  return (
+    "role-"
+    +
+    String(role)
+      .toLowerCase()
+      .replace(
+        /\s+/g,
+        "-"
+      )
+  );
+
+}
+
+
+function staffPriority(
+  role
+){
+
+  const priority = {
+    "Owner":100,
+    "Co-Owner":95,
+    "Head of Staff":90,
+    "Super Admin":80,
+    "Admin":70,
+    "Coordinator":60,
+    "Mascot":50
+  };
+
+
+  return (
+    priority[role]
+    ||
+    0
+  );
+
+}
+
+
 async function renderStaff(){
 
   const staff =
-    DATA?.staff || [];
+    [
+      ...(
+        DATA?.staff?.length
+          ?
+          DATA.staff
+          :
+          DEFAULT_STAFF
+      )
+    ];
+
+
+  staff.sort(
+    (
+      a,
+      b
+    ) =>
+      staffPriority(
+        b.role
+      )
+      -
+      staffPriority(
+        a.role
+      )
+  );
 
 
   const cards =
     await Promise.all(
 
       staff.map(
-        async member =>{
+        async staffMember =>{
 
           let profile =
             null;
@@ -4861,21 +5940,23 @@ async function renderStaff(){
 
           try{
 
-            [
-              profile,
-              stats
-            ] =
-              await Promise.all([
+            profile =
+              await getProfile(
+                staffMember.username
+              );
 
-                getProfile(
-                  member.username
-                ),
+          }
 
-                getStats(
-                  member.username
-                )
+          catch{
+          }
 
-              ]);
+
+          try{
+
+            stats =
+              await getStats(
+                staffMember.username
+              );
 
           }
 
@@ -4894,9 +5975,12 @@ async function renderStaff(){
           <a
             class="staff-card"
 
-            href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
+            href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
 
-            target="_blank">
+            target="_blank"
+
+            rel="noopener">
+
 
             <img
               class="staff-avatar"
@@ -4907,7 +5991,14 @@ async function renderStaff(){
                 FALLBACK
               }"
 
-              alt="">
+              alt="${escapeHTML(staffMember.username)}"
+
+              loading="lazy"
+
+              onerror="
+                this.onerror=null;
+                this.src='${FALLBACK}';
+              ">
 
 
             <div class="staff-main">
@@ -4922,24 +6013,30 @@ async function renderStaff(){
                     ""
                 }
 
-                ${escapeHTML(
-                  profile?.username
-                  ||
-                  member.username
-                )}
+                ${
+                  escapeHTML(
+                    profile?.username
+                    ||
+                    staffMember.username
+                  )
+                }
 
               </div>
+
 
               <div class="staff-role">
-                ${escapeHTML(member.role)}
+
+                ${escapeHTML(staffMember.role)}
+
               </div>
+
 
               <div class="staff-rating">
 
                 ${
                   rating
                     ?
-                    `${rating.rating} • ${rating.label}`
+                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
                     :
                     "Rating unavailable"
                 }
@@ -4954,14 +6051,31 @@ async function renderStaff(){
               <span
                 class="
                   role-badge
-                  role-${member.role
-                    .toLowerCase()
-                    .replace(/\s+/g,"-")}
+                  ${roleClass(staffMember.role)}
                 ">
 
-                ${escapeHTML(member.role)}
+                ${escapeHTML(staffMember.role)}
 
               </span>
+
+
+              ${
+                staffMember.secondaryRole
+                  ?
+                  `
+                  <span
+                    class="
+                      role-badge
+                      ${roleClass(staffMember.secondaryRole)}
+                    ">
+
+                    ${escapeHTML(staffMember.secondaryRole)}
+
+                  </span>
+                  `
+                  :
+                  ""
+              }
 
             </div>
 
@@ -4986,6 +6100,107 @@ async function renderStaff(){
    CHAMPIONS
    ========================================================= */
 
+function emptyWinner(
+  placement
+){
+
+  const positionClass =
+    placement === 1
+      ?
+      "podium-first"
+      :
+      placement === 2
+        ?
+        "podium-second"
+        :
+        "podium-third";
+
+
+  return `
+
+  <div
+    class="
+      podium-winner
+      ${positionClass}
+    ">
+
+    <div class="podium-placeholder-avatar"></div>
+
+    <div class="winner-name">
+      Awaiting Champion
+    </div>
+
+    <div class="winner-meta">
+      ACFA Seasonal Winner
+    </div>
+
+  </div>
+
+  `;
+
+}
+
+
+async function hydrateChampion(
+  champion
+){
+
+  if(!champion){
+    return null;
+  }
+
+
+  let profile =
+    null;
+
+
+  let stats =
+    null;
+
+
+  try{
+
+    profile =
+      await getProfile(
+        champion.username
+      );
+
+  }
+
+  catch{
+  }
+
+
+  try{
+
+    stats =
+      await getStats(
+        champion.username
+      );
+
+  }
+
+  catch{
+  }
+
+
+  return {
+
+    ...champion,
+
+    profile:
+      profile,
+
+    rating:
+      highestRating(
+        stats
+      )
+
+  };
+
+}
+
+
 async function renderChampions(){
 
   const champions =
@@ -4998,13 +6213,26 @@ async function renderChampions(){
     !champions.length
   ){
 
+    $("#podium")
+      .innerHTML =
+        `
+        ${emptyWinner(2)}
+        ${emptyWinner(1)}
+        ${emptyWinner(3)}
+        `;
+
+
     $("#archive")
       .innerHTML =
         `
         <div class="empty">
-          The first ACFA seasonal champion will appear here.
+
+          The first ACFA seasonal
+          champion will appear here.
+
         </div>
         `;
+
 
     return;
 
@@ -5015,57 +6243,151 @@ async function renderChampions(){
     await Promise.all(
 
       champions.map(
-        async champion =>{
+        hydrateChampion
+      )
 
-          let profile =
-            null;
-
-
-          let stats =
-            null;
+    );
 
 
-          try{
+  const latest =
+    hydrated.slice(
+      0,
+      3
+    );
 
-            [
-              profile,
-              stats
-            ] =
-              await Promise.all([
 
-                getProfile(
-                  champion.username
-                ),
+  const podiumData = [
 
-                getStats(
-                  champion.username
-                )
+    {
+      placement:2,
+      champion:
+        latest[1]
+        ||
+        null
+    },
 
-              ]);
+    {
+      placement:1,
+      champion:
+        latest[0]
+        ||
+        null
+    },
+
+    {
+      placement:3,
+      champion:
+        latest[2]
+        ||
+        null
+    }
+
+  ];
+
+
+  $("#podium")
+    .innerHTML =
+
+      podiumData.map(
+        item =>{
+
+          if(
+            !item.champion
+          ){
+
+            return emptyWinner(
+              item.placement
+            );
 
           }
 
-          catch{
-          }
+
+          const champion =
+            item.champion;
 
 
-          return {
+          const positionClass =
+            item.placement === 1
+              ?
+              "podium-first"
+              :
+              item.placement === 2
+                ?
+                "podium-second"
+                :
+                "podium-third";
 
-            ...champion,
 
-            profile,
+          return `
 
-            rating:
-              highestRating(
-                stats
-              )
+          <a
+            class="
+              podium-winner
+              ${positionClass}
+            "
 
-          };
+            href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+
+            target="_blank"
+
+            rel="noopener">
+
+
+            <img
+              class="winner-avatar"
+
+              src="${
+                champion.profile?.avatar
+                ||
+                FALLBACK
+              }"
+
+              alt="${escapeHTML(champion.username)}"
+
+              onerror="
+                this.onerror=null;
+                this.src='${FALLBACK}';
+              ">
+
+
+            <div class="winner-name">
+
+              ${escapeHTML(champion.username)}
+
+            </div>
+
+
+            <div class="winner-meta">
+
+              ${escapeHTML(champion.season || "")}
+
+              ${escapeHTML(champion.year || "")}
+
+              Champion
+
+            </div>
+
+
+            <div class="winner-rating">
+
+              ${
+                champion.rating
+                  ?
+                  `${escapeHTML(champion.rating.rating)} • ${escapeHTML(champion.rating.label)}`
+                  :
+                  "Rating unavailable"
+              }
+
+            </div>
+
+          </a>
+
+          `;
 
         }
       )
 
-    );
+      .join("");
 
 
   $("#archive")
@@ -5079,7 +6401,10 @@ async function renderChampions(){
 
           href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
 
-          target="_blank">
+          target="_blank"
+
+          rel="noopener">
+
 
           <img
             src="${
@@ -5087,30 +6412,45 @@ async function renderChampions(){
               ||
               FALLBACK
             }"
-            alt="">
+
+            alt="${escapeHTML(champion.username)}"
+
+            onerror="
+              this.onerror=null;
+              this.src='${FALLBACK}';
+            ">
+
 
           <div>
 
             <div class="staff-name">
+
               ${escapeHTML(champion.username)}
+
             </div>
+
 
             <div class="event-meta">
 
               ${escapeHTML(champion.season || "")}
+
               ${escapeHTML(champion.year || "")}
+
               Champion
 
             </div>
 
           </div>
 
+
           <div class="archive-rating">
 
             ${
               champion.rating
                 ?
-                champion.rating.rating
+                escapeHTML(
+                  champion.rating.rating
+                )
                 :
                 "—"
             }
@@ -5121,61 +6461,60 @@ async function renderChampions(){
 
         `
       )
+
       .join("");
 
 }
 
 
 /* =========================================================
-   JSON SYSTEM
+   JSON INITIALIZATION
    ========================================================= */
 
 async function initializeJSON(){
 
   try{
 
-    await loadACFAData();
-
-
-    renderQuickLinks();
-
-    renderAnnouncements();
-
-    renderEvents();
-
-    renderRules();
-
-    renderTournament();
-
-    renderStaff();
-
-    renderChampions();
+    await loadData();
 
   }
 
   catch(error){
 
-    console.error(
-      "ACFA JSON failed:",
+    console.warn(
+      "ACFA data.json could not be loaded.",
       error
     );
 
-
-    $("#announcementBoard")
-      .innerHTML =
-        `
-        <div class="empty">
-          Dashboard data unavailable.
-        </div>
-        `;
+    DATA = {};
 
   }
+
+
+  renderQuickLinks();
+
+  renderAnnouncements();
+
+  renderEvents();
+
+  renderRules();
+
+  renderTournament();
+
+
+  await Promise.all([
+
+    renderStaff(),
+
+    renderChampions()
+
+  ]);
 
 }
 
 
 /* =========================================================
-   API SYSTEM
+   API INITIALIZATION
    ========================================================= */
 
 async function initializeAPI(){
@@ -5185,23 +6524,17 @@ async function initializeAPI(){
     CLUB_MEMBERS =
       await getClubMembers();
 
-
-    await Promise.all([
-
-      renderNewestMembers(),
-
-      renderTitledMembers()
-
-    ]);
-
   }
 
   catch(error){
 
     console.error(
-      "Chess.com API failed:",
+      "Club member API failed:",
       error
     );
+
+
+    CLUB_MEMBERS = [];
 
 
     $("#newMembers")
@@ -5212,16 +6545,34 @@ async function initializeAPI(){
         </div>
         `;
 
+  }
 
-    $("#titledMembers")
-      .innerHTML =
-        `
-        <div class="art-empty">
-          Titled player API unavailable.
-        </div>
-        `;
+
+  /*
+   * Titled players still run even if the club member
+   * request has a temporary failure because the two known
+   * titled ACFA accounts are independently API-hydrated.
+   */
+
+  const jobs = [
+    renderTitledMembers()
+  ];
+
+
+  if(
+    CLUB_MEMBERS.length
+  ){
+
+    jobs.push(
+      renderNewestMembers()
+    );
 
   }
+
+
+  await Promise.allSettled(
+    jobs
+  );
 
 }
 
@@ -5261,12 +6612,13 @@ function start(){
 
 
   /*
-   * Run independently.
+   * JSON and Chess.com API are deliberately independent.
+   * If one fails, it does not destroy the other.
    */
 
-  initializeAPI();
-
   initializeJSON();
+
+  initializeAPI();
 
 }
 
@@ -5274,6 +6626,7 @@ function start(){
 start();
 
 </script>
+
 
 </body>
 </html>
