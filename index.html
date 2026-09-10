@@ -16,11 +16,6 @@
 
 <style>
 
-/* =========================================================
-   ACFA DYNAMIC SIDEBAR
-   HOME • TOURNAMENTS • STAFF
-   ========================================================= */
-
 :root{
   --black:#000000;
   --black2:#03060b;
@@ -45,11 +40,6 @@
   --line:rgba(82,159,255,.27);
 }
 
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
 *{
   box-sizing:border-box;
 }
@@ -57,7 +47,6 @@
 html{
   margin:0;
   min-height:100%;
-
   background:#000;
 
   scrollbar-width:thin;
@@ -106,11 +95,6 @@ img{
   max-width:100%;
 }
 
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
 html::-webkit-scrollbar,
 body::-webkit-scrollbar{
   width:5px;
@@ -134,11 +118,6 @@ body::-webkit-scrollbar-thumb{
 
   border:1px solid #07172b;
 }
-
-
-/* =========================================================
-   APP
-   ========================================================= */
 
 .shell{
   width:100%;
@@ -167,11 +146,6 @@ body::-webkit-scrollbar-thumb{
       #000
     );
 }
-
-
-/* =========================================================
-   PARTICLES
-   ========================================================= */
 
 .ambient{
   position:absolute;
@@ -232,7 +206,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes emberRise{
-
   0%{
     transform:
       translate3d(0,0,0)
@@ -264,13 +237,7 @@ body::-webkit-scrollbar-thumb{
 
     opacity:0;
   }
-
 }
-
-
-/* =========================================================
-   DASHBOARDS
-   ========================================================= */
 
 .viewport{
   overflow:hidden;
@@ -303,11 +270,6 @@ body::-webkit-scrollbar-thumb{
 
   padding:12px;
 }
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
 
 .hero{
   position:relative;
@@ -362,7 +324,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes heroPulse{
-
   50%{
     transform:
       translate(-50%,-50%)
@@ -370,7 +331,6 @@ body::-webkit-scrollbar-thumb{
 
     opacity:.7;
   }
-
 }
 
 .orbit{
@@ -439,7 +399,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes orbitSpin{
-
   from{
     transform:
       translate(-50%,-50%)
@@ -451,13 +410,7 @@ body::-webkit-scrollbar-thumb{
       translate(-50%,-50%)
       rotate(360deg);
   }
-
 }
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
 
 .logo-stage{
   position:relative;
@@ -522,7 +475,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes logoFloat{
-
   0%,
   100%{
     transform:
@@ -535,13 +487,7 @@ body::-webkit-scrollbar-thumb{
       translateY(-7px)
       rotate(.25deg);
   }
-
 }
-
-
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
 
 .hero-copy{
   position:relative;
@@ -592,11 +538,6 @@ body::-webkit-scrollbar-thumb{
 
   font-size:.76rem;
 }
-
-
-/* =========================================================
-   DASHBOARD SWITCHER
-   ========================================================= */
 
 .dashboard-switcher{
   display:grid;
@@ -662,11 +603,6 @@ body::-webkit-scrollbar-thumb{
       #d7a63e
     );
 }
-
-
-/* =========================================================
-   STANDARD SECTION
-   ========================================================= */
 
 .section{
   position:relative;
@@ -759,11 +695,6 @@ body::-webkit-scrollbar-thumb{
   text-transform:uppercase;
 }
 
-
-/* =========================================================
-   LIVE DOT
-   ========================================================= */
-
 .live-dot{
   display:inline-flex;
 
@@ -797,7 +728,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes pulseDot{
-
   70%{
     box-shadow:
       0 0 0 7px
@@ -809,13 +739,7 @@ body::-webkit-scrollbar-thumb{
       0 0 0 0
       rgba(105,183,255,0);
   }
-
 }
-
-
-/* =========================================================
-   QUICK LINKS
-   ========================================================= */
 
 .quick-links{
   display:grid;
@@ -871,11 +795,6 @@ body::-webkit-scrollbar-thumb{
   font-size:12px;
   font-weight:900;
 }
-
-
-/* =========================================================
-   ANNOUNCEMENTS
-   ========================================================= */
 
 .announcement-list{
   display:grid;
@@ -973,11 +892,6 @@ body::-webkit-scrollbar-thumb{
   font-weight:900;
 }
 
-
-/* =========================================================
-   EVENTS
-   ========================================================= */
-
 .events{
   display:grid;
   gap:7px;
@@ -1058,11 +972,6 @@ body::-webkit-scrollbar-thumb{
   font-size:11px;
 }
 
-
-/* =========================================================
-   ART BOARDS
-   ========================================================= */
-
 .members-showcase{
   display:grid;
 
@@ -1106,11 +1015,6 @@ body::-webkit-scrollbar-thumb{
   user-select:none;
 }
 
-
-/* =========================================================
-   NEW MEMBERS
-   ========================================================= */
-
 .new-members-overlay{
   position:absolute;
 
@@ -1128,6 +1032,10 @@ body::-webkit-scrollbar-thumb{
 
   display:block;
 
+  color:#07172b;
+
+  text-decoration:none;
+
   pointer-events:none;
 }
 
@@ -1135,7 +1043,7 @@ body::-webkit-scrollbar-thumb{
   position:absolute;
 
   width:6.1%;
-  aspect-ratio:1/1;
+  aspect-ratio:1 / 1;
 
   border-radius:50%;
 
@@ -1152,6 +1060,20 @@ body::-webkit-scrollbar-thumb{
     rgba(0,0,0,.3);
 
   pointer-events:auto;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.new-member-avatar:hover{
+  transform:scale(1.08);
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(255,214,107,.55)
+    );
 }
 
 .new-member-username{
@@ -1176,12 +1098,13 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   overflow:hidden;
-
   text-overflow:ellipsis;
 
   pointer-events:auto;
 
-  text-decoration:none;
+  text-shadow:
+    0 1px 0
+    rgba(255,255,255,.55);
 }
 
 .new-member-rating{
@@ -1206,8 +1129,6 @@ body::-webkit-scrollbar-thumb{
   white-space:nowrap;
 
   pointer-events:auto;
-
-  text-decoration:none;
 }
 
 .new-member-title{
@@ -1242,12 +1163,7 @@ body::-webkit-scrollbar-thumb{
   font-weight:950;
 
   pointer-events:auto;
-
-  text-decoration:none;
 }
-
-
-/* SLOT 1 */
 
 .new-member-slot.slot-1
 .new-member-avatar{
@@ -1270,9 +1186,6 @@ body::-webkit-scrollbar-thumb{
   top:45.4%;
 }
 
-
-/* SLOT 2 */
-
 .new-member-slot.slot-2
 .new-member-avatar{
   left:22.45%;
@@ -1293,9 +1206,6 @@ body::-webkit-scrollbar-thumb{
 .new-member-title{
   top:54.1%;
 }
-
-
-/* SLOT 3 */
 
 .new-member-slot.slot-3
 .new-member-avatar{
@@ -1318,9 +1228,6 @@ body::-webkit-scrollbar-thumb{
   top:62.8%;
 }
 
-
-/* SLOT 4 */
-
 .new-member-slot.slot-4
 .new-member-avatar{
   left:22.45%;
@@ -1342,9 +1249,6 @@ body::-webkit-scrollbar-thumb{
   top:71.5%;
 }
 
-
-/* SLOT 5 */
-
 .new-member-slot.slot-5
 .new-member-avatar{
   left:22.45%;
@@ -1365,11 +1269,6 @@ body::-webkit-scrollbar-thumb{
 .new-member-title{
   top:80.2%;
 }
-
-
-/* =========================================================
-   TITLED PLAYERS
-   ========================================================= */
 
 .titled-members-overlay{
   position:absolute;
@@ -1503,11 +1402,6 @@ body::-webkit-scrollbar-thumb{
   font-weight:950;
 }
 
-
-/* =========================================================
-   LOADING
-   ========================================================= */
-
 .art-board-loading{
   position:absolute;
 
@@ -1550,11 +1444,6 @@ body::-webkit-scrollbar-thumb{
   font-size:12px;
   font-weight:950;
 }
-
-
-/* =========================================================
-   RULES
-   ========================================================= */
 
 .rules-window{
   position:relative;
@@ -1631,12 +1520,10 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes rulesScroll{
-
   to{
     transform:
       translateY(-50%);
   }
-
 }
 
 .rule{
@@ -1689,11 +1576,6 @@ body::-webkit-scrollbar-thumb{
   font-size:10px;
   font-weight:950;
 }
-
-
-/* =========================================================
-   STAFF
-   ========================================================= */
 
 .staff-hero{
   position:relative;
@@ -1936,11 +1818,6 @@ body::-webkit-scrollbar-thumb{
     );
 }
 
-
-/* =========================================================
-   TOURNAMENT
-   ========================================================= */
-
 .tournament-hero{
   position:relative;
 
@@ -2135,19 +2012,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes justiceFloat{
-
   50%{
     transform:
       translateY(-6px)
       rotate(.2deg);
   }
-
 }
-
-
-/* =========================================================
-   CHAMPIONS
-   ========================================================= */
 
 .champions-stage{
   position:relative;
@@ -2265,29 +2135,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .podium-placeholder-avatar{
-  display:grid;
-
-  place-items:center;
-
-  background:
-    radial-gradient(
-      circle,
-      #183c69,
-      #061326
-    );
-
-  border:
-    3px dashed
-    rgba(255,255,255,.5);
-
-  color:#ffd66b;
-
-  font-size:
-    clamp(
-      20px,
-      5vw,
-      38px
-    );
+  background:transparent;
 }
 
 .winner-name{
@@ -2356,11 +2204,6 @@ body::-webkit-scrollbar-thumb{
   font-weight:900;
 }
 
-
-/* =========================================================
-   ARCHIVE
-   ========================================================= */
-
 .archive{
   display:grid;
 
@@ -2415,11 +2258,6 @@ body::-webkit-scrollbar-thumb{
   font-weight:950;
 }
 
-
-/* =========================================================
-   MISC
-   ========================================================= */
-
 .skeleton{
   height:56px;
 
@@ -2444,12 +2282,10 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes shimmer{
-
   to{
     background-position:
       -220% 0;
   }
-
 }
 
 .empty{
@@ -2474,11 +2310,6 @@ body::-webkit-scrollbar-thumb{
 
   font-size:10px;
 }
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media(max-width:430px){
 
@@ -2649,7 +2480,6 @@ body::-webkit-scrollbar-thumb{
 
 }
 
-
 @media(max-width:340px){
 
   .dashboard-btn{
@@ -2671,9 +2501,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 </style>
-
 </head>
-
 
 <body>
 
@@ -2686,7 +2514,6 @@ body::-webkit-scrollbar-thumb{
   id="ambient">
 </div>
 
-
 <div class="viewport">
 
 <div
@@ -2694,12 +2521,9 @@ body::-webkit-scrollbar-thumb{
   id="track">
 
 
-<!-- ======================================================
-     HOME
-     ====================================================== -->
+<!-- HOME -->
 
 <section class="page">
-
 
 <section class="hero">
 
@@ -2709,7 +2533,6 @@ body::-webkit-scrollbar-thumb{
 
   <div class="orbit two"></div>
 
-
   <div class="logo-stage">
 
     <img
@@ -2718,7 +2541,6 @@ body::-webkit-scrollbar-thumb{
       alt="And Chess For All">
 
   </div>
-
 
   <div class="hero-copy">
 
@@ -2730,7 +2552,6 @@ body::-webkit-scrollbar-thumb{
 
     </div>
 
-
     <div
       class="clock"
       id="clock">
@@ -2738,7 +2559,6 @@ body::-webkit-scrollbar-thumb{
       --:--:--
 
     </div>
-
 
     <div
       class="date"
@@ -2751,32 +2571,25 @@ body::-webkit-scrollbar-thumb{
 
 
 <nav
-  class="dashboard-switcher">
+  class="dashboard-switcher"
+  aria-label="ACFA dashboards">
 
   <button
     class="dashboard-btn active"
     data-dashboard="home">
-
     Home
-
   </button>
-
 
   <button
     class="dashboard-btn"
     data-dashboard="tournaments">
-
     Tournaments
-
   </button>
-
 
   <button
     class="dashboard-btn"
     data-dashboard="staff">
-
     Staff
-
   </button>
 
 </nav>
@@ -2799,7 +2612,6 @@ body::-webkit-scrollbar-thumb{
     </div>
 
   </div>
-
 
   <div
     class="quick-links"
@@ -2831,13 +2643,9 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
-
   <div
     class="announcement-list"
     id="announcementBoard">
-
-    <div class="skeleton"></div>
-
   </div>
 
 </section>
@@ -2857,20 +2665,13 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
-
   <div
     class="events"
     id="events">
-
-    <div class="skeleton"></div>
-
   </div>
 
 </section>
 
-
-
-<!-- NEW MEMBERS -->
 
 <div class="members-showcase">
 
@@ -2881,7 +2682,6 @@ body::-webkit-scrollbar-thumb{
     class="board-art"
     src="./assets/acfa-new-members-board.PNG"
     alt="ACFA New Members">
-
 
   <div
     class="new-members-overlay"
@@ -2917,16 +2717,12 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
-
-<!-- TITLED PLAYERS -->
-
 <section class="art-board">
 
   <img
     class="board-art"
     src="./assets/acfa-titled-members-board.PNG"
     alt="ACFA Titled Players">
-
 
   <div
     class="titled-members-overlay"
@@ -2950,9 +2746,6 @@ body::-webkit-scrollbar-thumb{
 </div>
 
 
-
-<!-- RULES -->
-
 <section class="section">
 
   <div class="section-head">
@@ -2961,12 +2754,11 @@ body::-webkit-scrollbar-thumb{
       Club Rules
     </h2>
 
-    <span class="event-meta">
+    <span class="meta">
       Hover to pause
     </span>
 
   </div>
-
 
   <div class="rules-window">
 
@@ -2988,45 +2780,33 @@ body::-webkit-scrollbar-thumb{
 
 </div>
 
-
 </section>
 
 
-
-<!-- ======================================================
-     TOURNAMENT
-     ====================================================== -->
+<!-- TOURNAMENTS -->
 
 <section class="page">
 
-
 <nav
-  class="dashboard-switcher">
+  class="dashboard-switcher"
+  aria-label="ACFA dashboards">
 
   <button
     class="dashboard-btn"
     data-dashboard="home">
-
     Home
-
   </button>
-
 
   <button
     class="dashboard-btn active"
     data-dashboard="tournaments">
-
     Tournaments
-
   </button>
-
 
   <button
     class="dashboard-btn"
     data-dashboard="staff">
-
     Staff
-
   </button>
 
 </nav>
@@ -3034,135 +2814,96 @@ body::-webkit-scrollbar-thumb{
 
 <section class="tournament-hero">
 
+  <div class="tournament-copy">
 
-<div class="tournament-copy">
+    <div class="eyebrow">
+      ACFA Seasonal Championships
+    </div>
 
-  <div class="eyebrow">
-    ACFA Seasonal Championships
-  </div>
+    <h1
+      class="season-title"
+      id="seasonTitle">
+      Fall 2026
+    </h1>
 
+    <span
+      class="status"
+      id="seasonStatus">
+      Planning
+    </span>
 
-  <h1
-    class="season-title"
-    id="seasonTitle">
+    <div class="facts">
 
-    Loading...
+      <div class="fact">
+        <b>Registration</b>
+        <span id="registrationDeadline">
+          TBA
+        </span>
+      </div>
 
-  </h1>
+      <div class="fact">
+        <b>Starts</b>
+        <span id="startDate">
+          TBA
+        </span>
+      </div>
 
+      <div class="fact">
+        <b>Ends</b>
+        <span id="endDate">
+          TBA
+        </span>
+      </div>
 
-  <span
-    class="status"
-    id="seasonStatus">
-
-    Loading
-
-  </span>
-
-
-  <div class="facts">
-
-
-    <div class="fact">
-
-      <b>
-        Registration
-      </b>
-
-      <span id="registrationDeadline">
-        Loading...
-      </span>
+      <div class="fact">
+        <b>Format</b>
+        <span id="format">
+          Seasonal Championship
+        </span>
+      </div>
 
     </div>
 
+    <div class="actions">
 
-    <div class="fact">
+      <a
+        class="action"
+        id="eventBtn"
+        target="_blank"
+        rel="noopener"
+        style="display:none">
 
-      <b>
-        Starts
-      </b>
+        Open Tournament
 
-      <span id="startDate">
-        Loading...
-      </span>
+      </a>
 
-    </div>
+      <a
+        class="action"
+        id="detailsBtn"
+        target="_blank"
+        rel="noopener"
+        style="display:none">
 
+        Event Details
 
-    <div class="fact">
-
-      <b>
-        Ends
-      </b>
-
-      <span id="endDate">
-        Loading...
-      </span>
-
-    </div>
-
-
-    <div class="fact">
-
-      <b>
-        Format
-      </b>
-
-      <span id="format">
-        Loading...
-      </span>
+      </a>
 
     </div>
-
 
   </div>
 
 
-  <div class="actions">
+  <div class="justice-wrap">
 
-    <a
-      class="action"
-      id="eventBtn"
-      target="_blank"
-      rel="noopener"
-      style="display:none">
-
-      Open Tournament
-
-    </a>
-
-
-    <a
-      class="action"
-      id="detailsBtn"
-      target="_blank"
-      rel="noopener"
-      style="display:none">
-
-      Event Details
-
-    </a>
+    <img
+      class="justice"
+      src="./assets/lady-justice.png"
+      alt="ACFA Lady Justice">
 
   </div>
-
-</div>
-
-
-<div class="justice-wrap">
-
-  <img
-    class="justice"
-    src="./assets/lady-justice.png"
-    alt="ACFA Lady Justice">
-
-</div>
-
 
 </section>
 
-
-
-<!-- CHAMPIONS -->
 
 <section class="section">
 
@@ -3172,12 +2913,11 @@ body::-webkit-scrollbar-thumb{
       Season Champions
     </h2>
 
-    <span class="event-meta">
+    <span class="meta">
       Latest Three
     </span>
 
   </div>
-
 
   <div class="champions-stage">
 
@@ -3185,7 +2925,6 @@ body::-webkit-scrollbar-thumb{
       class="champions-podium-art"
       src="./assets/acfa-champions-podium.PNG"
       alt="ACFA Season Champions Podium">
-
 
     <div
       class="champions-overlay"
@@ -3205,12 +2944,11 @@ body::-webkit-scrollbar-thumb{
       Champions Archive
     </h2>
 
-    <span class="event-meta">
+    <span class="meta">
       All Seasons
     </span>
 
   </div>
-
 
   <div
     class="archive"
@@ -3219,45 +2957,33 @@ body::-webkit-scrollbar-thumb{
 
 </section>
 
-
 </section>
 
 
-
-<!-- ======================================================
-     STAFF
-     ====================================================== -->
+<!-- STAFF -->
 
 <section class="page">
 
-
 <nav
-  class="dashboard-switcher">
+  class="dashboard-switcher"
+  aria-label="ACFA dashboards">
 
   <button
     class="dashboard-btn"
     data-dashboard="home">
-
     Home
-
   </button>
-
 
   <button
     class="dashboard-btn"
     data-dashboard="tournaments">
-
     Tournaments
-
   </button>
-
 
   <button
     class="dashboard-btn active"
     data-dashboard="staff">
-
     Staff
-
   </button>
 
 </nav>
@@ -3305,7 +3031,6 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
-
   <div
     class="staff-grid"
     id="staffBoard">
@@ -3317,7 +3042,6 @@ body::-webkit-scrollbar-thumb{
   </div>
 
 </section>
-
 
 </section>
 
@@ -3331,7 +3055,6 @@ body::-webkit-scrollbar-thumb{
 </div>
 
 
-
 <script>
 
 /* =========================================================
@@ -3342,12 +3065,20 @@ const API =
   "https://api.chess.com/pub";
 
 
+const FALLBACK =
+  "./assets/acfa-logo.png";
+
+
 const DATA_URL =
   "./data.json";
 
 
-const FALLBACK =
-  "./assets/acfa-logo.png";
+let DATA =
+  null;
+
+
+let CLUB_MEMBERS =
+  [];
 
 
 const TITLE_CODES = [
@@ -3387,15 +3118,7 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v30";
-
-
-let DATA =
-  null;
-
-
-let CLUB_MEMBERS =
-  [];
+  "acfa-dashboard-v31";
 
 
 const $ =
@@ -3412,6 +3135,49 @@ const $$ =
         selector
       )
     ];
+
+
+/* =========================================================
+   LOAD DATA.JSON
+   ========================================================= */
+
+async function loadData(){
+
+  const response =
+    await fetch(
+      `${DATA_URL}?v=${Date.now()}`,
+      {
+        cache:"no-store"
+      }
+    );
+
+
+  if(!response.ok){
+
+    throw new Error(
+      `Unable to load data.json: HTTP ${response.status}`
+    );
+
+  }
+
+
+  DATA =
+    await response.json();
+
+
+  if(
+    !DATA
+    ||
+    !DATA.club
+  ){
+
+    throw new Error(
+      "data.json is missing club data."
+    );
+
+  }
+
+}
 
 
 /* =========================================================
@@ -3455,66 +3221,6 @@ function safe(
 }
 
 
-/* =========================================================
-   LOAD EXTERNAL DATA.JSON
-   ========================================================= */
-
-async function loadData(){
-
-  const response =
-    await fetch(
-
-      `${DATA_URL}?v=${Date.now()}`,
-
-      {
-        cache:"no-store"
-      }
-
-    );
-
-
-  if(!response.ok){
-
-    throw new Error(
-      `data.json returned HTTP ${response.status}`
-    );
-
-  }
-
-
-  DATA =
-    await response.json();
-
-
-  if(
-    !DATA
-    ||
-    !DATA.club
-    ||
-    !DATA.home
-    ||
-    !DATA.tournament
-  ){
-
-    throw new Error(
-      "data.json is missing required sections."
-    );
-
-  }
-
-
-  console.log(
-    "ACFA data loaded:",
-    DATA
-  );
-
-}
-
-
-/* =========================================================
-   CACHE
-   ========================================================= */
-
 function cacheGet(
   key,
   lifetime
@@ -3523,9 +3229,10 @@ function cacheGet(
   try{
 
     const raw =
-      localStorage.getItem(
-        `${CACHE_VERSION}:${key}`
-      );
+      localStorage
+        .getItem(
+          `${CACHE_VERSION}:${key}`
+        );
 
 
     if(!raw){
@@ -3534,7 +3241,9 @@ function cacheGet(
 
 
     const cached =
-      JSON.parse(raw);
+      JSON.parse(
+        raw
+      );
 
 
     if(
@@ -3544,9 +3253,7 @@ function cacheGet(
       >
       lifetime
     ){
-
       return null;
-
     }
 
 
@@ -3570,16 +3277,14 @@ function cacheSet(
 
   try{
 
-    localStorage.setItem(
-
-      `${CACHE_VERSION}:${key}`,
-
-      JSON.stringify({
-        time:Date.now(),
-        value:value
-      })
-
-    );
+    localStorage
+      .setItem(
+        `${CACHE_VERSION}:${key}`,
+        JSON.stringify({
+          time:Date.now(),
+          value:value
+        })
+      );
 
   }
 
@@ -3588,10 +3293,6 @@ function cacheSet(
 
 }
 
-
-/* =========================================================
-   FETCH
-   ========================================================= */
 
 async function fetchJSON(
   url
@@ -3637,26 +3338,35 @@ function buildParticles(){
   ){
 
     const spark =
-      document.createElement("i");
+      document.createElement(
+        "i"
+      );
 
 
-    spark.className =
+    const classes =
+      ["spark"];
+
+
+    if(
       i % 4 === 0
-        ?
-        "spark blue"
-        :
-        "spark";
+    ){
+      classes.push(
+        "blue"
+      );
+    }
 
 
     if(
       i % 10 === 0
     ){
-
-      spark.classList.add(
+      classes.push(
         "large"
       );
-
     }
+
+
+    spark.className =
+      classes.join(" ");
 
 
     spark.style.setProperty(
@@ -3715,10 +3425,8 @@ function updateClock(){
     &&
     hour < 12
   ){
-
     greeting =
       "Good Morning";
-
   }
 
   else if(
@@ -3726,10 +3434,8 @@ function updateClock(){
     &&
     hour < 17
   ){
-
     greeting =
       "Good Afternoon";
-
   }
 
   else if(
@@ -3737,10 +3443,8 @@ function updateClock(){
     &&
     hour < 21
   ){
-
     greeting =
       "Good Evening";
-
   }
 
 
@@ -3776,7 +3480,7 @@ function updateClock(){
 
 
 /* =========================================================
-   NAVIGATION
+   NAV
    ========================================================= */
 
 function setDashboard(
@@ -3794,26 +3498,20 @@ function setDashboard(
 
 
   if(
-    dashboard ===
-    "tournaments"
+    dashboard === "tournaments"
   ){
-
     track.classList.add(
       "view-tournaments"
     );
-
   }
 
 
   if(
-    dashboard ===
-    "staff"
+    dashboard === "staff"
   ){
-
     track.classList.add(
       "view-staff"
     );
-
   }
 
 
@@ -3859,7 +3557,7 @@ function niceDate(
 
 
   /*
-    Preserve manually written values like:
+    Preserve JSON values such as:
     Oct 4th
     Oct 5th
     TBD
@@ -3869,9 +3567,7 @@ function niceDate(
     !/^\d{4}-\d{2}-\d{2}$/
       .test(text)
   ){
-
     return text;
-
   }
 
 
@@ -3886,9 +3582,7 @@ function niceDate(
       date.getTime()
     )
   ){
-
     return text;
-
   }
 
 
@@ -3918,27 +3612,24 @@ function monthDay(
   }
 
 
-  const text =
-    String(value);
+  const date =
+    new Date(
+      `${value}T12:00:00`
+    );
 
 
   if(
-    !/^\d{4}-\d{2}-\d{2}$/
-      .test(text)
+    Number.isNaN(
+      date.getTime()
+    )
   ){
 
     return [
-      text,
+      value,
       ""
     ];
 
   }
-
-
-  const date =
-    new Date(
-      `${text}T12:00:00`
-    );
 
 
   return [
@@ -3966,9 +3657,7 @@ function monthDay(
 function renderQuickLinks(){
 
   const links =
-    DATA.quickLinks
-    ||
-    [];
+    DATA.quickLinks || [];
 
 
   if(
@@ -3991,56 +3680,55 @@ function renderQuickLinks(){
   $("#quickLinks")
     .innerHTML =
 
-      links.map(
-        item =>`
+      links
+        .filter(
+          item =>
+            item.url
+        )
+        .map(
+          item =>`
 
-        <a
-          class="quick-link"
+          <a
+            class="quick-link"
 
-          href="${escapeHTML(item.url || "#")}"
+            href="${escapeHTML(item.url)}"
 
-          target="_blank"
+            target="_blank"
 
-          rel="noopener">
+            rel="noopener">
 
-          <div class="quick-icon">
+            <div class="quick-icon">
+              ${escapeHTML(item.icon || "•")}
+            </div>
 
-            ${escapeHTML(item.icon || "•")}
+            <div class="quick-label">
+              ${escapeHTML(item.label || "Link")}
+            </div>
 
-          </div>
+          </a>
 
-          <div class="quick-label">
-
-            ${escapeHTML(item.label || "Link")}
-
-          </div>
-
-        </a>
-
-        `
-      )
-      .join("");
+          `
+        )
+        .join("");
 
 }
 
 
 /* =========================================================
    ANNOUNCEMENTS
-   DATA.HOME.ANNOUNCEMENTS
+   home.announcements
    ========================================================= */
 
 function renderAnnouncements(){
 
-  const announcements = [
-
-    ...(
-      DATA.home
-        ?.announcements
-      ||
-      []
-    )
-
-  ];
+  const announcements =
+    [
+      ...(
+        DATA.home?.announcements
+        ||
+        []
+      )
+    ];
 
 
   announcements.sort(
@@ -4048,9 +3736,13 @@ function renderAnnouncements(){
       a,
       b
     ) =>
-      Number(Boolean(b.pinned))
+      Number(
+        Boolean(b.pinned)
+      )
       -
-      Number(Boolean(a.pinned))
+      Number(
+        Boolean(a.pinned)
+      )
   );
 
 
@@ -4074,112 +3766,101 @@ function renderAnnouncements(){
   $("#announcementBoard")
     .innerHTML =
 
-      announcements.map(
-        announcement =>`
+      announcements
+        .map(
+          announcement =>`
 
-        <article
-          class="
-            announcement
-            ${
-              announcement.pinned
-                ?
-                "pinned"
-                :
-                ""
-            }
-          ">
-
-
-          <div class="announcement-top">
-
-            <div class="announcement-title">
-
+          <article
+            class="
+              announcement
               ${
                 announcement.pinned
                   ?
-                  `<span class="pin">★</span>`
+                  "pinned"
                   :
                   ""
               }
+            ">
 
-              ${escapeHTML(
-                announcement.title
-                ||
-                "Announcement"
-              )}
+            <div class="announcement-top">
 
-            </div>
+              <div class="announcement-title">
 
-
-            <div class="announcement-date">
-
-              ${escapeHTML(
-                announcement.date
-                ||
-                ""
-              )}
-
-            </div>
-
-          </div>
-
-
-          <div class="announcement-body">
-
-            ${escapeHTML(
-              announcement.body
-              ||
-              ""
-            )}
-
-          </div>
-
-
-          ${
-            announcement.url
-              ?
-              `
-              <a
-                class="announcement-link"
-
-                href="${escapeHTML(announcement.url)}"
-
-                target="_blank"
-
-                rel="noopener">
+                ${
+                  announcement.pinned
+                    ?
+                    `<span class="pin">★</span>`
+                    :
+                    ""
+                }
 
                 ${escapeHTML(
-                  announcement.linkText
-                  ||
-                  "Read More"
+                  announcement.title || "Announcement"
                 )}
 
-              </a>
-              `
-              :
-              ""
-          }
+              </div>
 
+              <div class="announcement-date">
 
-        </article>
+                ${escapeHTML(
+                  announcement.date || ""
+                )}
 
-        `
-      )
-      .join("");
+              </div>
+
+            </div>
+
+            <div class="announcement-body">
+
+              ${escapeHTML(
+                announcement.body || ""
+              )}
+
+            </div>
+
+            ${
+              announcement.url
+                ?
+                `
+                <a
+                  class="announcement-link"
+
+                  href="${escapeHTML(announcement.url)}"
+
+                  target="_blank"
+
+                  rel="noopener">
+
+                  ${escapeHTML(
+                    announcement.linkText
+                    ||
+                    "Read More"
+                  )}
+
+                </a>
+                `
+                :
+                ""
+            }
+
+          </article>
+
+          `
+        )
+        .join("");
 
 }
 
 
 /* =========================================================
    EVENTS
-   DATA.HOME.EVENTS
+   home.events
    ========================================================= */
 
 function renderEvents(){
 
   const events =
-    DATA.home
-      ?.events
+    DATA.home?.events
     ||
     [];
 
@@ -4204,111 +3885,99 @@ function renderEvents(){
   $("#events")
     .innerHTML =
 
-      events.map(
-        event =>{
+      events
+        .map(
+          event =>{
 
-          const [
-            month,
-            day
-          ] =
-            monthDay(
-              event.date
-            );
+            const [
+              month,
+              day
+            ] =
+              monthDay(
+                event.date
+              );
 
 
-          const hasURL =
-            Boolean(
+            const tag =
               event.url
-            );
+                ?
+                "a"
+                :
+                "div";
 
 
-          const tag =
-            hasURL
-              ?
-              "a"
-              :
-              "div";
+            const href =
+              event.url
+                ?
+                `
+                href="${escapeHTML(event.url)}"
+                target="_blank"
+                rel="noopener"
+                `
+                :
+                "";
 
 
-          const link =
-            hasURL
-              ?
-              `
-              href="${escapeHTML(event.url)}"
-              target="_blank"
-              rel="noopener"
-              `
-              :
-              "";
+            return `
 
+            <${tag}
+              class="event"
+              ${href}>
 
-          return `
+              <div class="event-date">
 
-          <${tag}
-            class="event"
-            ${link}>
+                ${escapeHTML(month)}
 
-            <div class="event-date">
-
-              ${escapeHTML(month)}
-
-              ${
-                day
-                  ?
-                  `<br>${escapeHTML(day)}`
-                  :
-                  ""
-              }
-
-            </div>
-
-
-            <div class="event-main">
-
-              <div class="event-title">
-
-                ${escapeHTML(
-                  event.title
-                  ||
-                  "Club Event"
-                )}
+                ${
+                  day
+                    ?
+                    `<br>${escapeHTML(day)}`
+                    :
+                    ""
+                }
 
               </div>
 
+              <div class="event-main">
 
-              <div class="event-meta">
+                <div class="event-title">
 
-                ${escapeHTML(
-                  event.status
-                  ||
-                  ""
-                )}
+                  ${escapeHTML(
+                    event.title || "Club Event"
+                  )}
+
+                </div>
+
+                <div class="event-meta">
+
+                  ${escapeHTML(
+                    event.status || ""
+                  )}
+
+                </div>
 
               </div>
 
-            </div>
+            </${tag}>
 
-          </${tag}>
+            `;
 
-          `;
-
-        }
-      )
-      .join("");
+          }
+        )
+        .join("");
 
 }
 
 
 /* =========================================================
    RULES
-   DATA.HOME.RULES
+   home.rules
    ========================================================= */
 
 function renderRules(){
 
   const rules =
-    DATA.home
-      ?.rules
+    DATA.home?.rules
     ||
     [];
 
@@ -4321,13 +3990,8 @@ function renderRules(){
       .innerHTML =
         `
         <div class="rule">
-
           <i>1</i>
-
-          <span>
-            No rules configured.
-          </span>
-
+          <span>No rules configured.</span>
         </div>
         `;
 
@@ -4362,16 +4026,13 @@ function renderRules(){
 
   $("#rulesTrack")
     .innerHTML =
-      html
-      +
-      html;
+      html + html;
 
 }
 
 
 /* =========================================================
    TOURNAMENT
-   DATA.TOURNAMENT
    ========================================================= */
 
 function renderTournament(){
@@ -4384,13 +4045,17 @@ function renderTournament(){
 
   $("#seasonTitle")
     .textContent =
-      `${safe(
+      `
+      ${safe(
         tournament.activeSeason,
         "Season"
-      )} ${safe(
+      )}
+      ${safe(
         tournament.year,
         ""
-      )}`.trim();
+      )}
+      `
+      .trim();
 
 
   $("#seasonStatus")
@@ -4430,32 +4095,27 @@ function renderTournament(){
       );
 
 
-  const eventBtn =
-    $("#eventBtn");
+  $("#eventBtn")
+    .style.display =
+      "none";
 
 
-  const detailsBtn =
-    $("#detailsBtn");
-
-
-  eventBtn.style.display =
-    "none";
-
-
-  detailsBtn.style.display =
-    "none";
+  $("#detailsBtn")
+    .style.display =
+      "none";
 
 
   if(
     tournament.eventUrl
   ){
 
-    eventBtn.href =
+    $("#eventBtn").href =
       tournament.eventUrl;
 
 
-    eventBtn.style.display =
-      "inline-flex";
+    $("#eventBtn")
+      .style.display =
+        "inline-flex";
 
   }
 
@@ -4464,12 +4124,13 @@ function renderTournament(){
     tournament.detailsUrl
   ){
 
-    detailsBtn.href =
+    $("#detailsBtn").href =
       tournament.detailsUrl;
 
 
-    detailsBtn.style.display =
-      "inline-flex";
+    $("#detailsBtn")
+      .style.display =
+        "inline-flex";
 
   }
 
@@ -4477,7 +4138,7 @@ function renderTournament(){
 
 
 /* =========================================================
-   CHESS.COM API
+   API
    ========================================================= */
 
 async function getClubMembers(){
@@ -4500,7 +4161,7 @@ async function getClubMembers(){
 
   const response =
     await fetchJSON(
-      `${API}/club/${encodeURIComponent(DATA.club.slug)}/members`
+      `${API}/club/${DATA.club.slug}/members`
     );
 
 
@@ -4535,9 +4196,7 @@ async function getClubMembers(){
         normalized
       )
     ){
-
       continue;
-
     }
 
 
@@ -4699,14 +4358,8 @@ function highestRating(
       ]?.last?.rating;
 
 
-    if(
-      !Number.isFinite(
-        rating
-      )
-    ){
-
+    if(!rating){
       continue;
-
     }
 
 
@@ -4732,7 +4385,7 @@ function highestRating(
 
 
 /* =========================================================
-   LIMITED CONCURRENCY
+   CONCURRENCY
    ========================================================= */
 
 async function mapLimited(
@@ -4762,9 +4415,7 @@ async function mapLimited(
       if(
         current >= items.length
       ){
-
         return;
-
       }
 
 
@@ -4793,7 +4444,6 @@ async function mapLimited(
   await Promise.all(
 
     Array.from(
-
       {
         length:
           Math.min(
@@ -4801,10 +4451,8 @@ async function mapLimited(
             items.length
           )
       },
-
       () =>
         runner()
-
     )
 
   );
@@ -4821,26 +4469,23 @@ async function mapLimited(
 
 async function renderNewestMembers(){
 
-  const newest = [
-
-    ...CLUB_MEMBERS
-
-  ]
-
-  .sort(
-    (
-      a,
-      b
-    ) =>
-      (b.joined || 0)
-      -
-      (a.joined || 0)
-  )
-
-  .slice(
-    0,
-    5
-  );
+  const newest =
+    [
+      ...CLUB_MEMBERS
+    ]
+    .sort(
+      (
+        a,
+        b
+      ) =>
+        (b.joined || 0)
+        -
+        (a.joined || 0)
+    )
+    .slice(
+      0,
+      5
+    );
 
 
   const players =
@@ -4914,7 +4559,7 @@ async function renderNewestMembers(){
         ) =>{
 
           const slot =
-            index+1;
+            index + 1;
 
 
           const profileURL =
@@ -5025,7 +4670,7 @@ async function renderNewestMembers(){
 
 
 /* =========================================================
-   TITLED MEMBERS
+   TITLED PLAYERS
    ========================================================= */
 
 async function renderTitledMembers(){
@@ -5100,6 +4745,7 @@ async function renderTitledMembers(){
 
             return {
               title:title,
+
               players:
                 result.players
                 ||
@@ -5188,9 +4834,7 @@ async function renderTitledMembers(){
         if(
           !profile?.title
         ){
-
           return null;
-
         }
 
 
@@ -5229,11 +4873,10 @@ async function renderTitledMembers(){
   }
 
 
-  let players = [
-
-    ...found.values()
-
-  ];
+  let players =
+    [
+      ...found.values()
+    ];
 
 
   players =
@@ -5314,28 +4957,29 @@ async function renderTitledMembers(){
     new Map();
 
 
-  players.forEach(
-    player =>{
+  for(
+    const player
+    of
+    players
+  ){
 
-      finalMap.set(
+    finalMap.set(
 
-        player.username
-          .trim()
-          .toLowerCase(),
+      player.username
+        .trim()
+        .toLowerCase(),
 
-        player
+      player
 
-      );
+    );
 
-    }
-  );
+  }
 
 
-  players = [
-
-    ...finalMap.values()
-
-  ];
+  players =
+    [
+      ...finalMap.values()
+    ];
 
 
   players.sort(
@@ -5344,23 +4988,27 @@ async function renderTitledMembers(){
       b
     ) =>{
 
-      const rankA =
-        TITLE_RANK[a.title]
+      const aRank =
+        TITLE_RANK[
+          a.title
+        ]
         ||
         0;
 
 
-      const rankB =
-        TITLE_RANK[b.title]
+      const bRank =
+        TITLE_RANK[
+          b.title
+        ]
         ||
         0;
 
 
       if(
-        rankB !== rankA
+        bRank !== aRank
       ){
 
-        return rankB-rankA;
+        return bRank - aRank;
 
       }
 
@@ -5468,7 +5116,6 @@ async function renderTitledMembers(){
 
           </span>
 
-
         </a>
 
         `
@@ -5481,26 +5128,6 @@ async function renderTitledMembers(){
 /* =========================================================
    STAFF
    ========================================================= */
-
-function staffPriority(
-  role
-){
-
-  const priority = {
-    "Owner":100,
-    "Co-Owner":95,
-    "Head of Staff":90,
-    "Super Admin":80,
-    "Admin":70,
-    "Coordinator":60,
-    "Mascot":50
-  };
-
-
-  return priority[role] || 0;
-
-}
-
 
 function roleClass(
   role
@@ -5520,32 +5147,47 @@ function roleClass(
 }
 
 
+function staffPriority(
+  role
+){
+
+  const priority = {
+    "Owner":100,
+    "Co-Owner":95,
+    "Head of Staff":90,
+    "Super Admin":80,
+    "Admin":70,
+    "Coordinator":60,
+    "Mascot":50
+  };
+
+
+  return priority[
+    role
+  ] || 0;
+
+}
+
+
 async function renderStaff(){
 
-  const staff = [
-
-    ...(
-      DATA.staff
-      ||
-      []
-    )
-
-  ];
-
-
-  staff.sort(
-    (
-      a,
-      b
-    ) =>
-      staffPriority(
-        b.role
-      )
-      -
-      staffPriority(
-        a.role
-      )
-  );
+  const staff =
+    [
+      ...(DATA.staff || [])
+    ]
+    .sort(
+      (
+        a,
+        b
+      ) =>
+        staffPriority(
+          b.role
+        )
+        -
+        staffPriority(
+          a.role
+        )
+    );
 
 
   if(
@@ -5569,7 +5211,7 @@ async function renderStaff(){
     await Promise.all(
 
       staff.map(
-        async member =>{
+        async staffMember =>{
 
           let profile =
             null;
@@ -5581,21 +5223,23 @@ async function renderStaff(){
 
           try{
 
-            [
-              profile,
-              stats
-            ] =
-              await Promise.all([
+            profile =
+              await getProfile(
+                staffMember.username
+              );
 
-                getProfile(
-                  member.username
-                ),
+          }
 
-                getStats(
-                  member.username
-                )
+          catch{
+          }
 
-              ]);
+
+          try{
+
+            stats =
+              await getStats(
+                staffMember.username
+              );
 
           }
 
@@ -5609,15 +5253,19 @@ async function renderStaff(){
             );
 
 
+          const isHead =
+            staffMember.role
+            ===
+            "Head of Staff";
+
+
           return `
 
           <a
             class="
               staff-card
               ${
-                member.role
-                ===
-                "Head of Staff"
+                isHead
                   ?
                   "head-staff"
                   :
@@ -5625,7 +5273,7 @@ async function renderStaff(){
               }
             "
 
-            href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
+            href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
 
             target="_blank"
 
@@ -5652,6 +5300,7 @@ async function renderStaff(){
 
             <div class="staff-main">
 
+
               <div class="staff-name">
 
                 ${
@@ -5662,18 +5311,20 @@ async function renderStaff(){
                     ""
                 }
 
-                ${escapeHTML(
-                  profile?.username
-                  ||
-                  member.username
-                )}
+                ${
+                  escapeHTML(
+                    profile?.username
+                    ||
+                    staffMember.username
+                  )
+                }
 
               </div>
 
 
               <div class="staff-role">
 
-                ${escapeHTML(member.role)}
+                ${escapeHTML(staffMember.role)}
 
               </div>
 
@@ -5698,25 +5349,25 @@ async function renderStaff(){
               <span
                 class="
                   role-badge
-                  ${roleClass(member.role)}
+                  ${roleClass(staffMember.role)}
                 ">
 
-                ${escapeHTML(member.role)}
+                ${escapeHTML(staffMember.role)}
 
               </span>
 
 
               ${
-                member.secondaryRole
+                staffMember.secondaryRole
                   ?
                   `
                   <span
                     class="
                       role-badge
-                      ${roleClass(member.secondaryRole)}
+                      ${roleClass(staffMember.secondaryRole)}
                     ">
 
-                    ${escapeHTML(member.secondaryRole)}
+                    ${escapeHTML(staffMember.secondaryRole)}
 
                   </span>
                   `
@@ -5725,7 +5376,6 @@ async function renderStaff(){
               }
 
             </div>
-
 
           </a>
 
@@ -5790,12 +5440,17 @@ async function hydrateChampion(
 
 
   return {
+
     ...champion,
-    profile:profile,
+
+    profile:
+      profile,
+
     rating:
       highestRating(
         stats
       )
+
   };
 
 }
@@ -5805,7 +5460,8 @@ function emptyWinner(
   placement
 ){
 
-  const className =
+  const positionClass =
+
     placement === 1
       ?
       "podium-first"
@@ -5822,19 +5478,28 @@ function emptyWinner(
   <div
     class="
       podium-winner
-      ${className}
+      ${positionClass}
     ">
 
     <div class="podium-placeholder-avatar">
     </div>
 
-    <div class="winner-name">
-      Awaiting Champion
-    </div>
-
   </div>
 
   `;
+
+}
+
+
+function renderEmptyPodium(){
+
+  $("#podium")
+    .innerHTML =
+      `
+      ${emptyWinner(2)}
+      ${emptyWinner(1)}
+      ${emptyWinner(3)}
+      `;
 
 }
 
@@ -5848,18 +5513,12 @@ async function renderChampions(){
     [];
 
 
+  renderEmptyPodium();
+
+
   if(
     !champions.length
   ){
-
-    $("#podium")
-      .innerHTML =
-        `
-        ${emptyWinner(2)}
-        ${emptyWinner(1)}
-        ${emptyWinner(3)}
-        `;
-
 
     $("#archive")
       .innerHTML =
@@ -5868,7 +5527,6 @@ async function renderChampions(){
           The first ACFA seasonal champion will appear here.
         </div>
         `;
-
 
     return;
 
@@ -5882,79 +5540,95 @@ async function renderChampions(){
   };
 
 
-  const sorted = [
+  const sorted =
+    [
+      ...champions
+    ]
+    .sort(
+      (
+        a,
+        b
+      ) =>{
 
-    ...champions
+        if(
+          Number(b.year)
+          !==
+          Number(a.year)
+        ){
 
-  ];
+          return (
+            Number(b.year)
+            -
+            Number(a.year)
+          );
 
+        }
 
-  sorted.sort(
-    (
-      a,
-      b
-    ) =>{
-
-      if(
-        Number(b.year)
-        !==
-        Number(a.year)
-      ){
 
         return (
-          Number(b.year)
+          (
+            seasonRank[b.season]
+            ||
+            0
+          )
           -
-          Number(a.year)
+          (
+            seasonRank[a.season]
+            ||
+            0
+          )
         );
 
       }
-
-
-      return (
-        (
-          seasonRank[b.season]
-          ||
-          0
-        )
-        -
-        (
-          seasonRank[a.season]
-          ||
-          0
-        )
-      );
-
-    }
-  );
+    );
 
 
   const podiumOrder = [
+
     {
       placement:2,
-      champion:sorted[1] || null
+      champion:
+        sorted[1]
+        ||
+        null
     },
+
     {
       placement:1,
-      champion:sorted[0] || null
+      champion:
+        sorted[0]
+        ||
+        null
     },
+
     {
       placement:3,
-      champion:sorted[2] || null
+      champion:
+        sorted[2]
+        ||
+        null
     }
+
   ];
 
 
-  const podiumData =
+  const hydrated =
     await Promise.all(
 
       podiumOrder.map(
+
         async item =>({
-          placement:item.placement,
+
+          placement:
+            item.placement,
+
           champion:
             await hydrateChampion(
               item.champion
             )
+
         })
+
       )
 
     );
@@ -5963,7 +5637,7 @@ async function renderChampions(){
   $("#podium")
     .innerHTML =
 
-      podiumData.map(
+      hydrated.map(
         item =>{
 
           const champion =
@@ -5979,7 +5653,8 @@ async function renderChampions(){
           }
 
 
-          const className =
+          const positionClass =
+
             item.placement === 1
               ?
               "podium-first"
@@ -5996,7 +5671,7 @@ async function renderChampions(){
           <a
             class="
               podium-winner
-              ${className}
+              ${positionClass}
             "
 
             href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
@@ -6048,7 +5723,6 @@ async function renderChampions(){
               }
 
             </div>
-
 
           </a>
 
@@ -6134,7 +5808,6 @@ async function renderChampions(){
 
           </div>
 
-
         </a>
 
         `
@@ -6145,7 +5818,7 @@ async function renderChampions(){
 
 
 /* =========================================================
-   INITIALIZE PAGE AFTER DATA.JSON LOADS
+   INITIALIZE
    ========================================================= */
 
 async function initialize(){
@@ -6161,13 +5834,9 @@ async function initialize(){
   renderTournament();
 
 
-  await Promise.allSettled([
+  renderChampions();
 
-    renderStaff(),
-
-    renderChampions()
-
-  ]);
+  renderStaff();
 
 
   try{
@@ -6176,7 +5845,7 @@ async function initialize(){
       await getClubMembers();
 
 
-    await Promise.allSettled([
+    await Promise.all([
 
       renderNewestMembers(),
 
@@ -6188,8 +5857,8 @@ async function initialize(){
 
   catch(error){
 
-    console.error(
-      "Chess.com club-member API failed:",
+    console.warn(
+      "Chess.com member API error:",
       error
     );
 
@@ -6224,7 +5893,6 @@ async function start(){
 
   buildParticles();
 
-
   updateClock();
 
 
@@ -6253,10 +5921,8 @@ async function start(){
   try{
 
     /*
-      THIS MUST FINISH FIRST.
-
-      Nothing that depends on DATA runs until
-      the external data.json has loaded.
+      data.json MUST load before anything
+      tries to read DATA.
     */
 
     await loadData();
@@ -6269,16 +5935,25 @@ async function start(){
   catch(error){
 
     console.error(
-      "ACFA data.json failed to load:",
+      "ACFA initialization failed:",
       error
     );
+
+
+    $("#quickLinks")
+      .innerHTML =
+        `
+        <div class="empty">
+          Could not load ACFA data.
+        </div>
+        `;
 
 
     $("#announcementBoard")
       .innerHTML =
         `
         <div class="empty">
-          data.json could not be loaded.
+          Could not load ACFA data.
         </div>
         `;
 
@@ -6287,7 +5962,7 @@ async function start(){
       .innerHTML =
         `
         <div class="empty">
-          data.json could not be loaded.
+          Could not load ACFA data.
         </div>
         `;
 
@@ -6300,41 +5975,11 @@ async function start(){
           <i>!</i>
 
           <span>
-            data.json could not be loaded.
+            Could not load data.json.
           </span>
 
         </div>
         `;
-
-
-    $("#seasonTitle")
-      .textContent =
-        "Data unavailable";
-
-
-    $("#seasonStatus")
-      .textContent =
-        "Check data.json";
-
-
-    $("#registrationDeadline")
-      .textContent =
-        "—";
-
-
-    $("#startDate")
-      .textContent =
-        "—";
-
-
-    $("#endDate")
-      .textContent =
-        "—";
-
-
-    $("#format")
-      .textContent =
-        "—";
 
   }
 
@@ -6344,7 +5989,6 @@ async function start(){
 start();
 
 </script>
-
 
 </body>
 </html>
