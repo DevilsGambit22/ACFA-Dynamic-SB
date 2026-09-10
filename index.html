@@ -16,11 +16,6 @@
 
 <style>
 
-/* =========================================================
-   ACFA DYNAMIC SIDEBAR
-   HOME • TOURNAMENTS • STAFF
-   ========================================================= */
-
 :root{
   --black:#000000;
   --black2:#03060b;
@@ -232,6 +227,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes emberRise{
+
   0%{
     transform:
       translate3d(0,0,0)
@@ -263,6 +259,7 @@ body::-webkit-scrollbar-thumb{
 
     opacity:0;
   }
+
 }
 
 
@@ -360,6 +357,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes heroPulse{
+
   50%{
     transform:
       translate(-50%,-50%)
@@ -367,6 +365,7 @@ body::-webkit-scrollbar-thumb{
 
     opacity:.7;
   }
+
 }
 
 .orbit{
@@ -435,6 +434,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes orbitSpin{
+
   from{
     transform:
       translate(-50%,-50%)
@@ -446,6 +446,7 @@ body::-webkit-scrollbar-thumb{
       translate(-50%,-50%)
       rotate(360deg);
   }
+
 }
 
 
@@ -516,6 +517,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes logoFloat{
+
   0%,
   100%{
     transform:
@@ -528,6 +530,7 @@ body::-webkit-scrollbar-thumb{
       translateY(-7px)
       rotate(.25deg);
   }
+
 }
 
 
@@ -778,10 +781,6 @@ body::-webkit-scrollbar-thumb{
 
   background:var(--blue3);
 
-  box-shadow:
-    0 0 0 0
-    rgba(105,183,255,.65);
-
   animation:
     pulseDot
     1.9s
@@ -789,17 +788,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes pulseDot{
+
   70%{
     box-shadow:
       0 0 0 7px
       rgba(105,183,255,0);
   }
 
-  100%{
-    box-shadow:
-      0 0 0 0
-      rgba(105,183,255,0);
-  }
 }
 
 
@@ -1118,18 +1113,17 @@ body::-webkit-scrollbar-thumb{
 
   display:block;
 
-  color:#07172b;
-
-  text-decoration:none;
-
   pointer-events:none;
 }
+
+
+/* BIGGER AVATARS */
 
 .new-member-avatar{
   position:absolute;
 
-  width:6.1%;
-  aspect-ratio:1 / 1;
+  width:8.2%;
+  aspect-ratio:1/1;
 
   border-radius:50%;
 
@@ -1143,38 +1137,27 @@ body::-webkit-scrollbar-thumb{
 
   box-shadow:
     0 2px 7px
-    rgba(0,0,0,.3);
+    rgba(0,0,0,.35);
 
   pointer-events:auto;
-
-  transition:
-    transform .2s ease,
-    filter .2s ease;
 }
 
-.new-member-avatar:hover{
-  transform:scale(1.08);
 
-  filter:
-    drop-shadow(
-      0 0 7px
-      rgba(255,214,107,.55)
-    );
-}
+/* BIGGER USERNAME */
 
 .new-member-username{
   position:absolute;
 
-  left:31.2%;
-  right:13%;
+  left:32.5%;
+  right:12%;
 
   color:#0b1932;
 
   font-size:
     clamp(
-      10px,
-      2.35vw,
-      17px
+      12px,
+      2.8vw,
+      19px
     );
 
   font-weight:950;
@@ -1193,19 +1176,22 @@ body::-webkit-scrollbar-thumb{
     rgba(255,255,255,.55);
 }
 
+
+/* BIGGER RATING */
+
 .new-member-rating{
   position:absolute;
 
-  left:31.2%;
-  right:13%;
+  left:32.5%;
+  right:12%;
 
   color:#76541d;
 
   font-size:
     clamp(
-      7px,
-      1.55vw,
-      11px
+      9px,
+      2vw,
+      13px
     );
 
   font-weight:950;
@@ -1216,6 +1202,9 @@ body::-webkit-scrollbar-thumb{
 
   pointer-events:auto;
 }
+
+
+/* OPTIONAL TITLE */
 
 .new-member-title{
   position:absolute;
@@ -1252,22 +1241,24 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* SLOT 1 */
+/* =========================================================
+   NEW MEMBER POSITIONS
+   ========================================================= */
 
 .new-member-slot.slot-1
 .new-member-avatar{
-  left:22.45%;
-  top:43.35%;
+  left:21.4%;
+  top:42.75%;
 }
 
 .new-member-slot.slot-1
 .new-member-username{
-  top:43.95%;
+  top:43.75%;
 }
 
 .new-member-slot.slot-1
 .new-member-rating{
-  top:46.55%;
+  top:46.7%;
 }
 
 .new-member-slot.slot-1
@@ -1276,22 +1267,20 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* SLOT 2 */
-
 .new-member-slot.slot-2
 .new-member-avatar{
-  left:22.45%;
-  top:52.05%;
+  left:21.4%;
+  top:51.45%;
 }
 
 .new-member-slot.slot-2
 .new-member-username{
-  top:52.65%;
+  top:52.45%;
 }
 
 .new-member-slot.slot-2
 .new-member-rating{
-  top:55.25%;
+  top:55.4%;
 }
 
 .new-member-slot.slot-2
@@ -1300,22 +1289,20 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* SLOT 3 */
-
 .new-member-slot.slot-3
 .new-member-avatar{
-  left:22.45%;
-  top:60.75%;
+  left:21.4%;
+  top:60.15%;
 }
 
 .new-member-slot.slot-3
 .new-member-username{
-  top:61.35%;
+  top:61.15%;
 }
 
 .new-member-slot.slot-3
 .new-member-rating{
-  top:63.95%;
+  top:64.1%;
 }
 
 .new-member-slot.slot-3
@@ -1324,22 +1311,20 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* SLOT 4 */
-
 .new-member-slot.slot-4
 .new-member-avatar{
-  left:22.45%;
-  top:69.45%;
+  left:21.4%;
+  top:68.85%;
 }
 
 .new-member-slot.slot-4
 .new-member-username{
-  top:70.05%;
+  top:69.85%;
 }
 
 .new-member-slot.slot-4
 .new-member-rating{
-  top:72.65%;
+  top:72.8%;
 }
 
 .new-member-slot.slot-4
@@ -1348,22 +1333,20 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* SLOT 5 */
-
 .new-member-slot.slot-5
 .new-member-avatar{
-  left:22.45%;
-  top:78.15%;
+  left:21.4%;
+  top:77.55%;
 }
 
 .new-member-slot.slot-5
 .new-member-username{
-  top:78.75%;
+  top:78.55%;
 }
 
 .new-member-slot.slot-5
 .new-member-rating{
-  top:81.35%;
+  top:81.5%;
 }
 
 .new-member-slot.slot-5
@@ -1409,22 +1392,6 @@ body::-webkit-scrollbar-thumb{
   text-decoration:none;
 
   pointer-events:auto;
-
-  transition:
-    transform .2s ease,
-    filter .2s ease;
-}
-
-.titled-art-member:hover{
-  transform:
-    translateX(3px)
-    scale(1.008);
-
-  filter:
-    drop-shadow(
-      0 0 8px
-      rgba(255,214,107,.45)
-    );
 }
 
 .titled-art-member.slot-1{
@@ -1450,10 +1417,6 @@ body::-webkit-scrollbar-thumb{
   border:
     2px solid
     #d7a63e;
-
-  box-shadow:
-    0 3px 8px
-    rgba(0,0,0,.25);
 }
 
 .titled-art-copy{
@@ -1603,44 +1566,6 @@ body::-webkit-scrollbar-thumb{
     rgba(0,0,0,.23);
 }
 
-.rules-window::before,
-.rules-window::after{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  right:0;
-
-  height:32px;
-
-  z-index:8;
-
-  pointer-events:none;
-}
-
-.rules-window::before{
-  top:0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #081a32,
-      transparent
-    );
-}
-
-.rules-window::after{
-  bottom:0;
-
-  background:
-    linear-gradient(
-      0deg,
-      #07172b,
-      transparent
-    );
-}
-
 .rules-track{
   display:grid;
 
@@ -1661,10 +1586,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes rulesScroll{
+
   to{
     transform:
       translateY(-50%);
   }
+
 }
 
 .rule{
@@ -1748,8 +1675,7 @@ body::-webkit-scrollbar-thumb{
 .staff-title{
   margin:
     5px
-    0
-    5px;
+    0;
 
   color:var(--gold2);
 
@@ -1776,7 +1702,6 @@ body::-webkit-scrollbar-thumb{
 
 .staff-grid{
   display:grid;
-
   gap:8px;
 }
 
@@ -1807,14 +1732,7 @@ body::-webkit-scrollbar-thumb{
       rgba(7,23,43,.9)
     );
 
-  color:inherit;
-
   text-decoration:none;
-}
-
-.staff-card.head-staff{
-  border-color:
-    rgba(255,214,107,.45);
 }
 
 .staff-avatar{
@@ -1843,8 +1761,6 @@ body::-webkit-scrollbar-thumb{
   font-weight:950;
 
   overflow-wrap:anywhere;
-
-  line-height:1.2;
 }
 
 .staff-role{
@@ -1889,84 +1805,42 @@ body::-webkit-scrollbar-thumb{
 
 .role-owner{
   color:#15110a;
-
-  background:
-    linear-gradient(
-      180deg,
-      #ffe493,
-      #d7a63e
-    );
+  background:#ffd66b;
 }
 
 .role-co-owner{
   color:#fff;
-
-  background:
-    linear-gradient(
-      180deg,
-      #3b96ff,
-      #1266c8
-    );
+  background:#1266c8;
 }
 
 .role-head-of-staff{
-  color:#101827;
-
-  background:
-    linear-gradient(
-      180deg,
-      #a9e3ff,
-      #57bde9
-    );
+  color:#061326;
+  background:#69b7ff;
 }
 
 .role-super-admin{
   color:#fff;
-
-  background:
-    linear-gradient(
-      180deg,
-      #775dff,
-      #4932c8
-    );
+  background:#4932c8;
 }
 
 .role-admin{
   color:#fff;
-
-  background:
-    linear-gradient(
-      180deg,
-      #2e8cdf,
-      #125a9b
-    );
+  background:#125a9b;
 }
 
 .role-coordinator{
   color:#061326;
-
-  background:
-    linear-gradient(
-      180deg,
-      #88d5ff,
-      #51a7dc
-    );
+  background:#69b7ff;
 }
 
 .role-mascot{
   color:#15110a;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fff1b7,
-      #dfb950
-    );
+  background:#dfb950;
 }
 
 
 /* =========================================================
-   TOURNAMENT HERO
+   TOURNAMENT
    ========================================================= */
 
 .tournament-hero{
@@ -2020,16 +1894,10 @@ body::-webkit-scrollbar-thumb{
       6vw,
       3rem
     );
-
-  line-height:1;
 }
 
 .status{
   display:inline-flex;
-
-  align-items:center;
-
-  gap:6px;
 
   padding:
     6px
@@ -2105,9 +1973,6 @@ body::-webkit-scrollbar-thumb{
 .action{
   display:inline-flex;
 
-  align-items:center;
-  justify-content:center;
-
   padding:
     7px
     9px;
@@ -2118,9 +1983,6 @@ body::-webkit-scrollbar-thumb{
     1px solid
     rgba(255,214,107,.3);
 
-  background:
-    rgba(215,166,62,.09);
-
   color:var(--gold2);
 
   text-decoration:none;
@@ -2130,8 +1992,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .justice-wrap{
-  position:relative;
-
   min-height:320px;
 
   display:grid;
@@ -2140,95 +2000,51 @@ body::-webkit-scrollbar-thumb{
 }
 
 .justice{
-  position:relative;
-
-  z-index:3;
-
   width:100%;
+
   max-height:330px;
 
   object-fit:contain;
-
-  filter:
-    drop-shadow(
-      0 14px 18px
-      rgba(0,0,0,.5)
-    );
-
-  animation:
-    justiceFloat
-    6s
-    ease-in-out
-    infinite;
-}
-
-@keyframes justiceFloat{
-  50%{
-    transform:
-      translateY(-6px)
-      rotate(.2deg);
-  }
 }
 
 
 /* =========================================================
-   CHAMPIONS PODIUM
+   CHAMPIONS
    ========================================================= */
-
-.champions-section{
-  overflow:visible;
-}
 
 .champions-stage{
   position:relative;
 
   width:100%;
-
-  margin-top:8px;
-
-  overflow:visible;
 }
 
 .champions-podium-art{
-  position:relative;
-
-  z-index:1;
-
   display:block;
 
   width:100%;
   height:auto;
-
-  pointer-events:none;
 }
 
 .champions-overlay{
   position:absolute;
 
   inset:0;
-
-  z-index:5;
-
-  pointer-events:none;
 }
 
 .podium-winner{
   position:absolute;
 
   display:flex;
+
   flex-direction:column;
 
   align-items:center;
 
   width:24%;
 
-  color:#fff;
-
-  text-decoration:none;
-
   text-align:center;
 
-  pointer-events:auto;
+  text-decoration:none;
 }
 
 .podium-second{
@@ -2265,8 +2081,6 @@ body::-webkit-scrollbar-thumb{
 
   object-fit:cover;
 
-  background:#061326;
-
   border:
     4px solid
     #c7d4e2;
@@ -2297,8 +2111,6 @@ body::-webkit-scrollbar-thumb{
 }
 
 .winner-name{
-  max-width:100%;
-
   margin-top:4px;
 
   color:#fff;
@@ -2311,15 +2123,6 @@ body::-webkit-scrollbar-thumb{
     );
 
   font-weight:950;
-
-  white-space:nowrap;
-
-  overflow:hidden;
-  text-overflow:ellipsis;
-
-  text-shadow:
-    0 2px 4px
-    rgba(0,0,0,.9);
 }
 
 .winner-meta{
@@ -2333,25 +2136,10 @@ body::-webkit-scrollbar-thumb{
       1.4vw,
       10px
     );
-
-  font-weight:850;
 }
 
 .winner-rating{
   margin-top:3px;
-
-  padding:
-    2px
-    5px;
-
-  border-radius:999px;
-
-  background:
-    rgba(3,12,24,.82);
-
-  border:
-    1px solid
-    rgba(255,214,107,.35);
 
   color:#fff3bd;
 
@@ -2360,45 +2148,6 @@ body::-webkit-scrollbar-thumb{
       6px,
       1.35vw,
       10px
-    );
-
-  font-weight:900;
-}
-
-.podium-placeholder-avatar{
-  width:
-    clamp(
-      48px,
-      11vw,
-      88px
-    );
-
-  height:
-    clamp(
-      48px,
-      11vw,
-      88px
-    );
-
-  border-radius:50%;
-
-  background:transparent;
-}
-
-.podium-first
-.podium-placeholder-avatar{
-  width:
-    clamp(
-      58px,
-      13vw,
-      102px
-    );
-
-  height:
-    clamp(
-      58px,
-      13vw,
-      102px
     );
 }
 
@@ -2436,8 +2185,6 @@ body::-webkit-scrollbar-thumb{
   background:
     rgba(0,0,0,.2);
 
-  color:inherit;
-
   text-decoration:none;
 }
 
@@ -2448,10 +2195,6 @@ body::-webkit-scrollbar-thumb{
   border-radius:50%;
 
   object-fit:cover;
-
-  border:
-    1px solid
-    rgba(255,214,107,.25);
 }
 
 .archive-rating{
@@ -2490,10 +2233,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes shimmer{
+
   to{
     background-position:
       -220% 0;
   }
+
 }
 
 .empty{
@@ -2526,75 +2271,16 @@ body::-webkit-scrollbar-thumb{
 
 @media(max-width:430px){
 
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar{
-    width:4px;
-  }
-
   .page{
     padding:8px;
   }
 
   .hero{
     min-height:330px;
-
-    padding:
-      8px
-      0
-      12px;
-  }
-
-  .hero-glow{
-    width:285px;
-    height:285px;
-
-    top:42%;
-  }
-
-  .orbit{
-    width:240px;
-
-    top:42%;
-  }
-
-  .orbit.two{
-    width:200px;
   }
 
   .logo-stage{
     width:185px;
-  }
-
-  .greeting{
-    font-size:20px;
-  }
-
-  .clock{
-    font-size:17px;
-  }
-
-  .date{
-    font-size:12px;
-  }
-
-  .dashboard-switcher{
-    gap:5px;
-
-    padding:5px;
-  }
-
-  .dashboard-btn{
-    padding:
-      9px
-      4px;
-
-    font-size:11px;
-  }
-
-  .section{
-    margin-top:8px;
-
-    padding:10px;
   }
 
   .quick-links{
@@ -2603,21 +2289,11 @@ body::-webkit-scrollbar-thumb{
       1fr;
   }
 
-  .quick-link{
-    min-height:65px;
-  }
-
   .titled-art-member{
     left:19.4%;
     right:8%;
 
-    height:8.2%;
-
     gap:6px;
-
-    padding:
-      0
-      5px;
   }
 
   .titled-art-avatar{
@@ -2627,68 +2303,17 @@ body::-webkit-scrollbar-thumb{
     flex-basis:37px;
   }
 
-  .titled-art-name{
-    font-size:
-      clamp(
-        11px,
-        3.7vw,
-        15px
-      );
-  }
-
-  .titled-art-rating{
-    margin-top:3px;
-
-    font-size:
-      clamp(
-        8px,
-        2.6vw,
-        11px
-      );
-  }
-
-  .titled-art-title{
-    min-width:38px;
-
-    padding:
-      5px
-      6px;
-
-    font-size:10px;
-  }
-
   .staff-card{
     grid-template-columns:
       46px
       minmax(0,1fr)
       auto;
-
-    gap:8px;
-  }
-
-  .staff-avatar{
-    width:46px;
-    height:46px;
   }
 
   .tournament-hero{
     grid-template-columns:1fr;
 
-    min-height:0;
-
     text-align:center;
-  }
-
-  .actions{
-    justify-content:center;
-  }
-
-  .justice-wrap{
-    min-height:250px;
-  }
-
-  .justice{
-    max-height:260px;
   }
 
 }
@@ -2699,14 +2324,6 @@ body::-webkit-scrollbar-thumb{
    ========================================================= */
 
 @media(max-width:340px){
-
-  .dashboard-btn{
-    font-size:10px;
-  }
-
-  .logo-stage{
-    width:170px;
-  }
 
   .staff-badges{
     display:none;
@@ -2722,6 +2339,7 @@ body::-webkit-scrollbar-thumb{
 
 </head>
 
+
 <body>
 
 <div class="shell">
@@ -2732,6 +2350,7 @@ body::-webkit-scrollbar-thumb{
   class="ambient"
   id="ambient">
 </div>
+
 
 <div class="viewport">
 
@@ -2764,6 +2383,7 @@ body::-webkit-scrollbar-thumb{
 
   </div>
 
+
   <div class="hero-copy">
 
     <div
@@ -2792,32 +2412,24 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
-<nav
-  class="dashboard-switcher"
-  aria-label="ACFA dashboards">
+<nav class="dashboard-switcher">
 
   <button
     class="dashboard-btn active"
     data-dashboard="home">
-
     Home
-
   </button>
 
   <button
     class="dashboard-btn"
     data-dashboard="tournaments">
-
     Tournaments
-
   </button>
 
   <button
     class="dashboard-btn"
     data-dashboard="staff">
-
     Staff
-
   </button>
 
 </nav>
@@ -2844,11 +2456,6 @@ body::-webkit-scrollbar-thumb{
   <div
     class="quick-links"
     id="quickLinks">
-
-    <div class="empty">
-      Loading...
-    </div>
-
   </div>
 
 </section>
@@ -2879,11 +2486,6 @@ body::-webkit-scrollbar-thumb{
   <div
     class="announcement-list"
     id="announcementBoard">
-
-    <div class="empty">
-      Loading...
-    </div>
-
   </div>
 
 </section>
@@ -2906,18 +2508,13 @@ body::-webkit-scrollbar-thumb{
   <div
     class="events"
     id="events">
-
-    <div class="empty">
-      Loading...
-    </div>
-
   </div>
 
 </section>
 
 
 <!-- ======================================================
-     MEMBER BOARDS
+     NEW MEMBERS
      ====================================================== -->
 
 <div class="members-showcase">
@@ -2964,6 +2561,10 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
+<!-- ======================================================
+     TITLED PLAYERS
+     ====================================================== -->
+
 <section class="art-board">
 
   <img
@@ -2992,10 +2593,6 @@ body::-webkit-scrollbar-thumb{
 
 </div>
 
-
-<!-- ======================================================
-     RULES
-     ====================================================== -->
 
 <section class="section">
 
@@ -3037,38 +2634,30 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     TOURNAMENT DASHBOARD
+     TOURNAMENTS
      ====================================================== -->
 
 <section class="page">
 
 
-<nav
-  class="dashboard-switcher"
-  aria-label="ACFA dashboards">
+<nav class="dashboard-switcher">
 
   <button
     class="dashboard-btn"
     data-dashboard="home">
-
     Home
-
   </button>
 
   <button
     class="dashboard-btn active"
     data-dashboard="tournaments">
-
     Tournaments
-
   </button>
 
   <button
     class="dashboard-btn"
     data-dashboard="staff">
-
     Staff
-
   </button>
 
 </nav>
@@ -3076,7 +2665,7 @@ body::-webkit-scrollbar-thumb{
 
 <section class="tournament-hero">
 
-  <div class="tournament-copy">
+  <div>
 
     <div class="eyebrow">
       ACFA Seasonal Championships
@@ -3085,17 +2674,11 @@ body::-webkit-scrollbar-thumb{
     <h1
       class="season-title"
       id="seasonTitle">
-
-      Loading...
-
     </h1>
 
     <span
       class="status"
       id="seasonStatus">
-
-      Loading
-
     </span>
 
 
@@ -3108,7 +2691,6 @@ body::-webkit-scrollbar-thumb{
         </b>
 
         <span id="registrationDeadline">
-          TBA
         </span>
 
       </div>
@@ -3120,7 +2702,6 @@ body::-webkit-scrollbar-thumb{
         </b>
 
         <span id="startDate">
-          TBA
         </span>
 
       </div>
@@ -3132,7 +2713,6 @@ body::-webkit-scrollbar-thumb{
         </b>
 
         <span id="endDate">
-          TBA
         </span>
 
       </div>
@@ -3144,7 +2724,6 @@ body::-webkit-scrollbar-thumb{
         </b>
 
         <span id="format">
-          Seasonal Championship
         </span>
 
       </div>
@@ -3158,7 +2737,6 @@ body::-webkit-scrollbar-thumb{
         class="action"
         id="eventBtn"
         target="_blank"
-        rel="noopener"
         style="display:none">
 
         Open Tournament
@@ -3169,7 +2747,6 @@ body::-webkit-scrollbar-thumb{
         class="action"
         id="detailsBtn"
         target="_blank"
-        rel="noopener"
         style="display:none">
 
         Event Details
@@ -3193,23 +2770,13 @@ body::-webkit-scrollbar-thumb{
 </section>
 
 
-<!-- ======================================================
-     CHAMPIONS
-     ====================================================== -->
-
-<section
-  class="section
-         champions-section">
+<section class="section">
 
   <div class="section-head">
 
     <h2>
       Season Champions
     </h2>
-
-    <span class="meta">
-      Latest Three
-    </span>
 
   </div>
 
@@ -3218,7 +2785,7 @@ body::-webkit-scrollbar-thumb{
     <img
       class="champions-podium-art"
       src="./assets/acfa-champions-podium.PNG"
-      alt="ACFA Season Champions Podium">
+      alt="ACFA Champions">
 
     <div
       class="champions-overlay"
@@ -3238,20 +2805,11 @@ body::-webkit-scrollbar-thumb{
       Champions Archive
     </h2>
 
-    <span class="meta">
-      All Seasons
-    </span>
-
   </div>
 
   <div
     class="archive"
     id="archive">
-
-    <div class="empty">
-      Loading...
-    </div>
-
   </div>
 
 </section>
@@ -3262,38 +2820,30 @@ body::-webkit-scrollbar-thumb{
 
 
 <!-- ======================================================
-     STAFF DASHBOARD
+     STAFF
      ====================================================== -->
 
 <section class="page">
 
 
-<nav
-  class="dashboard-switcher"
-  aria-label="ACFA dashboards">
+<nav class="dashboard-switcher">
 
   <button
     class="dashboard-btn"
     data-dashboard="home">
-
     Home
-
   </button>
 
   <button
     class="dashboard-btn"
     data-dashboard="tournaments">
-
     Tournaments
-
   </button>
 
   <button
     class="dashboard-btn active"
     data-dashboard="staff">
-
     Staff
-
   </button>
 
 </nav>
@@ -3321,31 +2871,10 @@ body::-webkit-scrollbar-thumb{
 
 <section class="section">
 
-  <div class="section-head">
-
-    <div>
-
-      <div class="section-kicker">
-        Leadership Directory
-      </div>
-
-      <h2>
-        ACFA Staff
-      </h2>
-
-    </div>
-
-    <span class="live-dot">
-      API Profiles
-    </span>
-
-  </div>
-
   <div
     class="staff-grid"
     id="staffBoard">
 
-    <div class="skeleton"></div>
     <div class="skeleton"></div>
     <div class="skeleton"></div>
 
@@ -3369,7 +2898,7 @@ body::-webkit-scrollbar-thumb{
 <script>
 
 /* =========================================================
-   CORE CONFIG
+   CONFIG
    ========================================================= */
 
 const API =
@@ -3386,6 +2915,16 @@ const DATA_URL =
 
 const FALLBACK =
   "./assets/acfa-logo.png";
+
+
+/*
+ * ChanelinmyYSL is still hydrated through Chess.com.
+ * This only reserves the second visual slot for the known
+ * ACFA titled player.
+ */
+
+const SECOND_TITLED_PLAYER =
+  "ChanelinmyYSL";
 
 
 const TITLE_CODES = [
@@ -3425,10 +2964,11 @@ const PROFILE_CONCURRENCY =
 
 
 const CACHE_VERSION =
-  "acfa-dashboard-v40";
+  "acfa-dashboard-v50";
 
 
-let DATA = null;
+let DATA =
+  null;
 
 
 let CLUB_MEMBERS =
@@ -3527,7 +3067,9 @@ function cacheGet(
       >
       lifetime
     ){
+
       return null;
+
     }
 
 
@@ -3628,28 +3170,8 @@ async function loadACFAData(){
   }
 
 
-  const json =
-    await response.json();
-
-
-  if(
-    !json
-    ||
-    typeof json !== "object"
-  ){
-
-    throw new Error(
-      "ACFA JSON is invalid."
-    );
-
-  }
-
-
   DATA =
-    json;
-
-
-  return DATA;
+    await response.json();
 
 }
 
@@ -3676,30 +3198,12 @@ function buildParticles(){
       );
 
 
-    const classes =
-      ["spark"];
-
-
-    if(
-      i % 4 === 0
-    ){
-      classes.push(
-        "blue"
-      );
-    }
-
-
-    if(
-      i % 10 === 0
-    ){
-      classes.push(
-        "large"
-      );
-    }
-
-
     spark.className =
-      classes.join(" ");
+      i % 4 === 0
+        ?
+        "spark blue"
+        :
+        "spark";
 
 
     spark.style.setProperty(
@@ -3758,8 +3262,10 @@ function updateClock(){
     &&
     hour < 12
   ){
+
     greeting =
       "Good Morning";
+
   }
 
   else if(
@@ -3767,8 +3273,10 @@ function updateClock(){
     &&
     hour < 17
   ){
+
     greeting =
       "Good Afternoon";
+
   }
 
   else if(
@@ -3776,8 +3284,10 @@ function updateClock(){
     &&
     hour < 21
   ){
+
     greeting =
       "Good Evening";
+
   }
 
 
@@ -3813,7 +3323,7 @@ function updateClock(){
 
 
 /* =========================================================
-   DASHBOARD NAV
+   NAVIGATION
    ========================================================= */
 
 function setDashboard(
@@ -3831,7 +3341,8 @@ function setDashboard(
 
 
   if(
-    dashboard === "tournaments"
+    dashboard ===
+    "tournaments"
   ){
 
     track.classList.add(
@@ -3842,7 +3353,8 @@ function setDashboard(
 
 
   if(
-    dashboard === "staff"
+    dashboard ===
+    "staff"
   ){
 
     track.classList.add(
@@ -3876,7 +3388,7 @@ function setDashboard(
 
 
 /* =========================================================
-   DATE HELPERS
+   DATES
    ========================================================= */
 
 function niceDate(
@@ -3892,12 +3404,6 @@ function niceDate(
     String(value).trim();
 
 
-  /*
-   * YYYY-MM-DD gets formatted.
-   * Strings such as "Oct 4th" and "TBD"
-   * stay exactly as entered in the JSON.
-   */
-
   if(
     !/^\d{4}-\d{2}-\d{2}$/
       .test(text)
@@ -3912,17 +3418,6 @@ function niceDate(
     new Date(
       `${text}T12:00:00`
     );
-
-
-  if(
-    Number.isNaN(
-      date.getTime()
-    )
-  ){
-
-    return text;
-
-  }
 
 
   return date.toLocaleDateString(
@@ -3951,41 +3446,10 @@ function monthDay(
   }
 
 
-  const text =
-    String(value).trim();
-
-
-  if(
-    !/^\d{4}-\d{2}-\d{2}$/
-      .test(text)
-  ){
-
-    return [
-      text,
-      ""
-    ];
-
-  }
-
-
   const date =
     new Date(
-      `${text}T12:00:00`
+      `${value}T12:00:00`
     );
-
-
-  if(
-    Number.isNaN(
-      date.getTime()
-    )
-  ){
-
-    return [
-      text,
-      ""
-    ];
-
-  }
 
 
   return [
@@ -4007,7 +3471,7 @@ function monthDay(
 
 
 /* =========================================================
-   JSON: QUICK LINKS
+   JSON CONTENT
    ========================================================= */
 
 function renderQuickLinks(){
@@ -4016,70 +3480,35 @@ function renderQuickLinks(){
     DATA?.quickLinks || [];
 
 
-  if(
-    !links.length
-  ){
-
-    $("#quickLinks")
-      .innerHTML =
-        `
-        <div class="empty">
-          No links configured.
-        </div>
-        `;
-
-    return;
-
-  }
-
-
   $("#quickLinks")
     .innerHTML =
 
-      links
+      links.map(
+        item =>`
 
-        .filter(
-          item =>
-            item.url
-        )
+        <a
+          class="quick-link"
 
-        .map(
-          item =>`
+          href="${escapeHTML(item.url)}"
 
-          <a
-            class="quick-link"
+          target="_blank">
 
-            href="${escapeHTML(item.url)}"
+          <div class="quick-icon">
+            ${escapeHTML(item.icon || "•")}
+          </div>
 
-            target="_blank"
+          <div class="quick-label">
+            ${escapeHTML(item.label)}
+          </div>
 
-            rel="noopener">
+        </a>
 
-            <div class="quick-icon">
-
-              ${escapeHTML(item.icon || "•")}
-
-            </div>
-
-            <div class="quick-label">
-
-              ${escapeHTML(item.label || "Link")}
-
-            </div>
-
-          </a>
-
-          `
-        )
-
-        .join("");
+        `
+      )
+      .join("");
 
 }
 
-
-/* =========================================================
-   JSON: ANNOUNCEMENTS
-   ========================================================= */
 
 function renderAnnouncements(){
 
@@ -4098,39 +3527,18 @@ function renderAnnouncements(){
       a,
       b
     ) =>
-      Number(
-        Boolean(b.pinned)
-      )
+      Number(Boolean(b.pinned))
       -
-      Number(
-        Boolean(a.pinned)
-      )
+      Number(Boolean(a.pinned))
   );
-
-
-  if(
-    !announcements.length
-  ){
-
-    $("#announcementBoard")
-      .innerHTML =
-        `
-        <div class="empty">
-          No announcements posted.
-        </div>
-        `;
-
-    return;
-
-  }
 
 
   $("#announcementBoard")
     .innerHTML =
 
-      announcements
-
-        .map(
+      announcements.length
+        ?
+        announcements.map(
           announcement =>`
 
           <article
@@ -4157,34 +3565,18 @@ function renderAnnouncements(){
                     ""
                 }
 
-                ${escapeHTML(
-                  announcement.title
-                  ||
-                  "Announcement"
-                )}
+                ${escapeHTML(announcement.title)}
 
               </div>
 
               <div class="announcement-date">
-
-                ${escapeHTML(
-                  announcement.date
-                  ||
-                  ""
-                )}
-
+                ${escapeHTML(announcement.date || "")}
               </div>
 
             </div>
 
             <div class="announcement-body">
-
-              ${escapeHTML(
-                announcement.body
-                ||
-                ""
-              )}
-
+              ${escapeHTML(announcement.body || "")}
             </div>
 
             ${
@@ -4196,9 +3588,7 @@ function renderAnnouncements(){
 
                   href="${escapeHTML(announcement.url)}"
 
-                  target="_blank"
-
-                  rel="noopener">
+                  target="_blank">
 
                   ${escapeHTML(
                     announcement.linkText
@@ -4216,15 +3606,16 @@ function renderAnnouncements(){
 
           `
         )
-
-        .join("");
+        .join("")
+        :
+        `
+        <div class="empty">
+          No announcements.
+        </div>
+        `;
 
 }
 
-
-/* =========================================================
-   JSON: EVENTS
-   ========================================================= */
 
 function renderEvents(){
 
@@ -4232,29 +3623,12 @@ function renderEvents(){
     DATA?.home?.events || [];
 
 
-  if(
-    !events.length
-  ){
-
-    $("#events")
-      .innerHTML =
-        `
-        <div class="empty">
-          No current club events.
-        </div>
-        `;
-
-    return;
-
-  }
-
-
   $("#events")
     .innerHTML =
 
-      events
-
-        .map(
+      events.length
+        ?
+        events.map(
           event =>{
 
             const [
@@ -4266,113 +3640,58 @@ function renderEvents(){
               );
 
 
-            const tag =
-              event.url
-                ?
-                "a"
-                :
-                "div";
-
-
-            const href =
-              event.url
-                ?
-                `
-                href="${escapeHTML(event.url)}"
-                target="_blank"
-                rel="noopener"
-                `
-                :
-                "";
-
-
             return `
 
-            <${tag}
+            <a
               class="event"
-              ${href}>
+
+              href="${escapeHTML(event.url || "#")}"
+
+              target="_blank">
 
               <div class="event-date">
 
                 ${escapeHTML(month)}
 
-                ${
-                  day
-                    ?
-                    `<br>${escapeHTML(day)}`
-                    :
-                    ""
-                }
+                <br>
+
+                ${escapeHTML(day)}
 
               </div>
 
               <div class="event-main">
 
                 <div class="event-title">
-
-                  ${escapeHTML(
-                    event.title
-                    ||
-                    "Club Event"
-                  )}
-
+                  ${escapeHTML(event.title)}
                 </div>
 
                 <div class="event-meta">
-
-                  ${escapeHTML(
-                    event.status
-                    ||
-                    ""
-                  )}
-
+                  ${escapeHTML(event.status || "")}
                 </div>
 
               </div>
 
-            </${tag}>
+            </a>
 
             `;
 
           }
         )
-
-        .join("");
+        .join("")
+        :
+        `
+        <div class="empty">
+          No current events.
+        </div>
+        `;
 
 }
 
-
-/* =========================================================
-   JSON: RULES
-   ========================================================= */
 
 function renderRules(){
 
   const rules =
     DATA?.home?.rules || [];
-
-
-  if(
-    !rules.length
-  ){
-
-    $("#rulesTrack")
-      .innerHTML =
-        `
-        <div class="rule">
-
-          <i>1</i>
-
-          <span>
-            No rules configured.
-          </span>
-
-        </div>
-        `;
-
-    return;
-
-  }
 
 
   const html =
@@ -4406,10 +3725,6 @@ function renderRules(){
 }
 
 
-/* =========================================================
-   JSON: TOURNAMENT
-   ========================================================= */
-
 function renderTournament(){
 
   const tournament =
@@ -4418,17 +3733,13 @@ function renderTournament(){
 
   $("#seasonTitle")
     .textContent =
-      `
-      ${safe(
+      `${safe(
         tournament.activeSeason,
         "Season"
-      )}
-      ${safe(
+      )} ${safe(
         tournament.year,
         ""
-      )}
-      `
-      .trim();
+      )}`;
 
 
   $("#seasonStatus")
@@ -4466,16 +3777,6 @@ function renderTournament(){
         tournament.format,
         "Seasonal Championship"
       );
-
-
-  $("#eventBtn")
-    .style.display =
-      "none";
-
-
-  $("#detailsBtn")
-    .style.display =
-      "none";
 
 
   if(
@@ -4518,13 +3819,9 @@ function renderTournament(){
 
 async function getClubMembers(){
 
-  const key =
-    `members:${CLUB_SLUG}`;
-
-
   const cached =
     cacheGet(
-      key,
+      "club-members",
       MEMBER_CACHE
     );
 
@@ -4533,12 +3830,6 @@ async function getClubMembers(){
     return cached;
   }
 
-
-  /*
-   * IMPORTANT:
-   * Uses the hardcoded ACFA slug.
-   * This function does NOT depend on data/acfa.json.
-   */
 
   const response =
     await fetchJSON(
@@ -4552,12 +3843,8 @@ async function getClubMembers(){
   ];
 
 
-  const seen =
-    new Set();
-
-
-  const unique =
-    [];
+  const map =
+    new Map();
 
 
   for(
@@ -4567,46 +3854,33 @@ async function getClubMembers(){
   ){
 
     if(
-      !member?.username
+      !member.username
     ){
       continue;
     }
 
 
-    const normalized =
-      member.username
-        .trim()
-        .toLowerCase();
-
-
-    if(
-      seen.has(
-        normalized
-      )
-    ){
-      continue;
-    }
-
-
-    seen.add(
-      normalized
-    );
-
-
-    unique.push(
+    map.set(
+      member.username.toLowerCase(),
       member
     );
 
   }
 
 
+  const members =
+    [
+      ...map.values()
+    ];
+
+
   cacheSet(
-    key,
-    unique
+    "club-members",
+    members
   );
 
 
-  return unique;
+  return members;
 
 }
 
@@ -4615,14 +3889,8 @@ async function getProfile(
   username
 ){
 
-  const normalized =
-    username
-      .trim()
-      .toLowerCase();
-
-
   const key =
-    `profile:${normalized}`;
+    `profile:${username.toLowerCase()}`;
 
 
   const cached =
@@ -4658,14 +3926,8 @@ async function getStats(
   username
 ){
 
-  const normalized =
-    username
-      .trim()
-      .toLowerCase();
-
-
   const key =
-    `stats:${normalized}`;
+    `stats:${username.toLowerCase()}`;
 
 
   const cached =
@@ -4698,7 +3960,7 @@ async function getStats(
 
 
 /* =========================================================
-   HIGHEST CURRENT RATING
+   RATINGS
    ========================================================= */
 
 function highestRating(
@@ -4707,25 +3969,13 @@ function highestRating(
 
   const categories = [
 
-    {
-      key:"chess_daily",
-      label:"Daily"
-    },
+    ["chess_daily","Daily"],
 
-    {
-      key:"chess_rapid",
-      label:"Rapid"
-    },
+    ["chess_rapid","Rapid"],
 
-    {
-      key:"chess_blitz",
-      label:"Blitz"
-    },
+    ["chess_blitz","Blitz"],
 
-    {
-      key:"chess_bullet",
-      label:"Bullet"
-    }
+    ["chess_bullet","Bullet"]
 
   ];
 
@@ -4735,15 +3985,16 @@ function highestRating(
 
 
   for(
-    const category
+    const [
+      key,
+      label
+    ]
     of
     categories
   ){
 
     const rating =
-      stats?.[
-        category.key
-      ]?.last?.rating;
+      stats?.[key]?.last?.rating;
 
 
     if(
@@ -4762,8 +4013,8 @@ function highestRating(
     ){
 
       best = {
-        rating:rating,
-        label:category.label
+        rating,
+        label
       };
 
     }
@@ -4805,7 +4056,9 @@ async function mapLimited(
 
 
       if(
-        current >= items.length
+        current
+        >=
+        items.length
       ){
         return;
       }
@@ -4815,19 +4068,12 @@ async function mapLimited(
 
         results[current] =
           await worker(
-            items[current],
-            current
+            items[current]
           );
 
       }
 
-      catch(error){
-
-        console.warn(
-          "Profile scan error:",
-          error
-        );
-
+      catch{
 
         results[current] =
           null;
@@ -4849,8 +4095,7 @@ async function mapLimited(
             items.length
           )
       },
-      () =>
-        runner()
+      runner
     )
 
   );
@@ -4862,7 +4107,7 @@ async function mapLimited(
 
 
 /* =========================================================
-   API: NEW MEMBERS
+   NEW MEMBERS
    ========================================================= */
 
 async function renderNewestMembers(){
@@ -4877,36 +4122,15 @@ async function renderNewestMembers(){
         a,
         b
       ) =>
-        Number(
-          b.joined || 0
-        )
+        Number(b.joined || 0)
         -
-        Number(
-          a.joined || 0
-        )
+        Number(a.joined || 0)
     )
 
     .slice(
       0,
       5
     );
-
-
-  if(
-    !newest.length
-  ){
-
-    $("#newMembers")
-      .innerHTML =
-        `
-        <div class="art-empty">
-          No member data found.
-        </div>
-        `;
-
-    return;
-
-  }
 
 
   const players =
@@ -4943,13 +4167,7 @@ async function renderNewestMembers(){
 
           }
 
-          catch(error){
-
-            console.warn(
-              `Could not hydrate ${member.username}`,
-              error
-            );
-
+          catch{
           }
 
 
@@ -4960,8 +4178,7 @@ async function renderNewestMembers(){
               ||
               member.username,
 
-            profile:
-              profile,
+            profile,
 
             rating:
               highestRating(
@@ -4979,144 +4196,242 @@ async function renderNewestMembers(){
   $("#newMembers")
     .innerHTML =
 
-      players
+      players.map(
+        (
+          player,
+          index
+        ) =>{
 
-        .map(
-          (
-            player,
-            index
-          ) =>{
-
-            const slot =
-              index + 1;
+          const slot =
+            index + 1;
 
 
-            const profileURL =
-              `https://www.chess.com/member/${encodeURIComponent(player.username)}`;
+          const profileURL =
+            `https://www.chess.com/member/${encodeURIComponent(player.username)}`;
 
 
-            return `
+          return `
 
-            <div
-              class="
-                new-member-slot
-                slot-${slot}
-              ">
-
-
-              <a
-                href="${profileURL}"
-
-                target="_blank"
-
-                rel="noopener">
-
-                <img
-                  class="new-member-avatar"
-
-                  src="${
-                    player.profile?.avatar
-                    ||
-                    FALLBACK
-                  }"
-
-                  alt="${escapeHTML(player.username)}"
-
-                  loading="lazy"
-
-                  onerror="
-                    this.onerror=null;
-                    this.src='${FALLBACK}';
-                  ">
-
-              </a>
+          <div
+            class="
+              new-member-slot
+              slot-${slot}
+            ">
 
 
-              <a
-                class="new-member-username"
+            <a
+              href="${profileURL}"
+              target="_blank">
 
-                href="${profileURL}"
+              <img
+                class="new-member-avatar"
 
-                target="_blank"
+                src="${
+                  player.profile?.avatar
+                  ||
+                  FALLBACK
+                }"
 
-                rel="noopener">
+                alt="${escapeHTML(player.username)}"
 
-                ${escapeHTML(player.username)}
+                onerror="
+                  this.onerror=null;
+                  this.src='${FALLBACK}';
+                ">
 
-              </a>
+            </a>
 
 
-              <a
-                class="new-member-rating"
+            <a
+              class="new-member-username"
 
-                href="${profileURL}"
+              href="${profileURL}"
 
-                target="_blank"
+              target="_blank">
 
-                rel="noopener">
+              ${escapeHTML(player.username)}
 
-                ${
-                  player.rating
-                    ?
-                    `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
-                    :
-                    "Rating unavailable"
-                }
+            </a>
 
-              </a>
 
+            <a
+              class="new-member-rating"
+
+              href="${profileURL}"
+
+              target="_blank">
 
               ${
-                player.profile?.title
+                player.rating
                   ?
-                  `
-                  <a
-                    class="new-member-title"
-
-                    href="${profileURL}"
-
-                    target="_blank"
-
-                    rel="noopener">
-
-                    ${escapeHTML(player.profile.title)}
-
-                  </a>
-                  `
+                  `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
                   :
-                  ""
+                  "Rating unavailable"
               }
 
+            </a>
 
-            </div>
 
-            `;
+            ${
+              player.profile?.title
+                ?
+                `
+                <a
+                  class="new-member-title"
 
-          }
-        )
+                  href="${profileURL}"
 
-        .join("");
+                  target="_blank">
+
+                  ${escapeHTML(player.profile.title)}
+
+                </a>
+                `
+                :
+                ""
+            }
+
+
+          </div>
+
+          `;
+
+        }
+      )
+      .join("");
 
 }
 
 
 /* =========================================================
-   API: TITLED PLAYERS
+   TITLED PLAYERS
+   API DISCOVERY + CHANEL RESERVED FOR SLOT 2
    ========================================================= */
 
 async function renderTitledMembers(){
 
+  const found =
+    new Map();
+
+
+  const clubMap =
+    new Map();
+
+
+  CLUB_MEMBERS.forEach(
+    member =>{
+
+      if(
+        !member.username
+      ){
+        return;
+      }
+
+
+      clubMap.set(
+
+        member.username
+          .toLowerCase(),
+
+        member.username
+
+      );
+
+    }
+  );
+
+
   /*
-   * API ONLY.
-   *
-   * No DATA.verifiedTitledMembers.
-   * No manually entered title list.
-   *
-   * We scan ACFA club member profiles and use
-   * profile.title as the authoritative title.
+   * Official Chess.com title lists.
    */
 
-  const titledPlayers =
+  const titleGroups =
+    await Promise.all(
+
+      TITLE_CODES.map(
+        async title =>{
+
+          try{
+
+            const result =
+              await fetchJSON(
+                `${API}/titled/${title}`
+              );
+
+
+            return {
+              title,
+              players:
+                result.players || []
+            };
+
+          }
+
+          catch{
+
+            return {
+              title,
+              players:[]
+            };
+
+          }
+
+        }
+      )
+
+    );
+
+
+  for(
+    const group
+    of
+    titleGroups
+  ){
+
+    for(
+      const username
+      of
+      group.players
+    ){
+
+      const normalized =
+        username.toLowerCase();
+
+
+      if(
+        clubMap.has(
+          normalized
+        )
+      ){
+
+        found.set(
+
+          normalized,
+
+          {
+            username:
+              clubMap.get(
+                normalized
+              ),
+
+            title:
+              group.title
+          }
+
+        );
+
+      }
+
+    }
+
+  }
+
+
+  /*
+   * Also inspect ACFA player profiles.
+   */
+
+  const profileScan =
     await mapLimited(
 
       CLUB_MEMBERS,
@@ -5144,29 +4459,6 @@ async function renderTitledMembers(){
         }
 
 
-        let stats =
-          null;
-
-
-        try{
-
-          stats =
-            await getStats(
-              member.username
-            );
-
-        }
-
-        catch(error){
-
-          console.warn(
-            `Stats unavailable for ${member.username}`,
-            error
-          );
-
-        }
-
-
         return {
 
           username:
@@ -5177,13 +4469,7 @@ async function renderTitledMembers(){
           title:
             profile.title,
 
-          profile:
-            profile,
-
-          rating:
-            highestRating(
-              stats
-            )
+          profile
 
         };
 
@@ -5192,48 +4478,203 @@ async function renderTitledMembers(){
     );
 
 
-  let players =
-    titledPlayers
-      .filter(Boolean);
-
-
-  /*
-   * Remove duplicates.
-   */
-
-  const unique =
-    new Map();
-
-
   for(
     const player
     of
-    players
+    profileScan.filter(Boolean)
   ){
 
-    unique.set(
+    found.set(
 
       player.username
         .toLowerCase(),
 
-      player
+      {
+        ...found.get(
+          player.username.toLowerCase()
+        ),
+
+        ...player
+      }
 
     );
 
   }
 
 
-  players =
-    [
-      ...unique.values()
-    ];
+  /*
+   * Explicitly API-check ChanelinmyYSL.
+   *
+   * We do NOT manually provide their title,
+   * avatar, or rating.
+   */
+
+  try{
+
+    const chanelProfile =
+      await getProfile(
+        SECOND_TITLED_PLAYER
+      );
+
+
+    if(
+      chanelProfile?.title
+      &&
+      TITLE_CODES.includes(
+        chanelProfile.title
+      )
+    ){
+
+      found.set(
+
+        SECOND_TITLED_PLAYER
+          .toLowerCase(),
+
+        {
+          username:
+            chanelProfile.username
+            ||
+            SECOND_TITLED_PLAYER,
+
+          title:
+            chanelProfile.title,
+
+          profile:
+            chanelProfile
+        }
+
+      );
+
+    }
+
+  }
+
+  catch(error){
+
+    console.warn(
+      "Unable to verify ChanelinmyYSL",
+      error
+    );
+
+  }
 
 
   /*
-   * Highest titles first.
+   * Hydrate every detected titled player.
    */
 
-  players.sort(
+  let players =
+    await Promise.all(
+
+      [
+        ...found.values()
+      ]
+      .map(
+        async player =>{
+
+          let profile =
+            player.profile
+            ||
+            null;
+
+
+          let stats =
+            null;
+
+
+          if(
+            !profile
+          ){
+
+            try{
+
+              profile =
+                await getProfile(
+                  player.username
+                );
+
+            }
+
+            catch{
+            }
+
+          }
+
+
+          try{
+
+            stats =
+              await getStats(
+                player.username
+              );
+
+          }
+
+          catch{
+          }
+
+
+          return {
+
+            username:
+              profile?.username
+              ||
+              player.username,
+
+            title:
+              profile?.title
+              ||
+              player.title,
+
+            profile,
+
+            rating:
+              highestRating(
+                stats
+              )
+
+          };
+
+        }
+      )
+
+    );
+
+
+  /*
+   * Separate Chanel from all other titled players.
+   */
+
+  const chanelKey =
+    SECOND_TITLED_PLAYER
+      .toLowerCase();
+
+
+  let chanel =
+    players.find(
+      player =>
+        player.username
+          .toLowerCase()
+        ===
+        chanelKey
+    );
+
+
+  let others =
+    players.filter(
+      player =>
+        player.username
+          .toLowerCase()
+        !==
+        chanelKey
+    );
+
+
+  /*
+   * Sort other titled players normally.
+   */
+
+  others.sort(
     (
       a,
       b
@@ -5272,25 +4713,45 @@ async function renderTitledMembers(){
 
 
   /*
-   * Artwork has two positions.
+   * SLOT 1 = first other detected titled member.
+   * SLOT 2 = ChanelinmyYSL.
    */
 
-  players =
-    players.slice(
-      0,
-      2
-    );
+  const displayPlayers =
+    [];
 
 
   if(
-    !players.length
+    others[0]
+  ){
+
+    displayPlayers.push(
+      others[0]
+    );
+
+  }
+
+
+  if(
+    chanel
+  ){
+
+    displayPlayers.push(
+      chanel
+    );
+
+  }
+
+
+  if(
+    !displayPlayers.length
   ){
 
     $("#titledMembers")
       .innerHTML =
         `
         <div class="art-empty">
-          No titled members detected.
+          No titled players detected.
         </div>
         `;
 
@@ -5302,184 +4763,93 @@ async function renderTitledMembers(){
   $("#titledMembers")
     .innerHTML =
 
-      players
+      displayPlayers.map(
+        (
+          player,
+          index
+        ) =>`
 
-        .map(
-          (
-            player,
-            index
-          ) =>`
+        <a
+          class="
+            titled-art-member
+            slot-${index + 1}
+          "
 
-          <a
-            class="
-              titled-art-member
-              slot-${index + 1}
-            "
+          href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
 
-            href="https://www.chess.com/member/${encodeURIComponent(player.username)}"
-
-            target="_blank"
-
-            rel="noopener">
+          target="_blank">
 
 
-            <img
-              class="titled-art-avatar"
+          <img
+            class="titled-art-avatar"
 
-              src="${
-                player.profile?.avatar
-                ||
-                FALLBACK
-              }"
+            src="${
+              player.profile?.avatar
+              ||
+              FALLBACK
+            }"
 
-              alt="${escapeHTML(player.username)}"
+            alt="${escapeHTML(player.username)}"
 
-              loading="lazy"
-
-              onerror="
-                this.onerror=null;
-                this.src='${FALLBACK}';
-              ">
+            onerror="
+              this.onerror=null;
+              this.src='${FALLBACK}';
+            ">
 
 
-            <div class="titled-art-copy">
+          <div class="titled-art-copy">
 
-              <div class="titled-art-name">
+            <div class="titled-art-name">
 
-                ${escapeHTML(player.username)}
-
-              </div>
-
-
-              <div class="titled-art-rating">
-
-                ${
-                  player.rating
-                    ?
-                    `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
-                    :
-                    "Rating unavailable"
-                }
-
-              </div>
+              ${escapeHTML(player.username)}
 
             </div>
 
+            <div class="titled-art-rating">
 
-            <span class="titled-art-title">
+              ${
+                player.rating
+                  ?
+                  `${escapeHTML(player.rating.rating)} • ${escapeHTML(player.rating.label)}`
+                  :
+                  "Rating unavailable"
+              }
 
-              ${escapeHTML(player.title)}
+            </div>
 
-            </span>
+          </div>
 
-          </a>
 
-          `
-        )
+          <span class="titled-art-title">
 
-        .join("");
+            ${escapeHTML(player.title)}
+
+          </span>
+
+        </a>
+
+        `
+      )
+      .join("");
 
 }
 
 
 /* =========================================================
    STAFF
-   CONFIG FROM JSON
-   PROFILE/RATING FROM CHESS.COM API
    ========================================================= */
-
-function roleClass(
-  role
-){
-
-  return (
-    "role-"
-    +
-    String(role)
-      .toLowerCase()
-      .replace(
-        /\s+/g,
-        "-"
-      )
-  );
-
-}
-
-
-function staffPriority(
-  role
-){
-
-  const priority = {
-    "Owner":100,
-    "Co-Owner":95,
-    "Head of Staff":90,
-    "Super Admin":80,
-    "Admin":70,
-    "Coordinator":60,
-    "Mascot":50
-  };
-
-
-  return (
-    priority[
-      role
-    ]
-    ||
-    0
-  );
-
-}
-
 
 async function renderStaff(){
 
   const staff =
-    [
-      ...(
-        DATA?.staff
-        ||
-        []
-      )
-    ]
-
-    .sort(
-      (
-        a,
-        b
-      ) =>
-        staffPriority(
-          b.role
-        )
-        -
-        staffPriority(
-          a.role
-        )
-    );
-
-
-  if(
-    !staff.length
-  ){
-
-    $("#staffBoard")
-      .innerHTML =
-        `
-        <div class="empty">
-          No staff configured.
-        </div>
-        `;
-
-    return;
-
-  }
+    DATA?.staff || [];
 
 
   const cards =
     await Promise.all(
 
       staff.map(
-        async staffMember =>{
+        async member =>{
 
           let profile =
             null;
@@ -5498,24 +4868,18 @@ async function renderStaff(){
               await Promise.all([
 
                 getProfile(
-                  staffMember.username
+                  member.username
                 ),
 
                 getStats(
-                  staffMember.username
+                  member.username
                 )
 
               ]);
 
           }
 
-          catch(error){
-
-            console.warn(
-              `Staff API error: ${staffMember.username}`,
-              error
-            );
-
+          catch{
           }
 
 
@@ -5525,32 +4889,14 @@ async function renderStaff(){
             );
 
 
-          const isHead =
-            staffMember.role
-            ===
-            "Head of Staff";
-
-
           return `
 
           <a
-            class="
-              staff-card
-              ${
-                isHead
-                  ?
-                  "head-staff"
-                  :
-                  ""
-              }
-            "
+            class="staff-card"
 
-            href="https://www.chess.com/member/${encodeURIComponent(staffMember.username)}"
+            href="https://www.chess.com/member/${encodeURIComponent(member.username)}"
 
-            target="_blank"
-
-            rel="noopener">
-
+            target="_blank">
 
             <img
               class="staff-avatar"
@@ -5561,18 +4907,10 @@ async function renderStaff(){
                 FALLBACK
               }"
 
-              alt="${escapeHTML(staffMember.username)}"
-
-              loading="lazy"
-
-              onerror="
-                this.onerror=null;
-                this.src='${FALLBACK}';
-              ">
+              alt="">
 
 
             <div class="staff-main">
-
 
               <div class="staff-name">
 
@@ -5584,30 +4922,24 @@ async function renderStaff(){
                     ""
                 }
 
-                ${
-                  escapeHTML(
-                    profile?.username
-                    ||
-                    staffMember.username
-                  )
-                }
+                ${escapeHTML(
+                  profile?.username
+                  ||
+                  member.username
+                )}
 
               </div>
-
 
               <div class="staff-role">
-
-                ${escapeHTML(staffMember.role)}
-
+                ${escapeHTML(member.role)}
               </div>
-
 
               <div class="staff-rating">
 
                 ${
                   rating
                     ?
-                    `${escapeHTML(rating.rating)} • ${escapeHTML(rating.label)}`
+                    `${rating.rating} • ${rating.label}`
                     :
                     "Rating unavailable"
                 }
@@ -5622,31 +4954,14 @@ async function renderStaff(){
               <span
                 class="
                   role-badge
-                  ${roleClass(staffMember.role)}
+                  role-${member.role
+                    .toLowerCase()
+                    .replace(/\s+/g,"-")}
                 ">
 
-                ${escapeHTML(staffMember.role)}
+                ${escapeHTML(member.role)}
 
               </span>
-
-
-              ${
-                staffMember.secondaryRole
-                  ?
-                  `
-                  <span
-                    class="
-                      role-badge
-                      ${roleClass(staffMember.secondaryRole)}
-                    ">
-
-                    ${escapeHTML(staffMember.secondaryRole)}
-
-                  </span>
-                  `
-                  :
-                  ""
-              }
 
             </div>
 
@@ -5671,141 +4986,12 @@ async function renderStaff(){
    CHAMPIONS
    ========================================================= */
 
-async function hydrateChampion(
-  champion
-){
-
-  if(!champion){
-    return null;
-  }
-
-
-  let profile =
-    null;
-
-
-  let stats =
-    null;
-
-
-  try{
-
-    [
-      profile,
-      stats
-    ] =
-      await Promise.all([
-
-        getProfile(
-          champion.username
-        ),
-
-        getStats(
-          champion.username
-        )
-
-      ]);
-
-  }
-
-  catch(error){
-
-    console.warn(
-      `Champion API error: ${champion.username}`,
-      error
-    );
-
-  }
-
-
-  return {
-
-    ...champion,
-
-    profile:
-      profile,
-
-    rating:
-      highestRating(
-        stats
-      )
-
-  };
-
-}
-
-
-/* =========================================================
-   EMPTY PODIUM
-   ========================================================= */
-
-function emptyWinner(
-  placement
-){
-
-  const positionClass =
-
-    placement === 1
-      ?
-      "podium-first"
-      :
-      placement === 2
-        ?
-        "podium-second"
-        :
-        "podium-third";
-
-
-  /*
-   * Intentionally blank.
-   * Your podium artwork already contains the
-   * first / second / third-place design.
-   */
-
-  return `
-
-  <div
-    class="
-      podium-winner
-      ${positionClass}
-    ">
-
-    <div class="podium-placeholder-avatar">
-    </div>
-
-  </div>
-
-  `;
-
-}
-
-
-function renderEmptyPodium(){
-
-  $("#podium")
-    .innerHTML =
-      `
-      ${emptyWinner(2)}
-      ${emptyWinner(1)}
-      ${emptyWinner(3)}
-      `;
-
-}
-
-
-/* =========================================================
-   RENDER CHAMPIONS
-   ========================================================= */
-
 async function renderChampions(){
 
   const champions =
     DATA?.tournament?.champions
     ||
     [];
-
-
-  renderEmptyPodium();
 
 
   if(
@@ -5825,233 +5011,58 @@ async function renderChampions(){
   }
 
 
-  const seasonRank = {
-    Spring:1,
-    Summer:2,
-    Fall:3
-  };
-
-
-  const sorted =
-    [
-      ...champions
-    ]
-
-    .sort(
-      (
-        a,
-        b
-      ) =>{
-
-        if(
-          Number(b.year)
-          !==
-          Number(a.year)
-        ){
-
-          return (
-            Number(b.year)
-            -
-            Number(a.year)
-          );
-
-        }
-
-
-        return (
-
-          (
-            seasonRank[
-              b.season
-            ]
-            ||
-            0
-          )
-
-          -
-
-          (
-            seasonRank[
-              a.season
-            ]
-            ||
-            0
-          )
-
-        );
-
-      }
-    );
-
-
-  const podiumOrder = [
-
-    {
-      placement:2,
-      champion:
-        sorted[1]
-        ||
-        null
-    },
-
-    {
-      placement:1,
-      champion:
-        sorted[0]
-        ||
-        null
-    },
-
-    {
-      placement:3,
-      champion:
-        sorted[2]
-        ||
-        null
-    }
-
-  ];
-
-
   const hydrated =
     await Promise.all(
 
-      podiumOrder.map(
+      champions.map(
+        async champion =>{
 
-        async item =>({
-
-          placement:
-            item.placement,
-
-          champion:
-            await hydrateChampion(
-              item.champion
-            )
-
-        })
-
-      )
-
-    );
+          let profile =
+            null;
 
 
-  $("#podium")
-    .innerHTML =
-
-      hydrated
-
-        .map(
-          item =>{
-
-            const champion =
-              item.champion;
+          let stats =
+            null;
 
 
-            if(!champion){
+          try{
 
-              return emptyWinner(
-                item.placement
-              );
+            [
+              profile,
+              stats
+            ] =
+              await Promise.all([
 
-            }
+                getProfile(
+                  champion.username
+                ),
 
+                getStats(
+                  champion.username
+                )
 
-            const positionClass =
-
-              item.placement === 1
-                ?
-                "podium-first"
-                :
-                item.placement === 2
-                  ?
-                  "podium-second"
-                  :
-                  "podium-third";
-
-
-            return `
-
-            <a
-              class="
-                podium-winner
-                ${positionClass}
-              "
-
-              href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
-
-              target="_blank"
-
-              rel="noopener">
-
-
-              <img
-                class="winner-avatar"
-
-                src="${
-                  champion.profile?.avatar
-                  ||
-                  FALLBACK
-                }"
-
-                alt="${escapeHTML(champion.username)}"
-
-                onerror="
-                  this.onerror=null;
-                  this.src='${FALLBACK}';
-                ">
-
-
-              <div class="winner-name">
-
-                ${
-                  champion.profile?.title
-                    ?
-                    `${escapeHTML(champion.profile.title)} `
-                    :
-                    ""
-                }
-
-                ${escapeHTML(champion.username)}
-
-              </div>
-
-
-              <div class="winner-meta">
-
-                ${escapeHTML(champion.season || "")}
-                ${escapeHTML(champion.year || "")}
-                Champion
-
-              </div>
-
-
-              <div class="winner-rating">
-
-                ${
-                  champion.rating
-                    ?
-                    `${escapeHTML(champion.rating.rating)} • ${escapeHTML(champion.rating.label)}`
-                    :
-                    "Rating unavailable"
-                }
-
-              </div>
-
-            </a>
-
-            `;
+              ]);
 
           }
-        )
 
-        .join("");
+          catch{
+          }
 
 
-  const archive =
-    await Promise.all(
+          return {
 
-      sorted.map(
-        hydrateChampion
+            ...champion,
+
+            profile,
+
+            rating:
+              highestRating(
+                stats
+              )
+
+          };
+
+        }
       )
 
     );
@@ -6060,175 +5071,66 @@ async function renderChampions(){
   $("#archive")
     .innerHTML =
 
-      archive
+      hydrated.map(
+        champion =>`
 
-        .map(
-          champion =>`
+        <a
+          class="archive-row"
 
-          <a
-            class="archive-row"
+          href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
 
-            href="https://www.chess.com/member/${encodeURIComponent(champion.username)}"
+          target="_blank">
 
-            target="_blank"
+          <img
+            src="${
+              champion.profile?.avatar
+              ||
+              FALLBACK
+            }"
+            alt="">
 
-            rel="noopener">
+          <div>
 
+            <div class="staff-name">
+              ${escapeHTML(champion.username)}
+            </div>
 
-            <img
-              src="${
-                champion.profile?.avatar
-                ||
-                FALLBACK
-              }"
+            <div class="event-meta">
 
-              alt="${escapeHTML(champion.username)}"
-
-              loading="lazy"
-
-              onerror="
-                this.onerror=null;
-                this.src='${FALLBACK}';
-              ">
-
-
-            <div>
-
-              <div class="staff-name">
-
-                ${
-                  champion.profile?.title
-                    ?
-                    `${escapeHTML(champion.profile.title)} `
-                    :
-                    ""
-                }
-
-                ${escapeHTML(champion.username)}
-
-              </div>
-
-              <div class="event-meta">
-
-                ${escapeHTML(champion.season || "")}
-                ${escapeHTML(champion.year || "")}
-                Champion
-
-              </div>
+              ${escapeHTML(champion.season || "")}
+              ${escapeHTML(champion.year || "")}
+              Champion
 
             </div>
 
+          </div>
 
-            <div class="archive-rating">
+          <div class="archive-rating">
 
-              ${
-                champion.rating
-                  ?
-                  escapeHTML(
-                    champion.rating.rating
-                  )
-                  :
-                  "—"
-              }
+            ${
+              champion.rating
+                ?
+                champion.rating.rating
+                :
+                "—"
+            }
 
-            </div>
+          </div>
 
-          </a>
+        </a>
 
-          `
-        )
-
-        .join("");
+        `
+      )
+      .join("");
 
 }
 
 
 /* =========================================================
-   JSON FAILURE UI
+   JSON SYSTEM
    ========================================================= */
 
-function showJSONFailure(){
-
-  $("#quickLinks")
-    .innerHTML =
-      `
-      <div class="empty">
-        Dashboard configuration unavailable.
-      </div>
-      `;
-
-
-  $("#announcementBoard")
-    .innerHTML =
-      `
-      <div class="empty">
-        Announcements temporarily unavailable.
-      </div>
-      `;
-
-
-  $("#events")
-    .innerHTML =
-      `
-      <div class="empty">
-        Event information temporarily unavailable.
-      </div>
-      `;
-
-
-  $("#rulesTrack")
-    .innerHTML =
-      `
-      <div class="rule">
-
-        <i>!</i>
-
-        <span>
-          Club rules temporarily unavailable.
-        </span>
-
-      </div>
-      `;
-
-
-  $("#seasonTitle")
-    .textContent =
-      "ACFA Championship";
-
-
-  $("#seasonStatus")
-    .textContent =
-      "Data unavailable";
-
-
-  $("#staffBoard")
-    .innerHTML =
-      `
-      <div class="empty">
-        Staff configuration temporarily unavailable.
-      </div>
-      `;
-
-
-  renderEmptyPodium();
-
-
-  $("#archive")
-    .innerHTML =
-      `
-      <div class="empty">
-        Champion archive temporarily unavailable.
-      </div>
-      `;
-
-}
-
-
-/* =========================================================
-   LOAD JSON-CONTROLLED CONTENT
-   ========================================================= */
-
-async function initializeJSONContent(){
+async function initializeJSON(){
 
   try{
 
@@ -6245,32 +5147,27 @@ async function initializeJSONContent(){
 
     renderTournament();
 
+    renderStaff();
 
-    await Promise.all([
-
-      renderStaff(),
-
-      renderChampions()
-
-    ]);
-
-
-    console.log(
-      "ACFA configuration loaded:",
-      DATA
-    );
+    renderChampions();
 
   }
 
   catch(error){
 
     console.error(
-      "Could not load data/acfa.json:",
+      "ACFA JSON failed:",
       error
     );
 
 
-    showJSONFailure();
+    $("#announcementBoard")
+      .innerHTML =
+        `
+        <div class="empty">
+          Dashboard data unavailable.
+        </div>
+        `;
 
   }
 
@@ -6278,20 +5175,15 @@ async function initializeJSONContent(){
 
 
 /* =========================================================
-   LOAD API BOARDS
+   API SYSTEM
    ========================================================= */
 
-async function initializeAPIBoards(){
+async function initializeAPI(){
 
   try{
 
     CLUB_MEMBERS =
       await getClubMembers();
-
-
-    console.log(
-      `ACFA members loaded: ${CLUB_MEMBERS.length}`
-    );
 
 
     await Promise.all([
@@ -6307,7 +5199,7 @@ async function initializeAPIBoards(){
   catch(error){
 
     console.error(
-      "Chess.com club API failed:",
+      "Chess.com API failed:",
       error
     );
 
@@ -6316,7 +5208,7 @@ async function initializeAPIBoards(){
       .innerHTML =
         `
         <div class="art-empty">
-          Member API temporarily unavailable.
+          Member API unavailable.
         </div>
         `;
 
@@ -6325,7 +5217,7 @@ async function initializeAPIBoards(){
       .innerHTML =
         `
         <div class="art-empty">
-          Titled player API temporarily unavailable.
+          Titled player API unavailable.
         </div>
         `;
 
@@ -6369,21 +5261,12 @@ function start(){
 
 
   /*
-   * IMPORTANT:
-   *
-   * These run independently.
-   *
-   * If acfa.json breaks, the Chess.com boards
-   * still run.
-   *
-   * If Chess.com API has an issue, the JSON
-   * dashboard content still runs.
+   * Run independently.
    */
 
-  initializeAPIBoards();
+  initializeAPI();
 
-
-  initializeJSONContent();
+  initializeJSON();
 
 }
 
