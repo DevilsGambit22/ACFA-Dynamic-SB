@@ -1,0 +1,326 @@
+name: ACFA Dashboard Manager
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What do you want to update?"
+        required: true
+        type: choice
+        options:
+          - add_announcement
+          - update_event
+          - update_tournament
+          - clear_announcements
+          - clear_events
+
+      title:
+        description: "Announcement or event title"
+        required: false
+        type: string
+
+      body:
+        description: "Announcement body"
+        required: false
+        type: string
+
+      date:
+        description: "Announcement date text or event date YYYY-MM-DD"
+        required: false
+        type: string
+
+      status:
+        description: "Event or tournament status"
+        required: false
+        type: string
+
+      url:
+        description: "Announcement, event, or tournament URL"
+        required: false
+        type: string
+
+      registration_deadline:
+        description: "Tournament registration deadline"
+        required: false
+        type: string
+
+      start_date:
+        description: "Tournament start date"
+        required: false
+        type: string
+
+      end_date:
+        description: "Tournament end date"
+        required: false
+        type: string
+
+
+permissions:
+  contents: write
+
+
+jobs:
+  update-dashboard:
+
+    name: Update ACFA Dashboard Data
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+
+      - name: Verify data.json exists
+        run: |
+          if [ ! -f "data.json" ]; then
+            echo "ERROR: data.json was not found in the repository root."
+            exit 1
+          fi
+
+          echo "data.json found."
+
+
+      - name: Update data.json
+        env:
+          ACTION_TYPE: ${{ github.event.inputs.action }}
+          INPUT_TITLE: ${{ github.event.inputs.title }}
+          INPUT_BODY: ${{ github.event.inputs.body }}
+          INPUT_DATE: ${{ github.event.inputs.date }}
+          INPUT_STATUS: ${{ github.event.inputs.status }}
+          INPUT_URL: ${{ github.event.inputs.url }}
+          INPUT_REGISTRATION: ${{ github.event.inputs.registration_deadline }}
+          INPUT_START: ${{ github.event.inputs.start_date }}
+          INPUT_END: ${{ github.event.inputs.end_date }}
+
+        run: |
+          python3 <<'PY'
+          import json
+          import os
+          import sys
+
+          FILE = "data.json"
+
+
+          # ==================================================
+          # LOAD CURRENT DATA
+          # ==================================================
+
+          try:
+              with open(FILE, "r", encoding="utf-8") as f:
+                  data = json.load(f)
+
+          except FileNotFoundError:
+              print("ERROR: data.json was not found.")
+              sys.exit(1)
+
+          except json.JSONDecodeError as error:
+              print(f"ERROR: data.json is invalid JSON: {error}")
+              sys.exit(1)
+
+
+          # ==================================================
+          # ENSURE REQUIRED STRUCTURE EXISTS
+          # ==================================================
+
+          data.setdefault("club", {})
+          data.setdefault("home", {})
+          data["home"].setdefault("announcements", [])
+          data["home"].setdefault("events", [])
+          data["home"].setdefault("rules", [])
+          data.setdefault("tournament", {})
+          data["tournament"].setdefault("champions", [])
+
+
+          # ==================================================
+          # WORKFLOW INPUTS
+          # ==================================================
+
+          action = os.environ.get("ACTION_TYPE", "").strip()
+          title = os.environ.get("INPUT_TITLE", "").strip()
+          body = os.environ.get("INPUT_BODY", "").strip()
+          date = os.environ.get("INPUT_DATE", "").strip()
+          status = os.environ.get("INPUT_STATUS", "").strip()
+          url = os.environ.get("INPUT_URL", "").strip()
+          registration = os.environ.get("INPUT_REGISTRATION", "").strip()
+          start_date = os.environ.get("INPUT_START", "").strip()
+          end_date = os.environ.get("INPUT_END", "").strip()
+
+
+          # ==================================================
+          # ADD ANNOUNCEMENT
+          # ==================================================
+
+          if action == "add_announcement":
+
+              if not title:
+                  print("ERROR: A title is required to add an announcement.")
+                  sys.exit(1)
+
+              announcement = {
+                  "title": title,
+                  "date": date,
+                  "body": body,
+                  "url": url,
+                  "linkText": "Read More",
+                  "pinned": True
+              }
+
+              # Unpin previous announcements so newest is featured.
+              for item in data["home"]["announcements"]:
+                  item["pinned"] = False
+
+              # Put newest announcement at the top.
+              data["home"]["announcements"].insert(
+                  0,
+                  announcement
+              )
+
+              print(f"Added announcement: {title}")
+
+
+          # ==================================================
+          # UPDATE HOME EVENT
+          # ==================================================
+
+          elif action == "update_event":
+
+              events = data["home"]["events"]
+
+              if events:
+                  event = events[0]
+
+              else:
+                  event = {
+                      "title": "",
+                      "date": "",
+                      "status": "",
+                      "url": ""
+                  }
+
+                  events.append(event)
+
+              if title:
+                  event["title"] = title
+
+              if date:
+                  event["date"] = date
+
+              if status:
+                  event["status"] = status
+
+              if url:
+                  event["url"] = url
+
+              print("Updated ACFA home event.")
+
+
+          # ==================================================
+          # UPDATE TOURNAMENT
+          # ==================================================
+
+          elif action == "update_tournament":
+
+              tournament = data["tournament"]
+
+              if status:
+                  tournament["status"] = status
+
+              if registration:
+                  tournament["registrationDeadline"] = registration
+
+              if start_date:
+                  tournament["startDate"] = start_date
+
+              if end_date:
+                  tournament["endDate"] = end_date
+
+              if url:
+                  tournament["eventUrl"] = url
+
+              print("Updated ACFA tournament information.")
+
+
+          # ==================================================
+          # CLEAR ANNOUNCEMENTS
+          # ==================================================
+
+          elif action == "clear_announcements":
+
+              data["home"]["announcements"] = []
+
+              print("Cleared all ACFA announcements.")
+
+
+          # ==================================================
+          # CLEAR EVENTS
+          # ==================================================
+
+          elif action == "clear_events":
+
+              data["home"]["events"] = []
+
+              print("Cleared all ACFA home events.")
+
+
+          # ==================================================
+          # UNKNOWN ACTION
+          # ==================================================
+
+          else:
+
+              print(f"ERROR: Unknown action: {action}")
+              sys.exit(1)
+
+
+          # ==================================================
+          # SAVE DATA.JSON
+          # ==================================================
+
+          with open(FILE, "w", encoding="utf-8") as f:
+              json.dump(
+                  data,
+                  f,
+                  indent=2,
+                  ensure_ascii=False
+              )
+
+              f.write("\n")
+
+
+          print("data.json updated successfully.")
+
+          PY
+
+
+      - name: Validate updated JSON
+        run: |
+          python3 -m json.tool data.json > /dev/null
+
+          echo "data.json is valid JSON."
+
+
+      - name: Show changes
+        run: |
+          git diff -- data.json
+
+
+      - name: Commit dashboard update
+        run: |
+          git config user.name "ACFA Dashboard Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data.json
+
+          if git diff --cached --quiet; then
+            echo "No changes were made to data.json."
+            exit 0
+          fi
+
+          git commit -m "Update ACFA dashboard data"
+
+          git push
