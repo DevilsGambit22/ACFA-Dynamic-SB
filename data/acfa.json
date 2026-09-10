@@ -6,45 +6,22 @@
     "motto": "Every Player Belongs • Every Move Matters"
   },
 
-  "quickLinks": [
-    {
-      "label": "Club Events",
-      "icon": "♟",
-      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
-    },
-    {
-      "label": "Forums",
-      "icon": "✦",
-      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
-    },
-    {
-      "label": "Announcements",
-      "icon": "★",
-      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
-    },
-    {
-      "label": "Notes",
-      "icon": "✎",
-      "url": "https://www.chess.com/club/notes/and-chess-for-all-official"
-    }
-  ],
-
   "home": {
     "announcements": [
       {
-        "title": "ACFA Fall Championship Registration",
+        "title": "ACFA Fall Championship",
         "date": "September 2026",
-        "body": "Registration is now open for the first-ever ACFA Fall Championship. Join the tournament and compete for the inaugural seasonal championship title.",
+        "body": "Registration is open for the first-ever ACFA Fall Championship. Join us as And Chess For All Official begins its seasonal championship tradition.",
         "url": "https://www.chess.com/tournament/open-fall-championship-tournament",
-        "linkText": "Register Now",
+        "linkText": "View Tournament",
         "pinned": true
       },
       {
         "title": "Welcome to the ACFA Dashboard",
         "date": "September 2026",
-        "body": "Important club news, tournament updates, seasonal announcements, events, and community information will appear here.",
+        "body": "Important club news, tournament updates, seasonal announcements, and community information will appear here.",
         "url": "",
-        "linkText": "",
+        "linkText": "Read More",
         "pinned": false
       }
     ],
@@ -69,6 +46,29 @@
       "Handle disputes respectfully through the proper admin channels."
     ]
   },
+
+  "quickLinks": [
+    {
+      "label": "Club Events",
+      "icon": "♟",
+      "url": "https://www.chess.com/clubs/events/and-chess-for-all-official"
+    },
+    {
+      "label": "Forums",
+      "icon": "✦",
+      "url": "https://www.chess.com/clubs/forum/and-chess-for-all-official"
+    },
+    {
+      "label": "Announcements",
+      "icon": "★",
+      "url": "https://www.chess.com/club/and-chess-for-all-official/announcements"
+    },
+    {
+      "label": "Notes",
+      "icon": "✎",
+      "url": "https://www.chess.com/club/notes/and-chess-for-all-official"
+    }
+  ],
 
   "staff": [
     {
